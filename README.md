@@ -9,11 +9,19 @@ The Cratis **company and brand site**. Plain HTML, CSS and vanilla JavaScript �
 ## Run it
 
 ```bash
-python3 -m http.server 4321
-# → http://localhost:4321
+./serve            # → http://localhost:4321, opens a browser
+./serve 8080       # any other port
 ```
 
-Any static server works. Opening `index.html` directly also works, though root-relative paths (`/assets/…`) need a server.
+`serve` picks the first static server it finds — python3, npx, php or ruby — and refuses to start if the port is busy. There is nothing to install and nothing to build.
+
+Any static server works just as well:
+
+```bash
+python3 -m http.server 4321
+```
+
+Opening `index.html` directly also works, though root-relative paths (`/assets/…`) need a server.
 
 ## Deploy
 

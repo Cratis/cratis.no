@@ -23,7 +23,7 @@ Bring both. A beautiful site saying the wrong thing fails, and so does a sharp m
 `cratis.no` — the **company and brand website** for Cratis. Plain HTML, CSS and vanilla JavaScript. No framework, no build step, no dependencies. GitHub Pages will serve the repository root directly.
 
 ```bash
-python3 -m http.server 4321     # → http://localhost:4321
+./serve                         # → http://localhost:4321
 ```
 
 **Look at the site before reading the code.** Open it, scroll it, resize it, toggle the theme. Your first impression is the most valuable thing you have and you only get it once.

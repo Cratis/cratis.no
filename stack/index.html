@@ -1,47 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The stack — Chronicle, Arc, Studio and the tools — Cratis</title>
-<meta name="description" content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer.">
-<link rel="canonical" href="https://cratis.no/stack/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The stack — Chronicle, Arc, Studio and the tools — Cratis">
-<meta property="og:description" content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer.">
-<meta property="og:url" content="https://cratis.no/stack/">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://cratis.no/assets/og/stack.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://cratis.no/assets/og/stack.jpg">
-<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
-<script>
-  (function () {
-    try {
-      var t = localStorage.getItem('cratis-theme');
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-    } catch (e) { }
-  })();
-</script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The stack — Chronicle, Arc, Studio and the tools — Cratis</title>
+    <meta
+      name="description"
+      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+    />
+    <link rel="canonical" href="https://cratis.no/stack/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="The stack — Chronicle, Arc, Studio and the tools — Cratis"
+    />
+    <meta
+      property="og:description"
+      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+    />
+    <meta property="og:url" content="https://cratis.no/stack/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://cratis.no/assets/og/stack.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      name="twitter:image"
+      content="https://cratis.no/assets/og/stack.jpg"
+    />
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("cratis-theme");
+          if (t === "light" || t === "dark")
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
-
-  <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -88,12 +103,12 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-      <a href="/#production"><span class="idx">01</span> How it works</a>
-      <a href="/#value"><span class="idx">02</span> What you get</a>
-      <a href="/support/"><span class="idx">03</span> Working with us</a>
-      <a href="/about/"><span class="idx">04</span> Who we are</a>
-      <a href="/#contact"><span class="idx">05</span> Contact</a>
-    </nav>
+        <a href="/#production"><span class="idx">01</span> How it works</a>
+        <a href="/#value"><span class="idx">02</span> What you get</a>
+        <a href="/support/"><span class="idx">03</span> Working with us</a>
+        <a href="/about/"><span class="idx">04</span> Who we are</a>
+        <a href="/#contact"><span class="idx">05</span> Contact</a>
+      </nav>
 
       <div class="header-actions">
         <button
@@ -144,180 +159,395 @@
       </div>
     </header>
 
-<main id="main">
+    <main id="main">
+      <section class="page-hero shell">
+        <p class="eyebrow">The stack</p>
+        <h1>Designed as one thing.</h1>
+        <p class="lead">
+          Most stacks are a bag of libraries you bolt together and then spend
+          the project keeping in sync. The point of Cratis isn't that there are
+          many packages — it's that the packages agree about how an application
+          is shaped.
+        </p>
+      </section>
 
-  <section class="page-hero shell">
-    <p class="eyebrow">The stack</p>
-    <h1>Designed as one thing.</h1>
-    <p class="lead">Most stacks are a bag of libraries you bolt together and then spend the project keeping in sync. The point of Cratis isn't that there are many packages — it's that the packages agree about how an application is shaped.</p>
-  </section>
+      <section class="band shell">
+        <p class="eyebrow">One feature, every layer</p>
+        <div class="band-head">
+          <div>
+            <h2>Follow one behaviour all the way through.</h2>
+            <p>
+              This is where the difference shows. Not in a feature list — in
+              what happens to a single piece of behaviour as it crosses every
+              boundary in your system.
+            </p>
+          </div>
+        </div>
+        <div class="flow">
+          <div class="flow-step">
+            <span class="k">01 Model</span>
+            <h3>Map the domain</h3>
+            <p>
+              Capture the command, the event, the read model and the team's
+              intent before the implementation spreads out.
+            </p>
+            <p class="owner">Studio</p>
+          </div>
+          <div class="flow-step">
+            <span class="k">02 Build</span>
+            <h3>Keep the slice together</h3>
+            <p>
+              Command, handler, query, proxy and UI for one behaviour, in one
+              feature-shaped place.
+            </p>
+            <p class="owner">Arc</p>
+          </div>
+          <div class="flow-step">
+            <span class="k">03 Record</span>
+            <h3>Store what happened</h3>
+            <p>
+              Append facts through the gRPC boundary and let projections turn
+              them into read models.
+            </p>
+            <p class="owner">Chronicle</p>
+          </div>
+          <div class="flow-step">
+            <span class="k">04 Render</span>
+            <h3>Ship a typed screen</h3>
+            <p>
+              Generated TypeScript proxies remove the hand-written API client
+              and the form plumbing.
+            </p>
+            <p class="owner">Components</p>
+          </div>
+          <div class="flow-step">
+            <span class="k">05 Operate</span>
+            <h3>Inspect the running system</h3>
+            <p>
+              Browse events, replay projections, diagnose observers — from the
+              terminal or an agent.
+            </p>
+            <p class="owner">CLI &middot; MCP</p>
+          </div>
+        </div>
+        <p class="code-note">
+          Nothing in that sequence is a handoff you maintain. The build
+          maintains it.
+        </p>
+      </section>
 
-  <section class="band shell">
-    <p class="eyebrow">One feature, every layer</p>
-    <div class="band-head">
-      <div>
-        <h2>Follow one behaviour all the way through.</h2>
-        <p>This is where the difference shows. Not in a feature list — in what happens to a single piece of behaviour as it crosses every boundary in your system.</p>
-      </div>
-    </div>
-    <div class="flow">
-      <div class="flow-step">
-        <span class="k">01 Model</span>
-        <h3>Map the domain</h3>
-        <p>Capture the command, the event, the read model and the team's intent before the implementation spreads out.</p>
-        <p class="owner">Studio</p>
-      </div>
-      <div class="flow-step">
-        <span class="k">02 Build</span>
-        <h3>Keep the slice together</h3>
-        <p>Command, handler, query, proxy and UI for one behaviour, in one feature-shaped place.</p>
-        <p class="owner">Arc</p>
-      </div>
-      <div class="flow-step">
-        <span class="k">03 Record</span>
-        <h3>Store what happened</h3>
-        <p>Append facts through the gRPC boundary and let projections turn them into read models.</p>
-        <p class="owner">Chronicle</p>
-      </div>
-      <div class="flow-step">
-        <span class="k">04 Render</span>
-        <h3>Ship a typed screen</h3>
-        <p>Generated TypeScript proxies remove the hand-written API client and the form plumbing.</p>
-        <p class="owner">Components</p>
-      </div>
-      <div class="flow-step">
-        <span class="k">05 Operate</span>
-        <h3>Inspect the running system</h3>
-        <p>Browse events, replay projections, diagnose observers — from the terminal or an agent.</p>
-        <p class="owner">CLI &middot; MCP</p>
-      </div>
-    </div>
-    <p class="code-note">Nothing in that sequence is a handoff you maintain. The build maintains it.</p>
-  </section>
+      <section class="band shell" id="layers">
+        <p class="eyebrow">The pieces</p>
+        <div class="band-head">
+          <div><h2>What each one owns.</h2></div>
+        </div>
 
-  <section class="band shell" id="layers">
-    <p class="eyebrow">The pieces</p>
-    <div class="band-head">
-      <div><h2>What each one owns.</h2></div>
-    </div>
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Chronicle</strong><span>the event store</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Records what happened, in order, immutably — and derives read
+              models from it. Projections, reducers and reactors turn the log
+              into the state your screens need. Constraints are enforced
+              server-side at append time, so invalid facts never enter the
+              record.
+            </p>
+            <ul>
+              <li>gRPC / protobuf boundary</li>
+              <li>MongoDB</li>
+              <li>PostgreSQL</li>
+              <li>SQL Server</li>
+              <li>SQLite</li>
+              <li>Orleans runtime</li>
+              <li>Replay &amp; recovery</li>
+              <li>Namespaces for tenancy</li>
+            </ul>
+            <a
+              class="more"
+              href="https://cratis.io/chronicle/"
+              target="_blank"
+              rel="noopener"
+              >Chronicle documentation →</a
+            >
+          </div>
+        </div>
 
-    <div class="layer">
-      <div class="layer-name"><strong>Chronicle</strong><span>the event store</span></div>
-      <div class="layer-body">
-        <p>Records what happened, in order, immutably — and derives read models from it. Projections, reducers and reactors turn the log into the state your screens need. Constraints are enforced server-side at append time, so invalid facts never enter the record.</p>
-        <ul><li>gRPC / protobuf boundary</li><li>MongoDB</li><li>PostgreSQL</li><li>SQL Server</li><li>SQLite</li><li>Orleans runtime</li><li>Replay &amp; recovery</li><li>Namespaces for tenancy</li></ul>
-        <a class="more" href="https://cratis.io/chronicle/" target="_blank" rel="noopener">Chronicle documentation →</a>
-      </div>
-    </div>
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Arc</strong><span>the full-stack CQRS framework</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Turns behaviour into a typed application. A C# command becomes an
+              HTTP endpoint and a generated TypeScript proxy — so the frontend
+              can't drift from the backend without the compiler saying so.
+              Identity, authorization and tenancy are part of the framework, not
+              per-app boilerplate.
+            </p>
+            <ul>
+              <li>Commands &amp; queries</li>
+              <li>Proxy generation</li>
+              <li>Roslyn analyzers</li>
+              <li>Tenancy</li>
+              <li>Identity &amp; authorization</li>
+              <li>Works without event sourcing</li>
+            </ul>
+            <a
+              class="more"
+              href="https://cratis.io/arc/"
+              target="_blank"
+              rel="noopener"
+              >Arc documentation →</a
+            >
+          </div>
+        </div>
 
-    <div class="layer">
-      <div class="layer-name"><strong>Arc</strong><span>the full-stack CQRS framework</span></div>
-      <div class="layer-body">
-        <p>Turns behaviour into a typed application. A C# command becomes an HTTP endpoint and a generated TypeScript proxy — so the frontend can't drift from the backend without the compiler saying so. Identity, authorization and tenancy are part of the framework, not per-app boilerplate.</p>
-        <ul><li>Commands &amp; queries</li><li>Proxy generation</li><li>Roslyn analyzers</li><li>Tenancy</li><li>Identity &amp; authorization</li><li>Works without event sourcing</li></ul>
-        <a class="more" href="https://cratis.io/arc/" target="_blank" rel="noopener">Arc documentation →</a>
-      </div>
-    </div>
-
-    <div class="layer">
-      <div class="layer-name"><strong>Studio</strong><span>the modelling surface</span></div>
-      <div class="layer-body">
-        <!-- DRAFT: needs approval — participation framing from Einar's Studio
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Studio</strong><span>the modelling surface</span>
+          </div>
+          <div class="layer-body">
+            <!-- DRAFT: needs approval — participation framing from Einar's Studio
              presentation ("it changed who could participate"). -->
-        <p>Where the domain is designed — commands, events and read models on a shared canvas, with the whole team in the room. The point is not a better diagram; it is changing who can take part in designing the software. Screenplay writes that model down as a single declarative file, and Stage performs it: a live application, interpreted at runtime rather than generated. Prologue brings an existing system in by capturing what it already does.</p>
-        <ul><li>Event modelling canvas</li><li>Screenplay <code>.play</code></li><li>Stage runtime</li><li>Prologue capture</li></ul>
-        <a class="more" href="https://cratis.io/studio/" target="_blank" rel="noopener">Studio →</a>
-      </div>
-    </div>
+            <p>
+              Where the domain is designed — commands, events and read models on
+              a shared canvas, with the whole team in the room. The point is not
+              a better diagram; it is changing who can take part in designing
+              the software. Screenplay writes that model down as a single
+              declarative file, and Stage performs it: a live application,
+              interpreted at runtime rather than generated. Prologue brings an
+              existing system in by capturing what it already does.
+            </p>
+            <ul>
+              <li>Event modelling canvas</li>
+              <li>Screenplay <code>.play</code></li>
+              <li>Stage runtime</li>
+              <li>Prologue capture</li>
+            </ul>
+            <a
+              class="more"
+              href="https://cratis.io/studio/"
+              target="_blank"
+              rel="noopener"
+              >Studio →</a
+            >
+          </div>
+        </div>
 
-    <div class="layer">
-      <div class="layer-name"><strong>Components</strong><span>the React library</span></div>
-      <div class="layer-body">
-        <p>Renders Arc's generated proxies as forms, dialogs and data tables. A screen becomes a few lines rather than a few files, and observable queries keep it current without reload code.</p>
-        <ul><li>Command dialogs</li><li>Data tables</li><li>Schema editors</li><li>Observable queries</li></ul>
-        <a class="more" href="https://cratis.io/components/" target="_blank" rel="noopener">Components documentation →</a>
-      </div>
-    </div>
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Components</strong><span>the React library</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Renders Arc's generated proxies as forms, dialogs and data tables.
+              A screen becomes a few lines rather than a few files, and
+              observable queries keep it current without reload code.
+            </p>
+            <ul>
+              <li>Command dialogs</li>
+              <li>Data tables</li>
+              <li>Schema editors</li>
+              <li>Observable queries</li>
+            </ul>
+            <a
+              class="more"
+              href="https://cratis.io/components/"
+              target="_blank"
+              rel="noopener"
+              >Components documentation →</a
+            >
+          </div>
+        </div>
 
-    <div class="layer">
-      <div class="layer-name"><strong>AuthProxy</strong><span>the edge gateway</span></div>
-      <div class="layer-body">
-        <p>Authenticates once at the edge, resolves the tenant, enriches identity, and forwards trusted context to your services — in front of any backend you point it at.</p>
-        <ul><li>Authentication</li><li>Tenant resolution</li><li>Identity enrichment</li><li>Routing &amp; invites</li></ul>
-        <a class="more" href="https://cratis.io/authproxy/" target="_blank" rel="noopener">AuthProxy documentation →</a>
-      </div>
-    </div>
+        <div class="layer">
+          <div class="layer-name">
+            <strong>AuthProxy</strong><span>the edge gateway</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Authenticates once at the edge, resolves the tenant, enriches
+              identity, and forwards trusted context to your services — in front
+              of any backend you point it at.
+            </p>
+            <ul>
+              <li>Authentication</li>
+              <li>Tenant resolution</li>
+              <li>Identity enrichment</li>
+              <li>Routing &amp; invites</li>
+            </ul>
+            <a
+              class="more"
+              href="https://cratis.io/authproxy/"
+              target="_blank"
+              rel="noopener"
+              >AuthProxy documentation →</a
+            >
+          </div>
+        </div>
 
-    <div class="layer">
-      <div class="layer-name"><strong>The tools</strong><span>the operating surface</span></div>
-      <div class="layer-body">
-        <p>A terminal window into a running store, a VS Code reader for the event log, a browser extension for stepping into another user or tenant, and an MCP server that lets an assistant do the same in plain language. Inspect-only by design — to change state you still go through commands and events.</p>
-        <ul><li>CLI</li><li>Narrator</li><li>Lens</li><li>Synopsis</li><li>Chronicle MCP</li><li>Prompter</li></ul>
-        <a class="more" href="/stack/the-cast/">Meet the cast →</a>
-      </div>
-    </div>
-  </section>
+        <div class="layer">
+          <div class="layer-name">
+            <strong>The tools</strong><span>the operating surface</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              A terminal window into a running store, a VS Code reader for the
+              event log, a browser extension for stepping into another user or
+              tenant, and an MCP server that lets an assistant do the same in
+              plain language. Inspect-only by design — to change state you still
+              go through commands and events.
+            </p>
+            <ul>
+              <li>CLI</li>
+              <li>Narrator</li>
+              <li>Lens</li>
+              <li>Synopsis</li>
+              <li>Chronicle MCP</li>
+              <li>Prompter</li>
+            </ul>
+            <a class="more" href="/stack/the-cast/">Meet the cast →</a>
+          </div>
+        </div>
+      </section>
 
-  <section class="band shell" id="separable">
-    <p class="eyebrow">Adoption</p>
-    <div class="band-head">
-      <div>
-        <h2>Take one piece, or take all of it.</h2>
-        <p>Each product solves a complete problem on its own. The dependency only runs one way — Arc can sit on top of Chronicle, but Chronicle never knows Arc exists.</p>
-      </div>
-    </div>
-    <div class="table-wrap">
-      <table class="plans">
-        <caption class="visually-hidden">Which Cratis products to reach for</caption>
-        <thead><tr><th scope="col">You want</th><th scope="col">Reach for</th><th scope="col">Event sourcing?</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">History as the source of truth, from any runtime</th><td>Chronicle on its own</td><td>Yes</td></tr>
-          <tr><th scope="row">A typed full-stack app over a traditional database</th><td>Arc + Components over MongoDB or EF Core</td><td>Not required</td></tr>
-          <tr><th scope="row">Authentication, tenancy and routing at the edge</th><td>AuthProxy in front of your services</td><td>Optional</td></tr>
-          <tr><th scope="row">A typed full-stack app <em>and</em> a full event history</th><td>Arc + Chronicle + Components</td><td>Yes</td></tr>
-          <tr><th scope="row">A product-grade SaaS shape, end to end</th><td>AuthProxy + Arc + Components + Chronicle + CLI</td><td>Default</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="code-note">The last row is where the stack is at its best, and it's the default for a new information system. Coming from an existing one? <a href="https://cratis.io/adopting-cratis/" target="_blank" rel="noopener">Adopting Cratis</a> walks through taking one piece at a time.</p>
-  </section>
+      <section class="band shell" id="separable">
+        <p class="eyebrow">Adoption</p>
+        <div class="band-head">
+          <div>
+            <h2>Take one piece, or take all of it.</h2>
+            <p>
+              Each product solves a complete problem on its own. The dependency
+              only runs one way — Arc can sit on top of Chronicle, but Chronicle
+              never knows Arc exists.
+            </p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="plans">
+            <caption class="visually-hidden">
+              Which Cratis products to reach for
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">You want</th>
+                <th scope="col">Reach for</th>
+                <th scope="col">Event sourcing?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  History as the source of truth, from any runtime
+                </th>
+                <td>Chronicle on its own</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  A typed full-stack app over a traditional database
+                </th>
+                <td>Arc + Components over MongoDB or EF Core</td>
+                <td>Not required</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Authentication, tenancy and routing at the edge
+                </th>
+                <td>AuthProxy in front of your services</td>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  A typed full-stack app <em>and</em> a full event history
+                </th>
+                <td>Arc + Chronicle + Components</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">A product-grade SaaS shape, end to end</th>
+                <td>AuthProxy + Arc + Components + Chronicle + CLI</td>
+                <td>Default</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="code-note">
+          The last row is where the stack is at its best, and it's the default
+          for a new information system. Coming from an existing one?
+          <a
+            href="https://cratis.io/adopting-cratis/"
+            target="_blank"
+            rel="noopener"
+            >Adopting Cratis</a
+          >
+          walks through taking one piece at a time.
+        </p>
+      </section>
 
-  <section class="band shell">
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="num">Open</span>
-        <h3>No boundary you can't cross</h3>
-        <p>MIT licensed. Chronicle speaks gRPC and protobuf, with .NET, TypeScript, Kotlin and Elixir clients. Storage is a deployment choice, not an architecture decision. Nothing here is a door that only opens inward.</p>
-      </div>
-      <div class="card">
-        <span class="num">Opinionated</span>
-        <h3>On purpose, and only where it pays</h3>
-        <p>Conventions over configuration, vertical slices over layers, facts over current state. The opinions are what make codebases consistent — and consistency is what makes onboarding fast and AI assistance less speculative.</p>
-      </div>
-    </div>
-  </section>
+      <section class="band shell">
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="num">Open</span>
+            <h3>No boundary you can't cross</h3>
+            <p>
+              MIT licensed. Chronicle speaks gRPC and protobuf, with .NET,
+              TypeScript, Kotlin and Elixir clients. Storage is a deployment
+              choice, not an architecture decision. Nothing here is a door that
+              only opens inward.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Opinionated</span>
+            <h3>On purpose, and only where it pays</h3>
+            <p>
+              Conventions over configuration, vertical slices over layers, facts
+              over current state. The opinions are what make codebases
+              consistent — and consistency is what makes onboarding fast and AI
+              assistance less speculative.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="band shell">
-    <div class="banner">
-      <div>
-        <h3>The documentation goes deeper than this page can.</h3>
-        <p>Concepts, tutorials, reference and a getting-started walkthrough that takes one event through a projection and a reactor.</p>
-      </div>
-      <a class="cta" href="https://cratis.io" target="_blank" rel="noopener">
-        Read the docs
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
-    </div>
-  </section>
+      <section class="band shell">
+        <div class="banner">
+          <div>
+            <h3>The documentation goes deeper than this page can.</h3>
+            <p>
+              Concepts, tutorials, reference and a getting-started walkthrough
+              that takes one event through a projection and a reactor.
+            </p>
+          </div>
+          <a
+            class="cta"
+            href="https://cratis.io"
+            target="_blank"
+            rel="noopener"
+          >
+            Read the docs
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H8M17 7V16" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
 
-</main>
-
-  <footer class="site-footer">
+    <footer class="site-footer">
       <div class="shell">
         <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="logo" href="/" aria-label="Cratis — home">
-            <svg
+          <div class="foot-brand">
+            <a class="logo" href="/" aria-label="Cratis — home">
+              <svg
                 viewBox="0 0 600 328"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
@@ -357,56 +587,105 @@
                   />
                 </g>
               </svg>
-          </a>
-          <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
-          <p>The software production platform — it fits the languages, databases and systems you already run. Open source, MIT licensed, developed in the open.</p>
+            </a>
+            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
+            <p>
+              The software production platform — it fits the languages,
+              databases and systems you already run. Open source, MIT licensed,
+              developed in the open.
+            </p>
+          </div>
+
+          <div class="foot-col">
+            <h4>Product</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://cratis.io/chronicle/"
+                  target="_blank"
+                  rel="noopener"
+                  >Chronicle</a
+                >
+              </li>
+              <li>
+                <a href="https://cratis.io/arc/" target="_blank" rel="noopener"
+                  >Arc</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/studio/"
+                  target="_blank"
+                  rel="noopener"
+                  >Studio</a
+                >
+              </li>
+              <li><a href="/stack/">The stack</a></li>
+              <li><a href="/stack/the-cast/">The cast</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/why-cratis/">Why Cratis</a></li>
+              <li><a href="/support/">Support &amp; services</a></li>
+              <li><a href="/trust/">Trust</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/writing/">Writing</a></li>
+              <li>
+                <a href="https://cratis.io" target="_blank" rel="noopener"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Cratis"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/community/"
+                  target="_blank"
+                  rel="noopener"
+                  >Discord</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/roadmap/"
+                  target="_blank"
+                  rel="noopener"
+                  >Roadmap</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="foot-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="https://cratis.io/chronicle/" target="_blank" rel="noopener">Chronicle</a></li>
-            <li><a href="https://cratis.io/arc/" target="_blank" rel="noopener">Arc</a></li>
-            <li><a href="https://cratis.io/studio/" target="_blank" rel="noopener">Studio</a></li>
-            <li><a href="/stack/">The stack</a></li>
-            <li><a href="/stack/the-cast/">The cast</a></li>
-          </ul>
+        <div class="foot-bar">
+          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
+          <div>© 2026 Cratis · MIT licensed</div>
+          <div class="legal">
+            <a href="/trust/">Trust</a>
+            <a href="/trust/#security">Security</a>
+            <a href="https://github.com/Cratis" target="_blank" rel="noopener"
+              >Source</a
+            >
+          </div>
         </div>
-
-        <div class="foot-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/why-cratis/">Why Cratis</a></li>
-            <li><a href="/support/">Support &amp; services</a></li>
-            <li><a href="/trust/">Trust</a></li>
-          </ul>
-        </div>
-
-        <div class="foot-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/writing/">Writing</a></li>
-            <li><a href="https://cratis.io" target="_blank" rel="noopener">Documentation</a></li>
-            <li><a href="https://github.com/Cratis" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://cratis.io/community/" target="_blank" rel="noopener">Discord</a></li>
-            <li><a href="https://cratis.io/roadmap/" target="_blank" rel="noopener">Roadmap</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="foot-bar">
-        <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-        <div>© 2026 Cratis · MIT licensed</div>
-        <div class="legal">
-          <a href="/trust/">Trust</a>
-          <a href="/trust/#security">Security</a>
-          <a href="https://github.com/Cratis" target="_blank" rel="noopener">Source</a>
-        </div>
-      </div>
       </div>
     </footer>
 
-<script src="/assets/js/site.js" defer></script>
-</body>
+    <script src="/assets/js/site.js" defer></script>
+  </body>
 </html>
