@@ -279,7 +279,7 @@ Reproduced: forcing `.out` and waiting shows `opacity: 0, filter: blur(7px)` sti
 
 The founders' words: *"The light mode is not good, does not fit at all. Maybe we want to look at the whole colouring palette? It still feels a lot like a developer tool, not a company and product branding site."*
 
-**The reference they want to match is https://www.axoniq.io** — they like *"really smooth images and colours, very professional"* and essentially every aspect of that site.
+**The reference they want to match is <https://www.axoniq.io>** — they like *"really smooth images and colours, very professional"* and essentially every aspect of that site.
 
 This is not a tweak. Treat it as a real design question:
 
@@ -360,7 +360,6 @@ The founders' point: *"that is quite an offering — a system that fits most sys
 **Fix everywhere it appears:** nine footers, plus the `<meta name="description">` and JSON-LD `description` on the homepage. Grep for `event-sourced application platform`.
 
 ---
-
 
 ---
 
