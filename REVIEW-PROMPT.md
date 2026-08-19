@@ -245,6 +245,135 @@ Nothing invented can ship unnoticed. Each carries a visible amber ribbon, a `dat
 
 ---
 
+## Known defects and requested changes
+
+These came from the founders reviewing the live site. Each has been reproduced and root-caused where possible — the diagnosis is given so you do not have to rediscover it, but **verify before you trust it.**
+
+Work through them in roughly this order: the two rendering bugs first (they are visible and embarrassing), then the palette question (it affects everything else), then the content changes.
+
+---
+
+### 1. The hero word gets stuck mid-transition, and the period wraps
+
+**Severity: high — visible on the founders' own machine.**
+
+Two separate faults in the same element.
+
+**a) The word freezes blurred and invisible.** `assets/js/site.js` adds `.out` to the rotating word, then removes it in a `setTimeout` 340ms later. But the `IntersectionObserver` and the `visibilitychange` handler clear the *interval* — they do not cancel that pending timeout, and nothing re-runs it. If the reader scrolls away, switches tab, or the observer fires during that 340ms window, `.out` is never removed. The word stays at `opacity: 0` with `blur(7px)` permanently.
+
+Reproduced: forcing `.out` and waiting shows `opacity: 0, filter: blur(7px)` still applied after 600ms.
+
+**Fix direction:** make the swap self-healing rather than dependent on a timer surviving. Use `transitionend` with a timeout fallback, or drive the whole thing from CSS animations that cannot be orphaned, and always reset to a known-good state when the rotator resumes.
+
+**b) The period wraps onto its own line.** The `.r` span currently produces **four client rects** at 1403px wide. The rotator is an `inline-block` whose width is animated in JavaScript, so the trailing `.` is free to break onto a new line — that is the stray dot floating below the headline in the founders' screenshot.
+
+**Fix direction:** the word and its period must be an unbreakable unit. Consider `white-space: nowrap` on the line, wrapping word+period together, or reserving width for the longest word so the line box never reflows at all.
+
+**Also check:** the hero's `min-height` is `min(92vh, 920px)`, which on a 763px-tall laptop viewport leaves very little room. Verify the whole hero — headline, subhead, buttons, fact strip — fits comfortably on a 13-inch MacBook without scrolling.
+
+---
+
+### 2. Light mode is weak, and the palette may be wrong overall
+
+**Severity: high — this is the biggest single opportunity.**
+
+The founders' words: *"The light mode is not good, does not fit at all. Maybe we want to look at the whole colouring palette? It still feels a lot like a developer tool, not a company and product branding site."*
+
+**The reference they want to match is https://www.axoniq.io** — they like *"really smooth images and colours, very professional"* and essentially every aspect of that site.
+
+This is not a tweak. Treat it as a real design question:
+
+- The light theme is currently a mechanical inversion of the dark tokens. It was never designed. Decide whether light mode should exist at all — if it does, design it properly; if it does not earn its keep, removing it is a legitimate answer.
+- Reconsider the whole palette. Currently violet `#8b5cf6` primary with teal, amber and lime secondaries on a near-black `#08080e` ground. Research says two-colour palettes are winning awards; the original concept used four. AxonIQ sits somewhere else again. **Form your own view and argue it.**
+- The specific charge is that it reads as a *developer tool*. Work out what is causing that — the near-black ground, the mono labels, the hairline grids, the glow treatment — and decide what to keep, because some of it is genuinely good.
+
+---
+
+### 3. Adopt AxonIQ's logo-band treatment
+
+The founders like the existing logo marquee **and** want AxonIQ's version of it: *"the company logo scrolling banner is perfectly sized and really really smooth"*, with a supporting line beside it — theirs reads *"Powering mission-critical software across global organizations."*
+
+Study the real thing: sizing, speed, spacing, masking, and how the side text is positioned relative to the scroll.
+
+Note the current logos are six invented company names behind a placeholder guard. **Improve the treatment; do not remove the guard.**
+
+---
+
+### 4. Add a primary conversion CTA in the AxonIQ mould
+
+The founders specifically like AxonIQ's **"Start Free Today"** button and want an equivalent.
+
+For Cratis that might be a free Cratis Studio trial, or simply getting started immediately. Their instruction: *"something that makes sense there and funnels people in, maybe not have the developer angle."*
+
+Today the primary CTA is *"Talk to us"* — a high-friction ask that suits a two-person consultancy but gives a curious visitor nothing to do right now. Design a low-friction first step that does not route everyone into a sales conversation. **Do not invent a product tier or a trial that does not exist** — if there is nothing free to offer yet, say so and propose what it should be.
+
+---
+
+### 5. Rewrite the "how we help" headline — it does not scale
+
+Current: *"You are not buying software from us. You are getting the two people who built it."*
+
+Founders' verdict: *"a bit awkward and really not scalable."*
+
+They are right. It hard-codes headcount into the value proposition, so it breaks the day a third person joins, and it centres the company rather than the customer's problem.
+
+**Do the research.** Look at how JasperFX frames the same offer — *"an ongoing relationship with the team that builds and maintains it"* — and at how professional services firms sell expertise without selling headcount. The underlying truth is good (direct access to the people who built it, no triage tier); the expression is not. Lead with **what you can help with**, not with how many people there are.
+
+---
+
+### 6 & 9. Giant circles appear over card text on hover
+
+**Severity: high — reproduced and root-caused.**
+
+A real CSS collision. `.offer.featured::after` is the *"Most teams start here"* badge — a small pill with `border-radius: 999px`, positioned `top: 18px; right: 18px`. The later polish pass then declared `.card::after, .offer::after, .person::after { inset: 0 }` as a full-bleed hover overlay.
+
+Because both target the same pseudo-element, the featured card's badge inherits `bottom: 0` and `left: 0` from the overlay rule while keeping its `999px` radius — it stretches to the full card height and renders as a huge circle over the text.
+
+Verified: the featured offer's `::after` computes to `inset: 18px 18px 0px 0px` with `border-radius: 999px`.
+
+**Fix direction:** stop overloading one pseudo-element for two purposes. Move the hover sheen to `::before`, or give the badge a real element. **Then audit every other `::after` in the stylesheet for the same pattern** — the founders report seeing it in more than one place, and the same collision may exist on `.card` and `.person` variants.
+
+---
+
+### 7. Soften the numbers block
+
+The "how we work" numbers (`100%` open source, `0` people in between, `2` founders) are currently `clamp(56px, 9vw, 132px)` at weight 400 — the founders find them *"too in your face"*.
+
+They want them **animated** — counting up on scroll — and generally more refined.
+
+Consider whether 132px is right at all. The award research showed monumental type belongs below the fold, which this is, but the specific execution here is shouting rather than confident. Any count-up must respect `prefers-reduced-motion` and must not leave a `0` visible if the animation never runs.
+
+---
+
+### 8. The footer tagline is inaccurate and undersells the platform
+
+Current, in the footer of **all nine pages** plus the homepage JSON-LD:
+
+> "The event-sourced application platform for .NET. Open source, MIT licensed, developed in the open."
+
+This is a survivor from an earlier, developer-facing draft and it now **contradicts the homepage**, which no longer mentions .NET or event sourcing at all.
+
+It is also factually narrow. .NET is the first-class experience, but the platform is **language-agnostic and database-agnostic** — Chronicle speaks an open protocol with clients in several languages, and runs on the major databases an organisation already operates.
+
+The founders' point: *"that is quite an offering — a system that fits most systems and tech"* — and it should be expressed elegantly rather than as a technical footnote.
+
+**Fix everywhere it appears:** nine footers, plus the `<meta name="description">` and JSON-LD `description` on the homepage. Grep for `event-sourced application platform`.
+
+---
+
+
+---
+
+### 10. Is the homepage too long?
+
+The founders are genuinely undecided: *"might be too long, but I also like it at the same time."*
+
+It is currently ~2,000 words across fifteen sections. **Research and form a view.** Look at what AxonIQ actually does — count their sections and their word count — and at the award-winning references. Then either defend the current length or propose specific cuts.
+
+The section most likely to be redundant is *"Different questions, same platform"* (the three audience cards), which overlaps with the business outcomes above it. But check that judgement rather than accepting it.
+
+---
+
 ## What to do
 
 1. **Look at the site first.** Full first impression, before any code. Write down what you feel in the first ten seconds — that is the most valuable data in this review and you cannot recover it later.
@@ -252,7 +381,10 @@ Nothing invented can ship unnoticed. Each carries a visible amber ribbon, a `dat
 3. **Open the concept file** at `reference/design-concept.html` and compare.
 4. **Look at the reference sites** — AxonIQ, JasperFX, and current Awwwards technology winners.
 5. **Review against the audience test.** Would a CXO come away with the five reactions listed above? Where does it fail?
-6. **Report honestly**, then propose changes in priority order — highest impact first.
-7. **Make improvements** where you are confident. Flag anything requiring a founder decision rather than deciding it yourself.
+6. **Work the known defects** (previous section). The two rendering bugs are visible and should go first; the palette question affects everything else and deserves real thought before you touch it.
+7. **Report honestly**, then propose changes in priority order — highest impact first.
+8. **Make improvements** where you are confident. Flag anything requiring a founder decision rather than deciding it yourself.
+
+**On the AxonIQ reference:** the founders like that site a great deal and cite it repeatedly — the colours, the smoothness, the logo band, the CTA, the professionalism. Study it properly rather than glancing at it. Take its craft and its structure; do not take its adjectives, and do not make Cratis a copy of it. Cratis is smaller, more open, and more honest, and the site should feel like that.
 
 Work page by page. Ship one finished improvement rather than five started ones. Verify what you change, take screenshots and look at them, and be explicit about anything you could not check.
