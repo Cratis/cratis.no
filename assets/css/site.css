@@ -53,28 +53,33 @@
     --step-4: clamp(38px, 5.4vw, 68px);
 }
 
+/* Light theme — designed, not inverted.
+   Principles: warm off-white ground (never pure #fff — the award research is
+   explicit), white cards ON the tinted ground rather than grey cards on white,
+   and the SAME brand violet as dark — the brand must not change colour when
+   the theme does. All accent values checked for WCAG AA on the new ground. */
 :root[data-theme="light"] {
     color-scheme: light;
-    --accent: #2150cf;
-    --accent-strong: #1a41ab;
-    --accent-soft: #11244f;
-    --accent-deep: #dbe5fd;
-    --signal: #a86a00;
-    --bg: #ffffff;
-    --panel: #f7f8fa;
-    --panel-hi: #eff1f6;
+    --accent: #6d28d9; /* 6.8:1 on --bg */
+    --accent-strong: #5b21b6;
+    --accent-soft: #4c1d95;
+    --accent-deep: #ede9fe;
+    --signal: #9a6700;
+    --bg: #faf9f6;
+    --panel: #ffffff;
+    --panel-hi: #f5f2fc;
     --glow-a: #8b5cf6;
     --glow-b: #2dd4bf;
-    --violet: #7c3aed;
-    --violet-light: #6d28d9;
-    --teal: #0d9488;
-    --amber: #d97706;
-    --lime: #849b1f;
-    --line: rgba(10, 12, 20, 0.1);
-    --line-strong: rgba(10, 12, 20, 0.22);
-    --text: #0d1017;
-    --text-dim: #4a5162;
-    --text-faint: #757c8c;
+    --violet: #6d28d9;
+    --violet-light: #5b21b6;
+    --teal: #0f766e;
+    --amber: #b45309;
+    --lime: #63750f;
+    --line: rgba(23, 20, 40, 0.1);
+    --line-strong: rgba(23, 20, 40, 0.22);
+    --text: #17141f;
+    --text-dim: #4e4a5c;
+    --text-faint: #726e82;
 }
 
 /* ---------- reset ---------- */
@@ -183,9 +188,18 @@ svg {
     mask-image: linear-gradient(to bottom, #000 0%, #000 48%, transparent 88%);
 }
 :root[data-theme="light"] .bg-grid {
+    /* The graph-paper grid is most of what makes light mode read as a
+       developer tool. Nearly dissolve it and fade it out high. */
     background-image:
-        linear-gradient(to right, rgba(10, 12, 20, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(10, 12, 20, 0.04) 1px, transparent 1px);
+        linear-gradient(to right, rgba(23, 20, 40, 0.022) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(23, 20, 40, 0.022) 1px, transparent 1px);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 20%,
+        transparent 60%
+    );
+    mask-image: linear-gradient(to bottom, #000 0%, #000 20%, transparent 60%);
 }
 
 /* One glow. Not three. */
@@ -206,7 +220,7 @@ svg {
     pointer-events: none;
 }
 :root[data-theme="light"] .bg-glow {
-    opacity: 0.42;
+    opacity: 0.3;
 }
 
 /* ---------- shell ---------- */
@@ -1573,12 +1587,16 @@ table.plans .price-cell {
         transform 0.22s cubic-bezier(0.2, 0.7, 0.3, 1),
         box-shadow 0.22s ease;
 }
-.card::after,
-.offer::after,
-.person::after {
+/* The hover sheen lives on ::before — ::after stays free for real content
+   (e.g. the .offer.featured badge). Overloading one pseudo-element for both
+   made the badge inherit `inset: 0` and balloon into a full-card circle. */
+.card::before,
+.offer::before,
+.person::before {
     content: "";
     position: absolute;
     inset: 0;
+    border-radius: inherit;
     pointer-events: none;
     background: linear-gradient(
         180deg,
@@ -1588,9 +1606,9 @@ table.plans .price-cell {
     opacity: 0;
     transition: opacity 0.22s ease;
 }
-.card:hover::after,
-.offer:hover::after,
-.person:hover::after {
+.card:hover::before,
+.offer:hover::before,
+.person:hover::before {
     opacity: 1;
 }
 .card:hover,
@@ -2369,7 +2387,9 @@ h3 {
 }
 .number strong {
     display: block;
-    font-size: clamp(56px, 9vw, 132px);
+    /* Was clamp(56px, 9vw, 132px) — founders: "too in your face". Still
+       monumental, no longer shouting. */
+    font-size: clamp(46px, 6.4vw, 92px);
     font-weight: 400;
     line-height: 0.92;
     letter-spacing: -0.045em;
@@ -2398,6 +2418,9 @@ h3 {
 .split-head .r {
     display: block;
     padding-left: 12%;
+    /* The rotating word and its period are one unbreakable unit — the
+       rotator's animated width must never push the "." onto its own line. */
+    white-space: nowrap;
 }
 @media (max-width: 760px) {
     .split-head .r {
@@ -3030,21 +3053,41 @@ h3 {
     color: var(--text-faint);
     margin-bottom: 30px;
 }
+/* AxonIQ-style band: a quiet supporting line beside the scroll, not above it. */
+.logos-row {
+    display: grid;
+    grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 56px);
+}
+@media (max-width: 760px) {
+    .logos-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+.logos-lead {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-dim);
+    max-width: 24ch;
+}
 .logo-marquee {
     display: flex;
     overflow: hidden;
+    min-width: 0;
     -webkit-mask-image: linear-gradient(
         to right,
         transparent,
-        #000 8%,
-        #000 92%,
+        #000 10%,
+        #000 90%,
         transparent
     );
     mask-image: linear-gradient(
         to right,
         transparent,
-        #000 8%,
-        #000 92%,
+        #000 10%,
+        #000 90%,
         transparent
     );
 }
@@ -3054,7 +3097,10 @@ h3 {
     gap: clamp(38px, 5vw, 76px);
     padding-right: clamp(38px, 5vw, 76px);
     flex: none;
-    animation: logoslide 44s linear infinite;
+    animation: logoslide 56s linear infinite;
+}
+.logo-marquee:hover .logo-track {
+    animation-play-state: paused;
 }
 @media (prefers-reduced-motion: reduce) {
     .logo-track {

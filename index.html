@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cratis — software that knows what it did</title>
+    <title>Cratis — software that remembers</title>
     <meta
       name="description"
-      content="Model your domain, and the model becomes the running system. Event-sourced .NET with typed contracts from C# to React. MIT licensed. Built by the people who answer your questions."
+      content="Design software with your whole team, watch it run, and get answers about what happened. The software production platform — open source, MIT licensed, built to fit the languages, databases and systems you already run."
     />
     <link rel="canonical" href="https://cratis.no/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Cratis — The event-sourced application platform for .NET"
+      content="Cratis — the software production platform"
     />
     <meta
       property="og:description"
-      content="The model is the system. Event-sourced .NET, modelled end to end — from the canvas, to the running app, to the history behind it."
+      content="Software that remembers. Design it with your whole team, watch it run, then ask it anything about what happened — and get an answer, not an investigation."
     />
     <meta property="og:url" content="https://cratis.no/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -51,13 +51,13 @@
         "@type": "Organization",
         "name": "Cratis",
         "url": "https://cratis.no",
-        "description": "The event-sourced application platform for .NET.",
+        "description": "The software production platform — open source, MIT licensed, built to fit the languages, databases and systems you already run.",
         "sameAs": ["https://github.com/Cratis", "https://cratis.io"]
       }
     </script>
   </head>
   <body>
-      <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
@@ -109,12 +109,12 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-      <a href="/#production"><span class="idx">01</span> How it works</a>
-      <a href="/#value"><span class="idx">02</span> What you get</a>
-      <a href="/support/"><span class="idx">03</span> Working with us</a>
-      <a href="/about/"><span class="idx">04</span> Who we are</a>
-      <a href="/#contact"><span class="idx">05</span> Contact</a>
-    </nav>
+        <a href="/#production"><span class="idx">01</span> How it works</a>
+        <a href="/#value"><span class="idx">02</span> What you get</a>
+        <a href="/support/"><span class="idx">03</span> Working with us</a>
+        <a href="/about/"><span class="idx">04</span> Who we are</a>
+        <a href="/#contact"><span class="idx">05</span> Contact</a>
+      </nav>
 
       <div class="header-actions">
         <button
@@ -165,520 +165,944 @@
       </div>
     </header>
 
-<main id="main">
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero-brand shell">
+        <div class="hero-copy-col">
+          <p class="eyebrow">Cratis — the software production platform</p>
+          <h1 class="split-head">
+            <span class="l">Software that</span>
+            <span class="r"
+              ><span class="rotator serif" id="rotator"
+                ><span class="rot-word" id="rotWord">remembers</span
+                ><span class="rot-measure" id="rotMeasure" aria-hidden="true"
+                  >remembers</span
+                ></span
+              >.</span
+            >
+          </h1>
+          <p class="lead">
+            Design it with your whole team. Watch it run. Then ask it anything
+            about what happened — and get an answer, not an investigation. No
+            rewrite required.
+          </p>
+          <div class="hero-actions">
+            <!-- DRAFT: needs approval — replaces "Talk to us". The Fit Review is the only real,
+           free, already-defined offer (MESSAGING.md §6). The true "Start Free Today"
+           equivalent is a Cratis Studio self-serve start — a founder decision, since
+           Studio is not shipped yet and nothing may be invented. -->
+            <a class="cta" href="#contact">
+              Book a free Fit Review
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M7 17L17 7M17 7H8M17 7V16" />
+              </svg>
+            </a>
+            <a class="cta-ghost" href="#production">See how it works</a>
+            <button
+              class="scroll-cue"
+              type="button"
+              data-scroll-to="#production"
+            >
+              Scroll to see how <span class="arr">↓</span>
+            </button>
+          </div>
+          <p class="hero-facts">
+            <span>Open source</span>
+            <span>Runs on your infrastructure</span>
+            <span>No rewrite required</span>
+          </p>
+        </div>
+        <div class="orbit-wrap" aria-hidden="true">
+          <div class="orbit">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="core"></div>
+            <div class="orbiter orbiter-1">
+              <span class="body body-lime"></span>
+            </div>
+            <div class="orbiter orbiter-2">
+              <span class="body body-amber"></span>
+            </div>
+            <div class="orbiter orbiter-3">
+              <span class="body body-teal"></span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- HERO -->
-  <section class="hero-brand shell">
-    <div class="hero-copy-col">
-      <p class="eyebrow">Cratis — the software production platform</p>
-    <h1 class="split-head">
-        <span class="l">Software that</span>
-        <span class="r"><span class="rotator serif" id="rotator"><span class="rot-word" id="rotWord">remembers</span><span class="rot-measure" id="rotMeasure" aria-hidden="true">remembers</span></span>.</span>
-      </h1>
-    <p class="lead">Design it with your whole team. Watch it run. Then ask it anything about what happened — and get an answer, not an investigation. No rewrite required.</p>
-    <div class="hero-actions">
-      <a class="cta" href="#contact">
-        Talk to us
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
-      <a class="cta-ghost" href="#production">See how it works</a>
-        <button class="scroll-cue" type="button" data-scroll-to="#production">Scroll to see how <span class="arr">↓</span></button>
+      <div class="strip shell">
+        <div>Design &middot; Perform &middot; Record &middot; Explain</div>
+        <div class="pipeline" id="pipeline" aria-hidden="true">
+          <span data-i="0">Design</span><span class="sep">→</span>
+          <span data-i="1">Perform</span><span class="sep">→</span>
+          <span data-i="2">Record</span><span class="sep">→</span>
+          <span data-i="3">Explain</span>
+        </div>
       </div>
-      <p class="hero-facts">
-        <span>Open source</span>
-        <span>Runs on your infrastructure</span>
-        <span>No rewrite required</span>
-      </p>
-    </div>
-    <div class="orbit-wrap" aria-hidden="true">
-      <div class="orbit">
-        <div class="ring ring-1"></div>
-        <div class="ring ring-2"></div>
-        <div class="ring ring-3"></div>
-        <div class="core"></div>
-        <div class="orbiter orbiter-1"><span class="body body-lime"></span></div>
-        <div class="orbiter orbiter-2"><span class="body body-amber"></span></div>
-        <div class="orbiter orbiter-3"><span class="body body-teal"></span></div>
-      </div>
-    </div>
-  </section>
 
-  <div class="strip shell">
-    <div>Design &middot; Perform &middot; Record &middot; Explain</div>
-    <div class="pipeline" id="pipeline" aria-hidden="true">
-      <span data-i="0">Design</span><span class="sep">→</span>
-      <span data-i="1">Perform</span><span class="sep">→</span>
-      <span data-i="2">Record</span><span class="sep">→</span>
-      <span data-i="3">Explain</span>
-    </div>
-  </div>
+      <!-- THE SHIFT -->
+      <section class="band shell">
+        <p class="eyebrow">Why now</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              The way software gets made just changed. Most of it hasn't caught
+              up.
+            </h2>
+            <p class="section-lead">
+              Machines now write a growing share of the software your company
+              runs. They work faster than any review process was designed for —
+              and they only understand what your system has actually written
+              down.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="num">The risk</span>
+            <!-- DRAFT: needs approval — reworked from Einar's Studio presentation
+                 ("Every step is a translation"). Replaces "Speed without a shared
+                 plan", which overlapped the first business outcome below. -->
+            <h3>Intent leaks out at every handoff</h3>
+            <p>
+              An idea passes through requirements, stories, designs, code and
+              testing before anyone can use it — and every handoff is a
+              translation. What ships is an interpretation of an
+              interpretation, and nobody can say where the meaning went.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">The gap</span>
+            <h3>Systems that can't explain themselves</h3>
+            <p>
+              Ask most software why it made a decision and the honest answer is
+              that nobody knows. It stored the outcome and forgot everything
+              that led to it. That's an expensive answer to give a regulator, a
+              customer, or a board.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">The cost</span>
+            <h3>Knowledge that walks out the door</h3>
+            <p>
+              The rules that govern your system live in a handful of people's
+              heads. When they leave, the software keeps running and nobody can
+              safely change it.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- THE SHIFT -->
-  <section class="band shell">
-    <p class="eyebrow">Why now</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">The way software gets made just changed. Most of it hasn't caught up.</h2>
-        <p class="section-lead">Machines now write a growing share of the software your company runs. They work faster than any review process was designed for — and they only understand what your system has actually written down.</p>
-      </div>
-    </div>
-    <div class="grid grid-3">
-      <div class="card">
-        <span class="num">The risk</span>
-        <h3>Speed without a shared plan</h3>
-        <p>Teams ship faster than their design can absorb. The architecture everyone agreed on lives in a diagram that stopped being true months ago, and nobody notices until something breaks in front of a customer.</p>
-      </div>
-      <div class="card">
-        <span class="num">The gap</span>
-        <h3>Systems that can't explain themselves</h3>
-        <p>Ask most software why it made a decision and the honest answer is that nobody knows. It stored the outcome and forgot everything that led to it. That's an expensive answer to give a regulator, a customer, or a board.</p>
-      </div>
-      <div class="card">
-        <span class="num">The cost</span>
-        <h3>Knowledge that walks out the door</h3>
-        <p>The rules that govern your system live in a handful of people's heads. When they leave, the software keeps running and nobody can safely change it.</p>
-      </div>
-    </div>
-  </section>
+      <!-- WHERE IT MATTERS -->
+      <section class="band shell">
+        <p class="eyebrow">Where it matters most</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              When someone asks what happened, the answer should already exist.
+            </h2>
+            <p class="section-lead">
+              Any business where a decision has consequences later — a payment,
+              a claim, a contract, a shipment — is a business that eventually
+              gets asked to account for itself.
+            </p>
+          </div>
+        </div>
+        <div class="uses">
+          <div class="use">
+            <h3>Payments and transfers</h3>
+            <p>Every movement of money kept as a permanent, ordered fact.</p>
+          </div>
+          <div class="use">
+            <h3>Claims and cases</h3>
+            <p>
+              Files that carry their own history, from first contact to
+              resolution.
+            </p>
+          </div>
+          <div class="use">
+            <h3>Orders and inventory</h3>
+            <p>
+              What was promised, what changed, and when — without
+              reconstruction.
+            </p>
+          </div>
+          <div class="use">
+            <h3>Contracts and subscriptions</h3>
+            <p>
+              Every amendment, renewal and cancellation, in the order it
+              occurred.
+            </p>
+          </div>
+          <div class="use">
+            <h3>Identity and access</h3>
+            <p>Who was granted what, by whom, and on what basis.</p>
+          </div>
+          <div class="use">
+            <h3>Supply and logistics</h3>
+            <p>
+              A traceable line from origin to delivery that holds up under
+              scrutiny.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- WHERE IT MATTERS -->
-  <section class="band shell">
-    <p class="eyebrow">Where it matters most</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">When someone asks what happened, the answer should already exist.</h2>
-        <p class="section-lead">Any business where a decision has consequences later — a payment, a claim, a contract, a shipment — is a business that eventually gets asked to account for itself.</p>
-      </div>
-    </div>
-    <div class="uses">
-      <div class="use"><h3>Payments and transfers</h3><p>Every movement of money kept as a permanent, ordered fact.</p></div>
-      <div class="use"><h3>Claims and cases</h3><p>Files that carry their own history, from first contact to resolution.</p></div>
-      <div class="use"><h3>Orders and inventory</h3><p>What was promised, what changed, and when — without reconstruction.</p></div>
-      <div class="use"><h3>Contracts and subscriptions</h3><p>Every amendment, renewal and cancellation, in the order it occurred.</p></div>
-      <div class="use"><h3>Identity and access</h3><p>Who was granted what, by whom, and on what basis.</p></div>
-      <div class="use"><h3>Supply and logistics</h3><p>A traceable line from origin to delivery that holds up under scrutiny.</p></div>
-    </div>
-  </section>
-
-
-  <!-- LOGOS ---------------------------------------------------------------
+      <!-- LOGOS ---------------------------------------------------------------
        PLACEHOLDER: every name below is invented. Replace with real customers
        (with written permission) or delete this band before launch.
        See PAGES.md §11. -->
-  <section class="logos" data-placeholder-guard>
-    <div class="shell">
-      <p class="logos-label">△ Placeholder names — replace with real customers or remove before launch</p>
-    </div>
-    <div class="logo-marquee">
-      <div class="logo-track">
-          <span class="logo-item"><span class="mk" style="background:#8b5cf6">N</span>Nordvik</span>
-          <span class="logo-item"><span class="mk" style="background:#2dd4bf">H</span>Halden Group</span>
-          <span class="logo-item"><span class="mk" style="background:#f2994a">M</span>Meridian Care</span>
-          <span class="logo-item"><span class="mk" style="background:#dbe45c">S</span>Sagabank</span>
-          <span class="logo-item"><span class="mk" style="background:#8b5cf6">V</span>Vantage Logistics</span>
-          <span class="logo-item"><span class="mk" style="background:#2dd4bf">K</span>Kessler & Fjord</span>
-          <span class="logo-item"><span class="mk" style="background:#8b5cf6">N</span>Nordvik</span>
-          <span class="logo-item"><span class="mk" style="background:#2dd4bf">H</span>Halden Group</span>
-          <span class="logo-item"><span class="mk" style="background:#f2994a">M</span>Meridian Care</span>
-          <span class="logo-item"><span class="mk" style="background:#dbe45c">S</span>Sagabank</span>
-          <span class="logo-item"><span class="mk" style="background:#8b5cf6">V</span>Vantage Logistics</span>
-          <span class="logo-item"><span class="mk" style="background:#2dd4bf">K</span>Kessler & Fjord</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE MOMENT -->
-  <section class="moment shell">
-    <blockquote>Give it a vague plan and it builds vague software, faster.</blockquote>
-    <p class="attrib">The problem Cratis was built to solve</p>
-  </section>
-
-  <!-- THE PRODUCTION PIPELINE -->
-  <section class="band shell" id="production">
-    <p class="eyebrow">How it works</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">One production, from the first idea to the running business.</h2>
-        <p class="section-lead">Cratis treats building software the way a studio treats making a film: a shared script, a live performance, and a complete record of everything that happened. Four moves, one continuous line.</p>
-      </div>
-    </div>
-
-    <div class="production">
-      <div class="act">
-        <span class="act-no">Act 01</span>
-        <h3>Design</h3>
-        <p>Your team maps out what the business actually does — the decisions people make, the things that happen as a result, what everyone needs to see. On one canvas, together, in language the business uses.</p>
-        <p class="act-who">Studio &middot; Screenplay</p>
-      </div>
-      <div class="act">
-        <span class="act-no">Act 02</span>
-        <h3>Perform</h3>
-        <p>That design becomes a working system — not a document handed to developers to interpret, but the thing that actually runs. What you agreed on and what your customers use are the same artefact.</p>
-        <p class="act-who">Stage &middot; Arc</p>
-      </div>
-      <div class="act">
-        <span class="act-no">Act 03</span>
-        <h3>Record</h3>
-        <p>Every decision the business makes is kept as a permanent fact — not overwritten, not summarised away. Your system builds a memory instead of a snapshot.</p>
-        <p class="act-who">Chronicle</p>
-      </div>
-      <div class="act">
-        <span class="act-no">Act 04</span>
-        <h3>Explain</h3>
-        <p>Ask what happened and when, and get an answer backed by the record rather than someone's reconstruction. For an audit, an incident, a customer dispute — or an AI agent that needs the real context.</p>
-        <p class="act-who">Narrator &middot; Synopsis &middot; Prompter</p>
-      </div>
-    </div>
-
-    <p class="code-note">Adopt the whole pipeline, or start at any point. Each part works on its own — and works better together.</p>
-  </section>
-
-  <!-- WHAT YOU GET -->
-  <section class="band shell" id="value">
-    <p class="eyebrow">What changes</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">What your organisation gets out of it.</h2>
-      </div>
-    </div>
-
-    <div class="outcomes">
-      <div class="outcome">
-        <h3>The design and the software stop drifting apart</h3>
-        <div>
-          <p>In most organisations the plan and the product separate quietly within weeks, and nobody finds out until a release goes wrong. Cratis removes the gap structurally — the model your team agreed on is the thing that runs, so it can't quietly stop being true.</p>
-          <span class="tagline">Fewer surprises in production</span>
+      <section class="logos" data-placeholder-guard>
+        <div class="shell">
+          <p class="logos-label">
+            △ Placeholder names — replace with real customers or remove before
+            launch
+          </p>
         </div>
-      </div>
-      <div class="outcome">
-        <h3>Your system can answer for itself</h3>
-        <div>
-          <p>Every business decision is recorded as it happened, in order, permanently. When an auditor, a regulator, a customer or an executive asks how something came to be, answering is a question you ask the system — not a week of forensic work across log files.</p>
-          <span class="tagline">Audit becomes a query, not a project</span>
+        <div class="logos-row shell">
+          <!-- DRAFT: needs approval — supporting line in the AxonIQ mould. May only ship
+           once the logos are real customers; until then it stays behind the guard. -->
+          <p class="logos-lead">
+            Keeping the record straight where decisions have consequences.
+          </p>
+          <div class="logo-marquee">
+            <div class="logo-track">
+              <span class="logo-item"
+                ><span class="mk" style="background: #8b5cf6">N</span
+                >Nordvik</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #2dd4bf">H</span>Halden
+                Group</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #f2994a">M</span>Meridian
+                Care</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #dbe45c">S</span
+                >Sagabank</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #8b5cf6">V</span>Vantage
+                Logistics</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #2dd4bf">K</span>Kessler &
+                Fjord</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #8b5cf6">N</span
+                >Nordvik</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #2dd4bf">H</span>Halden
+                Group</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #f2994a">M</span>Meridian
+                Care</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #dbe45c">S</span
+                >Sagabank</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #8b5cf6">V</span>Vantage
+                Logistics</span
+              >
+              <span class="logo-item"
+                ><span class="mk" style="background: #2dd4bf">K</span>Kessler &
+                Fjord</span
+              >
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="outcome">
-        <h3>AI helps instead of accumulating risk</h3>
-        <div>
-          <p>Assistants are only as good as the structure they work inside. Cratis gives them explicit rules a machine can check, so generated work lands inside the lines rather than quietly adding another way of doing the same thing. Speed stops costing you consistency.</p>
-          <span class="tagline">Future-ready by construction</span>
-        </div>
-      </div>
-      <div class="outcome">
-        <h3>Knowledge stays with the company</h3>
-        <div>
-          <p>When how the business works is written into the system rather than carried in senior people's heads, onboarding gets faster and key-person risk drops. New people — and new tools — can read the same model.</p>
-          <span class="tagline">Less dependent on who's in the room</span>
-        </div>
-      </div>
-      <div class="outcome">
-        <h3>You are not locked in</h3>
-        <div>
-          <p>Everything at the core is open source under a permissive licence, runs on databases you already operate, and speaks open protocols across several programming languages. If you ever stop working with us, you keep all of it.</p>
-          <span class="tagline">Open by design, not by promise</span>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
+      <!-- THE MOMENT -->
+      <section class="moment shell">
+        <blockquote>
+          Give it a vague plan and it builds vague software, faster.
+        </blockquote>
+        <p class="attrib">The problem Cratis was built to solve</p>
+      </section>
 
-  <!-- HOW WE HELP -->
-  <section class="band shell" id="help">
-    <p class="eyebrow">How we help</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">You are not buying software from us. You are getting the two people who built it.</h2>
-        <p class="section-lead">Most of what we do is not writing code for you — it is helping your team make the decisions that are cheap now and expensive in two years.</p>
-      </div>
-    </div>
-    <div class="help">
-      <div class="help-item">
-        <span class="dot d-violet"></span>
-        <div>
-          <h3>We design it with you</h3>
-          <p>A working session with your people — the ones who know the business and the ones who will build it. Everyone leaves with the same picture, in language everyone in the room understands.</p>
+      <!-- THE PRODUCTION PIPELINE -->
+      <section class="band shell" id="production">
+        <p class="eyebrow">How it works</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              One production, from the first idea to the running business.
+            </h2>
+            <p class="section-lead">
+              <!-- DRAFT: needs approval — opening reframe from Einar's Studio
+                   presentation: code as the one artifact most of the room
+                   can't read. -->
+              In most organisations, the final authority on what the software
+              does is the code — the one artifact most of the room can't read.
+              Cratis changes what your team gathers around: a shared script
+              everyone can read, a live performance, and a complete record of
+              everything that happened. Four moves, one continuous line.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="help-item">
-        <span class="dot d-teal"></span>
-        <div>
-          <h3>We tell you when you are wrong</h3>
-          <p>Including when the answer is that you do not need us. A review that only confirms what you already believed is worth nothing, and we would rather be useful than agreeable.</p>
-        </div>
-      </div>
-      <div class="help-item">
-        <span class="dot d-amber"></span>
-        <div>
-          <h3>We build the first piece alongside your team</h3>
-          <p>Not instead of them. The first thing you build sets the pattern everything else copies, so we do it together — and then your team can do the rest without us.</p>
-        </div>
-      </div>
-      <div class="help-item">
-        <span class="dot d-lime"></span>
-        <div>
-          <h3>We stay reachable</h3>
-          <p>When something breaks at an awkward hour, the person who answers wrote the code. No ticket queue, no account manager, nobody reading your problem for the first time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- FOUNDER QUOTE -->
-  <section class="founder-quote shell">
-    <div class="fq-who">
-      <!-- NEEDS FACT: photograph -->
-      <span class="fq-portrait" aria-hidden="true">E</span>
-      <span>
-        <strong>Einar Ingebrigtsen</strong>
-        <span>Co-founder</span>
-      </span>
-    </div>
-    <div class="fq-body">
-      <!-- DRAFT: needs approval from Einar. Written in his voice, not quoted from him. -->
-      <blockquote>We kept watching good teams lose the plot — not because anyone did poor work, but because the plan lived in a few heads and the software slowly stopped matching it. <em>We built the thing where that cannot happen quietly.</em></blockquote>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="band shell">
-    <p class="eyebrow">Who this is for</p>
-    <div class="band-head">
-      <div><h2>Different questions, same platform.</h2></div>
-    </div>
-    <div class="audience">
-      <div class="aud">
-        <span class="role">Executives</span>
-        <h3>"Can we move fast without losing control?"</h3>
-        <p>Ship at the pace AI-assisted teams now work, while keeping a system you can still explain, audit and change. Speed and accountability stop being a trade.</p>
-      </div>
-      <div class="aud">
-        <span class="role">Product leaders</span>
-        <h3>"Does what we designed match what shipped?"</h3>
-        <p>Design with your engineers on a shared canvas, in business language, and watch that design become the running product — rather than an interpretation of it.</p>
-      </div>
-      <div class="aud">
-        <span class="role">Engineering leaders</span>
-        <h3>"Will this still be maintainable in five years?"</h3>
-        <p>Explicit conventions, a complete history, and one shape for every feature — so the system stays consistent whether a person or an assistant wrote the last change.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOICES -->
-  <section class="voices">
-    <div class="shell">
-      <div class="voices-head">
-        <div>
-          <p class="eyebrow">In production</p>
-          <h2>What teams say</h2>
+        <div class="production">
+          <div class="act">
+            <span class="act-no">Act 01</span>
+            <h3>Design</h3>
+            <p>
+              Your team maps out what the business actually does — the decisions
+              people make, the things that happen as a result, what everyone
+              needs to see. On one canvas, together, in language the business
+              uses.
+            </p>
+            <p class="act-who">Studio &middot; Screenplay</p>
+          </div>
+          <div class="act">
+            <span class="act-no">Act 02</span>
+            <h3>Perform</h3>
+            <p>
+              That design becomes a working system — not a document handed to
+              developers to interpret, but the thing that actually runs. What
+              you agreed on and what your customers use are the same artefact.
+            </p>
+            <p class="act-who">Stage &middot; Arc</p>
+          </div>
+          <div class="act">
+            <span class="act-no">Act 03</span>
+            <h3>Record</h3>
+            <p>
+              Every decision the business makes is kept as a permanent fact —
+              not overwritten, not summarised away. Your system builds a memory
+              instead of a snapshot.
+            </p>
+            <p class="act-who">Chronicle</p>
+          </div>
+          <div class="act">
+            <span class="act-no">Act 04</span>
+            <h3>Explain</h3>
+            <p>
+              Ask what happened and when, and get an answer backed by the record
+              rather than someone's reconstruction. For an audit, an incident, a
+              customer dispute — or an AI agent that needs the real context.
+            </p>
+            <p class="act-who">Narrator &middot; Synopsis &middot; Prompter</p>
+          </div>
         </div>
-        <p>Names and companies, or nothing at all.</p>
-      </div>
-      <!-- PLACEHOLDER GUARD — remove this ribbon and the .is-placeholder class only when
+
+        <p class="code-note">
+          <!-- DRAFT: needs approval — the loop framing from Einar's deck:
+               stages become a loop, feedback returns to design. -->
+          Adopt the whole pipeline, or start at any point. Each part works on
+          its own — and works better together. And the line is a loop: what the
+          record teaches you feeds the next design.
+        </p>
+      </section>
+
+      <!-- WHAT YOU GET -->
+      <section class="band shell" id="value">
+        <p class="eyebrow">What changes</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              What your organisation gets out of it.
+            </h2>
+            <!-- DRAFT: needs approval — the "completion system" idea from Einar's
+                 Studio presentation (slide 9), reworded for this audience. -->
+            <p class="section-lead">
+              Most tools produce artefacts — requirements, tickets, code,
+              documentation. Cratis closes a gap: from "we have an idea" to
+              "the software does what we intended".
+            </p>
+          </div>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome">
+            <!-- DRAFT: needs approval — new outcome, the core of Einar's Studio
+                 presentation: participation, the "Figma moment". -->
+            <h3>The whole organisation can take part</h3>
+            <div>
+              <p>
+                In most companies, the final say on what the software does is
+                the code — which most of the people who understand the business
+                can't read. Cratis moves that authority to a model everyone can
+                read, question and change. Product people, domain experts and
+                engineers shape the same artefact instead of passing
+                translations down a chain.
+              </p>
+              <span class="tagline">Software stops being engineering-only</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>The design and the software stop drifting apart</h3>
+            <div>
+              <p>
+                In most organisations the plan and the product separate quietly
+                within weeks, and nobody finds out until a release goes wrong.
+                Cratis removes the gap structurally — the model your team agreed
+                on is the thing that runs, so it can't quietly stop being true.
+              </p>
+              <span class="tagline">Fewer surprises in production</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>Your system can answer for itself</h3>
+            <div>
+              <p>
+                Every business decision is recorded as it happened, in order,
+                permanently. When an auditor, a regulator, a customer or an
+                executive asks how something came to be, answering is a question
+                you ask the system — not a week of forensic work across log
+                files.
+              </p>
+              <span class="tagline">Audit becomes a query, not a project</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>AI helps instead of accumulating risk</h3>
+            <div>
+              <p>
+                Assistants are only as good as the structure they work inside.
+                Cratis gives them explicit rules a machine can check, so
+                generated work lands inside the lines rather than quietly adding
+                another way of doing the same thing. Speed stops costing you
+                consistency.
+              </p>
+              <span class="tagline">Future-ready by construction</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>Knowledge stays with the company</h3>
+            <div>
+              <p>
+                When how the business works is written into the system rather
+                than carried in senior people's heads, onboarding gets faster
+                and key-person risk drops. New people — and new tools — can read
+                the same model.
+              </p>
+              <span class="tagline">Less dependent on who's in the room</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>You are not locked in</h3>
+            <div>
+              <p>
+                Everything at the core is open source under a permissive
+                licence, runs on databases you already operate, and speaks open
+                protocols across several programming languages. If you ever stop
+                working with us, you keep all of it.
+              </p>
+              <span class="tagline">Open by design, not by promise</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW WE HELP -->
+      <section class="band shell" id="help">
+        <p class="eyebrow">How we help</p>
+        <div class="band-head">
+          <div>
+            <!-- DRAFT: needs approval — replaces "You are not buying software from us. You are
+             getting the two people who built it." Founders called that awkward and not scalable:
+             it hard-codes headcount and centres us, not the customer's decision. -->
+            <h2 class="big-statement">
+              Get the decisions right while they are still cheap to change.
+            </h2>
+            <p class="section-lead">
+              Most of what we do is not writing code for you — it is working
+              directly with your team on the choices that are easy to make now
+              and expensive to unmake later. You work with the people who build
+              the platform, not a delivery layer in front of them.
+            </p>
+          </div>
+        </div>
+        <div class="help">
+          <div class="help-item">
+            <span class="dot d-violet"></span>
+            <div>
+              <h3>We design it with you</h3>
+              <p>
+                A working session with your people — the ones who know the
+                business and the ones who will build it. Everyone leaves with
+                the same picture, in language everyone in the room understands.
+              </p>
+            </div>
+          </div>
+          <div class="help-item">
+            <span class="dot d-teal"></span>
+            <div>
+              <h3>We tell you when you are wrong</h3>
+              <p>
+                Including when the answer is that you do not need us. A review
+                that only confirms what you already believed is worth nothing,
+                and we would rather be useful than agreeable.
+              </p>
+            </div>
+          </div>
+          <div class="help-item">
+            <span class="dot d-amber"></span>
+            <div>
+              <h3>We build the first piece alongside your team</h3>
+              <p>
+                Not instead of them. The first thing you build sets the pattern
+                everything else copies, so we do it together — and then your
+                team can do the rest without us.
+              </p>
+            </div>
+          </div>
+          <div class="help-item">
+            <span class="dot d-lime"></span>
+            <div>
+              <h3>We stay reachable</h3>
+              <p>
+                When something breaks at an awkward hour, the person who answers
+                wrote the code. No ticket queue, no account manager, nobody
+                reading your problem for the first time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOUNDER QUOTE -->
+      <section class="founder-quote shell">
+        <div class="fq-who">
+          <!-- NEEDS FACT: photograph -->
+          <span class="fq-portrait" aria-hidden="true">E</span>
+          <span>
+            <strong>Einar Ingebrigtsen</strong>
+            <span>Co-founder</span>
+          </span>
+        </div>
+        <div class="fq-body">
+          <!-- DRAFT: needs approval from Einar. Reworked from his own Cratis Studio
+               presentation (slide 3) — closer to words he has actually used, but
+               still not a verbatim quote. -->
+          <blockquote>
+            The one artifact everyone depends on is the one artifact most of
+            the room can't participate in. That never stopped bothering us.
+            <em>We built the thing where the whole room takes part.</em>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- WHO IT'S FOR — CUT in review, founders may restore.
+           The three audience cards ("Different questions, same platform":
+           Executives / Product leaders / Engineering leaders) restated the
+           business-outcomes band above with weaker copy, and the founders
+           flagged homepage length. The per-audience questions still live in
+           BRAND.md §audiences and in /why-cratis/. Restore from git history
+           if the cut is wrong: git show HEAD -- index.html -->
+
+      <!-- VOICES -->
+      <section class="voices">
+        <div class="shell">
+          <div class="voices-head">
+            <div>
+              <p class="eyebrow">In production</p>
+              <h2>What teams say</h2>
+            </div>
+            <p>Names and companies, or nothing at all.</p>
+          </div>
+          <!-- PLACEHOLDER GUARD — remove this ribbon and the .is-placeholder class only when
            every quote below is real, attributed, and used with written permission. -->
-      <div class="placeholder-ribbon" data-placeholder-guard>
-        <span>△</span>
-        <span>PLACEHOLDER — invented quotes, names and companies. Replace with real, permissioned testimonials or delete this section before launch.</span>
-      </div>
-    </div>
-    <div class="marquee is-placeholder">
-      <div class="marquee-track">
-        <figure class="voice">
-          <blockquote>We stopped arguing about what the system was supposed to do, because we could all see it. That alone paid for the engagement.</blockquote>
-          <figcaption><span class="avatar">AH</span><span><span class="who">Anne Halvorsen</span><br><span class="role">COO, Nordvik</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>An auditor asked us to account for eighteen months of pricing decisions. It took an afternoon, not a quarter.</blockquote>
-          <figcaption><span class="avatar">MT</span><span><span class="who">Marcus Thorne</span><br><span class="role">Finance Director, Sagabank</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>Our engineers were sceptical. What convinced them was being told, in the first call, which parts we did not need.</blockquote>
-          <figcaption><span class="avatar">PL</span><span><span class="who">Priya Lund</span><br><span class="role">CTO, Meridian Care</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>We are shipping faster with AI than we were a year ago, and I am less nervous about it, not more.</blockquote>
-          <figcaption><span class="avatar">JF</span><span><span class="who">Jonas Fjeld</span><br><span class="role">VP Engineering, Vantage Logistics</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>We stopped arguing about what the system was supposed to do, because we could all see it. That alone paid for the engagement.</blockquote>
-          <figcaption><span class="avatar">AH</span><span><span class="who">Anne Halvorsen</span><br><span class="role">COO, Nordvik</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>An auditor asked us to account for eighteen months of pricing decisions. It took an afternoon, not a quarter.</blockquote>
-          <figcaption><span class="avatar">MT</span><span><span class="who">Marcus Thorne</span><br><span class="role">Finance Director, Sagabank</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>Our engineers were sceptical. What convinced them was being told, in the first call, which parts we did not need.</blockquote>
-          <figcaption><span class="avatar">PL</span><span><span class="who">Priya Lund</span><br><span class="role">CTO, Meridian Care</span></span></figcaption>
-        </figure>
-        <figure class="voice">
-          <blockquote>We are shipping faster with AI than we were a year ago, and I am less nervous about it, not more.</blockquote>
-          <figcaption><span class="avatar">JF</span><span><span class="who">Jonas Fjeld</span><br><span class="role">VP Engineering, Vantage Logistics</span></span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFERINGS -->
-  <section class="band shell" id="offerings">
-    <p class="eyebrow">Working with us</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">The platform is free. Our time is what you'd be buying.</h2>
-        <p class="section-lead">Everything at the core is open source and always will be. What you can buy is the people who built it — as an ongoing relationship, or as a fixed piece of work with an agreed outcome.</p>
-      </div>
-    </div>
-
-    <div class="grid grid-3">
-      <div class="offer">
-        <h3>Support</h3>
-        <p class="who-for">For organisations running Cratis in production</p>
-        <ul>
-          <li>Direct access to the people who build it</li>
-          <li>Guaranteed response times when something breaks</li>
-          <li>Advisory hours for the decisions that are expensive to reverse</li>
-          <li>A written continuity commitment</li>
-        </ul>
-        <a class="offer-cta" href="/support/">See plans and pricing →</a>
-      </div>
-      <div class="offer featured">
-        <h3>Advisory</h3>
-        <p class="who-for">For getting it right the first time</p>
-        <ul>
-          <li>A design session with your team and ours</li>
-          <li>An architecture review, with the risks ranked</li>
-          <li>The first piece built alongside your engineers</li>
-          <li>Fixed scope, fixed price, agreed outcome</li>
-        </ul>
-        <a class="offer-cta" href="/support/#advisory">See engagements →</a>
-      </div>
-      <div class="offer">
-        <h3>Workshops</h3>
-        <p class="who-for">For teaching the part that's actually hard</p>
-        <ul>
-          <li>Designing a system your whole team understands</li>
-          <li>Working with a system that records everything</li>
-          <li>Building where people and AI follow the same rules</li>
-          <li>Built around your business, not a generic deck</li>
-        </ul>
-        <a class="offer-cta" href="/support/#workshops">See workshops →</a>
-      </div>
-    </div>
-
-    <div class="banner mt-lg">
-      <div>
-        <h3>Not sure it's a fit?</h3>
-        <p>Book a ninety-minute conversation. It's free, and if the honest answer is that you don't need us, that's what you'll hear.</p>
-      </div>
-      <a class="cta" href="#contact">
-        Book a conversation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- OPEN -->
-  <section class="band shell">
-    <p class="eyebrow">How we work</p>
-    <div class="band-head">
-      <div>
-        <h2>Open, and small on purpose.</h2>
-        <p class="section-lead">Two things make working with us different from working with a software vendor.</p>
-      </div>
-    </div>
-    <div class="numbers">
-      <div class="number">
-        <strong>100<span class="unit">%</span></strong>
-        <span class="label">Of the core platform is open source, permissively licensed, and public. There is nothing to renew and nothing phoning home.</span>
-      </div>
-      <div class="number">
-        <strong>0</strong>
-        <span class="label">People between you and the person who wrote the code. No account manager, no first-line triage.</span>
-      </div>
-      <div class="number">
-        <strong>2</strong>
-        <span class="label">Founders, working in the open. Small enough that you can always reach us — and we intend to stay that way.</span>
-      </div>
-    </div>
-    <p class="code-note">We publish what we're building, including the parts that aren't ready — and we'll tell you plainly when Cratis is the wrong fit. <a href="/about/">More about how we work →</a></p>
-  </section>
-
-
-  <!-- FOUNDER QUOTE 2 -->
-  <section class="founder-quote shell">
-    <div class="fq-who">
-      <!-- NEEDS FACT: photograph -->
-      <span class="fq-portrait" aria-hidden="true">S</span>
-      <span>
-        <strong>Sindre Alstad Wilting</strong>
-        <span>Co-founder</span>
-      </span>
-    </div>
-    <div class="fq-body">
-      <!-- DRAFT: needs approval from Sindre. Written in his voice, not quoted from him. -->
-      <blockquote>People assume being small is the compromise. It is the reason you get a straight answer on the first call — <em>there is nobody here whose job is to keep you talking.</em></blockquote>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="band shell" id="contact">
-    <p class="eyebrow">Get in touch</p>
-    <div class="band-head">
-      <div>
-        <h2 class="big-statement">Start with a conversation.</h2>
-        <p class="section-lead">You don't need a finished plan or an approved budget. Tell us what you're working on and we'll tell you honestly whether we can help.</p>
-      </div>
-    </div>
-
-    <div class="contact-grid">
-      <form id="contactForm" method="post" action="mailto:oss@cratis.io" enctype="text/plain">
-        <div class="field">
-          <label for="cf-about">What are you building or looking at?</label>
-          <textarea id="cf-about" name="about" required placeholder="A sentence or two is plenty."></textarea>
+          <div class="placeholder-ribbon" data-placeholder-guard>
+            <span>△</span>
+            <span
+              >PLACEHOLDER — invented quotes, names and companies. Replace with
+              real, permissioned testimonials or delete this section before
+              launch.</span
+            >
+          </div>
         </div>
-        <div class="field">
-          <label for="cf-help">What would help most?</label>
-          <select id="cf-help" name="help">
-            <option>A conversation — is this right for us?</option>
-            <option>Designing our system with our team</option>
-            <option>A review of what we have today</option>
-            <option>Help adopting it</option>
-            <option>Training for our team</option>
-            <option>A support plan</option>
-            <option>Something else</option>
-          </select>
+        <div class="marquee is-placeholder">
+          <div class="marquee-track">
+            <figure class="voice">
+              <blockquote>
+                We stopped arguing about what the system was supposed to do,
+                because we could all see it. That alone paid for the engagement.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">AH</span
+                ><span
+                  ><span class="who">Anne Halvorsen</span><br /><span
+                    class="role"
+                    >COO, Nordvik</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                An auditor asked us to account for eighteen months of pricing
+                decisions. It took an afternoon, not a quarter.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">MT</span
+                ><span
+                  ><span class="who">Marcus Thorne</span><br /><span
+                    class="role"
+                    >Finance Director, Sagabank</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                Our engineers were sceptical. What convinced them was being
+                told, in the first call, which parts we did not need.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">PL</span
+                ><span
+                  ><span class="who">Priya Lund</span><br /><span class="role"
+                    >CTO, Meridian Care</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                We are shipping faster with AI than we were a year ago, and I am
+                less nervous about it, not more.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">JF</span
+                ><span
+                  ><span class="who">Jonas Fjeld</span><br /><span class="role"
+                    >VP Engineering, Vantage Logistics</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                We stopped arguing about what the system was supposed to do,
+                because we could all see it. That alone paid for the engagement.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">AH</span
+                ><span
+                  ><span class="who">Anne Halvorsen</span><br /><span
+                    class="role"
+                    >COO, Nordvik</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                An auditor asked us to account for eighteen months of pricing
+                decisions. It took an afternoon, not a quarter.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">MT</span
+                ><span
+                  ><span class="who">Marcus Thorne</span><br /><span
+                    class="role"
+                    >Finance Director, Sagabank</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                Our engineers were sceptical. What convinced them was being
+                told, in the first call, which parts we did not need.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">PL</span
+                ><span
+                  ><span class="who">Priya Lund</span><br /><span class="role"
+                    >CTO, Meridian Care</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+            <figure class="voice">
+              <blockquote>
+                We are shipping faster with AI than we were a year ago, and I am
+                less nervous about it, not more.
+              </blockquote>
+              <figcaption>
+                <span class="avatar">JF</span
+                ><span
+                  ><span class="who">Jonas Fjeld</span><br /><span class="role"
+                    >VP Engineering, Vantage Logistics</span
+                  ></span
+                >
+              </figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="field">
-          <label for="cf-stage">Where are you today?</label>
-          <select id="cf-stage" name="stage">
-            <option>Starting something new</option>
-            <option>We have a system we can't rewrite</option>
-            <option>Already running on Cratis</option>
-          </select>
+      </section>
+
+      <!-- OFFERINGS -->
+      <section class="band shell" id="offerings">
+        <p class="eyebrow">Working with us</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              The platform is free. Our time is what you'd be buying.
+            </h2>
+            <p class="section-lead">
+              Everything at the core is open source and always will be. What you
+              can buy is the people who built it — as an ongoing relationship,
+              or as a fixed piece of work with an agreed outcome.
+            </p>
+          </div>
         </div>
-        <div class="field">
-          <label for="cf-email">Email</label>
-          <input id="cf-email" name="email" type="email" required placeholder="you@company.com">
-          <span class="hint">We'll reply ourselves. There's no one else to route it to.</span>
+
+        <div class="grid grid-3">
+          <div class="offer">
+            <h3>Support</h3>
+            <p class="who-for">
+              For organisations running Cratis in production
+            </p>
+            <ul>
+              <li>Direct access to the people who build it</li>
+              <li>Guaranteed response times when something breaks</li>
+              <li>
+                Advisory hours for the decisions that are expensive to reverse
+              </li>
+              <li>A written continuity commitment</li>
+            </ul>
+            <a class="offer-cta" href="/support/">See plans and pricing →</a>
+          </div>
+          <div class="offer featured">
+            <h3>Advisory</h3>
+            <p class="who-for">For getting it right the first time</p>
+            <ul>
+              <li>A design session with your team and ours</li>
+              <li>An architecture review, with the risks ranked</li>
+              <li>The first piece built alongside your engineers</li>
+              <li>Fixed scope, fixed price, agreed outcome</li>
+            </ul>
+            <a class="offer-cta" href="/support/#advisory">See engagements →</a>
+          </div>
+          <div class="offer">
+            <h3>Workshops</h3>
+            <p class="who-for">For teaching the part that's actually hard</p>
+            <ul>
+              <li>Designing a system your whole team understands</li>
+              <li>Working with a system that records everything</li>
+              <li>Building where people and AI follow the same rules</li>
+              <li>Built around your business, not a generic deck</li>
+            </ul>
+            <a class="offer-cta" href="/support/#workshops">See workshops →</a>
+          </div>
         </div>
-        <button class="cta" type="submit">
-          Send it
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-        </button>
-      </form>
 
-      <aside class="contact-aside">
-        <h3>Or skip the form</h3>
-        <p>Email <a href="mailto:oss@cratis.io?subject=Working%20with%20Cratis">oss@cratis.io</a> and one of us will answer.</p>
-        <p>Technical question about the software? <a href="https://cratis.io/community/" target="_blank" rel="noopener">Our community</a> is free, public, and usually faster — that's not a consolation prize, it's where most questions get answered.</p>
-        <p>Are you a developer who wants the detail? <a href="https://cratis.io" target="_blank" rel="noopener">The documentation</a> goes considerably deeper than this site does.</p>
-      </aside>
-    </div>
-  </section>
+        <div class="banner mt-lg">
+          <div>
+            <h3>Not sure it's a fit?</h3>
+            <p>
+              Book a ninety-minute conversation. It's free, and if the honest
+              answer is that you don't need us, that's what you'll hear.
+            </p>
+          </div>
+          <a class="cta" href="#contact">
+            Book a conversation
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H8M17 7V16" />
+            </svg>
+          </a>
+        </div>
+      </section>
 
-</main>
+      <!-- OPEN -->
+      <section class="band shell">
+        <p class="eyebrow">How we work</p>
+        <div class="band-head">
+          <div>
+            <h2>Open, and small on purpose.</h2>
+            <p class="section-lead">
+              Two things make working with us different from working with a
+              software vendor.
+            </p>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="number">
+            <strong>100<span class="unit">%</span></strong>
+            <span class="label"
+              >Of the core platform is open source, permissively licensed, and
+              public. There is nothing to renew and nothing phoning home.</span
+            >
+          </div>
+          <div class="number">
+            <strong>0</strong>
+            <span class="label"
+              >People between you and the person who wrote the code. No account
+              manager, no first-line triage.</span
+            >
+          </div>
+          <div class="number">
+            <strong>2</strong>
+            <span class="label"
+              >Founders, working in the open. Small enough that you can always
+              reach us — and we intend to stay that way.</span
+            >
+          </div>
+        </div>
+        <p class="code-note">
+          We publish what we're building, including the parts that aren't ready
+          — and we'll tell you plainly when Cratis is the wrong fit.
+          <a href="/about/">More about how we work →</a>
+        </p>
+      </section>
 
-  <footer class="site-footer">
+      <!-- FOUNDER QUOTE 2 -->
+      <section class="founder-quote shell">
+        <div class="fq-who">
+          <!-- NEEDS FACT: photograph -->
+          <span class="fq-portrait" aria-hidden="true">S</span>
+          <span>
+            <strong>Sindre Alstad Wilting</strong>
+            <span>Co-founder</span>
+          </span>
+        </div>
+        <div class="fq-body">
+          <!-- DRAFT: needs approval from Sindre. Written in his voice, not quoted from him. -->
+          <blockquote>
+            People assume being small is the compromise. It is the reason you
+            get a straight answer on the first call —
+            <em>there is nobody here whose job is to keep you talking.</em>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="band shell" id="contact">
+        <p class="eyebrow">Get in touch</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">Start with a conversation.</h2>
+            <p class="section-lead">
+              You don't need a finished plan or an approved budget. Tell us what
+              you're working on and we'll tell you honestly whether we can help.
+              The first conversation is a fit review — ninety minutes, free, and
+              if the honest answer is that you don't need us, that's what you'll
+              hear.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <form
+            id="contactForm"
+            method="post"
+            action="mailto:oss@cratis.io"
+            enctype="text/plain"
+          >
+            <div class="field">
+              <label for="cf-about">What are you building or looking at?</label>
+              <textarea
+                id="cf-about"
+                name="about"
+                required
+                placeholder="A sentence or two is plenty."
+              ></textarea>
+            </div>
+            <div class="field">
+              <label for="cf-help">What would help most?</label>
+              <select id="cf-help" name="help">
+                <option>A conversation — is this right for us?</option>
+                <option>Designing our system with our team</option>
+                <option>A review of what we have today</option>
+                <option>Help adopting it</option>
+                <option>Training for our team</option>
+                <option>A support plan</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-stage">Where are you today?</label>
+              <select id="cf-stage" name="stage">
+                <option>Starting something new</option>
+                <option>We have a system we can't rewrite</option>
+                <option>Already running on Cratis</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input
+                id="cf-email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@company.com"
+              />
+              <span class="hint"
+                >We'll reply ourselves. There's no one else to route it
+                to.</span
+              >
+            </div>
+            <button class="cta" type="submit">
+              Send it
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M7 17L17 7M17 7H8M17 7V16" />
+              </svg>
+            </button>
+          </form>
+
+          <aside class="contact-aside">
+            <h3>Or skip the form</h3>
+            <p>
+              Email
+              <a href="mailto:oss@cratis.io?subject=Working%20with%20Cratis"
+                >oss@cratis.io</a
+              >
+              and one of us will answer.
+            </p>
+            <p>
+              Technical question about the software?
+              <a
+                href="https://cratis.io/community/"
+                target="_blank"
+                rel="noopener"
+                >Our community</a
+              >
+              is free, public, and usually faster — that's not a consolation
+              prize, it's where most questions get answered.
+            </p>
+            <p>
+              Are you a developer who wants the detail?
+              <a href="https://cratis.io" target="_blank" rel="noopener"
+                >The documentation</a
+              >
+              goes considerably deeper than this site does.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="shell">
         <div class="foot-grid">
           <div class="foot-brand">
@@ -724,9 +1148,11 @@
                 </g>
               </svg>
             </a>
+            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The event-sourced application platform for .NET. Open source, MIT
-              licensed, developed in the open.
+              The software production platform — it fits the languages,
+              databases and systems you already run. Open source, MIT licensed,
+              developed in the open.
             </p>
           </div>
 
@@ -773,7 +1199,7 @@
             <h4>Resources</h4>
             <ul>
               <li><a href="/writing/">Writing</a></li>
-            <li>
+              <li>
                 <a href="https://cratis.io" target="_blank" rel="noopener"
                   >Documentation</a
                 >
@@ -820,6 +1246,6 @@
       </div>
     </footer>
 
-<script src="/assets/js/site.js" defer></script>
-</body>
+    <script src="/assets/js/site.js" defer></script>
+  </body>
 </html>
