@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cratis — Build software that remembers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080e;
+    --panel:#0d0d16;
+    --line:rgba(255,255,255,0.08);
+    --text:#f5f5f7;
+    --text-dim:#9b9aa8;
+    --eyebrow:#a78bfa;
+    --purple:#8b5cf6;
+    --purple-light:#c9baff;
+    --purple-deep:#4c1d95;
+    --teal:#2dd4bf;
+    --yellow:#dbe45c;
+    --orange:#f2994a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--purple);color:#fff;}
+
+  /* ---------- background atmosphere ---------- */
+  .bg-grid{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:linear-gradient(to bottom, black 0%, black 55%, transparent 92%);
+            mask-image:linear-gradient(to bottom, black 0%, black 55%, transparent 92%);
+  }
+  .bg-glow-teal{
+    position:fixed;left:-12%;bottom:-18%;width:52vw;height:52vw;max-width:640px;max-height:640px;
+    background:radial-gradient(circle, rgba(45,212,191,0.20), transparent 70%);
+    filter:blur(10px);z-index:0;pointer-events:none;
+  }
+  .bg-glow-purple{
+    position:fixed;right:-8%;top:8%;width:60vw;height:60vw;max-width:760px;max-height:760px;
+    background:radial-gradient(circle, rgba(139,92,246,0.22), transparent 70%);
+    filter:blur(10px);z-index:0;pointer-events:none;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- nav ---------- */
+  header{
+    position:relative;z-index:5;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:28px 48px;
+    max-width:1440px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo svg{height:40px;width:auto;display:block;}
+  .logo span{font-weight:800;font-size:19px;letter-spacing:-0.02em;}
+  nav.links{display:flex;gap:36px;font-size:13px;letter-spacing:0.03em;color:var(--text-dim);}
+  nav.links a{transition:color .2s ease;white-space:nowrap;}
+  nav.links a:hover{color:var(--text);}
+  .menu-btn{
+    display:flex;align-items:center;gap:8px;
+    border:1px solid var(--line);border-radius:999px;
+    padding:9px 16px;font-size:12px;letter-spacing:0.08em;font-weight:600;
+    background:rgba(255,255,255,0.02);
+    transition:border-color .2s ease, background .2s ease;
+    cursor:pointer;
+  }
+  .menu-btn:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);}
+  .menu-btn svg{width:12px;height:12px;transform:rotate(45deg);transition:transform .2s ease;}
+  @media (max-width:860px){ nav.links{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;z-index:2;
+    max-width:1440px;margin:0 auto;
+    padding:64px 48px 120px;
+    min-height:82vh;
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;
+  }
+  .hero-copy{position:relative;z-index:3;}
+  .eyebrow{
+    font-family:'Inter',monospace;
+    font-size:11px;letter-spacing:0.18em;font-weight:700;
+    color:var(--eyebrow);text-transform:uppercase;
+    margin-bottom:22px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:14px;height:1px;background:var(--eyebrow);}
+
+  h1{
+    font-size:clamp(40px, 5.4vw, 68px);
+    line-height:1.02;font-weight:800;letter-spacing:-0.03em;
+    margin-bottom:26px;
+  }
+  h1 .accent-line{display:block;}
+  .accent-word{
+    font-family:'Fraunces',serif;
+    font-style:italic;font-weight:600;
+    color:var(--purple-light);
+    display:inline-block;
+    min-width:1ch;
+    transition:opacity .32s ease, transform .32s ease, filter .32s ease;
+    text-shadow:0 0 40px rgba(139,92,246,0.45);
+  }
+  .accent-word.swap{opacity:0;transform:translateY(10px);filter:blur(4px);}
+
+  .subhead{
+    color:var(--text-dim);font-size:16.5px;line-height:1.6;
+    max-width:440px;margin-bottom:38px;
+  }
+  .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;color:#0a0a10;
+    padding:15px 24px;border-radius:999px;
+    font-weight:700;font-size:14.5px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,255,255,0.15);}
+  .cta svg{width:14px;height:14px;transition:transform .2s ease;}
+  .cta:hover svg{transform:translate(2px,-2px);}
+  .scroll-hint{
+    font-size:11px;letter-spacing:0.1em;font-weight:600;color:var(--text-dim);
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+  }
+  .scroll-hint .arrow{display:inline-block;animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+
+  /* ---------- orbit visual ---------- */
+  .orbit-wrap{
+    position:relative;z-index:1;
+    height:640px;
+    display:flex;align-items:center;justify-content:flex-end;
+    margin-right:-8%;
+  }
+  .orbit-stage{
+    position:relative;width:620px;height:620px;max-width:120vw;
+  }
+  .ring{
+    position:absolute;top:50%;left:50%;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.10);
+    transform:translate(-50%,-50%);
+  }
+  .ring-outer{width:560px;height:560px;}
+  .ring-mid{width:460px;height:460px;border-color:rgba(255,255,255,0.12);}
+  .ring-inner{width:360px;height:360px;border-color:rgba(255,255,255,0.14);}
+
+  .nucleus{
+    position:absolute;top:50%;left:50%;
+    width:230px;height:230px;border-radius:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle at 38% 32%, #b9a2ff 0%, #7c4dff 32%, #5b21c9 62%, #2c1065 100%);
+    box-shadow:0 0 120px 20px rgba(124,77,255,0.55), inset -18px -18px 50px rgba(0,0,0,0.35);
+    animation:breathe 7s ease-in-out infinite;
+  }
+  @keyframes breathe{
+    0%,100%{transform:translate(-50%,-50%) scale(1);}
+    50%{transform:translate(-50%,-50%) scale(1.035);}
+  }
+
+  .orbiter{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    animation:spin linear infinite;
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+  .orbit-a{width:560px;height:560px;animation-duration:34s;animation-delay:-4s;}
+  .orbit-b{width:460px;height:460px;animation-duration:42s;animation-direction:reverse;animation-delay:-16s;}
+  .orbit-c{width:360px;height:360px;animation-duration:20s;animation-delay:-9s;}
+
+  .dot{
+    position:absolute;top:0;left:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+  }
+  .dot::after{
+    content:"";position:absolute;inset:-9px;border-radius:50%;
+    background:inherit;filter:blur(7px);opacity:0.65;z-index:-1;
+  }
+  .dot-yellow{width:17px;height:17px;background:var(--yellow);box-shadow:0 0 18px 2px rgba(219,228,92,0.7);}
+  .dot-orange{width:20px;height:20px;background:var(--orange);box-shadow:0 0 20px 3px rgba(242,153,74,0.7);}
+  .dot-teal{width:13px;height:13px;background:var(--teal);box-shadow:0 0 16px 2px rgba(45,212,191,0.75);}
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;padding-bottom:40px;}
+    .orbit-wrap{height:420px;margin-right:0;justify-content:center;order:-1;}
+    .orbit-stage{width:400px;height:400px;transform:scale(0.85);}
+    .subhead{max-width:none;}
+  }
+
+  /* ---------- footer strip on hero ---------- */
+  .tag-strip{
+    position:relative;z-index:4;
+    max-width:1440px;margin:-70px auto 0;
+    padding:0 48px 40px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-family:'Inter',monospace;
+    font-size:11px;letter-spacing:0.06em;color:var(--text-dim);
+    text-transform:uppercase;
+  }
+  .tag-strip .pipeline span{transition:color .4s ease, text-shadow .4s ease;}
+  .tag-strip .pipeline span.active{color:var(--purple-light);text-shadow:0 0 16px rgba(139,92,246,0.6);}
+
+  /* ---------- sections below ---------- */
+  main{position:relative;z-index:2;}
+  .band{
+    max-width:1440px;margin:0 auto;padding:100px 48px;
+    border-top:1px solid var(--line);
+    scroll-margin-top:40px;
+  }
+  .band-head{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+    margin-bottom:52px;flex-wrap:wrap;
+  }
+  .band-head h2{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.02em;}
+  .band-head p{color:var(--text-dim);font-size:14.5px;max-width:360px;}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .card{background:var(--panel);padding:32px 28px;transition:background .25s ease;}
+  .card:hover{background:#111120;}
+  .card .num{font-family:monospace;font-size:11px;color:var(--eyebrow);letter-spacing:0.1em;margin-bottom:18px;display:block;}
+  .card h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-0.01em;}
+  .card p{color:var(--text-dim);font-size:14px;line-height:1.6;}
+  @media (max-width:860px){ .card-grid{grid-template-columns:1fr;} }
+
+  /* ---------- booking banner ---------- */
+  .book-banner{
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    background:linear-gradient(135deg, rgba(139,92,246,0.14), rgba(45,212,191,0.08));
+    border:1px solid var(--line);border-radius:16px;
+    padding:34px 38px;margin-bottom:56px;
+  }
+  .book-banner h3{font-size:21px;font-weight:800;letter-spacing:-0.01em;margin-bottom:8px;}
+  .book-banner p{color:var(--text-dim);font-size:14.5px;max-width:480px;}
+  .book-banner .cta{flex-shrink:0;}
+
+  /* ---------- tier / plan cards ---------- */
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;}
+  .tier{background:var(--panel);padding:32px 28px;display:flex;flex-direction:column;}
+  .tier.featured{background:#12101d;position:relative;}
+  .tier.featured::before{
+    content:"Most popular";
+    position:absolute;top:20px;right:20px;
+    font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;
+    color:var(--purple-light);background:rgba(139,92,246,0.14);
+    padding:4px 9px;border-radius:999px;
+  }
+  .tier .tier-name{font-size:19px;font-weight:800;letter-spacing:-0.01em;margin-bottom:4px;}
+  .tier .tier-audience{color:var(--text-dim);font-size:13px;margin-bottom:20px;}
+  .tier ul{list-style:none;margin-bottom:24px;flex-grow:1;}
+  .tier li{
+    font-size:13.5px;color:var(--text-dim);line-height:1.9;
+    padding-left:20px;position:relative;
+  }
+  .tier li::before{
+    content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;
+    background:var(--teal);
+  }
+  .tier .tier-price{font-size:13px;color:var(--text-dim);margin-bottom:14px;letter-spacing:0.02em;}
+  .tier .tier-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);border-radius:999px;
+    padding:11px 18px;font-size:13px;font-weight:700;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .tier .tier-cta:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);}
+  .tier-note{color:var(--text-dim);font-size:12.5px;text-align:right;}
+  @media (max-width:860px){ .tier-grid{grid-template-columns:1fr;} .book-banner{flex-direction:column;align-items:flex-start;} }
+
+  .subsection-label{
+    font-family:'Inter',monospace;font-size:11px;letter-spacing:0.14em;font-weight:700;
+    color:var(--eyebrow);text-transform:uppercase;margin:56px 0 20px;
+  }
+  .band > .subsection-label:first-of-type{margin-top:0;}
+
+  footer{
+    max-width:1440px;margin:0 auto;padding:40px 48px 60px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    border-top:1px solid var(--line);
+    color:var(--text-dim);font-size:12.5px;
+  }
+  footer .logo svg{height:26px;}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow-teal"></div>
+<div class="bg-glow-purple"></div>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 600 328" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(0.000000,328.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+        <path d="M974 2789 c-319 -182 -592 -343 -607 -358 -16 -14 -34 -35 -40 -46 -8 -14 -10 -229 -9 -735 l3 -715 23 -35 c18 -26 74 -64 222 -151 110 -64 374 -219 589 -344 214 -126 400 -231 413 -233 13 -3 31 3 42 13 19 17 20 33 20 307 0 233 -3 294 -15 317 -10 21 -93 74 -327 211 -172 101 -324 194 -338 207 l-25 23 0 401 0 401 27 23 c14 12 161 100 327 194 177 101 310 184 325 202 l26 31 0 293 c0 318 -1 325 -55 325 -12 0 -283 -149 -601 -331z"/>
+        <path d="M4830 2314 c-62 -23 -90 -58 -90 -115 0 -22 10 -41 34 -65 30 -30 40 -34 85 -34 59 0 95 19 117 61 25 49 12 105 -32 134 -25 16 -91 27 -114 19z"/>
+        <path d="M4310 2080 l0 -80 -55 0 -55 0 0 -80 0 -80 55 0 55 0 0 -168 c0 -164 1 -170 28 -223 22 -44 36 -58 81 -81 45 -24 66 -28 131 -28 77 0 134 12 157 34 8 8 5 28 -14 79 -21 55 -29 67 -42 61 -9 -4 -35 -9 -57 -12 -34 -3 -46 1 -63 19 -19 21 -21 34 -21 171 l0 148 80 0 80 0 0 80 0 80 -80 0 -80 0 0 80 0 80 -100 0 -100 0 0 -80z"/>
+        <path d="M1495 2019 c-178 -98 -219 -126 -237 -157 -15 -26 -18 -57 -18 -215 0 -175 1 -186 23 -218 30 -45 326 -219 372 -219 34 0 319 157 361 199 24 23 24 26 24 230 l0 207 -27 31 c-39 44 -319 203 -358 203 -19 0 -73 -24 -140 -61z"/>
+        <path d="M2635 2006 c-110 -35 -200 -116 -230 -207 -22 -64 -22 -180 -1 -238 35 -96 124 -178 225 -208 79 -23 231 -15 291 16 53 27 106 75 126 113 l14 27 -74 40 c-40 23 -76 41 -79 41 -2 0 -22 -18 -44 -39 -30 -30 -50 -41 -86 -46 -135 -20 -230 129 -167 261 49 101 177 119 259 37 l35 -35 69 33 c37 19 72 39 78 45 13 15 -41 87 -90 119 -21 15 -60 33 -87 41 -58 17 -184 17 -239 0z"/>
+        <path d="M3405 2008 c-16 -6 -47 -22 -67 -35 l-38 -23 0 30 0 30 -100 0 -100 0 0 -330 0 -330 99 0 99 0 4 183 c3 159 6 187 24 222 25 49 89 85 151 85 l43 0 0 90 0 90 -42 -1 c-24 0 -56 -5 -73 -11z"/>
+        <path d="M3705 2007 c-61 -16 -145 -55 -145 -68 0 -7 56 -126 64 -136 1 -1 25 9 53 23 61 31 155 42 206 25 43 -14 77 -53 77 -87 0 -24 -1 -24 -108 -24 -173 0 -262 -34 -302 -116 -45 -92 -9 -203 83 -255 33 -18 62 -24 128 -27 97 -5 144 6 189 45 l30 25 0 -31 0 -31 96 0 96 0 -5 228 c-2 125 -10 243 -16 263 -19 63 -65 115 -128 145 -51 25 -70 29 -163 31 -60 1 -127 -3 -155 -10z m255 -425 c0 -71 -86 -123 -168 -100 -42 12 -61 33 -62 69 0 25 21 51 50 62 8 3 52 6 98 6 l82 1 0 -38z"/>
+        <path d="M5207 2006 c-66 -19 -119 -58 -146 -107 -19 -34 -23 -52 -19 -109 3 -60 8 -73 33 -101 42 -44 94 -65 210 -84 109 -19 145 -35 145 -66 0 -55 -151 -63 -272 -15 -36 14 -67 26 -69 26 -9 0 -73 -140 -67 -146 4 -3 37 -17 75 -31 90 -34 269 -44 353 -19 119 35 172 95 172 194 0 124 -50 164 -249 202 -56 10 -112 24 -123 30 -31 17 -22 51 20 73 45 23 149 17 216 -12 26 -12 48 -21 51 -21 5 0 63 129 63 140 0 5 -26 19 -57 31 -73 28 -261 36 -336 15z"/>
+        <path d="M4760 1680 l0 -330 100 0 100 0 0 330 0 330 -100 0 -100 0 0 -330z"/>
+      </g>
+    </svg>
+  </div>
+
+  <nav class="links">
+    <a href="#ecosystem">01 / Ecosystem</a>
+    <a href="#studio">02 / Studio</a>
+    <a href="#expertise">03 / Expertise</a>
+  </nav>
+
+  <a class="menu-btn" href="https://cratis.io" target="_blank" rel="noopener">
+    MENU
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 19L19 5M19 5H8M19 5V16"/></svg>
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">The architecture of what happened</div>
+    <h1>
+      <span class="accent-line">Build software</span>
+      <span class="accent-line">that <span class="accent-word" id="accentWord">remembers</span>.</span>
+    </h1>
+    <p class="subhead">Cratis makes event sourcing feel like a creative advantage — not a systems tax. Model the truth. Generate the rest.</p>
+    <div class="hero-actions">
+      <a class="cta" href="https://cratis.io" target="_blank" rel="noopener">
+        Enter the ecosystem
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+      <div class="scroll-hint" id="scrollHint">SCROLL TO TRACE THE SIGNAL <span class="arrow">↓</span></div>
+    </div>
+  </div>
+
+  <div class="orbit-wrap">
+    <div class="orbit-stage">
+      <div class="ring ring-outer"></div>
+      <div class="ring ring-mid"></div>
+      <div class="ring ring-inner"></div>
+      <div class="nucleus"></div>
+
+      <div class="orbiter orbit-a"><div class="dot dot-yellow"></div></div>
+      <div class="orbiter orbit-b"><div class="dot dot-orange"></div></div>
+      <div class="orbiter orbit-c"><div class="dot dot-teal"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="tag-strip">
+  <div>Open source / .NET / Event Sourcing</div>
+  <div class="pipeline" id="pipeline">
+    <span data-i="0">Command</span> → <span data-i="1">Event</span> → <span data-i="2">Projection</span> → <span data-i="3">Screen</span> → <span data-i="4">Signal</span>
+  </div>
+</div>
+
+<main>
+  <section class="band" id="ecosystem">
+    <div class="band-head">
+      <h2>The ecosystem</h2>
+      <p>Three tools, one model of truth. Each one owns a stage between what happened and what people see.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Chronicle</h3>
+        <p>The event store. Append-only history with SDKs for C#, TypeScript, Go, Elixir and Kotlin, plus change data capture from your existing databases.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Arc</h3>
+        <p>A full-stack CQRS framework. Commands and queries defined once in C#, projected automatically into type-safe TypeScript for React.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Studio</h3>
+        <p>A low-code, AI-infused surface for the whole pipeline — model domains, wire projections, and generate deployable apps without leaving the browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="studio">
+    <div class="band-head">
+      <h2>Cratis Studio</h2>
+      <p>Double-click to implement. A visual editor that turns event models into running software.</p>
+    </div>
+    <p style="color:var(--text-dim);max-width:640px;line-height:1.7;font-size:15px;margin-bottom:48px;">
+      Studio treats deterministic generation as a productivity accelerator, not a toy: a Monaco-based logic editor and drag-and-drop UI designer sit directly on top of Chronicle and Arc, so the same event model that captures what happened also drives what your users see.
+    </p>
+
+    <div class="subsection-label">Studio plans</div>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="tier-name">Community</div>
+        <div class="tier-audience">Individuals &amp; open source</div>
+        <div class="tier-price">Free</div>
+        <ul>
+          <li>Full Studio editor, local projects</li>
+          <li>Monaco logic editor &amp; UI designer</li>
+          <li>Community Discord</li>
+          <li>Runs against open-source Chronicle</li>
+        </ul>
+        <a class="tier-cta" href="https://cratis.studio" target="_blank" rel="noopener">Get started</a>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">Team</div>
+        <div class="tier-audience">Growing product teams</div>
+        <div class="tier-price">Pricing on request</div>
+        <ul>
+          <li>Everything in Community</li>
+          <li>Shared workspaces &amp; environments</li>
+          <li>Managed deploy targets</li>
+          <li>Priority feature updates</li>
+        </ul>
+        <a class="tier-cta" href="mailto:hello@cratis.io?subject=Studio%20Team%20plan">Contact us</a>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-audience">Mission-critical rollouts</div>
+        <div class="tier-price">Pricing on request</div>
+        <ul>
+          <li>Everything in Team</li>
+          <li>SSO &amp; dedicated environment</li>
+          <li>Guided onboarding</li>
+          <li>Direct line to the Studio team</li>
+        </ul>
+        <a class="tier-cta" href="mailto:hello@cratis.io?subject=Studio%20Enterprise%20plan">Contact us</a>
+      </div>
+    </div>
+    <div class="tier-note">Studio plans cover the low-code product. For help with Chronicle, Arc, or your architecture, see Expertise below.</div>
+  </section>
+
+  <section class="band" id="expertise">
+    <div class="band-head">
+      <h2>Expertise &amp; support</h2>
+      <p>Work directly with the people who built the stack — from a free intro call to ongoing support.</p>
+    </div>
+
+    <div class="book-banner">
+      <div>
+        <h3>Not sure where to start?</h3>
+        <p>Book a free 30-minute introduction to the Cratis stack or to Studio — no strings attached.</p>
+      </div>
+      <a class="cta" href="mailto:hello@cratis.io?subject=Free%20intro%20call" style="background:var(--purple-light);">
+        Book a free intro call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+    </div>
+
+    <div class="subsection-label">Support plans</div>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="tier-name">Basic</div>
+        <div class="tier-audience">Individuals and small teams</div>
+        <div class="tier-price">Pricing on request</div>
+        <ul>
+          <li>10 hours of consulting / year</li>
+          <li>Response within 48 hours</li>
+          <li>Up to 2 critical incidents *</li>
+          <li>Private Discord channel</li>
+        </ul>
+        <a class="tier-cta" href="mailto:hello@cratis.io?subject=Basic%20support%20plan">Contact us</a>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">Standard</div>
+        <div class="tier-audience">Growing businesses</div>
+        <div class="tier-price">Pricing on request</div>
+        <ul>
+          <li>20 hours of consulting / year</li>
+          <li>Response within 36 hours</li>
+          <li>Up to 5 critical, 2 non-critical incidents</li>
+          <li>Private issue tracking board</li>
+        </ul>
+        <a class="tier-cta" href="mailto:hello@cratis.io?subject=Standard%20support%20plan">Contact us</a>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Premium</div>
+        <div class="tier-audience">Mission-critical projects</div>
+        <div class="tier-price">Pricing on request</div>
+        <ul>
+          <li>50 hours of consulting / year</li>
+          <li>Response within 24 hours</li>
+          <li>Unlimited critical incidents *</li>
+          <li>Email support &amp; onboarding workshop</li>
+        </ul>
+        <a class="tier-cta" href="mailto:hello@cratis.io?subject=Premium%20support%20plan">Contact us</a>
+      </div>
+    </div>
+    <div class="tier-note">* A production-blocking defect in a Cratis library, not functioning as documented.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    <svg viewBox="0 0 600 328" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(0.000000,328.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+        <path d="M974 2789 c-319 -182 -592 -343 -607 -358 -16 -14 -34 -35 -40 -46 -8 -14 -10 -229 -9 -735 l3 -715 23 -35 c18 -26 74 -64 222 -151 110 -64 374 -219 589 -344 214 -126 400 -231 413 -233 13 -3 31 3 42 13 19 17 20 33 20 307 0 233 -3 294 -15 317 -10 21 -93 74 -327 211 -172 101 -324 194 -338 207 l-25 23 0 401 0 401 27 23 c14 12 161 100 327 194 177 101 310 184 325 202 l26 31 0 293 c0 318 -1 325 -55 325 -12 0 -283 -149 -601 -331z"/>
+        <path d="M4830 2314 c-62 -23 -90 -58 -90 -115 0 -22 10 -41 34 -65 30 -30 40 -34 85 -34 59 0 95 19 117 61 25 49 12 105 -32 134 -25 16 -91 27 -114 19z"/>
+        <path d="M4310 2080 l0 -80 -55 0 -55 0 0 -80 0 -80 55 0 55 0 0 -168 c0 -164 1 -170 28 -223 22 -44 36 -58 81 -81 45 -24 66 -28 131 -28 77 0 134 12 157 34 8 8 5 28 -14 79 -21 55 -29 67 -42 61 -9 -4 -35 -9 -57 -12 -34 -3 -46 1 -63 19 -19 21 -21 34 -21 171 l0 148 80 0 80 0 0 80 0 80 -80 0 -80 0 0 80 0 80 -100 0 -100 0 0 -80z"/>
+        <path d="M1495 2019 c-178 -98 -219 -126 -237 -157 -15 -26 -18 -57 -18 -215 0 -175 1 -186 23 -218 30 -45 326 -219 372 -219 34 0 319 157 361 199 24 23 24 26 24 230 l0 207 -27 31 c-39 44 -319 203 -358 203 -19 0 -73 -24 -140 -61z"/>
+        <path d="M2635 2006 c-110 -35 -200 -116 -230 -207 -22 -64 -22 -180 -1 -238 35 -96 124 -178 225 -208 79 -23 231 -15 291 16 53 27 106 75 126 113 l14 27 -74 40 c-40 23 -76 41 -79 41 -2 0 -22 -18 -44 -39 -30 -30 -50 -41 -86 -46 -135 -20 -230 129 -167 261 49 101 177 119 259 37 l35 -35 69 33 c37 19 72 39 78 45 13 15 -41 87 -90 119 -21 15 -60 33 -87 41 -58 17 -184 17 -239 0z"/>
+        <path d="M3405 2008 c-16 -6 -47 -22 -67 -35 l-38 -23 0 30 0 30 -100 0 -100 0 0 -330 0 -330 99 0 99 0 4 183 c3 159 6 187 24 222 25 49 89 85 151 85 l43 0 0 90 0 90 -42 -1 c-24 0 -56 -5 -73 -11z"/>
+        <path d="M3705 2007 c-61 -16 -145 -55 -145 -68 0 -7 56 -126 64 -136 1 -1 25 9 53 23 61 31 155 42 206 25 43 -14 77 -53 77 -87 0 -24 -1 -24 -108 -24 -173 0 -262 -34 -302 -116 -45 -92 -9 -203 83 -255 33 -18 62 -24 128 -27 97 -5 144 6 189 45 l30 25 0 -31 0 -31 96 0 96 0 -5 228 c-2 125 -10 243 -16 263 -19 63 -65 115 -128 145 -51 25 -70 29 -163 31 -60 1 -127 -3 -155 -10z m255 -425 c0 -71 -86 -123 -168 -100 -42 12 -61 33 -62 69 0 25 21 51 50 62 8 3 52 6 98 6 l82 1 0 -38z"/>
+        <path d="M5207 2006 c-66 -19 -119 -58 -146 -107 -19 -34 -23 -52 -19 -109 3 -60 8 -73 33 -101 42 -44 94 -65 210 -84 109 -19 145 -35 145 -66 0 -55 -151 -63 -272 -15 -36 14 -67 26 -69 26 -9 0 -73 -140 -67 -146 4 -3 37 -17 75 -31 90 -34 269 -44 353 -19 119 35 172 95 172 194 0 124 -50 164 -249 202 -56 10 -112 24 -123 30 -31 17 -22 51 20 73 45 23 149 17 216 -12 26 -12 48 -21 51 -21 5 0 63 129 63 140 0 5 -26 19 -57 31 -73 28 -261 36 -336 15z"/>
+        <path d="M4760 1680 l0 -330 100 0 100 0 0 330 0 330 -100 0 -100 0 0 -330z"/>
+      </g>
+    </svg>
+  </div>
+  <div>© 2026 Cratis. Open source, .NET-first, event sourced.</div>
+</footer>
+
+<script>
+  // word carousel — the benefits event sourcing gives you, per Cratis
+  const words = ['remembers','explains','replays','reveals','evolves','scales'];
+  let wi = 0;
+  const wordEl = document.getElementById('accentWord');
+  setInterval(() => {
+    wi = (wi + 1) % words.length;
+    wordEl.classList.add('swap');
+    setTimeout(() => {
+      wordEl.textContent = words[wi];
+      wordEl.classList.remove('swap');
+    }, 320);
+  }, 2600);
+
+  // pipeline highlight — echoes the command -> signal flow
+  const stages = document.querySelectorAll('#pipeline span');
+  let pi = 0;
+  setInterval(() => {
+    stages.forEach(s => s.classList.remove('active'));
+    stages[pi].classList.add('active');
+    pi = (pi + 1) % stages.length;
+  }, 900);
+
+  document.getElementById('scrollHint').addEventListener('click', () => {
+    document.getElementById('ecosystem').scrollIntoView({behavior:'smooth'});
+  });
+
+  document.querySelectorAll('nav.links a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -50,6 +50,8 @@ Brand and content decisions live in version control alongside the site.
 | `SITE.md` | Purpose, requirements, design notes, information architecture |
 | `PAGES.md` | Page-by-page blueprint |
 | `POLICIES.md` | Draft versioning/LTS policy and support terms — **not yet publishable** |
+| `REVIEW-PROMPT.md` | Self-contained brief for a fresh session reviewing this site |
+| `reference/` | The original design concept, preserved, with its known factual errors annotated |
 
 ## Conventions
 
