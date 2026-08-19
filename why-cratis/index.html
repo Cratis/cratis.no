@@ -1,47 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Cratis — and when it's the wrong choice</title>
-<meta name="description" content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else.">
-<link rel="canonical" href="https://cratis.no/why-cratis/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Why Cratis — and when it's the wrong choice">
-<meta property="og:description" content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else.">
-<meta property="og:url" content="https://cratis.no/why-cratis/">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://cratis.no/assets/og/why.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://cratis.no/assets/og/why.jpg">
-<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
-<script>
-  (function () {
-    try {
-      var t = localStorage.getItem('cratis-theme');
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-    } catch (e) { }
-  })();
-</script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Cratis — and when it's the wrong choice</title>
+    <meta
+      name="description"
+      content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else."
+    />
+    <link rel="canonical" href="https://cratis.no/why-cratis/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Why Cratis — and when it's the wrong choice"
+    />
+    <meta
+      property="og:description"
+      content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else."
+    />
+    <meta property="og:url" content="https://cratis.no/why-cratis/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://cratis.no/assets/og/why.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content="https://cratis.no/assets/og/why.jpg" />
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("cratis-theme");
+          if (t === "light" || t === "dark")
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
-
-  <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -88,12 +100,12 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-      <a href="/#production"><span class="idx">01</span> How it works</a>
-      <a href="/#value"><span class="idx">02</span> What you get</a>
-      <a href="/support/"><span class="idx">03</span> Working with us</a>
-      <a href="/about/"><span class="idx">04</span> Who we are</a>
-      <a href="/#contact"><span class="idx">05</span> Contact</a>
-    </nav>
+        <a href="/studio/"><span class="idx">01</span> Studio</a>
+        <a href="/#production"><span class="idx">02</span> How it works</a>
+        <a href="/#value"><span class="idx">03</span> What you get</a>
+        <a href="/support/"><span class="idx">04</span> Working with us</a>
+        <a href="/about/"><span class="idx">05</span> Who we are</a>
+      </nav>
 
       <div class="header-actions">
         <button
@@ -144,160 +156,368 @@
       </div>
     </header>
 
-<main id="main">
+    <main id="main">
+      <section class="page-hero shell">
+        <p class="eyebrow">Why Cratis</p>
+        <h1>The honest version.</h1>
+        <p class="lead">
+          You're comparing options. Here's where we're genuinely different,
+          where we're not, and when you should pick something else.
+        </p>
+      </section>
 
-  <section class="page-hero shell">
-    <p class="eyebrow">Why Cratis</p>
-    <h1>The honest version.</h1>
-    <p class="lead">You're comparing options. Here's where we're genuinely different, where we're not, and when you should pick something else.</p>
-  </section>
+      <section class="band shell" id="instead-of">
+        <p class="eyebrow">What changes day to day</p>
+        <div class="band-head">
+          <div><h2>Instead of&hellip; you work with&hellip;</h2></div>
+        </div>
+        <div class="table-wrap">
+          <table class="plans">
+            <caption class="visually-hidden">
+              What changes when you adopt Cratis
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Instead of</th>
+                <th scope="col">You work with</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Duplicating request and response shapes in C# and TypeScript
+                </th>
+                <td>
+                  One C# command or query model, generated into typed frontend
+                  proxies
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Spreading one feature across controllers, handlers, clients
+                  and UI folders
+                </th>
+                <td>A vertical slice organised by behaviour</td>
+              </tr>
+              <tr>
+                <th scope="row">Rebuilding screens by hand after a write</th>
+                <td>
+                  Observable queries and components that follow the read model
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Rebuilding authentication, tenancy and identity plumbing per
+                  service
+                </th>
+                <td>
+                  AuthProxy at the edge, Arc identity and tenancy inside,
+                  Chronicle namespaces underneath
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Teaching every developer and assistant a project-specific
+                  architecture
+                </th>
+                <td>
+                  Strong conventions, analyzers and <code>.ai</code> guidance
+                  that make each feature look like the rest
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Locking event history to one language or database engine
+                </th>
+                <td>
+                  An open gRPC boundary, four client languages, four storage
+                  backends
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Debugging from logs alone</th>
+                <td>
+                  Events, observers, read models and replay, visible through the
+                  CLI and Workbench
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-  <section class="band shell" id="instead-of">
-    <p class="eyebrow">What changes day to day</p>
-    <div class="band-head">
-      <div><h2>Instead of&hellip; you work with&hellip;</h2></div>
-    </div>
-    <div class="table-wrap">
-      <table class="plans">
-        <caption class="visually-hidden">What changes when you adopt Cratis</caption>
-        <thead><tr><th scope="col">Instead of</th><th scope="col">You work with</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Duplicating request and response shapes in C# and TypeScript</th><td>One C# command or query model, generated into typed frontend proxies</td></tr>
-          <tr><th scope="row">Spreading one feature across controllers, handlers, clients and UI folders</th><td>A vertical slice organised by behaviour</td></tr>
-          <tr><th scope="row">Rebuilding screens by hand after a write</th><td>Observable queries and components that follow the read model</td></tr>
-          <tr><th scope="row">Rebuilding authentication, tenancy and identity plumbing per service</th><td>AuthProxy at the edge, Arc identity and tenancy inside, Chronicle namespaces underneath</td></tr>
-          <tr><th scope="row">Teaching every developer and assistant a project-specific architecture</th><td>Strong conventions, analyzers and <code>.ai</code> guidance that make each feature look like the rest</td></tr>
-          <tr><th scope="row">Locking event history to one language or database engine</th><td>An open gRPC boundary, four client languages, four storage backends</td></tr>
-          <tr><th scope="row">Debugging from logs alone</th><td>Events, observers, read models and replay, visible through the CLI and Workbench</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+      <section class="band shell" id="pillars">
+        <p class="eyebrow">The four things we'd defend</p>
+        <div class="band-head">
+          <div><h2>What we actually claim.</h2></div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="num">01</span>
+            <h3>One model, end to end</h3>
+            <p>
+              The point isn't that Cratis has many packages. It's that the
+              packages agree about how an application is shaped. A command, an
+              event, a read model, a tenant, an identity, a React form and an
+              operating tool are parts of one model — not islands with separate
+              conventions.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">02</span>
+            <h3>A history you can question</h3>
+            <p>
+              Event sourcing optimises for understanding change, not storing the
+              latest value. Events are facts: immutable, past-tense,
+              single-purpose. Read models are disposable, because the events are
+              the state.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">03</span>
+            <h3>Rails an agent can follow</h3>
+            <p>
+              Analyzers that fail the build on convention drift, skills that
+              teach assistants the conventions, and an MCP server that makes the
+              running store legible. A convention you can break silently isn't a
+              convention — it's a suggestion.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">04</span>
+            <h3>Open at every boundary</h3>
+            <p>
+              Everything you deploy is MIT licensed. gRPC and protobuf at the
+              Chronicle boundary. Storage is a deployment choice. The pieces
+              stand alone — Chronicle without Arc, Arc without event sourcing.
+              The dependency only runs one way.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="band shell" id="pillars">
-    <p class="eyebrow">The four things we'd defend</p>
-    <div class="band-head"><div><h2>What we actually claim.</h2></div></div>
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="num">01</span>
-        <h3>One model, end to end</h3>
-        <p>The point isn't that Cratis has many packages. It's that the packages agree about how an application is shaped. A command, an event, a read model, a tenant, an identity, a React form and an operating tool are parts of one model — not islands with separate conventions.</p>
-      </div>
-      <div class="card">
-        <span class="num">02</span>
-        <h3>A history you can question</h3>
-        <p>Event sourcing optimises for understanding change, not storing the latest value. Events are facts: immutable, past-tense, single-purpose. Read models are disposable, because the events are the state.</p>
-      </div>
-      <div class="card">
-        <span class="num">03</span>
-        <h3>Rails an agent can follow</h3>
-        <p>Analyzers that fail the build on convention drift, skills that teach assistants the conventions, and an MCP server that makes the running store legible. A convention you can break silently isn't a convention — it's a suggestion.</p>
-      </div>
-      <div class="card">
-        <span class="num">04</span>
-        <h3>Open at every boundary</h3>
-        <p>Everything you deploy is MIT licensed. gRPC and protobuf at the Chronicle boundary. Storage is a deployment choice. The pieces stand alone — Chronicle without Arc, Arc without event sourcing. The dependency only runs one way.</p>
-      </div>
-    </div>
-  </section>
+      <section class="band shell" id="from-libraries">
+        <p class="eyebrow">Coming from libraries</p>
+        <div class="band-head">
+          <div>
+            <h2>If you're using Marten and Wolverine.</h2>
+            <p>Let's start with the part that isn't a sales pitch.</p>
+          </div>
+        </div>
 
-  <section class="band shell" id="from-libraries">
-    <p class="eyebrow">Coming from libraries</p>
-    <div class="band-head">
-      <div>
-        <h2>If you're using Marten and Wolverine.</h2>
-        <p>Let's start with the part that isn't a sales pitch.</p>
-      </div>
-    </div>
+        <div class="callout">
+          <p>
+            <strong>Marten is excellent.</strong> Eleven years of production
+            use, millions of downloads, and a reputation it earned the hard way.
+            Jeremy Miller has been doing this longer than we have, and the
+            Critter Stack is a genuinely good answer to the problem it set out
+            to solve.
+          </p>
+          <p>
+            If you're backend-only, committed to PostgreSQL, and you don't have
+            a frontend contract problem or a modelling gap —
+            <strong>stay where you are.</strong> You'd be trading a mature,
+            well-supported library for a younger one to solve a problem you
+            don't have.
+          </p>
+        </div>
 
-    <div class="callout">
-      <p><strong>Marten is excellent.</strong> Eleven years of production use, millions of downloads, and a reputation it earned the hard way. Jeremy Miller has been doing this longer than we have, and the Critter Stack is a genuinely good answer to the problem it set out to solve.</p>
-      <p>If you're backend-only, committed to PostgreSQL, and you don't have a frontend contract problem or a modelling gap — <strong>stay where you are.</strong> You'd be trading a mature, well-supported library for a younger one to solve a problem you don't have.</p>
-    </div>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <span class="num">Where they're stronger</span>
+            <h3>Maturity and reach</h3>
+            <p>
+              More years in production, a larger community, more people who have
+              already hit your problem and written about it. If that matters
+              more than anything below, it's a good reason to choose them.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Where we're different</span>
+            <h3>Scope, not quality</h3>
+            <p>
+              They give you an event store and messaging. We carry the frontend
+              contract, the edge, identity and tenancy, and a modelling surface
+              as part of the same set of conventions. That's a different bet,
+              not a better library.
+            </p>
+          </div>
+        </div>
 
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <span class="num">Where they're stronger</span>
-        <h3>Maturity and reach</h3>
-        <p>More years in production, a larger community, more people who have already hit your problem and written about it. If that matters more than anything below, it's a good reason to choose them.</p>
-      </div>
-      <div class="card">
-        <span class="num">Where we're different</span>
-        <h3>Scope, not quality</h3>
-        <p>They give you an event store and messaging. We carry the frontend contract, the edge, identity and tenancy, and a modelling surface as part of the same set of conventions. That's a different bet, not a better library.</p>
-      </div>
-    </div>
+        <p class="code-note">
+          Teams come to us when the gaps they're feeling are the ones
+          <em>between</em> the layers — the hand-written API client, the DTOs
+          mirrored in two languages, the design that lives in someone's head.
+          That's the part we built.
+        </p>
+      </section>
 
-    <p class="code-note">Teams come to us when the gaps they're feeling are the ones <em>between</em> the layers — the hand-written API client, the DTOs mirrored in two languages, the design that lives in someone's head. That's the part we built.</p>
-  </section>
-
-  <section class="band shell" id="from-platforms">
-    <p class="eyebrow">Coming from an enterprise platform</p>
-    <div class="band-head">
-      <div>
-        <h2>If you're looking at a JVM event platform.</h2>
-        <p>Different runtime, different buying motion, and one real architectural difference.</p>
-      </div>
-    </div>
-    <div class="table-wrap">
-      <table class="plans">
-        <caption class="visually-hidden">Cratis compared with enterprise JVM event platforms</caption>
-        <thead><tr><th scope="col">&nbsp;</th><th scope="col">Enterprise JVM platform</th><th scope="col">Cratis</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Runtime</th><td>Java</td><td>.NET, with TypeScript, Kotlin and Elixir clients</td></tr>
-          <tr><th scope="row">Storage</th><td>Their server</td><td>MongoDB, PostgreSQL, SQL Server or SQLite</td></tr>
-          <!-- CORRECTED: was a bare "MIT" against their "Commercial licence for
+      <section class="band shell" id="from-platforms">
+        <p class="eyebrow">Coming from an enterprise platform</p>
+        <div class="band-head">
+          <div>
+            <h2>If you're looking at a JVM event platform.</h2>
+            <p>
+              Different runtime, different buying motion, and one real
+              architectural difference.
+            </p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="plans">
+            <caption class="visually-hidden">
+              Cratis compared with enterprise JVM event platforms
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Enterprise JVM platform</th>
+                <th scope="col">Cratis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Runtime</th>
+                <td>Java</td>
+                <td>.NET, with TypeScript, Kotlin and Elixir clients</td>
+              </tr>
+              <tr>
+                <th scope="row">Storage</th>
+                <td>Their server</td>
+                <td>MongoDB, PostgreSQL, SQL Server or SQLite</td>
+              </tr>
+              <!-- CORRECTED: was a bare "MIT" against their "Commercial licence for
                production". The distinction we can honestly claim is that nothing
                you DEPLOY needs a licence — Studio is a design-time product. -->
-          <tr><th scope="row">Licence</th><td>Commercial licence for production</td><td>MIT for everything you deploy; Studio is a paid design-time product</td></tr>
-          <tr><th scope="row">Frontend</th><td>Not addressed</td><td>Typed C# → TypeScript → React</td></tr>
-          <tr><th scope="row">Model to system</th><td>An agent <em>generates</em> code from the model</td><td>Stage <em>runs</em> the model</td></tr>
-          <tr><th scope="row">Buying</th><td>Sales-led</td><td>Public pricing, self-serve</td></tr>
-          <tr><th scope="row">Getting help</th><td>A support portal</td><td>The person who wrote it</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="code-note">Where we won't compete: they have fifteen years, regulated-industry deployments, and a scale record we don't have an equivalent for. If your evaluation weights those most heavily, that's a legitimate reason to choose them. We compete on shape and on access.</p>
-  </section>
+              <tr>
+                <th scope="row">Licence</th>
+                <td>Commercial licence for production</td>
+                <td>
+                  MIT for everything you deploy; Studio is a paid design-time
+                  product
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Frontend</th>
+                <td>Not addressed</td>
+                <td>Typed C# → TypeScript → React</td>
+              </tr>
+              <tr>
+                <th scope="row">Model to system</th>
+                <td>An agent <em>generates</em> code from the model</td>
+                <td>Stage <em>runs</em> the model</td>
+              </tr>
+              <tr>
+                <th scope="row">Buying</th>
+                <td>Sales-led</td>
+                <td>Public pricing, self-serve</td>
+              </tr>
+              <tr>
+                <th scope="row">Getting help</th>
+                <td>A support portal</td>
+                <td>The person who wrote it</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="code-note">
+          Where we won't compete: they have fifteen years, regulated-industry
+          deployments, and a scale record we don't have an equivalent for. If
+          your evaluation weights those most heavily, that's a legitimate reason
+          to choose them. We compete on shape and on access.
+        </p>
+      </section>
 
-  <section class="band shell" id="wrong-fit">
-    <p class="eyebrow">The part most sites leave out</p>
-    <div class="band-head">
-      <div>
-        <h2>When Cratis is the wrong choice.</h2>
-        <p>Because the products are separable, "is Cratis a good fit?" is really several questions.</p>
-      </div>
-    </div>
-    <div class="routes">
-      <div class="route"><div><h3>You're not on .NET</h3><p>Chronicle's boundary is open and there are clients for TypeScript, Kotlin and Elixir — but .NET is the first-class experience and we're not going to pretend otherwise.</p></div></div>
-      <div class="route"><div><h3>Your slice is genuinely current-state-only</h3><p>Reference data, settings, a small admin surface. Event sourcing is pure cost there. Arc over MongoDB or EF Core is the simpler boundary, and it's a first-class path.</p></div></div>
-      <div class="route"><div><h3>It's a prototype you'll throw away</h3><p>The conventions pay off over years. If the code won't live that long, they're overhead.</p></div></div>
-      <div class="route"><div><h3>You want the largest possible community</h3><p>We're younger and smaller than the alternatives. If "someone has already written a blog post about my exact problem" is your top criterion, weigh that honestly.</p></div></div>
-    </div>
-    <p class="code-note">When none of it fits — a couple of static pages, a non-.NET backend, or a throwaway prototype — Cratis is more than you need, and that's fine.</p>
-  </section>
+      <section class="band shell" id="wrong-fit">
+        <p class="eyebrow">The part most sites leave out</p>
+        <div class="band-head">
+          <div>
+            <h2>When Cratis is the wrong choice.</h2>
+            <p>
+              Because the products are separable, "is Cratis a good fit?" is
+              really several questions.
+            </p>
+          </div>
+        </div>
+        <div class="routes">
+          <div class="route">
+            <div>
+              <h3>You're not on .NET</h3>
+              <p>
+                Chronicle's boundary is open and there are clients for
+                TypeScript, Kotlin and Elixir — but .NET is the first-class
+                experience and we're not going to pretend otherwise.
+              </p>
+            </div>
+          </div>
+          <div class="route">
+            <div>
+              <h3>Your slice is genuinely current-state-only</h3>
+              <p>
+                Reference data, settings, a small admin surface. Event sourcing
+                is pure cost there. Arc over MongoDB or EF Core is the simpler
+                boundary, and it's a first-class path.
+              </p>
+            </div>
+          </div>
+          <div class="route">
+            <div>
+              <h3>It's a prototype you'll throw away</h3>
+              <p>
+                The conventions pay off over years. If the code won't live that
+                long, they're overhead.
+              </p>
+            </div>
+          </div>
+          <div class="route">
+            <div>
+              <h3>You want the largest possible community</h3>
+              <p>
+                We're younger and smaller than the alternatives. If "someone has
+                already written a blog post about my exact problem" is your top
+                criterion, weigh that honestly.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="code-note">
+          When none of it fits — a couple of static pages, a non-.NET backend,
+          or a throwaway prototype — Cratis is more than you need, and that's
+          fine.
+        </p>
+      </section>
 
-  <section class="band shell">
-    <div class="banner">
-      <div>
-        <h3>Still deciding?</h3>
-        <p>Book a Fit Review. Ninety minutes, free, and if the answer is that you should use something else, that's what we'll tell you.</p>
-      </div>
-      <a class="cta" href="/#contact">
-        Book a Fit Review
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
-    </div>
-  </section>
+      <section class="band shell">
+        <div class="banner">
+          <div>
+            <h3>Still deciding?</h3>
+            <p>
+              Book a Fit Review. Ninety minutes, free, and if the answer is that
+              you should use something else, that's what we'll tell you.
+            </p>
+          </div>
+          <a class="cta" href="/#contact">
+            Book a Fit Review
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H8M17 7V16" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
 
-</main>
-
-  <footer class="site-footer">
+    <footer class="site-footer">
       <div class="shell">
         <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="logo" href="/" aria-label="Cratis — home">
-            <svg
+          <div class="foot-brand">
+            <a class="logo" href="/" aria-label="Cratis — home">
+              <svg
                 viewBox="0 0 600 328"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
@@ -337,56 +557,99 @@
                   />
                 </g>
               </svg>
-          </a>
-          <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
-          <p>The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.</p>
+            </a>
+            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
+            <p>
+              The software production platform — it fits the languages,
+              databases and systems you already run. The software your business
+              runs on is open source; Cratis Studio, where your team designs, is
+              our product.
+            </p>
+          </div>
+
+          <div class="foot-col">
+            <h4>Product</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://cratis.io/chronicle/"
+                  target="_blank"
+                  rel="noopener"
+                  >Chronicle</a
+                >
+              </li>
+              <li>
+                <a href="https://cratis.io/arc/" target="_blank" rel="noopener"
+                  >Arc</a
+                >
+              </li>
+              <li><a href="/studio/">Cratis Studio</a></li>
+              <li><a href="/stack/">The stack</a></li>
+              <li><a href="/stack/the-cast/">The cast</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/why-cratis/">Why Cratis</a></li>
+              <li><a href="/support/">Support &amp; services</a></li>
+              <li><a href="/trust/">Trust</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/writing/">Writing</a></li>
+              <li>
+                <a href="https://cratis.io" target="_blank" rel="noopener"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Cratis"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/community/"
+                  target="_blank"
+                  rel="noopener"
+                  >Discord</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/roadmap/"
+                  target="_blank"
+                  rel="noopener"
+                  >Roadmap</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="foot-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="https://cratis.io/chronicle/" target="_blank" rel="noopener">Chronicle</a></li>
-            <li><a href="https://cratis.io/arc/" target="_blank" rel="noopener">Arc</a></li>
-            <li><a href="https://cratis.io/studio/" target="_blank" rel="noopener">Studio</a></li>
-            <li><a href="/stack/">The stack</a></li>
-            <li><a href="/stack/the-cast/">The cast</a></li>
-          </ul>
+        <div class="foot-bar">
+          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
+          <div>© 2026 Cratis · MIT licensed</div>
+          <div class="legal">
+            <a href="/trust/">Trust</a>
+            <a href="/trust/#security">Security</a>
+            <a href="https://github.com/Cratis" target="_blank" rel="noopener"
+              >Source</a
+            >
+          </div>
         </div>
-
-        <div class="foot-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/why-cratis/">Why Cratis</a></li>
-            <li><a href="/support/">Support &amp; services</a></li>
-            <li><a href="/trust/">Trust</a></li>
-          </ul>
-        </div>
-
-        <div class="foot-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/writing/">Writing</a></li>
-            <li><a href="https://cratis.io" target="_blank" rel="noopener">Documentation</a></li>
-            <li><a href="https://github.com/Cratis" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://cratis.io/community/" target="_blank" rel="noopener">Discord</a></li>
-            <li><a href="https://cratis.io/roadmap/" target="_blank" rel="noopener">Roadmap</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="foot-bar">
-        <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-        <div>© 2026 Cratis · MIT licensed</div>
-        <div class="legal">
-          <a href="/trust/">Trust</a>
-          <a href="/trust/#security">Security</a>
-          <a href="https://github.com/Cratis" target="_blank" rel="noopener">Source</a>
-        </div>
-      </div>
       </div>
     </footer>
 
-<script src="/assets/js/site.js" defer></script>
-</body>
+    <script src="/assets/js/site.js" defer></script>
+  </body>
 </html>

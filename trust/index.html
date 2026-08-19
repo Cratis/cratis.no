@@ -1,47 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trust — licence, security, continuity and governance — Cratis</title>
-<meta name="description" content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place.">
-<link rel="canonical" href="https://cratis.no/trust/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Trust — licence, security, continuity and governance — Cratis">
-<meta property="og:description" content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place.">
-<meta property="og:url" content="https://cratis.no/trust/">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://cratis.no/assets/og/trust.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://cratis.no/assets/og/trust.jpg">
-<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
-<script>
-  (function () {
-    try {
-      var t = localStorage.getItem('cratis-theme');
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-    } catch (e) { }
-  })();
-</script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trust — licence, security, continuity and governance — Cratis</title>
+    <meta
+      name="description"
+      content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place."
+    />
+    <link rel="canonical" href="https://cratis.no/trust/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Trust — licence, security, continuity and governance — Cratis"
+    />
+    <meta
+      property="og:description"
+      content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place."
+    />
+    <meta property="og:url" content="https://cratis.no/trust/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://cratis.no/assets/og/trust.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      name="twitter:image"
+      content="https://cratis.no/assets/og/trust.jpg"
+    />
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("cratis-theme");
+          if (t === "light" || t === "dark")
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
-
-  <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-glow-2" aria-hidden="true"></div>
-<div class="bg-grain" aria-hidden="true"></div>
+    <div class="bg-glow-2" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -88,12 +103,12 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-      <a href="/#production"><span class="idx">01</span> How it works</a>
-      <a href="/#value"><span class="idx">02</span> What you get</a>
-      <a href="/support/"><span class="idx">03</span> Working with us</a>
-      <a href="/about/"><span class="idx">04</span> Who we are</a>
-      <a href="/#contact"><span class="idx">05</span> Contact</a>
-    </nav>
+        <a href="/studio/"><span class="idx">01</span> Studio</a>
+        <a href="/#production"><span class="idx">02</span> How it works</a>
+        <a href="/#value"><span class="idx">03</span> What you get</a>
+        <a href="/support/"><span class="idx">04</span> Working with us</a>
+        <a href="/about/"><span class="idx">05</span> Who we are</a>
+      </nav>
 
       <div class="header-actions">
         <button
@@ -144,174 +159,348 @@
       </div>
     </header>
 
-<main id="main">
+    <main id="main">
+      <section class="page-hero shell">
+        <p class="eyebrow">Trust</p>
+        <h1>Everything your review will ask for.</h1>
+        <p class="lead">
+          Licence, security, continuity, governance and roadmap — in one place,
+          with anchors you can link to directly. This page is written to be
+          cited, not admired.
+        </p>
+      </section>
 
-  <section class="page-hero shell">
-    <p class="eyebrow">Trust</p>
-    <h1>Everything your review will ask for.</h1>
-    <p class="lead">Licence, security, continuity, governance and roadmap — in one place, with anchors you can link to directly. This page is written to be cited, not admired.</p>
-  </section>
-
-  <section class="band shell" id="licence">
-    <h2>Licence</h2>
-    <div class="grid grid-2 mt-lg">
-      <!-- CORRECTED: this card previously claimed "Every part of the platform is MIT
+      <section class="band shell" id="licence">
+        <h2>Licence</h2>
+        <div class="grid grid-2 mt-lg">
+          <!-- CORRECTED: this card previously claimed "Every part of the platform is MIT
            licensed", which was false — Cratis Studio is a commercial product.
-           NEEDS FACT: confirm the exact MIT product list. Chronicle, Arc, Components,
-           Fundamentals and Screenplay are confirmed by the founders; Stage, Prologue,
-           AuthProxy, CLI, Narrator, Lens, Synopsis and Prompter are assumed and must
-           be checked before this ships. -->
-      <div class="card">
-        <h3>What you run is MIT</h3>
-        <p>Everything your business would actually run on is MIT licensed — one of the most permissive licences there is. Use it commercially, change it, redistribute it. No production licence, no seat count, nothing phoning home. The source is public, so you can check that rather than take our word for it.</p>
-      </div>
-      <div class="card">
-        <h3>What is commercial</h3>
-        <p>Cratis Studio — where your team designs together — is a paid product, in beta now, with pricing published rather than quoted. What you design in it stays yours and comes out in a format you can take elsewhere, and the software it produces keeps running whether you keep paying us or not. Support plans, advisory work and workshops are the other commercial part: our time, not the software.</p>
-      </div>
-    </div>
-    <p class="code-note">Source for every product is at <a href="https://github.com/Cratis" target="_blank" rel="noopener">github.com/Cratis</a>.</p>
-  </section>
+           RESOLVED by licence audit of github.com/Cratis (40 public repos): every
+           product repo carries MIT — Chronicle (plus the TypeScript, Kotlin, Elixir
+           and MCP clients), Arc, Components, Fundamentals, Screenplay, Scene, Stage,
+           Prologue, Synopsis, Lens, Prompter, cli, Specifications, Templates, Ante.
+           HOUSEKEEPING for the founders: AuthProxy and Narrator have NO LICENSE file.
+           Treated as MIT here per instruction, but both repos should get one — an
+           architecture reviewer who checks will otherwise find a gap where this page
+           promises none. -->
+          <div class="card">
+            <h3>What you run is MIT</h3>
+            <p>
+              Everything your business would actually run on is MIT licensed —
+              one of the most permissive licences there is. Use it commercially,
+              change it, redistribute it. No production licence, no seat count,
+              nothing phoning home. The source is public, so you can check that
+              rather than take our word for it.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What is commercial</h3>
+            <p>
+              Cratis Studio — where your team designs together — is a paid
+              product, in beta now, with pricing published rather than quoted.
+              What you design in it stays yours and comes out in a format you
+              can take elsewhere, and the software it produces keeps running
+              whether you keep paying us or not. Support plans, advisory work
+              and workshops are the other commercial part: our time, not the
+              software.
+            </p>
+          </div>
+        </div>
+        <p class="code-note">
+          Source for every product is at
+          <a href="https://github.com/Cratis" target="_blank" rel="noopener"
+            >github.com/Cratis</a
+          >.
+        </p>
+      </section>
 
-  <section class="band shell" id="continuity">
-    <h2>Continuity</h2>
-    <div class="callout mt-lg">
-      <h3>What happens if we stop</h3>
-      <p>The software your business runs on is open source and public. It sits on your own infrastructure, works with the systems you already have, and speaks open standards. There is no licence to renew, nothing phoning home, and no proprietary format holding your data.</p>
-      <p>Cratis Studio is the exception, and a deliberate one: it is a product you pay for, so it is the one part you would lose. What your team designed in it comes out with you, and the software it produced keeps running — because that is what your business actually depends on.</p>
-      <p>If Cratis ceased to operate tomorrow, you would keep the rest of it — the software, your data, and the right to continue it yourself. Nothing to renew, nothing to migrate off.</p>
-      <p>Every support plan additionally guarantees a ninety-day wind-down with handover documentation, and a refund of the unused remainder of the term.</p>
-      <p>We think that makes us a lower-lock-in choice than most vendors ten times our size. It's certainly a more honest one.</p>
-    </div>
-  </section>
+      <section class="band shell" id="continuity">
+        <h2>Continuity</h2>
+        <div class="callout mt-lg">
+          <h3>What happens if we stop</h3>
+          <p>
+            The software your business runs on is open source and public. It
+            sits on your own infrastructure, works with the systems you already
+            have, and speaks open standards. There is no licence to renew,
+            nothing phoning home, and no proprietary format holding your data.
+          </p>
+          <p>
+            Cratis Studio is the exception, and a deliberate one: it is a
+            product you pay for, so it is the one part you would lose. What your
+            team designed in it comes out with you, and the software it produced
+            keeps running — because that is what your business actually depends
+            on.
+          </p>
+          <p>
+            If Cratis ceased to operate tomorrow, you would keep the rest of it
+            — the software, your data, and the right to continue it yourself.
+            Nothing to renew, nothing to migrate off.
+          </p>
+          <p>
+            Every support plan additionally guarantees a ninety-day wind-down
+            with handover documentation, and a refund of the unused remainder of
+            the term.
+          </p>
+          <p>
+            We think that makes us a lower-lock-in choice than most vendors ten
+            times our size. It's certainly a more honest one.
+          </p>
+        </div>
+      </section>
 
-  <section class="band shell" id="versioning">
-    <h2>Versioning and support windows</h2>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>Semantic versioning, taken literally</h3>
-        <p>We follow the industry-standard versioning scheme, and we apply it literally. Any change that could break something you rely on is labelled as a major change — even when calling it something smaller would be more convenient for us. That label is checked automatically before anything ships.</p>
-      </div>
-      <div class="card">
-        <h3>Why our major numbers are high</h3>
-        <p>Some of our version numbers look high. That is not twenty rewrites — it is twenty changes we declared honestly on the day they shipped, rather than quietly folding them into something that sounds smaller. We would rather the number be honest than flattering.</p>
-      </div>
-    </div>
-    <!-- NEEDS FACT / BLOCKED: the formal support-window policy is drafted in POLICIES.md §1
+      <section class="band shell" id="versioning">
+        <h2>Versioning and support windows</h2>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>Semantic versioning, taken literally</h3>
+            <p>
+              We follow the industry-standard versioning scheme, and we apply it
+              literally. Any change that could break something you rely on is
+              labelled as a major change — even when calling it something
+              smaller would be more convenient for us. That label is checked
+              automatically before anything ships.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Why our major numbers are high</h3>
+            <p>
+              Some of our version numbers look high. That is not twenty rewrites
+              — it is twenty changes we declared honestly on the day they
+              shipped, rather than quietly folding them into something that
+              sounds smaller. We would rather the number be honest than
+              flattering.
+            </p>
+          </div>
+        </div>
+        <!-- NEEDS FACT / BLOCKED: the formal support-window policy is drafted in POLICIES.md §1
          but commits to a quarterly major cadence and maintenance branches that do not exist
          yet. Do not publish those commitments until the release process supports them.
          See POLICIES.md §0 and §3 decision 1. -->
-    <div class="callout mt-lg">
-      <h3>What we haven't published yet</h3>
-      <p>We're writing a formal support-window and long-term-support policy — which majors get security fixes, for how long, and what the upgrade commitment is. It isn't published, because we won't commit to a window we can't currently hold.</p>
-      <p>If you need to know where a specific version stands before you commit to it, <a href="/#contact">ask us</a> and you'll get a straight answer rather than a marketing one.</p>
-    </div>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>What it runs on</h3>
-        <p>The platform supports current and previous generations of its runtime, and runs on the major databases you are likely to already operate. Your operations team will not be asked to adopt anything unfamiliar.</p>
-      </div>
-      <div class="card">
-        <h3>Test builds</h3>
-        <p>Everything we publish publicly is a stable release. Pull-request builds go to GitHub Packages as <code>1.2.3-pr&lt;n&gt;.&lt;sha&gt;</code>, built in Debug — for verifying a fix before it merges, not for production.</p>
-      </div>
-    </div>
-    <p class="code-note">Current compatibility baselines are maintained in the documentation: <a href="https://cratis.io/compatibility/" target="_blank" rel="noopener">version compatibility</a>. Pin explicit package versions and image tags in anything you deploy.</p>
-  </section>
+        <div class="callout mt-lg">
+          <h3>What we haven't published yet</h3>
+          <p>
+            We're writing a formal support-window and long-term-support policy —
+            which majors get security fixes, for how long, and what the upgrade
+            commitment is. It isn't published, because we won't commit to a
+            window we can't currently hold.
+          </p>
+          <p>
+            If you need to know where a specific version stands before you
+            commit to it, <a href="/#contact">ask us</a> and you'll get a
+            straight answer rather than a marketing one.
+          </p>
+        </div>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>What it runs on</h3>
+            <p>
+              The platform supports current and previous generations of its
+              runtime, and runs on the major databases you are likely to already
+              operate. Your operations team will not be asked to adopt anything
+              unfamiliar.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Test builds</h3>
+            <p>
+              Everything we publish publicly is a stable release. Pull-request
+              builds go to GitHub Packages as
+              <code>1.2.3-pr&lt;n&gt;.&lt;sha&gt;</code>, built in Debug — for
+              verifying a fix before it merges, not for production.
+            </p>
+          </div>
+        </div>
+        <p class="code-note">
+          Current compatibility baselines are maintained in the documentation:
+          <a
+            href="https://cratis.io/compatibility/"
+            target="_blank"
+            rel="noopener"
+            >version compatibility</a
+          >. Pin explicit package versions and image tags in anything you
+          deploy.
+        </p>
+      </section>
 
-  <section class="band shell" id="security">
-    <h2>Security</h2>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>Reporting a vulnerability</h3>
-        <p>Report it privately through the affected project, or email <a href="mailto:oss@cratis.io?subject=Security%3A">oss@cratis.io</a> with a subject starting <code>Security:</code>. Please don't open a public issue first.</p>
-        <p style="margin-top:12px"><a href="https://cratis.io/security/" target="_blank" rel="noopener">Full disclosure process →</a></p>
-      </div>
-      <div class="card">
-        <h3>What to include</h3>
-        <p>Which product and version, what kind of issue it is, how to reproduce it, and what it would let someone do. There is no bounty programme — we would rather say so plainly than imply one.</p>
-      </div>
-    </div>
-    <p class="code-note">For going live safely, there is a full operational checklist covering security, storage, monitoring and backups: <a href="https://cratis.io/production-readiness/" target="_blank" rel="noopener">production readiness</a>.</p>
-  </section>
+      <section class="band shell" id="security">
+        <h2>Security</h2>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>Reporting a vulnerability</h3>
+            <p>
+              Report it privately through the affected project, or email
+              <a href="mailto:oss@cratis.io?subject=Security%3A"
+                >oss@cratis.io</a
+              >
+              with a subject starting <code>Security:</code>. Please don't open
+              a public issue first.
+            </p>
+            <p style="margin-top: 12px">
+              <a
+                href="https://cratis.io/security/"
+                target="_blank"
+                rel="noopener"
+                >Full disclosure process →</a
+              >
+            </p>
+          </div>
+          <div class="card">
+            <h3>What to include</h3>
+            <p>
+              Which product and version, what kind of issue it is, how to
+              reproduce it, and what it would let someone do. There is no bounty
+              programme — we would rather say so plainly than imply one.
+            </p>
+          </div>
+        </div>
+        <p class="code-note">
+          For going live safely, there is a full operational checklist covering
+          security, storage, monitoring and backups:
+          <a
+            href="https://cratis.io/production-readiness/"
+            target="_blank"
+            rel="noopener"
+            >production readiness</a
+          >.
+        </p>
+      </section>
 
-  <section class="band shell" id="governance">
-    <h2>Governance</h2>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>How decisions get made</h3>
-        <p>Small fixes move quickly and in the open. Larger design decisions start as public discussion and end as a durable record. Anything that could break your system arrives with notes on what changed and what to do. Security issues are handled privately first.</p>
-        <p style="margin-top:12px"><a href="/trust/#governance">Governance in full →</a></p>
-      </div>
-      <div class="card">
-        <h3>Roadmap</h3>
-        <p>What we're building is public, including the parts that aren't ready. Studio is marked "coming soon" because it is coming soon, not because it's shipping quietly.</p>
-        <p style="margin-top:12px"><a href="https://cratis.io/roadmap/" target="_blank" rel="noopener">Public roadmap →</a></p>
-      </div>
-    </div>
-  </section>
+      <section class="band shell" id="governance">
+        <h2>Governance</h2>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>How decisions get made</h3>
+            <p>
+              Small fixes move quickly and in the open. Larger design decisions
+              start as public discussion and end as a durable record. Anything
+              that could break your system arrives with notes on what changed
+              and what to do. Security issues are handled privately first.
+            </p>
+            <p style="margin-top: 12px">
+              <a href="/trust/#governance">Governance in full →</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Roadmap</h3>
+            <p>
+              What we're building is public, including the parts that aren't
+              ready. Studio is marked "coming soon" because it is coming soon,
+              not because it's shipping quietly.
+            </p>
+            <p style="margin-top: 12px">
+              <a
+                href="https://cratis.io/roadmap/"
+                target="_blank"
+                rel="noopener"
+                >Public roadmap →</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="band shell" id="data">
-    <h2>Data and privacy</h2>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>What the software sends us</h3>
-        <p>Nothing. There is no telemetry, no licence check, and no usage reporting of any kind. What runs in your infrastructure stays in your infrastructure.</p>
-      </div>
-      <div class="card">
-        <h3>What this website collects</h3>
-        <!-- NEEDS FACT: confirm the analytics choice, then state it exactly. -->
-        <p>No cookie banner, because there's nothing to consent to. If we add analytics it will be a privacy-preserving, cookieless product, and this section will name it.</p>
-      </div>
-    </div>
-    <div class="card mt-lg">
-      <h3>If we work together</h3>
-      <p>Anything you share under an engagement or support plan stays confidential, and we won't name you as a customer without written permission. We don't want your credentials or your production data — and we'd rather you didn't have to trust us with them.</p>
-    </div>
-  </section>
+      <section class="band shell" id="data">
+        <h2>Data and privacy</h2>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>What the software sends us</h3>
+            <p>
+              Nothing. There is no telemetry, no licence check, and no usage
+              reporting of any kind. What runs in your infrastructure stays in
+              your infrastructure.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What this website collects</h3>
+            <!-- NEEDS FACT: confirm the analytics choice, then state it exactly. -->
+            <p>
+              No cookie banner, because there's nothing to consent to. If we add
+              analytics it will be a privacy-preserving, cookieless product, and
+              this section will name it.
+            </p>
+          </div>
+        </div>
+        <div class="card mt-lg">
+          <h3>If we work together</h3>
+          <p>
+            Anything you share under an engagement or support plan stays
+            confidential, and we won't name you as a customer without written
+            permission. We don't want your credentials or your production data —
+            and we'd rather you didn't have to trust us with them.
+          </p>
+        </div>
+      </section>
 
-  <section class="band shell" id="company">
-    <h2>The company</h2>
-    <!-- NEEDS FACT: legal entity name, organisation number, registered address, VAT number.
+      <section class="band shell" id="company">
+        <h2>The company</h2>
+        <!-- NEEDS FACT: legal entity name, organisation number, registered address, VAT number.
          This blocks launch — see POLICIES.md §3 decision 7. -->
-    <div class="callout mt-lg">
-      <h3>Registered details</h3>
-      <p>Cratis is built by two people, working in the open. Full legal entity details — registered name, organisation number, address and VAT registration — will be listed here and in the footer of every page.</p>
-      <p>Need them for a supplier form before then? <a href="/#contact">Ask us</a> and we'll send them over the same day.</p>
-    </div>
-    <div class="grid grid-2 mt-lg">
-      <div class="card">
-        <h3>Who you'd be dealing with</h3>
-        <p>Both founders, directly. There is no sales team to route you through and no support tier to escalate past. <a href="/about/">More about us →</a></p>
-      </div>
-      <div class="card">
-        <h3>Terms</h3>
-        <p>Support plan terms — severity definitions, response commitments, cancellation and the continuity clause — are being finalised for publication. Ask and we'll send the current draft.</p>
-      </div>
-    </div>
-  </section>
+        <div class="callout mt-lg">
+          <h3>Registered details</h3>
+          <p>
+            Cratis is built by two people, working in the open. Full legal
+            entity details — registered name, organisation number, address and
+            VAT registration — will be listed here and in the footer of every
+            page.
+          </p>
+          <p>
+            Need them for a supplier form before then?
+            <a href="/#contact">Ask us</a> and we'll send them over the same
+            day.
+          </p>
+        </div>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>Who you'd be dealing with</h3>
+            <p>
+              Both founders, directly. There is no sales team to route you
+              through and no support tier to escalate past.
+              <a href="/about/">More about us →</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Terms</h3>
+            <p>
+              Support plan terms — severity definitions, response commitments,
+              cancellation and the continuity clause — are being finalised for
+              publication. Ask and we'll send the current draft.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="band shell">
-    <div class="banner">
-      <div>
-        <h3>Something your review needs that isn't here?</h3>
-        <p>Tell us what's missing. If it's a fair question we'll answer it, and then we'll add it to this page so the next person doesn't have to ask.</p>
-      </div>
-      <a class="cta" href="/#contact">
-        Ask us
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
-    </div>
-  </section>
+      <section class="band shell">
+        <div class="banner">
+          <div>
+            <h3>Something your review needs that isn't here?</h3>
+            <p>
+              Tell us what's missing. If it's a fair question we'll answer it,
+              and then we'll add it to this page so the next person doesn't have
+              to ask.
+            </p>
+          </div>
+          <a class="cta" href="/#contact">
+            Ask us
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H8M17 7V16" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
 
-</main>
-
-  <footer class="site-footer">
+    <footer class="site-footer">
       <div class="shell">
         <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="logo" href="/" aria-label="Cratis — home">
-            <svg
+          <div class="foot-brand">
+            <a class="logo" href="/" aria-label="Cratis — home">
+              <svg
                 viewBox="0 0 600 328"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
@@ -351,56 +540,99 @@
                   />
                 </g>
               </svg>
-          </a>
-          <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
-          <p>The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.</p>
+            </a>
+            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
+            <p>
+              The software production platform — it fits the languages,
+              databases and systems you already run. The software your business
+              runs on is open source; Cratis Studio, where your team designs, is
+              our product.
+            </p>
+          </div>
+
+          <div class="foot-col">
+            <h4>Product</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://cratis.io/chronicle/"
+                  target="_blank"
+                  rel="noopener"
+                  >Chronicle</a
+                >
+              </li>
+              <li>
+                <a href="https://cratis.io/arc/" target="_blank" rel="noopener"
+                  >Arc</a
+                >
+              </li>
+              <li><a href="/studio/">Cratis Studio</a></li>
+              <li><a href="/stack/">The stack</a></li>
+              <li><a href="/stack/the-cast/">The cast</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/why-cratis/">Why Cratis</a></li>
+              <li><a href="/support/">Support &amp; services</a></li>
+              <li><a href="/trust/">Trust</a></li>
+            </ul>
+          </div>
+
+          <div class="foot-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/writing/">Writing</a></li>
+              <li>
+                <a href="https://cratis.io" target="_blank" rel="noopener"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Cratis"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/community/"
+                  target="_blank"
+                  rel="noopener"
+                  >Discord</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cratis.io/roadmap/"
+                  target="_blank"
+                  rel="noopener"
+                  >Roadmap</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="foot-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="https://cratis.io/chronicle/" target="_blank" rel="noopener">Chronicle</a></li>
-            <li><a href="https://cratis.io/arc/" target="_blank" rel="noopener">Arc</a></li>
-            <li><a href="https://cratis.io/studio/" target="_blank" rel="noopener">Studio</a></li>
-            <li><a href="/stack/">The stack</a></li>
-            <li><a href="/stack/the-cast/">The cast</a></li>
-          </ul>
+        <div class="foot-bar">
+          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
+          <div>© 2026 Cratis · MIT licensed</div>
+          <div class="legal">
+            <a href="/trust/">Trust</a>
+            <a href="/trust/#security">Security</a>
+            <a href="https://github.com/Cratis" target="_blank" rel="noopener"
+              >Source</a
+            >
+          </div>
         </div>
-
-        <div class="foot-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/why-cratis/">Why Cratis</a></li>
-            <li><a href="/support/">Support &amp; services</a></li>
-            <li><a href="/trust/">Trust</a></li>
-          </ul>
-        </div>
-
-        <div class="foot-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/writing/">Writing</a></li>
-            <li><a href="https://cratis.io" target="_blank" rel="noopener">Documentation</a></li>
-            <li><a href="https://github.com/Cratis" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://cratis.io/community/" target="_blank" rel="noopener">Discord</a></li>
-            <li><a href="https://cratis.io/roadmap/" target="_blank" rel="noopener">Roadmap</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="foot-bar">
-        <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-        <div>© 2026 Cratis · MIT licensed</div>
-        <div class="legal">
-          <a href="/trust/">Trust</a>
-          <a href="/trust/#security">Security</a>
-          <a href="https://github.com/Cratis" target="_blank" rel="noopener">Source</a>
-        </div>
-      </div>
       </div>
     </footer>
 
-<script src="/assets/js/site.js" defer></script>
-</body>
+    <script src="/assets/js/site.js" defer></script>
+  </body>
 </html>

@@ -109,11 +109,11 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="/#production"><span class="idx">01</span> How it works</a>
-        <a href="/#value"><span class="idx">02</span> What you get</a>
-        <a href="/support/"><span class="idx">03</span> Working with us</a>
-        <a href="/about/"><span class="idx">04</span> Who we are</a>
-        <a href="/#contact"><span class="idx">05</span> Contact</a>
+        <a href="/studio/"><span class="idx">01</span> Studio</a>
+        <a href="/#production"><span class="idx">02</span> How it works</a>
+        <a href="/#value"><span class="idx">03</span> What you get</a>
+        <a href="/support/"><span class="idx">04</span> Working with us</a>
+        <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
 
       <div class="header-actions">
@@ -187,12 +187,13 @@
             rewrite required.
           </p>
           <div class="hero-actions">
-            <!-- DRAFT: needs approval — replaces "Talk to us". The Fit Review is the only real,
-           free, already-defined offer (MESSAGING.md §6). The true "Start Free Today"
-           equivalent is a Cratis Studio self-serve start — a founder decision, since
-           Studio is not shipped yet and nothing may be invented. -->
-            <a class="cta" href="#contact">
-              Book a free Fit Review
+            <!-- DRAFT: needs approval. This is the low-friction first step the
+                 founders asked for, in the AxonIQ "Start Free Today" mould. It is
+                 real and already exists: Cratis Studio grants a trial seat with
+                 full access and no payment details (cratis.studio terms §3).
+                 The Fit Review is now the secondary, higher-intent path. -->
+            <a class="cta" href="/studio/">
+              Try Cratis Studio free
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -203,7 +204,7 @@
                 <path d="M7 17L17 7M17 7H8M17 7V16" />
               </svg>
             </a>
-            <a class="cta-ghost" href="#production">See how it works</a>
+            <a class="cta-ghost" href="#contact">Book a free Fit Review</a>
             <button
               class="scroll-cue"
               type="button"
@@ -213,8 +214,8 @@
             </button>
           </div>
           <p class="hero-facts">
+            <span>Free to try, no card</span>
             <span>Open source at the core</span>
-            <span>Runs on your infrastructure</span>
             <span>No rewrite required</span>
           </p>
         </div>
@@ -507,6 +508,68 @@
           its own — and works better together. And the line is a loop: what the
           record teaches you feeds the next design.
         </p>
+      </section>
+
+      <!-- STUDIO — the product.
+           DRAFT: needs approval. Studio is the only thing we sell as software and
+           it was previously a footnote on this site. Facts here are taken from
+           cratis.studio and its published terms: hosted, per-seat, in beta, trial
+           seat with full access and no payment details. -->
+      <section class="band shell" id="studio">
+        <p class="eyebrow">Our product</p>
+        <div class="band-head">
+          <div>
+            <h2 class="big-statement">
+              Cratis Studio is where all of that starts.
+            </h2>
+            <p class="section-lead">
+              The design step is the one everything else inherits from — so it
+              is the one we built a product around. Studio is where your whole
+              team maps out how the business works, argues about it while that
+              is still cheap, and then watches it run. It is in beta, and it is
+              free to try without talking to us first.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Everyone in the same room</h3>
+            <p>
+              Product people, domain experts, designers and engineers work on
+              one picture at the same time — in business language, so the people
+              who know the business are not spectators.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Press play on the design</h3>
+            <p>
+              What you agreed on becomes something that actually runs, so your
+              team reacts to the real thing instead of imagining it. Being wrong
+              this afternoon costs far less than being wrong next quarter.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Ready for how software is made now</h3>
+            <p>
+              Machines write a growing share of your software and they build
+              what they are told. Studio is where you say precisely what you
+              want — the part that stays human.
+            </p>
+          </div>
+        </div>
+        <div class="banner mt-lg">
+          <div>
+            <h3>Have a look for yourself.</h3>
+            <p>
+              A trial seat with full access, no card and no call first — and an
+              honest account of what is still moving while it is in beta.
+            </p>
+          </div>
+          <a class="cta" href="/studio/">
+            About Cratis Studio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
       </section>
 
       <!-- WHAT YOU GET -->
@@ -1170,7 +1233,10 @@
             </a>
             <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.
+              The software production platform — it fits the languages,
+              databases and systems you already run. The software your business
+              runs on is open source; Cratis Studio, where your team designs, is
+              our product.
             </p>
           </div>
 
@@ -1190,14 +1256,7 @@
                   >Arc</a
                 >
               </li>
-              <li>
-                <a
-                  href="https://cratis.io/studio/"
-                  target="_blank"
-                  rel="noopener"
-                  >Studio</a
-                >
-              </li>
+              <li><a href="/studio/">Cratis Studio</a></li>
               <li><a href="/stack/">The stack</a></li>
               <li><a href="/stack/the-cast/">The cast</a></li>
             </ul>

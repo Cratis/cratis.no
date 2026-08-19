@@ -3,30 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The stack — Chronicle, Arc, Studio and the tools — Cratis</title>
+    <title>Cratis Studio — where your team designs the software together</title>
     <meta
       name="description"
-      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+      content="Cratis Studio is where your whole team designs how the business works — and watches it run. In beta, with a free trial that needs no card. Built for how software gets made now that machines write a share of it."
     />
-    <link rel="canonical" href="https://cratis.no/stack/" />
+    <link rel="canonical" href="https://cratis.no/studio/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="The stack — Chronicle, Arc, Studio and the tools — Cratis"
+      content="Cratis Studio — where your team designs the software together"
     />
     <meta
       property="og:description"
-      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+      content="Design how the business works with the whole team, then watch it run. In beta, free to try, no card required."
     />
-    <meta property="og:url" content="https://cratis.no/stack/" />
+    <meta property="og:url" content="https://cratis.no/studio/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:image" content="https://cratis.no/assets/og/stack.jpg" />
+    <!-- NEEDS FACT: a dedicated share card for /studio/ (1200x630). Reusing the
+         homepage card until one exists. -->
+    <meta property="og:image" content="https://cratis.no/assets/og/home.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      name="twitter:image"
-      content="https://cratis.no/assets/og/stack.jpg"
-    />
+    <meta name="twitter:image" content="https://cratis.no/assets/og/home.jpg" />
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +44,7 @@
       })();
     </script>
   </head>
-  <body>
+<body>
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
     <div class="bg-glow-2" aria-hidden="true"></div>
@@ -158,402 +157,358 @@
         </a>
       </div>
     </header>
-
     <main id="main">
+      <!-- HERO -->
       <section class="page-hero shell">
-        <p class="eyebrow">The stack</p>
-        <h1>Designed as one thing.</h1>
+        <p class="eyebrow">Cratis Studio</p>
+        <h1>Where your team designs the software together.</h1>
+        <!-- DRAFT: needs approval. Drawn from cratis.studio/vision.html and Einar's
+             Studio talk. Deliberately non-technical: this page is for the person
+             deciding, not the person implementing. -->
         <p class="lead">
-          Most stacks are a bag of libraries you bolt together and then spend
-          the project keeping in sync. The point of Cratis isn't that there are
-          many packages — it's that the packages agree about how an application
-          is shaped.
+          Most software gets designed in one room and built in another. Studio
+          puts everyone in the same room — the people who know the business and
+          the people who build it — around one picture of how the business
+          works. Then it runs that picture, so what you agreed on and what your
+          customers use are the same thing.
+        </p>
+        <div class="hero-actions mt-lg">
+          <a class="cta" href="https://cratis.studio" target="_blank" rel="noopener">
+            Try Studio free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a class="cta-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="hero-facts">
+          <span>In beta</span>
+          <span>Free trial, no card</span>
+          <span>Your model exports</span>
         </p>
       </section>
 
+      <!-- WHY NOW -->
       <section class="band shell">
-        <p class="eyebrow">One feature, every layer</p>
+        <p class="eyebrow">Why this now</p>
         <div class="band-head">
           <div>
-            <h2>Follow one behaviour all the way through.</h2>
+            <h2>Machines write a growing share of your software. They build what they are told.</h2>
             <p>
-              This is where the difference shows. Not in a feature list — in
-              what happens to a single piece of behaviour as it crosses every
-              boundary in your system.
+              An assistant is only as good as the description it works from.
+              Give it a vague plan and it produces vague software, faster than
+              anyone can review it. The bottleneck has moved: it is no longer
+              how quickly you can write software, it is how precisely you can
+              say what you want.
             </p>
           </div>
         </div>
-        <div class="flow">
-          <div class="flow-step">
-            <span class="k">01 Model</span>
-            <h3>Map the domain</h3>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="num">Before</span>
+            <h3>The plan lives in a document</h3>
             <p>
-              Capture the command, the event, the read model and the team's
-              intent before the implementation spreads out.
+              Someone writes it down, someone else interprets it, and the
+              distance between the two only shows up months later in something
+              that shipped wrong.
             </p>
-            <p class="owner">Studio</p>
           </div>
-          <div class="flow-step">
-            <span class="k">02 Build</span>
-            <h3>Keep the slice together</h3>
+          <div class="card">
+            <span class="num">With Studio</span>
+            <h3>The plan is the thing that runs</h3>
             <p>
-              Command, handler, query, proxy and UI for one behaviour, in one
-              feature-shaped place.
+              Your team designs how the business behaves, and that design is
+              what executes. There is no gap between them to drift, because
+              there is no second copy.
             </p>
-            <p class="owner">Arc</p>
           </div>
-          <div class="flow-step">
-            <span class="k">03 Record</span>
-            <h3>Store what happened</h3>
+          <div class="card">
+            <span class="num">The effect</span>
+            <h3>Speed stops costing you control</h3>
             <p>
-              Append facts through the gRPC boundary and let projections turn
-              them into read models.
+              People and assistants work from the same explicit description
+              instead of guessing at it — so going faster stops meaning
+              accumulating things nobody can explain later.
             </p>
-            <p class="owner">Chronicle</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">04 Render</span>
-            <h3>Ship a typed screen</h3>
-            <p>
-              Generated TypeScript proxies remove the hand-written API client
-              and the form plumbing.
-            </p>
-            <p class="owner">Components</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">05 Operate</span>
-            <h3>Inspect the running system</h3>
-            <p>
-              Browse events, replay projections, diagnose observers — from the
-              terminal or an agent.
-            </p>
-            <p class="owner">CLI &middot; MCP</p>
-          </div>
-        </div>
-        <p class="code-note">
-          Nothing in that sequence is a handoff you maintain. The build
-          maintains it.
-        </p>
-      </section>
-
-      <section class="band shell" id="layers">
-        <p class="eyebrow">The pieces</p>
-        <div class="band-head">
-          <div><h2>What each one owns.</h2></div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Chronicle</strong><span>the event store</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Records what happened, in order, immutably — and derives read
-              models from it. Projections, reducers and reactors turn the log
-              into the state your screens need. Constraints are enforced
-              server-side at append time, so invalid facts never enter the
-              record.
-            </p>
-            <ul>
-              <li>gRPC / protobuf boundary</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>SQL Server</li>
-              <li>SQLite</li>
-              <li>Orleans runtime</li>
-              <li>Replay &amp; recovery</li>
-              <li>Namespaces for tenancy</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/chronicle/"
-              target="_blank"
-              rel="noopener"
-              >Chronicle documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Arc</strong><span>the full-stack CQRS framework</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Turns behaviour into a typed application. A C# command becomes an
-              HTTP endpoint and a generated TypeScript proxy — so the frontend
-              can't drift from the backend without the compiler saying so.
-              Identity, authorization and tenancy are part of the framework, not
-              per-app boilerplate.
-            </p>
-            <ul>
-              <li>Commands &amp; queries</li>
-              <li>Proxy generation</li>
-              <li>Roslyn analyzers</li>
-              <li>Tenancy</li>
-              <li>Identity &amp; authorization</li>
-              <li>Works without event sourcing</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/arc/"
-              target="_blank"
-              rel="noopener"
-              >Arc documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Studio</strong
-            ><span>the modelling surface · commercial</span>
-          </div>
-          <div class="layer-body">
-            <!-- DRAFT: needs approval — participation framing from Einar's Studio
-             presentation ("it changed who could participate"). -->
-            <p>
-              Where the domain is designed — commands, events and read models on
-              a shared canvas, with the whole team in the room. The point is not
-              a better diagram; it is changing who can take part in designing
-              the software. Screenplay writes that model down as a single
-              declarative file, and Stage performs it: a live application,
-              interpreted at runtime rather than generated. Prologue brings an
-              existing system in by capturing what it already does.
-            </p>
-            <!-- CORRECTED: Studio is our commercial product, in beta. Every other
-                 layer here is MIT, so saying nothing implied Studio was too. -->
-            <p>
-              Studio is the one commercial product in the stack — in beta now,
-              priced in public at
-              <a href="https://cratis.studio" target="_blank" rel="noopener"
-                >cratis.studio</a
-              >. Everything else on this page is MIT, including everything you
-              deploy.
-            </p>
-            <ul>
-              <li>Event modelling canvas</li>
-              <li>Screenplay <code>.play</code></li>
-              <li>Stage runtime</li>
-              <li>Prologue capture</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/studio/"
-              target="_blank"
-              rel="noopener"
-              >Studio →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Components</strong><span>the React library</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Renders Arc's generated proxies as forms, dialogs and data tables.
-              A screen becomes a few lines rather than a few files, and
-              observable queries keep it current without reload code.
-            </p>
-            <ul>
-              <li>Command dialogs</li>
-              <li>Data tables</li>
-              <li>Schema editors</li>
-              <li>Observable queries</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/components/"
-              target="_blank"
-              rel="noopener"
-              >Components documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>AuthProxy</strong><span>the edge gateway</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Authenticates once at the edge, resolves the tenant, enriches
-              identity, and forwards trusted context to your services — in front
-              of any backend you point it at.
-            </p>
-            <ul>
-              <li>Authentication</li>
-              <li>Tenant resolution</li>
-              <li>Identity enrichment</li>
-              <li>Routing &amp; invites</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/authproxy/"
-              target="_blank"
-              rel="noopener"
-              >AuthProxy documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>The tools</strong><span>the operating surface</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              A terminal window into a running store, a VS Code reader for the
-              event log, a browser extension for stepping into another user or
-              tenant, and an MCP server that lets an assistant do the same in
-              plain language. Inspect-only by design — to change state you still
-              go through commands and events.
-            </p>
-            <ul>
-              <li>CLI</li>
-              <li>Narrator</li>
-              <li>Lens</li>
-              <li>Synopsis</li>
-              <li>Chronicle MCP</li>
-              <li>Prompter</li>
-            </ul>
-            <a class="more" href="/stack/the-cast/">Meet the cast →</a>
           </div>
         </div>
       </section>
 
-      <section class="band shell" id="separable">
-        <p class="eyebrow">Adoption</p>
+      <!-- HOW IT WORKS -->
+      <section class="band shell" id="how">
+        <p class="eyebrow">How it works</p>
         <div class="band-head">
           <div>
-            <h2>Take one piece, or take all of it.</h2>
+            <h2>From a conversation to something running.</h2>
             <p>
-              Each product solves a complete problem on its own. The dependency
-              only runs one way — Arc can sit on top of Chronicle, but Chronicle
-              never knows Arc exists.
+              You do not need to know how any of this is built to take part.
+              That is the point.
             </p>
           </div>
         </div>
-        <div class="table-wrap">
-          <table class="plans">
-            <caption class="visually-hidden">
-              Which Cratis products to reach for
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">You want</th>
-                <th scope="col">Reach for</th>
-                <th scope="col">Event sourcing?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  History as the source of truth, from any runtime
-                </th>
-                <td>Chronicle on its own</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  A typed full-stack app over a traditional database
-                </th>
-                <td>Arc + Components over MongoDB or EF Core</td>
-                <td>Not required</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Authentication, tenancy and routing at the edge
-                </th>
-                <td>AuthProxy in front of your services</td>
-                <td>Optional</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  A typed full-stack app <em>and</em> a full event history
-                </th>
-                <td>Arc + Chronicle + Components</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <th scope="row">A product-grade SaaS shape, end to end</th>
-                <td>AuthProxy + Arc + Components + Chronicle + CLI</td>
-                <td>Default</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="steps">
+          <div class="step">
+            <span class="n">01</span>
+            <div>
+              <h3>Get it out of people's heads</h3>
+              <p>
+                Everyone who knows part of how the business works puts it on one
+                canvas — what people do, what happens as a result, what everyone
+                needs to see. In business language, not technical notation.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n">02</span>
+            <div>
+              <h3>Shape it together, at the same time</h3>
+              <p>
+                Product people, domain experts, designers and engineers work on
+                the same model at once — the way you would expect from any
+                modern collaborative tool. Disagreements surface on the canvas,
+                where they are cheap, instead of in production.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n">03</span>
+            <div>
+              <h3>Press play</h3>
+              <p>
+                Studio turns the model into something that actually runs, so
+                your team can use it and react to it rather than imagine it.
+                Being wrong on a Tuesday afternoon is much cheaper than being
+                wrong after a quarter of building.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="n">04</span>
+            <div>
+              <h3>Change it and go again</h3>
+              <p>
+                What you learn from using it goes straight back into the model.
+                The loop is the work — not a phase that happens once at the
+                start and never survives contact with reality.
+              </p>
+            </div>
+          </div>
         </div>
-        <p class="code-note">
-          The last row is where the stack is at its best, and it's the default
-          for a new information system. Coming from an existing one?
-          <a
-            href="https://cratis.io/adopting-cratis/"
-            target="_blank"
-            rel="noopener"
-            >Adopting Cratis</a
-          >
-          walks through taking one piece at a time.
-        </p>
       </section>
 
+      <!-- WHAT YOU GET -->
       <section class="band shell">
+        <p class="eyebrow">What changes</p>
+        <div class="band-head">
+          <div>
+            <h2>What your organisation gets out of it.</h2>
+          </div>
+        </div>
+        <div class="outcomes">
+          <div class="outcome">
+            <h3>More of your people can take part</h3>
+            <div>
+              <p>
+                Today the final say on what the software does is the code, which
+                most of the people who understand the business cannot read.
+                Studio moves that to something everyone can read, question and
+                change — so the knowledge that shapes your software is not
+                locked inside one department.
+              </p>
+              <span class="tagline">Design stops being engineering-only</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>Less gets lost on the way</h3>
+            <div>
+              <p>
+                Every handoff between an idea and working software is a
+                translation, and every translation loses something. Designing
+                and running from one model removes most of the handoffs
+                outright.
+              </p>
+              <span class="tagline">Fewer surprises at the end</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>You find out sooner</h3>
+            <div>
+              <p>
+                Because the model runs, the people who will live with a decision
+                can try it before it is built for real — customers included.
+                Feedback arrives while changing your mind is still cheap.
+              </p>
+              <span class="tagline">Cheaper mistakes, earlier</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>Delivery gets more predictable</h3>
+            <div>
+              <p>
+                Studio knows what state each piece of work is in, because that
+                falls out of the model rather than out of someone updating a
+                board. Less ambiguity between what was intended and what arrives.
+              </p>
+              <span class="tagline">Status you don't have to maintain</span>
+            </div>
+          </div>
+          <div class="outcome">
+            <h3>The record keeps itself</h3>
+            <div>
+              <p>
+                Anything built this way records every business decision as it
+                happened, permanently and in order. When someone asks how you
+                got here — an auditor, a customer, a board — answering is a
+                question you ask the system.
+              </p>
+              <span class="tagline">Audit becomes a query, not a project</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HONESTY -->
+      <section class="band shell" id="honest">
+        <p class="eyebrow">The honest part</p>
+        <div class="band-head">
+          <div>
+            <h2>Where Studio is today, and where it isn't.</h2>
+            <p>
+              We would rather you knew this before you spent an afternoon on it.
+            </p>
+          </div>
+        </div>
         <div class="grid grid-2">
           <div class="card">
-            <span class="num">Open</span>
-            <h3>No boundary you can't cross</h3>
+            <h3>It is in beta, and that means something</h3>
             <p>
-              MIT licensed. Chronicle speaks gRPC and protobuf, with .NET,
-              TypeScript, Kotlin and Elixir clients. Storage is a deployment
-              choice, not an architecture decision. Nothing here is a door that
-              only opens inward.
+              Features arrive often and some of them move. Parts are labelled
+              preview. We are still building toward the full loop, and we would
+              rather say that than let you discover it. What is not in beta is
+              how we treat your work: continuous backups, tested restores, and
+              your organisation's content kept separate from everyone else's.
             </p>
           </div>
           <div class="card">
-            <span class="num">Opinionated</span>
-            <h3>On purpose, and only where it pays</h3>
+            <h3>Pricing may still change</h3>
             <p>
-              Conventions over configuration, vertical slices over layers, facts
-              over current state. The opinions are what make codebases
-              consistent — and consistency is what makes onboarding fast and AI
-              assistance less speculative.
+              It is published rather than quoted, and it is per person. Prices
+              during beta are current but not frozen — we commit to telling
+              administrators at least thirty days before any increase, and we
+              are actively asking early customers whether we have it right.
+            </p>
+          </div>
+          <div class="card">
+            <h3>It will not cover everything</h3>
+            <p>
+              No tool covers a whole business, and the last stretch is usually
+              the part that makes you different from everyone else. Studio is
+              built to let your engineers drop into ordinary code exactly where
+              that is needed, without leaving the model behind.
+            </p>
+          </div>
+          <div class="card">
+            <h3>When it is the wrong fit</h3>
+            <p>
+              If your teams already design together well and nobody is asking
+              questions the system cannot answer, you may not need this. It
+              earns its keep where several people have to agree on how something
+              works before it gets built — and where being wrong about that is
+              expensive.
             </p>
           </div>
         </div>
       </section>
 
+      <!-- WHAT IT COSTS / OPENNESS -->
+      <section class="band shell" id="what-it-costs">
+        <p class="eyebrow">What it costs</p>
+        <div class="band-head">
+          <div>
+            <h2>Free to try. Then per person, published.</h2>
+          </div>
+        </div>
+        <div class="callout">
+          <h3>Start without talking to us</h3>
+          <p>
+            Create an organisation and the first administrator gets a trial seat
+            with full access — no card, no call, no demo booked before you can
+            look. After that, each person who needs access holds a seat, bought
+            in the quantity and billing cycle you choose, at prices shown before
+            you confirm.
+          </p>
+          <p>
+            <!-- NEEDS FACT: exact trial length and per-seat price. Both are shown in
+                 the product at the moment they apply; deliberately not restated here,
+                 because a stale number on this page would be worse than no number. -->
+            Current prices are on
+            <a href="https://cratis.studio" target="_blank" rel="noopener">cratis.studio</a>.
+          </p>
+        </div>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>What you keep</h3>
+            <p>
+              What your team designs stays yours and comes out in a format you
+              can take elsewhere. If the last seat lapses, your organisation's
+              content is held for thirty days so an administrator can export it
+              or come back.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Why this one is paid</h3>
+            <p>
+              The software your business runs on is open source and always will
+              be — you can read every line of it, and it keeps running whether
+              you work with us or not. Studio is the hosted product around it,
+              and it is what funds the rest staying free.
+              <a href="/trust/#licence">How we draw that line →</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
       <section class="band shell">
         <div class="banner">
           <div>
-            <h3>The documentation goes deeper than this page can.</h3>
+            <h3>Have a look for yourself.</h3>
             <p>
-              Concepts, tutorials, reference and a getting-started walkthrough
-              that takes one event through a projection and a reactor.
+              Free trial, no card, no call first. If you would rather talk it
+              through, we would rather that than sell you something you do not
+              need.
             </p>
           </div>
-          <a
-            class="cta"
-            href="https://cratis.io"
-            target="_blank"
-            rel="noopener"
-          >
-            Read the docs
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              aria-hidden="true"
-            >
-              <path d="M7 17L17 7M17 7H8M17 7V16" />
-            </svg>
+          <a class="cta" href="https://cratis.studio" target="_blank" rel="noopener">
+            Try Studio free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+        <div class="routes mt-lg">
+          <a class="route" href="/#contact">
+            <div>
+              <h3>Talk to us about it</h3>
+              <p>Ninety minutes, free, and an honest answer about whether it fits.</p>
+            </div>
+            <span class="go">→</span>
+          </a>
+          <a class="route" href="/stack/">
+            <div>
+              <h3>What Studio is built on</h3>
+              <p>The open-source software underneath it, and what each part does.</p>
+            </div>
+            <span class="go">→</span>
+          </a>
+          <a class="route" href="https://cratis.studio/vision.html" target="_blank" rel="noopener">
+            <div>
+              <h3>Read the vision</h3>
+              <p>Where we think software development goes from here, written by Einar.</p>
+            </div>
+            <span class="go">↗</span>
           </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+<footer class="site-footer">
       <div class="shell">
         <div class="foot-grid">
           <div class="foot-brand">
