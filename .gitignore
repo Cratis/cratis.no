@@ -1,0 +1,27 @@
+# Agent / tooling state — never committed
+.pi/
+.pi-tasks/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node — not used by this site, but guards against accidental scaffolding
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+
+# Build output — this site has no build step; nothing here should ever appear
+dist/
+.astro/
+
+# Local
+*.local
+.env
+.env.*
