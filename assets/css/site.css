@@ -2656,10 +2656,12 @@ h3 {
    rather than a log viewer. Pure CSS, no canvas, no library.
    ========================================================================= */
 .orbit-wrap {
+    --orbit-clearance: 56px;
     position: relative;
     display: grid;
     place-items: center;
-    min-height: clamp(380px, 46vw, 620px);
+    min-height: calc(clamp(380px, 46vw, 620px) + 2 * var(--orbit-clearance));
+    padding: var(--orbit-clearance);
 }
 .orbit {
     position: relative;
