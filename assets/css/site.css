@@ -2665,7 +2665,7 @@ h3 {
 }
 .orbit {
     position: relative;
-    width: clamp(320px, 40vw, 580px);
+    width: min(100%, 580px);
     aspect-ratio: 1;
 }
 
