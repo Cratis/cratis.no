@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trust — licence, security, continuity and governance — Cratis</title>
+    <title>Trust — open-source scope, security, continuity and current practices — Cratis</title>
     <meta
       name="description"
-      content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place."
+      content="Open-source scope, security reporting, continuity limits, versioning, and current operating practices for architecture reviews."
     />
     <link rel="canonical" href="https://cratis.no/trust/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Trust — licence, security, continuity and governance — Cratis"
+      content="Trust — open-source scope, security, continuity and current practices — Cratis"
     />
     <meta
       property="og:description"
-      content="Licence, security disclosure, versioning, continuity commitments, governance and roadmap. Everything an architecture review needs, in one place."
+      content="Open-source scope, security reporting, continuity limits, versioning, and current operating practices for architecture reviews."
     />
     <meta property="og:url" content="https://cratis.no/trust/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,6 +28,8 @@
       content="https://cratis.no/assets/og/trust.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,10 +55,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -109,6 +108,18 @@
         <a href="/support/"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -164,50 +175,38 @@
         <p class="eyebrow">Trust</p>
         <h1>Everything your review will ask for.</h1>
         <p class="lead">
-          Licence, security, continuity, governance and roadmap — in one place,
-          with anchors you can link to directly. This page is written to be
-          cited, not admired.
+          The boundary between Cratis Build, Studio, and Assurance, together
+          with current security, continuity, versioning, and operating practices.
+          Where a formal policy does not yet exist, this page says so.
         </p>
       </section>
 
-      <section class="band shell" id="licence">
-        <h2>Licence</h2>
+      <section class="band shell" id="license">
+        <h2>License</h2>
         <div class="grid grid-2 mt-lg">
-          <!-- CORRECTED: this card previously claimed "Every part of the platform is MIT
-           licensed", which was false — Cratis Studio is a commercial product.
-           RESOLVED by licence audit of github.com/Cratis (40 public repos): every
-           product repo carries MIT — Chronicle (plus the TypeScript, Kotlin, Elixir
-           and MCP clients), Arc, Components, Fundamentals, Screenplay, Scene, Stage,
-           Prologue, Synopsis, Lens, Prompter, cli, Specifications, Templates, Ante.
-           HOUSEKEEPING for the founders: AuthProxy and Narrator have NO LICENSE file.
-           Treated as MIT here per instruction, but both repos should get one — an
-           architecture reviewer who checks will otherwise find a gap where this page
-           promises none. -->
-          <div class="card">
-            <h3>What you run is MIT</h3>
+<div class="card">
+            <h3>Cratis Build is open</h3>
             <p>
-              Everything your business would actually run on is MIT licensed —
-              one of the most permissive licences there is. Use it commercially,
-              change it, redistribute it. No production licence, no seat count,
-              nothing phoning home. The source is public, so you can check that
-              rather than take our word for it.
+              Chronicle, Arc, Components and the operating tools that make up
+              the Cratis Build runtime are developed in public under permissive
+              open-source terms. There is no production feature key for using
+              the runtime or operating your own event history. Check the license
+              in each repository before adopting a package.
             </p>
           </div>
           <div class="card">
-            <h3>What is commercial</h3>
+            <h3>Studio and Assurance are commercial</h3>
             <p>
-              Cratis Studio — where your team designs together — is a paid
-              product, in beta now, with pricing published rather than quoted.
-              What you design in it stays yours and comes out in a format you
-              can take elsewhere, and the software it produces keeps running
-              whether you keep paying us or not. Support plans, advisory work
-              and workshops are the other commercial part: our time, not the
-              software.
+              Cratis Studio is the paid collaborative design and runtime-
+              understanding product. It is preview software, and its maturity is
+              stated on the product page. Cratis Assurance is paid access to our
+              time and expertise through support, reviews, first slices and
+              workshops. Neither is a license to operate Cratis Build.
             </p>
           </div>
         </div>
         <p class="code-note">
-          Source for every product is at
+          Public Cratis repositories are at
           <a href="https://github.com/Cratis" target="_blank" rel="noopener"
             >github.com/Cratis</a
           >.
@@ -219,32 +218,55 @@
         <div class="callout mt-lg">
           <h3>What happens if we stop</h3>
           <p>
-            The software your business runs on is open source and public. It
-            sits on your own infrastructure, works with the systems you already
-            have, and speaks open standards. There is no licence to renew,
-            nothing phoning home, and no proprietary format holding your data.
+            Cratis Build is developed in public and is intended to run in your
+            infrastructure. Build does not require a Studio subscription or a
+            commercial feature key. Each repository states its own license, and
+            each component's documentation describes its interfaces and storage.
           </p>
           <p>
-            Cratis Studio is the exception, and a deliberate one: it is a
-            product you pay for, so it is the one part you would lose. What your
-            team designed in it comes out with you, and the software it produced
-            keeps running — because that is what your business actually depends
-            on.
+            Cratis Studio is a separate hosted, paid Preview product. Build
+            continues without Studio. Studio provides export for supported model
+            content; current formats, retention, and post-subscription access are
+            described by the hosted product and its applicable terms.
           </p>
           <p>
-            If Cratis ceased to operate tomorrow, you would keep the rest of it
-            — the software, your data, and the right to continue it yourself.
-            Nothing to renew, nothing to migrate off.
+            Public source and data held in your infrastructure reduce vendor
+            dependency, but they do not make transition work disappear. Your team
+            would still need to assess maintenance, replacement services, data
+            formats, and any migration appropriate to its deployment.
           </p>
           <p>
-            Every support plan additionally guarantees a ninety-day wind-down
-            with handover documentation, and a refund of the unused remainder of
-            the term.
+            Published support plans include a continuity commitment. The plan
+            and signed agreement define its scope, handover, and any financial terms.
           </p>
           <p>
-            We think that makes us a lower-lock-in choice than most vendors ten
-            times our size. It's certainly a more honest one.
+            The practical claim is narrower: Build source is public, Studio is
+            clearly separated, and leaving still requires an engineering plan.
           </p>
+        </div>
+      </section>
+
+      <section class="band shell" id="operations">
+        <h2>Open operations</h2>
+        <div class="grid grid-2 mt-lg">
+          <div class="card">
+            <h3>Workbench, CLI and MCP</h3>
+            <p>
+              Workbench, CLI, and MCP are developed alongside Chronicle.
+              Current versions provide inspection and operational workflows for
+              supported concepts; check the documentation for the capability and
+              version you plan to use.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Repair is not a paid permission</h3>
+            <p>
+              A Studio seat or Assurance plan is not intended to gate Build's
+              available inspection and recovery tooling. Supported mutations
+              should use domain commands or documented Chronicle operations so
+              changes remain visible in the record.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -256,7 +278,7 @@
             <p>
               We follow the industry-standard versioning scheme, and we apply it
               literally. Any change that could break something you rely on is
-              labelled as a major change — even when calling it something
+              labeled as a major change — even when calling it something
               smaller would be more convenient for us. That label is checked
               automatically before anything ships.
             </p>
@@ -272,11 +294,7 @@
             </p>
           </div>
         </div>
-        <!-- NEEDS FACT / BLOCKED: the formal support-window policy is drafted in POLICIES.md §1
-         but commits to a quarterly major cadence and maintenance branches that do not exist
-         yet. Do not publish those commitments until the release process supports them.
-         See POLICIES.md §0 and §3 decision 1. -->
-        <div class="callout mt-lg">
+<div class="callout mt-lg">
           <h3>What we haven't published yet</h3>
           <p>
             We're writing a formal support-window and long-term-support policy —
@@ -294,19 +312,17 @@
           <div class="card">
             <h3>What it runs on</h3>
             <p>
-              The platform supports current and previous generations of its
-              runtime, and runs on the major databases you are likely to already
-              operate. Your operations team will not be asked to adopt anything
-              unfamiliar.
+              Runtime targets, database providers, and compatibility vary by
+              product and version. Review the current compatibility documentation
+              before adoption rather than assuming a universal support matrix.
             </p>
           </div>
           <div class="card">
             <h3>Test builds</h3>
             <p>
-              Everything we publish publicly is a stable release. Pull-request
-              builds go to GitHub Packages as
-              <code>1.2.3-pr&lt;n&gt;.&lt;sha&gt;</code>, built in Debug — for
-              verifying a fix before it merges, not for production.
+              Public registries and pull-request feeds use versioned artifacts.
+              Treat pull-request builds as test artifacts, and check package
+              metadata and release notes before selecting a production version.
             </p>
           </div>
         </div>
@@ -349,7 +365,7 @@
             <p>
               Which product and version, what kind of issue it is, how to
               reproduce it, and what it would let someone do. There is no bounty
-              programme — we would rather say so plainly than imply one.
+              program — we would rather say so plainly than imply one.
             </p>
           </div>
         </div>
@@ -371,21 +387,21 @@
           <div class="card">
             <h3>How decisions get made</h3>
             <p>
-              Small fixes move quickly and in the open. Larger design decisions
-              start as public discussion and end as a durable record. Anything
-              that could break your system arrives with notes on what changed
-              and what to do. Security issues are handled privately first.
+              Current repositories show changes, reviews, releases, and issue
+              discussions in public. Practices vary by project and are not yet a
+              single formal governance program. Security reports are handled
+              privately first.
             </p>
             <p style="margin-top: 12px">
-              <a href="/trust/#governance">Governance in full →</a>
+              <a href="https://cratis.io/governance/" target="_blank" rel="noopener">Current governance process →</a>
             </p>
           </div>
           <div class="card">
             <h3>Roadmap</h3>
             <p>
-              What we're building is public, including the parts that aren't
-              ready. Studio is marked "coming soon" because it is coming soon,
-              not because it's shipping quietly.
+              Public repositories and documentation show current work and
+              maturity where maintained. Studio is consistently labeled Preview;
+              a repository issue or plan is direction, not a delivery promise.
             </p>
             <p style="margin-top: 12px">
               <a
@@ -405,18 +421,19 @@
           <div class="card">
             <h3>What the software sends us</h3>
             <p>
-              Nothing. There is no telemetry, no licence check, and no usage
-              reporting of any kind. What runs in your infrastructure stays in
-              your infrastructure.
+              Cratis Build does not require a Studio seat or commercial feature
+              key. Telemetry and outbound behavior can vary by component and
+              configuration; review the documentation and network policy for the
+              version you deploy.
             </p>
           </div>
           <div class="card">
             <h3>What this website collects</h3>
-            <!-- NEEDS FACT: confirm the analytics choice, then state it exactly. -->
-            <p>
-              No cookie banner, because there's nothing to consent to. If we add
-              analytics it will be a privacy-preserving, cookieless product, and
-              this section will name it.
+<p>
+              This static site currently declares no analytics script. Third-party
+              font hosting may still receive ordinary web requests from your
+              browser. Review the page source and browser controls for behavior
+              relevant to you.
             </p>
           </div>
         </div>
@@ -432,38 +449,29 @@
       </section>
 
       <section class="band shell" id="company">
-        <h2>The company</h2>
-        <!-- NEEDS FACT: legal entity name, organisation number, registered address, VAT number.
-         This blocks launch — see POLICIES.md §3 decision 7. -->
+        <h2>Company contact</h2>
         <div class="callout mt-lg">
-          <h3>Registered details</h3>
+          <h3>Talk to Cratis</h3>
           <p>
-            Cratis is built by two people, working in the open. Full legal
-            entity details — registered name, organisation number, address and
-            VAT registration — will be listed here and in the footer of every
-            page.
-          </p>
-          <p>
-            Need them for a supplier form before then?
-            <a href="/#contact">Ask us</a> and we'll send them over the same
-            day.
+            Cratis is founder-led and works in the open. For supplier or company
+            information required for an evaluation, contact
+            <a href="mailto:oss@cratis.io">oss@cratis.io</a>.
           </p>
         </div>
         <div class="grid grid-2 mt-lg">
           <div class="card">
             <h3>Who you'd be dealing with</h3>
             <p>
-              Both founders, directly. There is no sales team to route you
-              through and no support tier to escalate past.
+              Assurance is founder-led today. The selected plan or engagement
+              defines availability, points of contact, and escalation.
               <a href="/about/">More about us →</a>
             </p>
           </div>
           <div class="card">
             <h3>Terms</h3>
             <p>
-              Support plan terms — severity definitions, response commitments,
-              cancellation and the continuity clause — are being finalised for
-              publication. Ask and we'll send the current draft.
+              The support page lists currently published plan terms and prices.
+              A signed agreement defines the commitments for an engagement.
             </p>
           </div>
         </div>
@@ -541,12 +549,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -620,8 +625,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

@@ -288,6 +288,55 @@
         });
     }
 
+    /* ---------- mobile navigation ---------- */
+    var menus = document.querySelectorAll(".nav-menu");
+    for (var menuIndex = 0; menuIndex < menus.length; menuIndex++) {
+        var menu = menus[menuIndex];
+        var summary = menu.querySelector("summary");
+        menu.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && this.open) {
+                this.open = false;
+                this.querySelector("summary").focus();
+            }
+        });
+        var menuLinks = menu.querySelectorAll("a");
+        for (var linkIndex = 0; linkIndex < menuLinks.length; linkIndex++) {
+            menuLinks[linkIndex].addEventListener("click", function () {
+                this.closest("details").open = false;
+            });
+        }
+        if (summary) {
+            summary.setAttribute("aria-label", "Open primary navigation");
+        }
+    }
+
+    /* ---------- contact email draft ---------- */
+    var contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var data = new FormData(contactForm);
+            var body = [
+                "What are you building or looking at?",
+                data.get("about") || "",
+                "",
+                "What would help most?",
+                data.get("help") || "",
+                "",
+                "Where are you today?",
+                data.get("stage") || "",
+                "",
+                "Reply to:",
+                data.get("email") || "",
+            ].join("\n");
+            window.location.href =
+                "mailto:oss@cratis.io?subject=" +
+                encodeURIComponent("Working with Cratis") +
+                "&body=" +
+                encodeURIComponent(body);
+        });
+    }
+
     /* ---------- smooth in-page nav ---------- */
     var anchors = document.querySelectorAll('a[href^="#"]');
     for (var a = 0; a < anchors.length; a++) {

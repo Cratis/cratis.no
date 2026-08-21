@@ -1,88 +1,83 @@
 # cratis.no
 
-The Cratis **company and brand site**. Plain HTML, CSS and vanilla JavaScript — no framework, no build step, no dependencies.
+The Cratis company and brand site. It is plain HTML, CSS, and vanilla JavaScript with no build step or runtime dependencies.
 
-> **Not the documentation.** Product docs live at [cratis.io](https://cratis.io) (`../Documentation`). If a page teaches someone *how to use the software*, it belongs there. If it helps someone *decide to use it, trust us, or pay us*, it belongs here.
+Product documentation belongs at [cratis.io](https://cratis.io). This repository helps people decide whether Cratis fits, understand current product maturity, evaluate trust, or work with Cratis Assurance.
 
----
-
-## Run it
+## Run locally
 
 ```bash
-./serve            # → http://localhost:4321, opens a browser
-./serve 8080       # any other port
+./serve            # http://localhost:4321
+./serve 8080       # another port
 ```
 
-`serve` picks the first static server it finds — python3, npx, php or ruby — and refuses to start if the port is busy. There is nothing to install and nothing to build.
-
-Any static server works just as well:
+Any static server also works:
 
 ```bash
 python3 -m http.server 4321
 ```
 
-Opening `index.html` directly also works, though root-relative paths (`/assets/…`) need a server.
+Root-relative paths require a server. GitHub Pages serves the repository root directly.
 
-## Deploy
-
-Static files at the repository root. Point GitHub Pages at the default branch, root directory — nothing to build.
-
-**Before the first deploy**, see [Launch checklist](#launch-checklist).
-
-## Structure
+## Current structure
 
 ```text
-index.html                 Homepage
-about/                     Founders, community, values
-support/                   Plans, advisory, workshops
-trust/                     Licence, security, continuity, governance
-why-cratis/                The competitive argument
-stack/                     The platform
-stack/the-cast/            How the products are named
-writing/                   Index + essays
-assets/css/site.css        Everything visual — one file
-assets/js/site.js          Progressive enhancement only
-assets/img/logo.svg        Wordmark, uses currentColor
-assets/og/                 Per-page share cards (1200×630)
+index.html                         Company and lifecycle overview
+studio/index.html                  Cratis Studio Preview
+stack/index.html                   Cratis Build and the lifecycle
+stack/the-cast/index.html          Portfolio naming map
+why-cratis/index.html              Fit and anti-fit guidance
+support/index.html                 Cratis Assurance plans and pricing
+trust/index.html                   Current trust facts and explicit limits
+about/index.html                   Founders, lineage, and values
+writing/index.html                 Essays
+writing/vague-codebase-vague-code/ Published essay
+assets/css/site.css                Shared styles
+assets/js/site.js                  Progressive enhancement
+assets/img/                        Wordmark, favicon, and touch icons
+assets/og/                         Per-page share cards
 ```
 
-## The documents
+## Content sources
 
-Brand and content decisions live in version control alongside the site.
-
-| File | What it is |
+| File | Purpose |
 | --- | --- |
-| `AGENTS.md` | Rules for anyone — human or AI — working on this site. **Read first.** |
-| `BRAND.md` | Positioning, brand architecture, messaging pillars, competitive analysis |
-| `MESSAGING.md` | Approved copy, product one-liners, objection handling, do-not-say list |
-| `SITE.md` | Purpose, requirements, design notes, information architecture |
-| `PAGES.md` | Page-by-page blueprint |
-| `POLICIES.md` | Draft versioning/LTS policy and support terms — **not yet publishable** |
-| `REVIEW-PROMPT.md` | Self-contained brief for a fresh session reviewing this site |
-| `reference/` | The original design concept, preserved, with its known factual errors annotated |
+| `AGENTS.md` | Repository-wide working rules |
+| `BRAND.md` | Positioning, lifecycle, offers, voice, and fit |
+| `MESSAGING.md` | Approved public language and claim boundaries |
+| `SITE.md` | Current site behavior, routes, and validation requirements |
+| `PAGES.md` | Page-by-page responsibilities |
+| `REVIEW-PROMPT.md` | Public-site review checklist |
 
-## Conventions
+Unratified policy drafts do not belong in this public repository.
 
-- **Audience is non-technical.** The homepage, `/about`, `/support` and `/trust` are written for executives and product leaders. They are verified free of developer jargon. `/stack`, `/why-cratis` and the essays are the technical depth, reachable from the footer.
-- **One stylesheet, one script.** Resist adding files; the site is small enough that discoverability beats modularity.
-- **JavaScript is optional.** Every page is complete and readable with scripts disabled. The rotating headline word, the orbit, the marquees and the reveals are all enhancement.
-- **Nothing invented ships silently.** Placeholder content carries a visible amber ribbon, a `data-placeholder-guard` attribute, and an HTML comment. Search for `NEEDS FACT`, `DRAFT:`, `PLACEHOLDER` and `BLOCKED`.
+## Public-content rules
 
-## Launch checklist
+- Use American English.
+- Keep the lifecycle clear: **Design → Build → Operate → Improve**.
+- Keep Cratis Studio outside Cratis Build and label Studio **Preview**.
+- Scope open-source statements to Cratis Build and to the license stated by each repository.
+- Keep the support prices and terms already published on `/support` unless the founders approve a change.
+- Do not publish invented customers, logos, testimonials, quotations, legal details, metrics, or capabilities.
+- Do not expose editorial notes, audit history, private sources, or research provenance in HTML.
+- Qualify preview, compatibility, storage, client, export, and operating capabilities by product and version.
+- Say plainly when a simpler approach is the better fit.
 
-Blocking items, all requiring facts only the founders have:
+## Progressive enhancement and accessibility
 
-- [ ] **Legal entity** — registered name, organisation number, address, VAT. Appears in every footer and on `/trust`.
-- [ ] **Customer logos** — replace the six invented names on the homepage, or delete the band.
-- [ ] **Testimonials** — replace the four invented quotes with real, permissioned ones, or delete the section.
-- [ ] **Founder quotes** — two drafts written *in* Einar's and Sindre's voices. Approve, rewrite, or remove.
-- [ ] **Founder photographs** — initials stand in on `/about` and the homepage.
-- [ ] **Founder bios** — one line each, currently placeholder.
-- [ ] **Pricing sign-off** — support tiers and engagement fees on `/support` are proposals, not decisions.
-- [ ] **Versioning policy** — `POLICIES.md` §0 documents why the "LTS branch" promise was removed. Resolve before advertising it.
-- [ ] **Privacy/analytics** — `/trust` says no cookie banner. Confirm the analytics choice, or leave as-is.
-- [ ] **Domain** — `.no` reads as a local supplier to international buyers. See `BRAND.md` §10.1.
+Every page remains readable without JavaScript. The mobile primary navigation uses native `<details>` behavior as its no-JavaScript fallback. JavaScript adds Escape-to-close, focus return, theme persistence, animation, smooth in-page navigation, and a properly encoded email draft for the contact form.
 
-## Browser support
+Validate dark and light themes, mobile and desktop widths, keyboard navigation, visible focus, reduced motion, and no-JavaScript behavior before publication.
 
-Modern evergreen browsers. Uses `color-mix()`, `clamp()`, `backdrop-filter` and `aspect-ratio`. Degrades to a readable, unstyled-but-correct document in anything older.
+## Static validation
+
+At minimum, check:
+
+- HTML parsing and unique IDs;
+- internal files and fragments;
+- external HTTP links;
+- no HTML comments or placeholder markers;
+- no invented customer or testimonial text;
+- American English in public content;
+- required favicon, touch icon, and share-card assets;
+- Studio labeled Preview everywhere.

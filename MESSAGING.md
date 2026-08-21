@@ -1,411 +1,142 @@
-# Cratis — Messaging Deck
+# Cratis — messaging
 
-Ready-to-use copy. Companion to `BRAND.md`.
-Everything here is drafted in the Cratis voice (§8 of BRAND.md) and is meant to be pasted, then trimmed — never expanded.
+Ready-to-use public copy. Keep claims aligned with `BRAND.md` and the live product pages.
 
----
-
-## 1. The elevator ladder
+## Elevator ladder
 
 **Five words**
-> The model is the system.
+
+> Software that remembers.
 
 **One sentence**
-> Cratis is the event-sourced application platform for .NET — model your domain, and the model becomes the running system.
 
-**Three sentences (the standard intro)**
-> Cratis is the event-sourced application platform for .NET. You model the domain where the whole team can see it, record what happened as immutable facts, and carry one typed contract from C# to React — so drift becomes a build error instead of a production incident. It's MIT licensed, runs on the database you already have, and it's built by the two people who answer your questions.
+> Cratis helps teams design, build, operate, and improve accountable, long-lived .NET business systems.
 
-**Thirty seconds (spoken)**
-> Most teams have an architecture diagram that stopped being true in month three, and a database row that's forgotten how it got that way. Cratis closes that gap. You model the domain on a shared canvas, Chronicle records what actually happened as facts, and Arc carries one typed contract all the way to the React screen. Rename a property in C# and the frontend stops compiling until you fix it.
->
-> The part people find hardest to believe is Stage: it doesn't generate code from the model, it *runs* the model. So the two can't drift.
->
-> It matters more now than it did two years ago, because assistants write a growing share of the code — and an assistant is only as good as the structure it's working inside.
+**Three sentences**
 
----
+> Cratis Build is the open runtime: Chronicle owns the event lifecycle, while Arc carries commands and queries from C# through generated TypeScript toward React. Cratis Studio is the paid collaborative design and runtime-understanding product at Preview maturity. Cratis Assurance is founder-led support, reviews, first slices, production readiness, and workshops, with commitments defined by the selected plan or engagement.
 
-## 2. Homepage
+## Master narrative
 
-### Hero
+Long-lived business software has to do more than hold today's value. It has to preserve what happened, explain how current state came to be, and remain changeable after the people who first built it have moved on.
 
-> # The model is the system
->
-> Event-sourced .NET, modelled end to end — from the canvas, to the running app, to the history behind it.
->
-> `[ Get started ]`  `[ Why Cratis ]`
->
-> MIT licensed · MongoDB, PostgreSQL, SQL Server or SQLite · .NET, TypeScript, Kotlin and Elixir clients
+Cratis joins that lifecycle instead of treating each part as a separate toolchain. Teams design the domain together. They build on an open .NET runtime. They operate from durable facts through public visual, terminal, and agent-facing surfaces whose supported capabilities vary by tool and version. Then they use what production teaches them to improve the model.
 
-### Under the hero — three commands
+> **Design → Build → Operate → Improve.**
 
-> **Three commands to a full-stack app.**
->
-> ```bash
-> dotnet new install Cratis.Templates
-> dotnet new cratis -n MyApp --allow-scripts Yes
-> cd MyApp && docker compose up -d && dotnet run
-> ```
->
-> Chronicle, Arc and a React frontend, wired together. Nothing to bolt on afterwards.
-
-### Section — the problem
-
-> ## Your architecture is in a diagram. Your truth is in a row
->
-> The design lives on a whiteboard that stopped being accurate in month three. The behaviour lives across four folders in four layers. The state lives in a row that has forgotten how it got that way.
->
-> Every one of those gaps is a place where what you meant and what runs quietly diverge.
->
-> Then you point an assistant at it. It doesn't fail loudly — it guesses, plausibly, at speed.
->
-> **Give it a vague codebase and it produces vague code, faster.**
-
-### Section — the answer
-
-> ## One model, all the way down
->
-> **Model it where everyone can see it.** Commands, events and read models on a shared canvas — not a sketch you translate afterwards, but the slice, drawn.
->
-> **Record what happened, not what's left.** Chronicle stores immutable facts and derives read models from them. Audit isn't a feature you add later; it's what the storage layer already is.
->
-> **Carry one contract to the screen.** Arc generates the TypeScript your React app calls. Rename a property in C#, and the frontend stops compiling until you fix it.
->
-> **Give the agent the same rails.** Analyzers, `.ai` skills and an MCP server into the live store — so an assistant builds with the grain of the framework instead of guessing at it.
->
-> Nothing in that list is a thing *you* keep in sync. The build does.
-
-### Section — the products
-
-> ## Three products, one grain
->
-> **Chronicle** — *the event store.*
-> Records what happened. Projections, reducers, reactors, constraints and replay over MongoDB, PostgreSQL, SQL Server or SQLite. gRPC at the boundary, with .NET, TypeScript, Kotlin and Elixir clients.
->
-> **Arc** — *the full-stack CQRS framework.*
-> Turns behaviour into a typed application. Commands and queries become HTTP endpoints and generated TypeScript proxies, with identity, tenancy, authorization and React components included.
->
-> **Studio** — *the modelling surface.*
-> Where the model is designed — and run. Model on the canvas, write it as a Screenplay script, and let Stage perform it live. Bring an existing system in with Prologue.
->
-> Use them together, or use one on its own. Chronicle never knows Arc exists.
-
-### Section — who we are
-
-> ## Built by the people who answer your questions
->
-> We're small. That's deliberate, and it's the point: the person replying in Discord is the person who wrote the line you're asking about. No account manager, no tier-one triage, no discovery call before you get a straight answer.
->
-> We publish what we're building. We say when something isn't ready. And we'll tell you when Cratis is the wrong fit — which is worth more to both of us than a year of a licence you regret.
->
-> `[ Work with us ]`  `[ Support plans ]`  `[ Join the Discord ]`
-
-### Closing
-
-> ## Start where it makes sense
->
-> **Just looking?** The getting-started walkthrough takes one event through a projection and a reactor.
-> **Already have a system?** Prologue captures what it actually does and interprets it into an event model.
-> **Not sure it fits?** Book a Fit Review. Ninety minutes, free, and we'll tell you honestly if the answer is no.
-
----
-
-## 3. Product one-liners
-
-*Lock these. Use them verbatim everywhere — docs, READMEs, package descriptions, social bios, conference slides.*
-
-| Product | Locked descriptor | The line |
-| --- | --- | --- |
-| **Chronicle** | the event store | Records what happened, so you can always ask how you got here. |
-| **Arc** | the full-stack CQRS framework | One slice of C#, typed all the way to the screen. |
-| **Studio** | the modelling surface | Model it together. Then watch it run. |
-| **Screenplay** | the modelling language | A whole bounded context, in one script. |
-| **Stage** | the runtime | It performs, it doesn't print. |
-| **Prologue** | the on-ramp | Captures what your existing system actually does. |
-| **Components** | the React library | Your model, rendered — forms, tables and dialogs from the proxies you already have. |
-| **AuthProxy** | the edge gateway | Authenticate once. Resolve the tenant. Pass on trusted context. |
-| **CLI** | the terminal window | You don't want to write a query. You want to look. |
-| **Narrator** | the reader | Follow the story your events tell, inside VS Code. |
-| **Lens** | the viewfinder | Become any user, step into any tenant. |
-| **Synopsis** | the behaviour report | The source proves it. Synopsis makes it readable. |
-| **Prompter** | the docs assistant | The line you forgot, whispered from offstage. |
-
----
-
-## 4. The ensemble page
-
-*Cratis has a genuine, coherent metaphor across ten products and no single page that presents it. This is that page. It is a strong, shareable asset — the kind of thing that gets posted.*
-
-> # The cast
->
-> Cratis names its products after telling a story — because that is what an information system is. Something happened. Something recorded it. Something has to be able to tell you about it later.
->
-> **Prologue** — what came before the curtain rose.
-> Captures what your existing system actually does — its HTTP commands, its database changes, its telemetry — and interprets that into an event model.
->
-> **Studio** — the storyboard.
-> Where the team maps out what happens: the commands people issue, the events those produce, the read models people look at. On one canvas, in real time.
->
-> **Screenplay** — the script.
-> One declarative `.play` file describing a whole bounded context. Declarative first, with an escape hatch into real code where you need it.
->
-> **Stage** — the performance.
-> Hands the script to the cast and lets them perform it — a live, running Cratis application. No code generation, no compilation. **The model is the application.**
->
-> **Arc** — the plot.
-> The shape the story takes: commands in, events out, queries back — typed all the way to the screen.
->
-> **Chronicle** — the record.
-> What happened, in order, immutably. Not a summary. The facts.
->
-> **Narrator** — reading it back.
-> Browse the streams, namespaces and observers, and follow the story your events tell.
->
-> **Lens** — the viewfinder.
-> Frames the scene from someone else's point of view: become any user, step into any tenant.
->
-> **Synopsis** — the programme notes.
-> Turns the executable examples scattered through a repository into the clearest account of what the system actually promises.
->
-> **Prompter** — offstage, with the line you forgot.
-> Answers Cratis questions on Discord in seconds, grounded in the docs, with citations — and says so plainly when it doesn't know.
->
-> The metaphor isn't decoration. The file extension is `.play`. Stage really does perform. And the whole pipeline reads as a sentence: *Prologue captures the backstory, Studio storyboards it, Screenplay writes it down, Stage performs it, Chronicle records it, Narrator reads it back, Synopsis tells you what it promised.*
-
----
-
-## 5. Support plans page
+## Homepage
 
 ### Hero
 
-> # Depend on it with someone behind you
+> # Software that remembers.
 >
-> Cratis is MIT licensed and always will be. A support plan isn't access to the software — it's an ongoing relationship with the people who build it, and a written answer to the questions your architecture review will ask.
+> Design it with the people who understand the business. Build it on an open .NET runtime. Operate it from the event record. Improve it without losing the reasons behind today's state.
 
-### Above the table — the continuity clause
+### The problem
 
-> ## First, the question you were going to ask anyway
+> A database row tells you what is true now. Long-lived business systems are eventually asked a harder question: what happened, in what order, and why?
 >
-> **What happens if we stop?**
+> When the answer lives across code, logs, tickets, and a few people's memories, every change becomes an investigation.
+
+### The lifecycle
+
+> **Design.** Model decisions, facts, and views with the people who know the domain.
 >
-> Everything you depend on is MIT licensed and published on GitHub. Chronicle's kernel boundary is gRPC and protobuf. The storage schemas are documented. The clients for .NET, TypeScript, Kotlin and Elixir are all open source. There is no licence server, no phone-home, and no proprietary format holding your data.
+> **Build.** Carry one typed contract from C# commands and queries to TypeScript and React.
 >
-> If Cratis ceased to operate tomorrow, you would keep the source, the protocol, the schemas, the tooling, and the right to fork — with nothing to renew and nothing to migrate off.
+> **Operate.** Use Workbench, CLI, and Chronicle MCP for their documented Chronicle inspection and operational workflows; available concepts and actions vary by tool and version.
 >
-> Every support plan additionally guarantees a ninety-day wind-down with handover documentation.
+> **Improve.** Feed runtime evidence and executable specifications back into the next design.
+
+## Offer copy
+
+### Cratis Build
+
+> **The open runtime and operating foundation.**
 >
-> We think that makes us a lower-lock-in choice than most vendors ten times our size. It's certainly a more honest one.
+> Chronicle owns the event lifecycle. Arc turns C# commands and queries into HTTP APIs and generated TypeScript proxies. Components carries that contract into React. Workbench, CLI, and Chronicle MCP provide public operating surfaces around the same model; current inspection and action coverage varies by tool and version.
 
-### Under the table
+### Cratis Studio
 
-> **What "advisory hours" means.** Not break/fix. Architecture questions, model reviews, consistency boundary decisions, tenancy design, migration paths, performance work, and second opinions before you commit to something expensive to change.
+> **The paid collaborative design product.**
 >
-> **What a critical incident means.** A production-blocking issue where Cratis is not behaving as documented.
+> Model the business with domain experts, product people, and engineers on one shared surface. Explore supported behavior as a live preview and connect design intent with runtime understanding. Studio is Preview software: useful today and still moving. Supported export formats and retention follow the hosted product and its applicable terms.
+
+### Cratis Assurance
+
+> **Expertise and responsibility.**
 >
-> **What isn't in a plan.** General .NET or React consultancy, and feature development for your product. For scoped work, see [Advisory](/services/advisory/).
+> Support, architecture review, model sprints, first slices, production readiness, and workshops delivered directly by the people building Cratis. More than fifteen years of event-sourcing lineage, applied to the decision in front of you.
+
+## Product lines
+
+| Product | Line |
+| --- | --- |
+| Chronicle | Own the full life of a durable fact. |
+| Arc | One C# contract, typed through to React. |
+| Cratis Studio | Design together. Understand what runs. |
+| Workbench | Inspect and interact with supported Chronicle concepts in the browser. |
+| CLI | Inspect Chronicle and run documented operational actions from the terminal. |
+| Chronicle MCP | Expose documented Chronicle inspection and operational tools through MCP. |
+| Screenplay | A bounded context in one portable model. |
+| Stage | Perform supported behavior as a live sandbox. |
+| Prologue | Start from what the existing system already does. |
+| Cratis Assurance | Direct expertise when the decision matters. |
+
+## Founder and lineage copy
+
+> Cratis carries more than fifteen years of event-sourcing lineage through successive generations of .NET frameworks and production systems. That experience does not make every new surface mature; it gives us a longer record of lessons to apply and limits to recognize.
 >
-> **Not ready for a plan?** The Discord is free, public, and usually faster. That's not a consolation prize — it's where most questions get answered.
+> We are intentionally small. The people helping with your model, architecture, or incident are the people building the stack.
 
----
+## Honesty copy
 
-## 6. Services page
+### When Cratis is more than you need
 
-### Hero
+> Use the smallest approach that solves the whole problem. A settings surface, reference data, a short-lived prototype, or a focused backend service may not need event sourcing or the wider Cratis lifecycle. Arc can work without Chronicle, and sometimes a smaller tool is the honest answer.
 
-> # Get the model right the first time
->
-> The first slices set the pattern everything after them copies. Consistency boundaries are cheap to change now and expensive to change later.
->
-> Every engagement is fixed in scope, fixed in price, and named in outcome. You'll know what you're getting and what it costs before you commit to anything.
+### Studio maturity
 
-### The catalogue intro
+> Studio is Preview software. Features move, some lifecycle connections remain partial, and Stage performs supported model behavior as a sandbox rather than removing every production concern. We state that boundary because ambition is not the same as maturity.
 
-> Start with a **Fit Review** — ninety minutes, free, and we'll tell you plainly whether we can help. If the answer is no, we'll tell you what we'd do instead.
+### Open and paid boundary
 
-### When we're not the right fit
+> Cratis Build is open: the runtime and operating tools you deploy. Cratis Studio is paid: collaborative design and runtime understanding. Cratis Assurance is paid: our time, expertise, and commitments. A paid plan is never permission to operate or repair your own system.
 
-> ## When we're not the right fit
->
-> Being direct about the limits saves everyone a meeting.
->
-> **The question can be answered in public.** The Discord is free, open, and usually faster.
-> **You want a general .NET or React consultancy.** We work on the model, the stack, and the architecture around them.
-> **You want us to build your product.** We'll build the first slice with your team, and teach them the pattern. We won't be your development department.
-> **You found a vulnerability.** Use responsible disclosure instead.
+## Common questions
 
----
+**Is event sourcing always the right answer?**
 
-## 7. Workshops page
+> No. It earns its cost where decisions, handoffs, corrections, and historical explanation matter. For current-state-only behavior, use a simpler persistence model. Arc supports that path without Chronicle.
 
-### Hero
+**What does Chronicle add beyond an event log?**
 
-> # The syntax is learnable in a week. The modelling is the part worth teaching
->
-> Most teams don't struggle with Cratis. They struggle with deciding what an event is, where a consistency boundary belongs, and which read models are worth having.
->
-> Our workshops are built around your codebase and your domain — not a generic deck we run for everyone.
+> Chronicle owns the event lifecycle: contracts and generations, append, projections and reducers, reactions, replay, failed processing, revision, compliance, inspection, and recovery.
 
-### Format
+**How does Arc connect backend and frontend?**
 
-> Remote, up to twelve people, two days by default. We work through your domain, not a toy one. You leave with an event model your team agrees on and the first slices specified — not just notes.
->
-> On-site is available. So is a one-day Foundations format when two days is more than the calendar allows.
+> Commands and queries are defined in C#. Arc exposes the HTTP surface and generates TypeScript proxies and types. React consumes those generated contracts, so a backend change becomes a compile-time frontend change instead of silent drift.
 
-### Public cohorts
+**What is open for operations?**
 
-> ## Public workshops
->
-> Once a quarter we run an open cohort — fifteen seats, mixed teams, same format. It's the cheapest way to find out whether event modelling changes how your team thinks, before committing a whole team's calendar to it.
+> Workbench, CLI, and Chronicle MCP are public operating surfaces that do not require Studio or an Assurance plan. Workbench provides browser-based Chronicle inspection and interaction; the CLI exposes documented inspection, replay, retry, and job workflows; Chronicle MCP exposes its documented event-store, event, observer, recommendation, job, and identity tools. Exact coverage varies by tool and version.
 
----
+**What does Studio do today?**
 
-## 8. About page
+> It gives teams a collaborative event-modeling surface and a live sandbox for supported behavior. Supported model export is available, while formats and retention follow the hosted product. Its direction includes deeper runtime understanding, but it remains Preview.
 
-### Opening
+**Why work with Cratis Assurance?**
 
-> # Two people, and the software we'd want to inherit
->
-> Cratis started from a straightforward frustration: the tools were good, but you spent your life keeping them in sync with each other. The event store didn't know about the command boundary. The command boundary didn't know about the frontend. The frontend didn't know about anything, and the model that was supposed to tie it all together lived on a whiteboard.
->
-> So we built the thing where the pieces agree.
+> For founder-led access to people building the stack and experience shaped by more than fifteen years of event-sourced .NET systems. Assurance covers bounded outcomes and published support commitments, with availability defined by the selected plan or engagement; it does not gate open software.
 
-### The size question, addressed directly
+## Do not say
 
-> ## We're small. Here's what that actually means
->
-> **What you get.** The person answering your question wrote the code. No triage tier, no account manager, no ticket that gets escalated to someone who has to read the source for the first time.
->
-> **What we do about the rest.** Everything is MIT and public. There's a published roadmap, a versioning and LTS policy, a security disclosure process, and a written continuity clause in every support plan. Not because we plan to disappear — because you shouldn't have to take our word for it.
->
-> **What we won't do.** Pretend to be bigger than we are. You can count us, and you should be able to.
+Avoid claims that are generic, inflated, or ahead of the product:
 
-### Values
-
-> ## What we build towards
->
-> **Empathy.** Understanding who we're building for — an API consumer, a teammate, an end user — is the whole job.
-> **Simplicity.** The internals can be complex. The surface you touch shouldn't be.
-> **Readability.** Code is read far more than it's written. We're not trying to save keystrokes.
-> **Predictability.** *Surprises belong to birthdays, not in code.*
-> **Testability.** Specs are how a system explains itself to the next person.
-> **Automation.** If a computer can do it, make it do it.
-
----
-
-## 9. Objection handling
-
-**"Isn't event sourcing overkill?"**
-> Often, yes — and we say so in the docs. It's the right default for systems driven by processes, decisions and handoffs over time, where "how did we get here?" will eventually be a real question. For a settings screen or a reference table, it's pure cost. Arc runs perfectly well over EF Core or MongoDB when that's the honest answer.
-
-**"We already use Marten."**
-> Marten is excellent, and Jeremy has been doing this for longer than we have. If you're backend-only, committed to Postgres, and don't have a frontend contract problem or a modelling gap, stay where you are.
->
-> Teams come to us when the gaps they're feeling are the ones between the layers — the hand-written API client, the DTOs mirrored in two languages, the design that lives in someone's head. That's the part we built.
-
-**"You're two people."**
-> We are. Everything is MIT, on GitHub, over an open protocol, on a database you already run. There's no licence server and nothing proprietary holding your data. Support plans include a written ninety-day wind-down.
->
-> We're small, and we intend to stay small enough that you can always reach the person who wrote the code.
-
-**"Isn't the .NET-only thing limiting?"**
-> .NET is the first-class experience, and we're not going to pretend otherwise. But Chronicle's boundary is gRPC and protobuf, and there are shipping clients for TypeScript, Kotlin and Elixir. Your event history isn't locked to one runtime, which is more than most event platforms can say.
-
-**"Why not just build this ourselves?"**
-> Plenty of teams do, and the first six months feel great. The bill arrives later — in the projection rebuild nobody planned for, the tenancy model that was added afterwards, the frontend client that four people maintain differently, and the onboarding that takes a month because the conventions only exist in people's heads.
-
-**"What about lock-in?"**
-> Fair. Concretely: MIT licence, source on GitHub, gRPC/protobuf at the boundary, documented storage schemas, four database backends, four client languages, and a `.play` format that's specified and exportable. You can leave. We'd rather you didn't want to.
-
-**"How does this actually help with AI?"**
-> Three specific things, not a vibe. `.ai` skills and agents that teach Claude Code, Copilot and Codex the conventions. Roslyn analyzers that fail the build when generated code drifts off them. And an MCP server that lets an assistant browse the event log, replay an observer and recover a failed partition against the live store.
->
-> The last one is inspect-only by design. To change state you still go through commands and events. History stays honest.
-
----
-
-## 10. Social and profile copy
-
-**GitHub org bio**
-> The event-sourced application platform for .NET. The model is the system.
-
-**Twitter/X and LinkedIn bio**
-> The event-sourced application platform for .NET. Model your domain — then watch it run. Chronicle · Arc · Studio. MIT.
-
-**LinkedIn company tagline**
-> Event-sourced .NET, modelled end to end.
-
-**LinkedIn "about"**
-> Cratis builds the event-sourced application platform for .NET. Chronicle records what happened. Arc turns behaviour into a typed, full-stack application. Studio is where the domain is modelled — and, with Stage, where the model actually runs.
->
-> We work with teams on event modelling, adoption, architecture review and training, and we offer support plans for organisations depending on Cratis in production. Everything is MIT licensed and developed in the open.
-
-**Conference talk abstract boilerplate**
-> Cratis is an open-source, event-sourced application platform for .NET, built on one idea: the model should be the running system, not a diagram beside it.
-
----
-
-## 11. The `lines.md` starter
-
-*Maintain this file. Reuse relentlessly. Consistent phrasing across surfaces is what makes a small company sound established.*
-
-**On the model**
-
-- The model is the system.
-- The model isn't a sketch you translate — it's the slice, drawn.
-- It performs, it doesn't print.
-- Build the system you modelled.
-- You find the holes on a whiteboard, not in production.
-
-**On coherence**
-
-- The point is not that Cratis has many packages. The point is that the packages agree.
-- Nothing in that list is a thing you keep in sync. The build does.
-- The compiler tells you what to fix instead of production telling your users.
-- A feature is one thing, and it spans the stack.
-
-**On history**
-
-- Events are facts. If you reach for a nullable field on an event, you need a second event.
-- There's no precious state to migrate, because the events are the state.
-- Audit isn't a feature you add. It's what the storage layer already is.
-- Instead of "what does the row look like now?", you ask "what happened, in what order, and why?"
-
-**On AI**
-
-- Give it a vague codebase and it produces vague code, faster.
-- An assistant is only as good as the structure it works inside.
-- A convention you can break silently isn't a convention — it's a suggestion.
-- Operate, not mutate. History stays honest.
-
-**On operating**
-
-- An observer that has stopped consuming looks exactly like an observer with nothing to do.
-- You don't want to write a query. You want to look.
-- Operability is architecture.
-
-**On the company**
-
-- We'll tell you when we're not the right fit.
-- Small enough that you can always reach the person who wrote the code.
-- If the answer would help everyone, it belongs in the documentation.
-
-**On craft**
-
-- Surprises belong to birthdays, not in code.
-- It should be easy to do things right, and hard to do things wrong.
-- We're not trying to save keystrokes.
-- APIs should be lovable.
-
----
-
-## 12. Do-not-say list
-
-Ban these outright. Each one makes Cratis sound like everyone else, and the current voice is far too good to lose.
-
-**Words:** seamless · effortless · revolutionary · cutting-edge · game-changing · best-in-class · world-class · leverage (as a verb) · empower · unlock · supercharge · robust · powerful · simply · just · blazing fast · next-generation
-
-**Claims:** any download or star count until it beats the competition · "trusted by leading companies" without names · "enterprise-grade" without an SLA behind it · anything implying more people than there are · "the only" without a checked fact
-
-**Structures:** a homepage that lists nineteen products · feature grids with no stated problem · testimonials without a name and a company · a pricing page that says "contact us" for every tier
-
-**Metaphor overreach:** curtains · applause · standing ovation · taking centre stage · "the show must go on" · break a leg. The names carry the metaphor. The copy shouldn't perform it.
+- seamless, effortless, revolutionary, best-in-class, world-class;
+- enterprise-grade without a published commitment behind it;
+- fully automatic lifecycle;
+- full language-client parity;
+- production runtime when describing Stage;
+- mature or generally available when describing Studio;
+- any customer, testimonial, metric, price, date, or capability that has not been verified publicly.

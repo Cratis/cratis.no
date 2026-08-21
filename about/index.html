@@ -25,6 +25,8 @@
       content="https://cratis.no/assets/og/about.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,10 +52,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -104,8 +103,20 @@
         <a href="/#production"><span class="idx">02</span> How it works</a>
         <a href="/#value"><span class="idx">03</span> What you get</a>
         <a href="/support/"><span class="idx">04</span> Working with us</a>
-        <a href="/about/"><span class="idx">05</span> Who we are</a>
+        <a href="/about/" aria-current="page"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/" aria-current="page"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -179,13 +190,9 @@
         </div>
         <div class="people">
           <div class="person">
-            <!-- NEEDS FACT: photograph -->
-            <div class="portrait" aria-hidden="true">EI</div>
-            <!-- Title per cratis.studio/vision.html, signed by Einar himself. -->
-            <h3>Einar Ingebrigtsen</h3>
+<div class="portrait" aria-hidden="true">EI</div>
+<h3>Einar Ingebrigtsen</h3>
             <p class="role">Co-founder and CTO</p>
-            <!-- NEEDS FACT: bio, written by Einar -->
-            <p>Created Cratis and wrote most of what it runs on.</p>
             <p class="links">
               <a href="https://github.com/einari" target="_blank" rel="noopener"
                 >GitHub ↗</a
@@ -193,12 +200,9 @@
             </p>
           </div>
           <div class="person">
-            <!-- NEEDS FACT: photograph -->
-            <div class="portrait" aria-hidden="true">SW</div>
+<div class="portrait" aria-hidden="true">SW</div>
             <h3>Sindre Alstad Wilting</h3>
             <p class="role">Co-founder and Chief Architect</p>
-            <!-- NEEDS FACT: bio, written by Sindre -->
-            <p>Builds and maintains the platform alongside Einar.</p>
             <p class="links">
               <a href="https://github.com/woksin" target="_blank" rel="noopener"
                 >GitHub ↗</a
@@ -206,8 +210,41 @@
             </p>
           </div>
         </div>
-        <!-- BLOCKED: Core team section. Recruit 3–5 recognised community members first.
-         A one-person or empty "core team" reads worse than omitting it. See BRAND.md §7.2. -->
+</section>
+
+      <section class="band shell" id="lineage">
+        <p class="eyebrow">The lineage</p>
+        <div class="band-head">
+          <div>
+            <h2>More than fifteen years of learning from event-sourced systems.</h2>
+            <p>
+              Cratis is the current generation of work that began around 2010
+              and has continued through successive frameworks, companies and
+              production systems. The names and implementations changed. The
+              hard questions did not: how to model facts well, evolve them
+              safely, explain current state and make the next team productive.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Experience, not a maturity shortcut</h3>
+            <p>
+              Fifteen-plus years means we have seen approaches work, strain and
+              get replaced. It does not make every new Cratis surface mature.
+              Build is the established open foundation; Studio is described as
+              preview software because that is where it is today.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Founder-led Assurance</h3>
+            <p>
+              Assurance, workshops, and support are founder-led today. The
+              selected plan or engagement defines availability, points of
+              contact, and escalation.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section class="band shell">
@@ -218,29 +255,30 @@
         <div class="grid grid-3">
           <div class="card">
             <span class="num">What you get</span>
-            <h3>The person answering wrote the code</h3>
+            <h3>Support stays close to the product</h3>
             <p>
-              No triage tier, no account manager, no ticket escalated to someone
-              reading the source for the first time. You get an answer from
-              someone who already knows why it works that way.
+              Assurance is currently delivered by people who work on the stack.
+              Published plans and signed agreements define response targets,
+              capacity, and escalation.
             </p>
           </div>
           <div class="card">
             <span class="num">What we do about the rest</span>
-            <h3>Everything public, in writing</h3>
+            <h3>Public facts, in writing</h3>
             <p>
-              An open licence on the software you run, the source in public, a
-              published roadmap, a security disclosure process, and a written
-              continuity clause in every support plan. Not because we plan to
-              disappear — because you shouldn't have to take our word for it.
+              Cratis Build repositories state their licenses in public. The site
+              also publishes a security reporting route, current product
+              maturity, and the support commitments already offered. Where a
+              formal policy does not exist yet, we say so.
             </p>
           </div>
           <div class="card">
             <span class="num">What we won't do</span>
             <h3>Pretend to be bigger</h3>
             <p>
-              You can count us, and you should be able to. We'd rather be a
-              small company you can reach than a large one you can't.
+              You can count us, and you should be able to. We publish the
+              capacity and response commitments attached to each paid plan
+              rather than implying unlimited access.
             </p>
           </div>
         </div>
@@ -250,14 +288,11 @@
         <p class="eyebrow">The community</p>
         <div class="band-head">
           <div>
-            <!-- CORRECTED: was "Every product is MIT licensed" — not true of
-                 Cratis Studio, which is our commercial product. -->
-            <h2>Open, and genuinely so.</h2>
+<h2>Open, and genuinely so.</h2>
             <p>
-              The software your business would run on is open source and built
-              in the open, where anyone can read the decisions being made about
-              it. Cratis Studio, where your team designs together, is the
-              product we charge for. We would rather draw that line plainly than
+              Cratis Build is developed in public under the license stated by
+              each repository. Cratis Studio, where teams design together, is a
+              paid Preview product. We would rather draw that line plainly than
               blur it.
             </p>
           </div>
@@ -304,9 +339,9 @@
             <div>
               <h3>GitHub</h3>
               <p>
-                Every product, every open question, every change. If you want to
-                know what we are actually working on this week, that is where to
-                look.
+                Cratis Build repositories publish source, issues, and change
+                history according to each project's workflow. If you want to see
+                current public work, that is where to look.
               </p>
             </div>
             <span class="go">Browse the source →</span>
@@ -330,7 +365,7 @@
       </section>
 
       <section class="band shell" id="values">
-        <p class="eyebrow">What we build towards</p>
+        <p class="eyebrow">What we build toward</p>
         <div class="band-head">
           <div>
             <h2>Values, and the ones that cost us something.</h2>
@@ -374,7 +409,7 @@
             <h3>Testability</h3>
             <p>
               Specs are how a system explains itself to the next person. We
-              favour BDD so the tests read like the behaviour.
+              favor BDD so the tests read like the behavior.
             </p>
           </div>
           <div class="card">
@@ -463,12 +498,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -497,7 +529,7 @@
           <div class="foot-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="/about/">About</a></li>
+              <li><a href="/about/" aria-current="page">About</a></li>
               <li><a href="/why-cratis/">Why Cratis</a></li>
               <li><a href="/support/">Support &amp; services</a></li>
               <li><a href="/trust/">Trust</a></li>
@@ -542,8 +574,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

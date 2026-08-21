@@ -34,6 +34,8 @@
       content="https://cratis.no/assets/og/vague.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,10 +61,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -115,6 +114,18 @@
         <a href="/support/"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -175,8 +186,7 @@
             <span>·</span>
             <span>10 min read</span>
           </p>
-          <!-- NEEDS FACT: publication date and author byline. -->
-        </header>
+</header>
 
         <div class="article-body">
           <p>
@@ -298,9 +308,9 @@
           <h3>2. In the state</h3>
 
           <p>
-            A row that says <code>status: 'cancelled'</code> has thrown away
-            everything that matters. Who cancelled it. When. Whether it was
-            cancelled once or cancelled, reinstated, and cancelled again.
+            A row that says <code>status: 'canceled'</code> has thrown away
+            everything that matters. Who canceled it. When. Whether it was
+            canceled once or canceled, reinstated, and canceled again.
             Whether a human did it or a nightly job did it at 3am.
           </p>
 
@@ -381,11 +391,13 @@
           </p>
 
           <p>
-            <strong>One contract across the boundary.</strong> If your frontend
-            types are generated from your backend types, drift stops being a
-            class of bug and becomes a compile error. Rename a property in C#,
-            rebuild, and the TypeScript stops compiling until you fix it. Nobody
-            has to remember. Nobody has to review for it.
+            <strong>One contract across the boundary.</strong> Generating
+            frontend types from backend contracts turns many shape mismatches
+            into build failures instead of relying on manual synchronization.
+            Rename a property in C#, rebuild, and affected TypeScript usage can
+            be corrected while the change is still visible. People still review
+            meaning and behavior; the generated boundary removes one source of
+            avoidable duplication.
           </p>
 
           <div class="code-wrap">
@@ -398,9 +410,9 @@
           </div>
 
           <p>
-            The TypeScript proxy for that command is generated. There is no
-            second definition to keep in step, because there is no second
-            definition.
+            The TypeScript proxy for that command is generated from the compiled
+            backend contract, so the application does not need a separately
+            maintained handwritten request definition.
           </p>
 
           <p>
@@ -416,7 +428,7 @@
 
           <p>
             <strong>One shape for a feature.</strong> If everything for one
-            behaviour — the command, the events, the projection, the screen, the
+            behavior — the command, the events, the projection, the screen, the
             specs — lives in one place, then "add a feature" has a single
             correct answer, and both a new developer and an assistant can find
             it by looking at any existing feature.
@@ -456,18 +468,19 @@
 
           <p>
             If your event log is inspectable through a defined interface, an
-            assistant can answer questions about production without anyone
-            handing it credentials to your database. It can browse what
-            happened, replay a projection, and identify a stuck consumer — and
-            it can do that as a read-only participant.
+            assistant can investigate production without direct database
+            credentials. Current Chronicle tools can browse events and identify
+            failed observers; supported replay, retry, recommendation, and job
+            actions are separate operations that can change derived or
+            operational state. Replay is not read-only.
           </p>
 
           <p>
-            We think this direction is worth being deliberate about, so we made
-            it one-way on purpose:
-            <strong>operate, not mutate.</strong> Inspecting is open. Changing
-            state still goes through commands and events, like everything else.
-            History stays honest, whether a human or an agent is asking.
+            We think this boundary is worth being deliberate about:
+            <strong>inspect first; mutate explicitly.</strong> Authorize
+            operational actions for the environment they affect, and keep
+            business state changes on documented command and event paths so
+            history remains explainable whether a human or an agent is acting.
           </p>
 
           <h2>What this is actually about</h2>
@@ -518,8 +531,9 @@
         <footer class="article-footer">
           <p>
             We build <a href="/stack/">Cratis</a> — an event-sourced application
-            platform for .NET — around exactly this idea: that the model should
-            be the running system rather than a document beside it. If you are
+            platform for .NET — around exactly this idea: that an explicit model
+            should stay close to the running system rather than becoming a stale
+            document beside it. If you are
             working through this in your own codebase,
             <a href="/#contact">we're happy to talk</a>, including if the honest
             answer is that you don't need us.
@@ -599,9 +613,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
-            <p>
-              The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.
+<p>
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -675,8 +689,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>
