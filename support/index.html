@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Support, advisory and workshops — Cratis</title>
+    <title>Cratis Assurance — support, reviews and workshops</title>
     <meta
       name="description"
-      content="Support plans for teams running Cratis in production. Advisory hours, guaranteed response times, and a written continuity clause. From €4,500/year."
+      content="Cratis Assurance is direct expertise for teams designing, adopting and operating accountable .NET systems: support, fixed-scope reviews, first slices and workshops."
     />
     <link rel="canonical" href="https://cratis.no/support/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="Support plans for teams running Cratis in production. Advisory hours, guaranteed response times, and a written continuity clause. From €4,500/year."
+      content="Cratis Assurance is direct expertise for teams designing, adopting and operating accountable .NET systems: support, fixed-scope reviews, first slices and workshops."
     />
     <meta property="og:url" content="https://cratis.no/support/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -31,6 +31,8 @@
       content="https://cratis.no/assets/og/support.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,10 +58,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -109,9 +108,21 @@
         <a href="/studio/"><span class="idx">01</span> Studio</a>
         <a href="/#production"><span class="idx">02</span> How it works</a>
         <a href="/#value"><span class="idx">03</span> What you get</a>
-        <a href="/support/"><span class="idx">04</span> Working with us</a>
+        <a href="/support/" aria-current="page"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/" aria-current="page"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -164,48 +175,44 @@
 
     <main id="main">
       <section class="page-hero shell">
-        <p class="eyebrow">Support, advisory and workshops</p>
-        <h1>Depend on it with someone behind you.</h1>
-        <!-- CORRECTED: was "Cratis is MIT licensed and always will be" — true of the
-         open-source core, not of Cratis Studio. -->
-        <p class="lead">
-          The software your business runs on is open source and always will be.
-          A support plan isn't access to the software — it's an ongoing
-          relationship with the people who build it, and a written answer to the
-          questions your architecture review will ask.
+        <p class="eyebrow">Cratis Assurance</p>
+        <h1>Depend on it with the people behind it.</h1>
+<p class="lead">
+          Cratis Build is open source. Assurance is not permission to use or
+          repair it; it is direct access to the people and experience behind the
+          stack. Use it for model decisions, adoption, production readiness,
+          incident help and the changes that are expensive to reverse.
         </p>
       </section>
-
-      <!-- THE HONEST THING — before the price. This order is deliberate. -->
-      <section class="band shell" id="continuity">
+<section class="band shell" id="continuity">
         <div class="callout">
-          <h3>First, the question you were going to ask anyway.</h3>
+          <h2>First, the question you were going to ask anyway.</h2>
           <p><strong>What happens if you stop?</strong></p>
           <p>
-            The software your business runs on is open source and public. It
-            sits on your own infrastructure, works with the systems you already
-            have, and there is no licence to renew, nothing phoning home, and no
-            proprietary format holding your data.
+            Cratis Build is developed in public and is intended to run in your
+            infrastructure. It does not require a Studio subscription or a
+            commercial feature key. Each repository states its own license, and
+            component documentation describes interfaces and storage.
           </p>
           <p>
-            Cratis Studio is the one exception, and we would rather tell you
-            here than have you find out later: it is a product you pay for, so
-            it is the part that would go. What your team designed in it comes
-            out with you, and the software it produced keeps running — so what
-            you would lose is the shared design surface, not your systems.
+            Cratis Studio is a separate hosted, paid Preview product. Build
+            continues without it. Studio provides export for supported model
+            content; formats, retention, and post-subscription access follow the
+            hosted product and the terms that apply when you use it.
           </p>
           <p>
-            If Cratis ceased to operate tomorrow, you would keep the rest — the
-            software, the data, and the right to continue it yourself. Nothing
-            to renew, nothing to migrate off.
+            Public Build source and data in your infrastructure reduce vendor
+            dependency. They do not eliminate transition work: your team would
+            still need to plan maintenance, replacement services, and any
+            migration appropriate to its deployment.
           </p>
           <p>
-            Every support plan additionally guarantees a ninety-day wind-down
-            with handover documentation.
+            The published support plans include a ninety-day wind-down with
+            handover documentation. The signed agreement defines the applicable scope.
           </p>
           <p>
-            We think that makes us a lower-lock-in choice than most vendors ten
-            times our size. It's certainly a more honest one.
+            The practical claim is narrower: Build source is public, Studio is
+            clearly separated, and leaving still requires an engineering plan.
           </p>
         </div>
       </section>
@@ -325,8 +332,8 @@
                 <th scope="row">Roadmap input</th>
                 <td>Public</td>
                 <td>Public</td>
-                <td>Prioritised</td>
-                <td>Prioritised + briefing</td>
+                <td>Prioritized</td>
+                <td>Prioritized + briefing</td>
               </tr>
               <tr>
                 <th scope="row">Continuity clause</th>
@@ -338,14 +345,7 @@
             </tbody>
           </table>
         </div>
-
-        <!-- NOTE: the "LTS branch & backports" row specified in BRAND.md §6.2 is deliberately
-         ABSENT. An audit of all eleven product repositories found no maintenance branch has
-         ever existed, and no older major has ever received a fix after its successor shipped.
-         Do not add that row until the release process actually supports it.
-         See POLICIES.md §0. -->
-
-        <div class="grid grid-2 mt-lg">
+<div class="grid grid-2 mt-lg">
           <div class="card">
             <h3>What "advisory hours" means</h3>
             <p>
@@ -359,7 +359,7 @@
             <p>
               Something is broken in production and it is our software's fault.
               Response times are measured to a real human answer — not an
-              automated acknowledgement.
+              automated acknowledgment.
             </p>
           </div>
         </div>
@@ -383,10 +383,10 @@
       </section>
 
       <section class="band shell" id="advisory">
-        <p class="eyebrow">Advisory</p>
+        <p class="eyebrow">Assurance engagements</p>
         <div class="band-head">
           <div>
-            <h2>Get the model right the first time.</h2>
+            <h2>Get the consequential decisions right early.</h2>
             <p>
               The first slices set the pattern everything after them copies.
               Consistency boundaries are cheap to change now and expensive to
@@ -418,7 +418,7 @@
               </li>
               <li>A written review with risks ranked and fixes named</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>Model Sprint</h3>
@@ -431,7 +431,7 @@
               <li>A design your whole team agrees on</li>
               <li>The first three pieces specified in detail</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>First Slice</h3>
@@ -439,12 +439,12 @@
             <p class="price">€25,000</p>
             <ul>
               <li>
-                One real, production-grade piece of your system, built alongside
+                One real slice, built as a production-oriented pattern alongside
                 your team
               </li>
               <li>The pattern everything after it copies</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>Prologue Discovery</h3>
@@ -454,7 +454,7 @@
               <li>A map of what your existing system actually does today</li>
               <li>A sequenced adoption plan</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>AI-Ready Foundations</h3>
@@ -466,7 +466,7 @@
               </li>
               <li>A system where people and AI follow the same rules</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
         </div>
       </section>
@@ -476,7 +476,7 @@
         <div class="band-head">
           <div>
             <h2>
-              The syntax is learnable in a week.<br />The modelling is the part
+              The syntax is learnable in a week.<br />The modeling is the part
               worth teaching.
             </h2>
             <p>
@@ -499,7 +499,7 @@
               </li>
               <li>Worked through your business, not a textbook example</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>Systems That Remember</h3>
@@ -511,7 +511,7 @@
                 What it costs, what it buys, and where it is the wrong choice
               </li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
           <div class="offer">
             <h3>Building on Cratis</h3>
@@ -521,7 +521,7 @@
               <li>Building a full product on the platform, end to end</li>
               <li>Taught by building something real together</li>
             </ul>
-            <a class="offer-cta" href="/#contact">Enquire →</a>
+            <a class="offer-cta" href="/#contact">Inquire →</a>
           </div>
         </div>
         <p class="code-note">
@@ -587,23 +587,20 @@
                 reassuring one.
               </p>
               <p>
-                The software your business runs on is open source and developed
-                in public. It sits on your own infrastructure and works with the
-                systems you already have. There is no licence to renew and no
-                proprietary format holding your data. If we stopped tomorrow,
-                you would keep everything you are running and the right to
-                continue it yourself — Cratis Studio, where your team designs,
-                is the one part that would go, and what you designed in it comes
-                out with you.
+                Cratis Build is developed in public and intended to run in your
+                infrastructure without a Studio subscription. Studio is a
+                separate paid Preview product with export for supported model
+                content. Continuing or replacing any deployed stack would still
+                require engineering ownership and a transition plan.
               </p>
               <p>
-                That is a stronger position than most teams have with most
-                vendors, and it is deliberate. Support plans additionally
-                include a ninety-day wind-down with handover documentation.
+                The published support plans additionally include a ninety-day
+                wind-down with handover documentation; the signed agreement
+                defines the applicable scope.
               </p>
               <p>
-                We are small, and we intend to stay small enough that you can
-                always reach the person who wrote the code.
+                Assurance is founder-led today. The selected plan or agreement
+                defines availability, points of contact, and escalation.
               </p>
             </div>
           </details>
@@ -628,7 +625,7 @@
                 the system cannot answer — stay where you are.
               </p>
               <p>
-                Organisations come to us when the design lives in a few people's
+                Organizations come to us when the design lives in a few people's
                 heads, when the pieces have drifted apart, or when a question
                 about the past takes a week to answer. That is the part we
                 built.
@@ -639,13 +636,10 @@
             <summary>What about lock-in?</summary>
             <div class="answer">
               <p>
-                Concretely: the software your business runs on is open source
-                and public, it sits on your infrastructure, and it works with
-                the systems you already have. The one thing we charge for is
-                Cratis Studio — where your team designs, not what keeps your
-                business running — and what you design in it comes out with you.
-                You can leave whenever you want. We would rather you did not
-                want to.
+                Cratis Build source is public and the runtime is intended for
+                your infrastructure. Studio is a separate paid Preview product
+                with export for supported model content. Those choices reduce
+                lock-in, but leaving still requires a maintenance or migration plan.
               </p>
             </div>
           </details>
@@ -659,17 +653,18 @@
                 ask the running system what happened, in plain language.
               </p>
               <p>
-                That last one is read-only by design. An assistant can look, but
-                changing anything still goes through the same path as everything
-                else. The record stays honest.
+                Inspection can be read-only, but Chronicle MCP also exposes
+                documented operational actions such as observer replay and
+                recovery and job changes. Treat those as writes, authorize them
+                for the environment they affect, and keep business changes on
+                domain command and event paths.
               </p>
             </div>
           </details>
           <details>
             <summary>How long is a version supported?</summary>
             <div class="answer">
-              <!-- NEEDS FACT: publish once POLICIES.md §1 is ratified and the release process supports it. -->
-              <p>
+<p>
                 We are writing this down formally. Until it is published, ask us
                 directly and you will get a straight answer about the version
                 you are on.
@@ -751,12 +746,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -787,7 +779,7 @@
             <ul>
               <li><a href="/about/">About</a></li>
               <li><a href="/why-cratis/">Why Cratis</a></li>
-              <li><a href="/support/">Support &amp; services</a></li>
+              <li><a href="/support/" aria-current="page">Support &amp; services</a></li>
               <li><a href="/trust/">Trust</a></li>
             </ul>
           </div>
@@ -830,8 +822,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

@@ -54,7 +54,7 @@
 }
 
 /* Light theme — designed, not inverted.
-   Principles: warm off-white ground (never pure #fff — the award research is
+   Principles: warm off-white ground (never pure #fff — visual review is
    explicit), white cards ON the tinted ground rather than grey cards on white,
    and the SAME brand violet as dark — the brand must not change colour when
    the theme does. All accent values checked for WCAG AA on the new ground. */
@@ -261,13 +261,69 @@ svg {
     transition: color 0.18s ease;
     white-space: nowrap;
 }
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
     color: var(--text);
 }
-.site-nav .idx {
+.site-nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 6px;
+}
+.site-nav .idx,
+.mobile-nav .idx {
     color: var(--text-faint);
     font-family: var(--font-mono);
     font-size: 11px;
+}
+
+.nav-menu {
+    display: none;
+    position: relative;
+}
+.nav-menu summary {
+    min-width: 48px;
+    min-height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--panel);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    list-style: none;
+}
+.nav-menu summary::-webkit-details-marker {
+    display: none;
+}
+.mobile-nav {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: min(340px, calc(100vw - 2 * var(--gutter)));
+    display: grid;
+    padding: 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: 0 20px 50px rgb(0 0 0 / 0.4);
+}
+.mobile-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-dim);
+}
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible,
+.mobile-nav a[aria-current="page"] {
+    color: var(--text);
+    background: color-mix(in srgb, var(--text) 7%, transparent);
 }
 
 .header-actions {
@@ -332,7 +388,19 @@ svg {
 }
 
 @media (max-width: 900px) {
+    .site-header {
+        gap: 10px;
+    }
     .site-nav {
+        display: none;
+    }
+    .nav-menu {
+        display: block;
+        margin-left: auto;
+    }
+}
+@media (max-width: 520px) {
+    .site-header .pill {
         display: none;
     }
 }
@@ -2315,16 +2383,14 @@ table.plans .price-cell {
 }
 
 /* =========================================================================
-   2026 CORRECTION PASS
-   Measured from Awwwards winners (Prime Security, Kurrent, SSTR, ON Energy):
-   - display weight 400-500, never 700-800
-   - hero caps ~78px; monumental type lives BELOW the fold
-   - letter-spacing scales with size
-   - grotesque + mono, no serif body
-   - one accent, flat dark, top-anchored radial atmosphere only
+   TYPOGRAPHY CORRECTION PASS
+   - keep hero type bounded and reserve monumental type for later sections
+   - scale letter spacing with size
+   - use the sans and mono families consistently
+   - retain one accent and a restrained top-anchored atmosphere
    ========================================================================= */
 
-/* --- Hero: smaller, lighter, confident. Prime Security = min(4.8vw, 78px)/500 --- */
+/* --- Hero: bounded, lighter, and confident --- */
 .hero-brand h1 {
     font-size: min(6.4vw, 82px);
     font-weight: 500;
@@ -2357,7 +2423,7 @@ h3 {
     font-weight: 600;
 }
 
-/* --- Monumental type BELOW the fold: the stat block (Prime Security 160px) --- */
+/* --- Monumental type stays below the fold in the stat block --- */
 .numbers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2408,7 +2474,7 @@ h3 {
     color: var(--text-dim);
 }
 
-/* --- Split hero headline (Prime Security signature) --- */
+/* --- Split hero headline --- */
 .split-head {
     position: relative;
 }
@@ -2430,7 +2496,7 @@ h3 {
 
 /* --- THE SIGNATURE VISUAL: ordered time ---------------------------------
    An event store's one true image is a timeline that keeps arriving.
-   Nobody in the researched set has claimed it. Pure CSS + minimal JS. */
+   Keep it distinctive and restrained. Pure CSS + minimal JS. */
 .timeline-wrap {
     position: relative;
     margin-top: clamp(40px, 5vw, 70px);
@@ -2561,7 +2627,7 @@ h3 {
     }
 }
 
-/* --- Use-case tiles (AxonIQ pattern: business nouns, one sentence) --- */
+/* --- Use-case tiles (business nouns, one sentence) --- */
 .uses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2601,7 +2667,7 @@ h3 {
     color: var(--text-dim);
 }
 
-/* --- Mono is the label voice throughout (SSTR "engineer's language") --- */
+/* --- Mono is the label voice throughout --- */
 .eyebrow,
 .act-no,
 .num,
@@ -2615,7 +2681,7 @@ h3 {
     font-family: var(--font-mono);
 }
 
-/* Serif italic stays — but only as a single accent word, Kurrent-style */
+/* Serif italic stays only as a single accent word */
 .serif {
     font-weight: 600;
 }
@@ -3055,7 +3121,7 @@ h3 {
     color: var(--text-faint);
     margin-bottom: 30px;
 }
-/* AxonIQ-style band: a quiet supporting line beside the scroll, not above it. */
+/* Quiet supporting line beside the scroll, not above it. */
 .logos-row {
     display: grid;
     grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);

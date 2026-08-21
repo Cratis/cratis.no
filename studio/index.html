@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cratis Studio — where your team designs the software together</title>
+    <title>Cratis Studio — collaborative design and runtime understanding</title>
     <meta
       name="description"
-      content="Cratis Studio is where your whole team designs how the business works — and watches it run. In beta, with a free trial that needs no card. Built for how software gets made now that machines write a share of it."
+      content="Cratis Studio is the paid collaborative design product for Cratis. Model the business together, explore it as a live preview, and connect design intent with runtime understanding."
     />
     <link rel="canonical" href="https://cratis.no/studio/" />
     <meta property="og:type" content="website" />
@@ -16,17 +16,17 @@
     />
     <meta
       property="og:description"
-      content="Design how the business works with the whole team, then watch it run. In beta, free to try, no card required."
+      content="Design how the business works together and explore supported behavior in a sandbox. Studio is Preview software and free to try without a card."
     />
     <meta property="og:url" content="https://cratis.no/studio/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <!-- NEEDS FACT: a dedicated share card for /studio/ (1200x630). Reusing the
-         homepage card until one exists. -->
-    <meta property="og:image" content="https://cratis.no/assets/og/home.jpg" />
+<meta property="og:image" content="https://cratis.no/assets/og/studio.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="twitter:image" content="https://cratis.no/assets/og/home.jpg" />
+    <meta name="twitter:image" content="https://cratis.no/assets/og/studio.jpg" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,10 +52,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -102,12 +99,24 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="/studio/"><span class="idx">01</span> Studio</a>
+        <a href="/studio/" aria-current="page"><span class="idx">01</span> Studio</a>
         <a href="/#production"><span class="idx">02</span> How it works</a>
         <a href="/#value"><span class="idx">03</span> What you get</a>
         <a href="/support/"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/" aria-current="page"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -158,19 +167,14 @@
       </div>
     </header>
     <main id="main">
-      <!-- HERO -->
-      <section class="page-hero shell">
+<section class="page-hero shell">
         <p class="eyebrow">Cratis Studio</p>
-        <h1>Where your team designs the software together.</h1>
-        <!-- DRAFT: needs approval. Drawn from cratis.studio/vision.html and Einar's
-             Studio talk. Deliberately non-technical: this page is for the person
-             deciding, not the person implementing. -->
+        <h1>Design together. Understand what runs.</h1>
         <p class="lead">
-          Most software gets designed in one room and built in another. Studio
-          puts everyone in the same room — the people who know the business and
-          the people who build it — around one picture of how the business
-          works. Then it runs that picture, so what you agreed on and what your
-          customers use are the same thing.
+          Cratis Studio is the paid collaborative surface for the Cratis
+          lifecycle. Domain experts, product people and engineers model the
+          business together, explore supported behavior as a live preview, and
+          keep design intent close to what the runtime can explain.
         </p>
         <div class="hero-actions mt-lg">
           <a class="cta" href="https://cratis.studio" target="_blank" rel="noopener">
@@ -180,14 +184,12 @@
           <a class="cta-ghost" href="#how">See how it works</a>
         </div>
         <p class="hero-facts">
-          <span>In beta</span>
+          <span>Preview maturity</span>
           <span>Free trial, no card</span>
-          <span>Your model exports</span>
+          <span>Supported model export</span>
         </p>
       </section>
-
-      <!-- WHY NOW -->
-      <section class="band shell">
+<section class="band shell">
         <p class="eyebrow">Why this now</p>
         <div class="band-head">
           <div>
@@ -213,11 +215,12 @@
           </div>
           <div class="card">
             <span class="num">With Studio</span>
-            <h3>The plan is the thing that runs</h3>
+            <h3>The plan becomes explorable</h3>
             <p>
-              Your team designs how the business behaves, and that design is
-              what executes. There is no gap between them to drift, because
-              there is no second copy.
+              Your team makes intended behavior explicit in one model. At
+              Preview maturity, Stage can perform supported parts in a sandbox;
+              implementation, review, and testing remain necessary for
+              production software.
             </p>
           </div>
           <div class="card">
@@ -231,16 +234,16 @@
           </div>
         </div>
       </section>
-
-      <!-- HOW IT WORKS -->
-      <section class="band shell" id="how">
+<section class="band shell" id="how">
         <p class="eyebrow">How it works</p>
         <div class="band-head">
           <div>
-            <h2>From a conversation to something running.</h2>
+            <h2>From a conversation to a model the team can explore.</h2>
             <p>
-              You do not need to know how any of this is built to take part.
-              That is the point.
+              You do not need to read the implementation to take part. Studio
+              makes intent visible while Stage gives supported parts of the
+              model a Preview sandbox to learn from. That sandbox does not
+              replace implementation, review, or testing.
             </p>
           </div>
         </div>
@@ -263,20 +266,20 @@
               <p>
                 Product people, domain experts, designers and engineers work on
                 the same model at once — the way you would expect from any
-                modern collaborative tool. Disagreements surface on the canvas,
-                where they are cheap, instead of in production.
+                modern collaborative tool. Some disagreements can surface on
+                the canvas before implementation, when they are cheaper to resolve.
               </p>
             </div>
           </div>
           <div class="step">
             <span class="n">03</span>
             <div>
-              <h3>Press play</h3>
+              <h3>Explore it live</h3>
               <p>
-                Studio turns the model into something that actually runs, so
-                your team can use it and react to it rather than imagine it.
-                Being wrong on a Tuesday afternoon is much cheaper than being
-                wrong after a quarter of building.
+                At Preview maturity, Stage performs supported parts of the
+                model in a sandbox so the team can explore behavior rather than
+                only debate a static diagram. It is a learning surface, not the
+                production application or evidence of production performance.
               </p>
             </div>
           </div>
@@ -293,13 +296,11 @@
           </div>
         </div>
       </section>
-
-      <!-- WHAT YOU GET -->
-      <section class="band shell">
+<section class="band shell">
         <p class="eyebrow">What changes</p>
         <div class="band-head">
           <div>
-            <h2>What your organisation gets out of it.</h2>
+            <h2>What your organization gets out of it.</h2>
           </div>
         </div>
         <div class="outcomes">
@@ -320,10 +321,10 @@
             <h3>Less gets lost on the way</h3>
             <div>
               <p>
-                Every handoff between an idea and working software is a
-                translation, and every translation loses something. Designing
-                and running from one model removes most of the handoffs
-                outright.
+                Handoffs between an idea and working software introduce
+                translation. A shared model can reduce some of that translation,
+                while implementation, review, and testing still connect the
+                design to production behavior.
               </p>
               <span class="tagline">Fewer surprises at the end</span>
             </div>
@@ -332,41 +333,41 @@
             <h3>You find out sooner</h3>
             <div>
               <p>
-                Because the model runs, the people who will live with a decision
-                can try it before it is built for real — customers included.
-                Feedback arrives while changing your mind is still cheap.
+                Because Stage can perform supported model behavior in a sandbox,
+                the people affected by a decision can explore it before the
+                production implementation is complete. Feedback can arrive while
+                changing direction is still cheaper.
               </p>
               <span class="tagline">Cheaper mistakes, earlier</span>
             </div>
           </div>
           <div class="outcome">
-            <h3>Delivery gets more predictable</h3>
+            <h3>Runtime conversations start with evidence</h3>
             <div>
               <p>
-                Studio knows what state each piece of work is in, because that
-                falls out of the model rather than out of someone updating a
-                board. Less ambiguity between what was intended and what arrives.
+                The model, Chronicle's durable facts and the operating surfaces
+                give the team a shared way to compare intended behavior with
+                what the running system can show. Gaps become questions to
+                resolve, not assumptions to preserve.
               </p>
-              <span class="tagline">Status you don't have to maintain</span>
+              <span class="tagline">Intent and evidence in one conversation</span>
             </div>
           </div>
           <div class="outcome">
-            <h3>The record keeps itself</h3>
+            <h3>A durable record supports later questions</h3>
             <div>
               <p>
-                Anything built this way records every business decision as it
-                happened, permanently and in order. When someone asks how you
-                got here — an auditor, a customer, a board — answering is a
-                question you ask the system.
+                Chronicle can retain relevant business facts in order, subject
+                to the system's retention and compliance rules. That history can
+                make later questions easier to investigate; it does not remove
+                the need to design audit and reporting behavior.
               </p>
-              <span class="tagline">Audit becomes a query, not a project</span>
+              <span class="tagline">A stronger starting point for audit questions</span>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- HONESTY -->
-      <section class="band shell" id="honest">
+<section class="band shell" id="honest">
         <p class="eyebrow">The honest part</p>
         <div class="band-head">
           <div>
@@ -378,22 +379,21 @@
         </div>
         <div class="grid grid-2">
           <div class="card">
-            <h3>It is in beta, and that means something</h3>
+            <h3>It is preview software, and that means something</h3>
             <p>
-              Features arrive often and some of them move. Parts are labelled
-              preview. We are still building toward the full loop, and we would
-              rather say that than let you discover it. What is not in beta is
-              how we treat your work: continuous backups, tested restores, and
-              your organisation's content kept separate from everyone else's.
+              Features arrive often and some of them move. Some lifecycle
+              connections are still partial, and the live runtime is a sandbox
+              for supported model behavior rather than a blanket production
+              guarantee. We would rather state those boundaries than let you
+              infer maturity from the ambition.
             </p>
           </div>
           <div class="card">
             <h3>Pricing may still change</h3>
             <p>
-              It is published rather than quoted, and it is per person. Prices
-              during beta are current but not frozen — we commit to telling
-              administrators at least thirty days before any increase, and we
-              are actively asking early customers whether we have it right.
+              Studio is a paid Preview product. Current seat options and prices
+              are shown by the hosted product before purchase and may change as
+              the product develops. The terms shown at purchase apply to that order.
             </p>
           </div>
           <div class="card">
@@ -417,9 +417,7 @@
           </div>
         </div>
       </section>
-
-      <!-- WHAT IT COSTS / OPENNESS -->
-      <section class="band shell" id="what-it-costs">
+<section class="band shell" id="what-it-costs">
         <p class="eyebrow">What it costs</p>
         <div class="band-head">
           <div>
@@ -429,17 +427,12 @@
         <div class="callout">
           <h3>Start without talking to us</h3>
           <p>
-            Create an organisation and the first administrator gets a trial seat
-            with full access — no card, no call, no demo booked before you can
-            look. After that, each person who needs access holds a seat, bought
-            in the quantity and billing cycle you choose, at prices shown before
-            you confirm.
+            The hosted product currently offers a trial without requiring a
+            card or a sales call. Current seat options, billing choices, and
+            prices are shown before you confirm a purchase.
           </p>
           <p>
-            <!-- NEEDS FACT: exact trial length and per-seat price. Both are shown in
-                 the product at the moment they apply; deliberately not restated here,
-                 because a stale number on this page would be worse than no number. -->
-            Current prices are on
+Current prices are on
             <a href="https://cratis.studio" target="_blank" rel="noopener">cratis.studio</a>.
           </p>
         </div>
@@ -447,27 +440,24 @@
           <div class="card">
             <h3>What you keep</h3>
             <p>
-              What your team designs stays yours and comes out in a format you
-              can take elsewhere. If the last seat lapses, your organisation's
-              content is held for thirty days so an administrator can export it
-              or come back.
+              Studio provides export for supported model content. Available
+              formats, access after a subscription ends, and retention are
+              described by the hosted product and the terms that apply when you use it.
             </p>
           </div>
           <div class="card">
             <h3>Why this one is paid</h3>
             <p>
-              The software your business runs on is open source and always will
-              be — you can read every line of it, and it keeps running whether
-              you work with us or not. Studio is the hosted product around it,
-              and it is what funds the rest staying free.
-              <a href="/trust/#licence">How we draw that line →</a>
+              Cratis Build — the software your business runs on — is open
+              source. You can read it, operate it and continue running it
+              whether you use Studio or Assurance. Studio is the hosted,
+              collaborative product around design and runtime understanding.
+              <a href="/trust/#license">How we draw that line →</a>
             </p>
           </div>
         </div>
       </section>
-
-      <!-- CTA -->
-      <section class="band shell">
+<section class="band shell">
         <div class="banner">
           <div>
             <h3>Have a look for yourself.</h3>
@@ -554,12 +544,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -579,7 +566,7 @@
                   >Arc</a
                 >
               </li>
-              <li><a href="/studio/">Cratis Studio</a></li>
+              <li><a href="/studio/" aria-current="page">Cratis Studio</a></li>
               <li><a href="/stack/">The stack</a></li>
               <li><a href="/stack/the-cast/">The cast</a></li>
             </ul>
@@ -633,8 +620,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

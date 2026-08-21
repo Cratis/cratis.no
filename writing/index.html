@@ -16,6 +16,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://cratis.no/assets/og/home.jpg">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -95,6 +97,18 @@
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
 
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
+
       <div class="header-actions">
         <button
           class="theme-toggle"
@@ -155,7 +169,7 @@
     <div class="post-list">
       <a class="post" href="/writing/vague-codebase-vague-code/">
         <span class="when">Essay · 10 min</span>
-        <h3>Give it a vague codebase and it produces vague code, faster.</h3>
+        <h2>Give it a vague codebase and it produces vague code, faster.</h2>
         <p>Assistants are a multiplier on the structure they work inside — including when that structure is bad. On unstated conventions, contract drift, state that has forgotten its own history, and why a rule without teeth isn't a rule.</p>
       </a>
     </div>
@@ -209,12 +223,14 @@
                 </g>
               </svg>
           </a>
-          <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
-          <p>The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.</p>
+<p>
+            Software that remembers. Design, build, operate and improve
+            accountable, long-lived .NET business systems.
+          </p>
         </div>
 
         <div class="foot-col">
-          <h4>Product</h4>
+          <h3>Product</h3>
           <ul>
             <li><a href="https://cratis.io/chronicle/" target="_blank" rel="noopener">Chronicle</a></li>
             <li><a href="https://cratis.io/arc/" target="_blank" rel="noopener">Arc</a></li>
@@ -225,7 +241,7 @@
         </div>
 
         <div class="foot-col">
-          <h4>Company</h4>
+          <h3>Company</h3>
           <ul>
             <li><a href="/about/">About</a></li>
             <li><a href="/why-cratis/">Why Cratis</a></li>
@@ -235,7 +251,7 @@
         </div>
 
         <div class="foot-col">
-          <h4>Resources</h4>
+          <h3>Resources</h3>
           <ul>
             <li><a href="/writing/">Writing</a></li>
             <li><a href="https://cratis.io" target="_blank" rel="noopener">Documentation</a></li>
@@ -247,8 +263,7 @@
       </div>
 
       <div class="foot-bar">
-        <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-        <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
         <div class="legal">
           <a href="/trust/">Trust</a>
           <a href="/trust/#security">Security</a>

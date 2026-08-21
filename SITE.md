@@ -1,315 +1,119 @@
-# SITE.md — Build specification for cratis.no
+# cratis.no site specification
 
-**Read `AGENTS.md` first.** This document covers stack, form factor, design system, components, and build order. Page-by-page content lives in `PAGES.md`.
+Read `AGENTS.md`, `BRAND.md`, and `MESSAGING.md` before changing public content.
 
----
+## Purpose
 
-## 1. Purpose and scope
+The site should let an evaluator understand Cratis quickly, decide whether it fits, verify current limits, and choose among three offers:
 
-### 1.1 What this site is for
+1. **Cratis Build** — the open runtime and operating foundation.
+2. **Cratis Studio** — the paid collaborative design product at **Preview** maturity.
+3. **Cratis Assurance** — founder-led support and bounded expertise, with availability and commitments defined by the selected plan or engagement.
 
-Four jobs, in priority order:
+The organizing lifecycle is **Design → Build → Operate → Improve**. Studio supports Design but is not part of Build. Build includes the deployed runtime and available operating tools. Assurance does not gate the right to run or repair Build.
 
-1. **Make a senior engineer understand Cratis in ten seconds** — and want to know more.
-2. **Give a manager or architect the evidence to say yes** — trust, continuity, terms, proof.
-3. **Sell support plans, workshops and advisory** — with public pricing and a low-friction first step.
-4. **Make two people look like a company** — without claiming to be more than two people.
+## Technology and deployment
 
-### 1.2 What this site is not
+The current site is static HTML, one shared stylesheet, and one progressive-enhancement script. GitHub Pages serves the repository root. There is no compilation, package installation, CMS, or generated content layer.
 
-Not documentation. Not a tutorial. Not a blog-first site. Not a feature encyclopedia.
+JavaScript is optional for reading and navigation. It enhances theme persistence, motion, mobile-menu Escape behavior, in-page focus management, and contact email composition.
 
-If a visitor wants to *learn Cratis*, this site's job is to hand them to cratis.io as fast as possible. If they want to *trust Cratis or buy from Cratis*, this site is where that happens end to end.
-
-### 1.3 The single success metric
-
-> A staff engineer who has never heard of Cratis lands on the homepage, and within thirty seconds can accurately explain to a colleague what it is and why it's different.
-
-Every design and copy decision is judged against that sentence.
-
----
-
-## 2. Form factor and constraints
-
-*Technology choice is Einar's. This section states what the site must **do**, not what it must be built **with**.*
-
-### 2.1 Requirements, not prescriptions
-
-| Requirement | Why it matters |
-| --- | --- |
-| **Fast** | LCP under 1.5s. A slow site contradicts everything the brand claims about craft. |
-| **Works without JavaScript** | Content must be readable with JS disabled. Only the one interactive piece (§5.3) may require it. |
-| **Accessible** | Semantic HTML, real heading order, keyboard navigable, visible focus, WCAG AA contrast, `prefers-reduced-motion` honoured. |
-| **Dark and light** | Dark is the default. Light must work and must be tested. |
-| **Content in the repo** | Copy lives in version control, reviewable in a pull request. No CMS — two people need `git`, not an editor UI. |
-| **Analytics without a cookie banner** | Plausible, Fathom, or none. A consent banner on a site that preaches honesty is a bad first impression. |
-| **Preview deploys** | Every pull request gets a URL. Copy changes need to be seen before they merge. |
-
-### 2.2 One structural rule that outlives any stack
-
-**Pricing, product names, and locked descriptors have exactly one source each.**
-
-Support plan tiers appear on `/support` and `/services`. Product descriptors appear on the homepage, `/stack`, and the footer. If those are typed by hand in multiple places they *will* drift — an unusually embarrassing bug for a brand whose central claim is that drift becomes a build error.
-
-Whatever the stack: keep them in one data file and render from it.
-
-### 2.3 Note on continuity with the docs site
-
-The docs site (`../Documentation/web`) is Astro + Starlight. Sharing a toolchain family would let conventions and components transfer, and would make the two sites easier to keep visually aligned. That's an argument, not a requirement — the design and stack call is Einar's.
-
----
-
-## 3. Design notes
-
-*Einar owns design and styling. This section is **input**, not instruction — observations from the brand work and from the existing docs site that may or may not be useful.*
-
-### 3.1 A correction to BRAND.md worth knowing about
-
-`BRAND.md` §9.2 proposed a warm amber accent. **Disregard that.** It was written before I looked at `../Documentation/web/src/styles/cratis.css`, which already ships a real identity:
-
-```css
---sl-font:            'Inter Variable'
---sl-font-mono:       'JetBrains Mono Variable'
---sl-color-accent:    #3b6fed   /* dark theme */
---sl-color-accent:    #2150cf   /* light theme */
---sl-color-accent-low: #14224a
---sl-color-accent-high:#c3d4fb
-```
-
-Brand continuity outranks a fresh aesthetic preference. A visitor moving between cratis.no and cratis.io should not feel they changed companies. If the accent changes, it should change on both sites in the same week.
-
-### 3.2 The rest of BRAND.md §9 still stands
-
-- **Editorial, not theatrical.** The theatre metaphor lives in the *names*. No curtains, masks, spotlights, or clapperboards — it reads as kitsch and undercuts the enterprise credibility the support plans depend on.
-- **Code is a first-class visual element**, not decoration. Real, correct, runnable code — never pseudo-code on a site that sells type safety.
-- **Almost no photography.** Two real photographs of two real people on `/about`. No stock, no illustrated blobs, no 3D isometric servers.
-- **Asymmetry over centering.** Centered hero text is the default look of every developer-tool site.
-- **One motion piece only** (§5.3). Nothing on scroll — no fade-ins, no parallax, no reveal animations.
-
-### 3.3 One suggestion worth considering
-
-If a single warm accent is introduced, reserving it for **prices, status pills, and the one motion highlight** — and nothing else — would make it read as meaningful rather than decorative. Scarcity is what makes an accent work.
-
-### 3.4 The display-serif question
-
-`BRAND.md` §9.2 argued for a high-contrast serif on headlines — the "playbill" reference — to separate Cratis from the wall of Inter-on-white that every developer tool currently looks like.
-
-That argument still holds, but it is a **brand-wide** decision, not a marketing-site decision. If adopted, it should land on both sites together. Flagged as open decision 3 in §10.
-
-### 3.5 Content-driven layout constraints
-
-These come from the copy rather than from taste, so they are worth knowing regardless of visual direction:
-
-- **The hero headline must hold two lines maximum** at every breakpoint. "The model is the system." is short by design.
-- **The pull-quotes need room.** Three of them (`§1.3`, `§1.4`, and the continuity clause) are doing heavy lifting and will be screenshotted.
-- **The plan table must not collapse into stacked cards on mobile.** The comparison *is* the value — horizontal scroll with a sticky first column preserves it.
-- **Prose wants a narrow measure** (~42rem); comparison tables and code want a wide one (~68rem). The page alternates between them.
-
----
-
-## 4. Information architecture
+## Current routes
 
 ```text
-/                       Homepage
-/stack                  The Cratis Stack — three products, one narrative
-/stack/the-cast         The ensemble page (metaphor, shareable)
-/why-cratis             The competitive argument, honestly made
-/support                Support plans + continuity clause + terms
-/services               Advisory catalogue
-/services/workshops     Workshops + public cohorts
-/trust                  Security, governance, LTS, licence, roadmap
-/about                  Founders, core team, values, legal entity
-/customers              Showcase — named production users
-/blog                   Index
-/blog/[slug]            Post
-/contact                Book a Fit Review
-/legal/terms            Support plan terms
-/legal/privacy          Privacy
+/                                      Company and lifecycle overview
+/studio/                               Cratis Studio Preview
+/stack/                                Build and the lifecycle
+/stack/the-cast/                       Product and capability naming
+/why-cratis/                           Fit and anti-fit
+/support/                              Assurance plans, pricing, and workshops
+/trust/                                Current trust facts and explicit limits
+/about/                                Founders, lineage, and values
+/writing/                              Essays
+/writing/vague-codebase-vague-code/    Published essay
 ```
 
-### 4.1 Navigation
+Product tutorials and API documentation link to `cratis.io` instead of being duplicated here.
 
-**Header** — five items maximum. More than five and nothing gets clicked.
+## Navigation
 
-```text
-[Cratis]    Stack   Why Cratis   Support   Services   Docs ↗    [ Get started ]
-```
+The desktop header contains Studio, How it works, What you get, Working with us, and Who we are, plus Docs. The mobile header exposes the same destinations through a native `<details>` menu.
 
-- `Docs ↗` goes to cratis.io with an external-link marker.
-- `Get started` is the only button in the header. It goes to the cratis.io getting-started page.
-- Sticky on scroll, translucent backdrop, thin bottom border once scrolled.
-- Mobile: hamburger → full-screen overlay, large touch targets.
+Requirements:
 
-**Footer** — four columns, and this is where the credibility signals live.
+- current Studio, Support, and About links use `aria-current="page"` in static HTML;
+- the menu works without JavaScript;
+- Escape closes an open enhanced menu and returns focus to its summary;
+- links have at least a 48-pixel touch target;
+- the skip link and visible focus styles remain available;
+- every page has one `<h1>` and a logical heading order.
 
-```
-Product          Company         Resources        Cratis
-Chronicle        About           Documentation    Cratis AS
-Arc              Trust           GitHub           Org.nr NNN NNN NNN
-Studio           Customers       Discord          Oslo, Norway
-The Cast         Blog            Roadmap          oss@cratis.io
-                 Contact         Changelog        MIT licensed
-                                 Security
-```
+## Content architecture
 
-Bottom bar: `© Cratis AS` · Terms · Privacy · theme toggle.
+### Homepage
 
-**The legal entity in the footer is not a formality.** It is the line that turns "two guys with a GitHub org" into "a registered company" for a cautious reader. Put it on every page.
+Explain the lifecycle and route visitors to Studio, Build, Assurance, fit guidance, and contact. Do not include customer logos, testimonials, attributed founder quotations, or numerical absolutes without approved evidence.
 
----
+The contact form opens a draft in the visitor's email application. The page must state that nothing is sent automatically and provide the email address as a fallback.
 
-## 5. Recurring content patterns
+### Studio
 
-*Not a component spec — a list of the shapes the copy keeps taking. Useful whether these become components, partials, or hand-built sections.*
+Use **Preview** consistently. Describe Stage as a sandbox for supported model behavior, not as the production system, a complete runtime, or proof that design and implementation cannot drift. Current trial, pricing, export, and retention details belong to the hosted product and its applicable terms.
 
-### 5.1 Patterns that repeat across pages
+### Stack and cast
 
-| Pattern | Where it appears | What it has to do |
-| --- | --- | --- |
-| **Product card** | Homepage, `/stack`, footer | Name + locked descriptor + one-liner + link. The descriptor is never optional — see `MESSAGING.md` §3. |
-| **Statement** | Homepage ×2, `/support`, `/about` | A single brand line, large, standing alone. These get screenshotted; they need room. |
-| **Code showcase** | Homepage, `/stack` | Tabbed C# / TypeScript with a caption. Real code from the docs, never invented. |
-| **Comparison** | `/why-cratis` | "Instead of / you get" two-column table. |
-| **Plan table** | `/support` | Four tiers, ~15 rows. Must stay comparable on mobile. |
-| **Engagement card** | `/services` | Name, duration, price, "you leave with". |
-| **FAQ** | `/support`, `/why-cratis` | Expand/collapse. Should work without JS. |
-| **Person card** | `/about`, homepage | Photo, name, role, one-line bio, link. |
-| **Honesty callout** | Every commercial page | The "when this is the wrong fit" aside. This is a Cratis signature — it needs a distinct, recognisable treatment. |
-| **Logo wall** | `/customers` | **Blocked** until three real logos exist. An empty or padded wall is worse than none. |
+Present Build, Studio, and Assurance before individual capability names. Chronicle is the event-lifecycle foundation and Arc carries typed contracts from C# toward TypeScript and React. Client, storage, and operating-tool coverage vary by product and version; link to current documentation.
 
-### 5.2 The single source-of-truth rule
+### Support
 
-Product descriptors, plan tiers, and engagement prices each appear on **two or more** pages. However the site is built, these belong in one data file and get rendered — not retyped. See §2.2.
+Preserve the founder-published plan and engagement prices and the concrete support terms on the page. General marketing copy may summarize them as published response targets, but should not expand their coverage. A signed agreement is authoritative for an engagement.
 
-### 5.3 The one interactive piece — "model to system"
+### Trust
 
-The centrepiece, and the only place on the site that justifies JavaScript. Four states:
+State current facts and limits. Do not publish a support window, maintenance branch, release cadence, legal entity detail, universal telemetry claim, zero-migration claim, universal storage independence, or formal governance program before it exists and is ratified.
 
-```text
-[ 1 Model ]  [ 2 Script ]  [ 3 Running ]  [ 4 History ]
+### About and writing
 
-1. MODEL     A simplified event-model canvas — command → event → read model.
-2. SCRIPT    The same model as Screenplay .play source.
-3. RUNNING   The live app — a React form and a table.
-4. HISTORY   The event log in the CLI, showing the event the form just produced.
-```
+Preserve the more-than-fifteen-year event-sourcing lineage and the founder-led nature of Assurance without promising unlimited direct availability. Only publish approved names, roles, bios, photographs, and quotations.
 
-**Caption, fixed:** *"The same model, four ways. Stage runs it — nothing is generated, so nothing can drift."*
+## Open-source and commercial wording
 
-Behaviour worth preserving whatever the implementation:
+Use these boundaries:
 
-- Auto-advance, but **stops permanently on any user interaction**. Nothing is more irritating than a carousel that keeps moving after you've taken control.
-- Keyboard operable, correct tab semantics.
-- A static first frame when JS is off or reduced-motion is set.
+- Cratis Build is developed in public under the license stated by each repository.
+- Cratis Studio is a separate paid Preview product.
+- Cratis Assurance is paid time, expertise, and published commitments.
+- Build does not require Studio or Assurance as permission to run.
 
-**This is the single highest-value asset on the site** — it demonstrates the one claim no competitor can make. It is also the only thing here that needs real design and engineering time. Worth doing *after* the pages exist, so it illustrates something proven rather than something speculative.
+Do not say that all Cratis software is MIT licensed, that every deployed component has identical terms, or that public source eliminates migration and maintenance work.
 
----
+Footer wording must remain scoped to Build and repository-specific licenses.
 
-## 6. Page-type templates
+## Visual and asset requirements
 
-### 6.1 Homepage — the ten-second test
+- Dark is the default theme; light is fully supported.
+- Respect `prefers-reduced-motion`.
+- Content remains visible if scripts or observers fail.
+- Preserve readable prose width and horizontal scrolling for comparison tables.
+- Every public page includes SVG and PNG favicons plus the Apple touch icon.
+- Every public page has a 1200×630 share card; Studio uses `assets/og/studio.jpg`.
 
-Sections, in order:
+## Public hygiene
 
-1. **Hero** — headline, subhead, two buttons, credibility strip
-2. **Three commands** — the install snippet
-3. **The problem** — name the pain
-4. **The answer** — four moves, one payoff line
-5. **`ModelToSystem`** — the proof
-6. **The products** — three cards
-7. **The code** — one slice, C# and TypeScript
-8. **Who we are** — the company promise
-9. **Where to start** — three routes out
+Public HTML contains no editorial, audit, placeholder, provenance, or source comments. Public pages and repository documents contain no private research references, competitor claims, customer secrets, or invented proof.
 
-Nine sections. **No more.** Every extra section costs comprehension, which is the one thing the homepage is measured on.
+Customer logos and testimonials remain absent until real material has written publication approval. Unratified policy drafts do not belong here.
 
-### 6.2 Commercial pages (`/support`, `/services`)
+## Validation
 
-Fixed order: **Hero → the honest thing → the offer → the detail → FAQ → CTA.**
+Before publication:
 
-"The honest thing" comes *before* the price. On `/support` that is the continuity clause. On `/services` it is "when we're not the right fit". Leading with the caveat is the differentiator — it is also, straightforwardly, the more useful order for the reader.
-
-### 6.3 Trust page
-
-Long, dense, scannable, boring on purpose. Sections addressable by anchor so an architect can link a colleague to exactly one clause. This page is optimised for being *cited*, not read.
-
----
-
-## 7. Suggested sequence
-
-*Ordered by value, not by dependency. The point is that finished pages beat scaffolded ones — one complete page teaches more about whether the direction is right than twelve empty routes.*
-
-| Order | Page | Why here |
-| --- | --- | --- |
-| 1 | **Homepage** | The ten-second test is the whole point. Everything else is downstream of getting this right. |
-| 2 | `/support` | Revenue. The continuity clause is the most valuable copy on the site. |
-| 3 | `/services` + `/services/workshops` | Revenue. |
-| 4 | `/trust` | Cheapest high-value page — mostly assembly of content that already exists on cratis.io. |
-| 5 | `/about` + `/contact` | Credibility, and the route from interest to conversation. |
-| 6 | `/stack` + `/why-cratis` | Depth for the evaluator who wants to go deeper. |
-| 7 | The "model to system" piece | Now illustrates something proven. |
-| 8 | `/stack/the-cast` | Shareable asset — good launch-day content. |
-| 9 | `/blog` + first post | Ongoing. |
-| 10 | `/customers` | **Blocked** until three real named users exist. |
-
-**A launch could reasonably be 1–5.** Items 6–9 are depth, and depth can follow. Item 10 is blocked on facts, not on effort.
-
----
-
-## 8. SEO and metadata
-
-- **One `<h1>` per page.** Real heading hierarchy, no skipped levels.
-- **Per-page OG image** in `public/og/` — dark background, the page headline in Inter, the Cratis mark. Consistent template.
-- Meta descriptions written by hand, 150–160 characters. Never auto-generated.
-- `Organization` and `Product` JSON-LD on the homepage. `FAQPage` on `/support`.
-- `sitemap.xml` and a real `robots.txt`.
-- **Canonicals matter here.** cratis.io and cratis.no must never compete for the same query. Any topic that exists in the docs is linked, not restated.
-
-**Target queries** — commercial-intent only, leaving informational queries to the docs:
-
-`event sourcing .NET support` · `Marten alternative` · `AxonIQ alternative .NET` · `event modeling workshop` · `event sourcing consulting` · `CQRS framework .NET React` · `event sourcing training`
-
----
-
-## 9. Done checklist
-
-Before a page ships:
-
-**Content — the part that must not slip**
-
-- [ ] Every claim traceable to `BRAND.md`, `MESSAGING.md`, or a verified fact
-- [ ] Zero do-not-say words (`MESSAGING.md` §12)
-- [ ] Every product name carries its locked descriptor on first use
-- [ ] No invented statistics, dates, customers, or headcount
-- [ ] Every external link resolves
-- [ ] Any gap left as an explicit marker, not a plausible guess
-
-**Experience**
-
-- [ ] Dark and light both correct
-- [ ] Mobile, tablet, desktop all checked
-- [ ] Readable with JavaScript disabled
-- [ ] Keyboard navigable, visible focus states
-- [ ] `prefers-reduced-motion` honoured
-- [ ] LCP under 1.5s
-
-**Brand**
-
-- [ ] No theatre imagery, no stock photography
-- [ ] The honesty section is present wherever the page makes a claim worth qualifying
-
----
-
-## 10. Open decisions
-
-Flag these to the founders; do not decide them unilaterally.
-
-| # | Decision | Recommendation |
-| --- | --- | --- |
-| 1 | **Domain.** `.no` signals a local Norwegian supplier to international enterprise buyers. | Consolidate on `cratis.io`, or acquire `.com`/`.dev`. See `BRAND.md` §10.1. |
-| 2 | **Publish prices?** | **Yes.** Public pricing is the single biggest credibility multiplier available to a small company. |
-| 3 | **Display serif for headlines?** | Defer. If adopted, change both sites in one commit. |
-| 4 | **Payment flow** — Stripe checkout vs. invoice on request? | Invoice for support plans; Stripe only for public workshop seats. |
-| 5 | **Blog on this site or cratis.io?** | Here. Company voice, and it feeds the commercial pages. |
-| 6 | **Legal entity details** — exact name, org.nr, address for the footer. | **Needed before launch.** Cannot be invented. |
+1. Parse every public HTML file and reject malformed markup, duplicate IDs, or broken heading structure.
+2. Resolve every internal file and fragment.
+3. Check external links.
+4. Scan for HTML comments, placeholder markers, invented customer names, and internal-policy references.
+5. Scan public copy for British spellings.
+6. Confirm Studio is Preview everywhere and outside Build.
+7. Check favicon, touch-icon, and share-card dimensions.
+8. Exercise desktop and mobile navigation with keyboard, Escape, reduced motion, and JavaScript disabled.
+9. Review dark and light screenshots at mobile and desktop widths when browser tooling is available.

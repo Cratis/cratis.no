@@ -6,7 +6,7 @@
     <title>Why Cratis — and when it's the wrong choice</title>
     <meta
       name="description"
-      content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else."
+      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="How Cratis compares to assembling libraries yourself or adopting an enterprise event platform — including the cases where you should choose something else."
+      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
     />
     <meta property="og:url" content="https://cratis.no/why-cratis/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -25,6 +25,8 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:image" content="https://cratis.no/assets/og/why.jpg" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,10 +52,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -106,6 +105,18 @@
         <a href="/support/"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -197,7 +208,7 @@
                   Spreading one feature across controllers, handlers, clients
                   and UI folders
                 </th>
-                <td>A vertical slice organised by behaviour</td>
+                <td>A vertical slice organized by behavior</td>
               </tr>
               <tr>
                 <th scope="row">Rebuilding screens by hand after a write</th>
@@ -230,15 +241,16 @@
                   Locking event history to one language or database engine
                 </th>
                 <td>
-                  An open gRPC boundary, four client languages, four storage
-                  backends
+                  An open gRPC boundary, with client and storage coverage
+                  documented by product and version
                 </td>
               </tr>
               <tr>
                 <th scope="row">Debugging from logs alone</th>
                 <td>
-                  Events, observers, read models and replay, visible through the
-                  CLI and Workbench
+                  Events, observers, and read models visible in current tools;
+                  replay is a deliberate operational action in supported CLI and
+                  Workbench versions
                 </td>
               </tr>
             </tbody>
@@ -267,7 +279,7 @@
             <span class="num">02</span>
             <h3>A history you can question</h3>
             <p>
-              Event sourcing optimises for understanding change, not storing the
+              Event sourcing optimizes for understanding change, not storing the
               latest value. Events are facts: immutable, past-tense,
               single-purpose. Read models are disposable, because the events are
               the state.
@@ -285,147 +297,90 @@
           </div>
           <div class="card">
             <span class="num">04</span>
-            <h3>Open at every boundary</h3>
+            <h3>Public Build source and documented boundaries</h3>
             <p>
-              Everything you deploy is MIT licensed. gRPC and protobuf at the
-              Chronicle boundary. Storage is a deployment choice. The pieces
-              stand alone — Chronicle without Arc, Arc without event sourcing.
-              The dependency only runs one way.
+              Cratis Build is developed in public under the license stated by
+              each repository. Chronicle exposes gRPC and protobuf, while client
+              and storage coverage varies by product and version. Chronicle can
+              be used without Arc, and Arc can be used without event sourcing.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="band shell" id="from-libraries">
-        <p class="eyebrow">Coming from libraries</p>
+      <section class="band shell" id="from-parts">
+        <p class="eyebrow">When assembling parts</p>
         <div class="band-head">
           <div>
-            <h2>If you're using Marten and Wolverine.</h2>
-            <p>Let's start with the part that isn't a sales pitch.</p>
-          </div>
-        </div>
-
-        <div class="callout">
-          <p>
-            <strong>Marten is excellent.</strong> Eleven years of production
-            use, millions of downloads, and a reputation it earned the hard way.
-            Jeremy Miller has been doing this longer than we have, and the
-            Critter Stack is a genuinely good answer to the problem it set out
-            to solve.
-          </p>
-          <p>
-            If you're backend-only, committed to PostgreSQL, and you don't have
-            a frontend contract problem or a modelling gap —
-            <strong>stay where you are.</strong> You'd be trading a mature,
-            well-supported library for a younger one to solve a problem you
-            don't have.
-          </p>
-        </div>
-
-        <div class="grid grid-2 mt-lg">
-          <div class="card">
-            <span class="num">Where they're stronger</span>
-            <h3>Maturity and reach</h3>
+            <h2>Choose the smallest boundary that solves the real problem.</h2>
             <p>
-              More years in production, a larger community, more people who have
-              already hit your problem and written about it. If that matters
-              more than anything below, it's a good reason to choose them.
-            </p>
-          </div>
-          <div class="card">
-            <span class="num">Where we're different</span>
-            <h3>Scope, not quality</h3>
-            <p>
-              They give you an event store and messaging. We carry the frontend
-              contract, the edge, identity and tenancy, and a modelling surface
-              as part of the same set of conventions. That's a different bet,
-              not a better library.
+              A focused library can be the better answer. Cratis earns its keep
+              when the expensive gaps are between design, backend, frontend,
+              history and operations.
             </p>
           </div>
         </div>
-
-        <p class="code-note">
-          Teams come to us when the gaps they're feeling are the ones
-          <em>between</em> the layers — the hand-written API client, the DTOs
-          mirrored in two languages, the design that lives in someone's head.
-          That's the part we built.
-        </p>
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="num">Choose focused parts</span>
+            <h3>When the boundary is genuinely narrow</h3>
+            <p>
+              A backend-only service, one database, no shared design problem and
+              no cross-language contract drift may not need the wider stack.
+              Fewer moving pieces are a benefit when they solve the whole job.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Choose Cratis</span>
+            <h3>When coherence is the requirement</h3>
+            <p>
+              Cratis Build joins Chronicle's event lifecycle with Arc's typed
+              C# → TypeScript → React continuity. Workbench, CLI, and Chronicle
+              MCP then expose documented operating workflows whose coverage
+              varies by tool and version.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section class="band shell" id="from-platforms">
-        <p class="eyebrow">Coming from an enterprise platform</p>
+      <section class="band shell" id="packages">
+        <p class="eyebrow">The commercial boundary</p>
         <div class="band-head">
           <div>
-            <h2>If you're looking at a JVM event platform.</h2>
+            <h2>Three offers, with the line drawn plainly.</h2>
+          </div>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="num">Cratis Build</span>
+            <h3>Public runtime source and operating tools</h3>
             <p>
-              Different runtime, different buying motion, and one real
-              architectural difference.
+              Chronicle, Arc, Components, Workbench, CLI, and Chronicle MCP are
+              developed in public under the license stated by each repository.
+              Their documented Build capabilities do not require a Studio seat
+              or production feature key.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Cratis Studio</span>
+            <h3>Paid collaborative design</h3>
+            <p>
+              A hosted Preview for modeling together, exploring supported
+              behavior, and improving runtime understanding. Studio provides
+              export for supported model content; available formats, retention,
+              and later access follow the hosted product and applicable terms.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Cratis Assurance</span>
+            <h3>Paid expertise and responsibility</h3>
+            <p>
+              Support, architecture review, model sprints, first slices,
+              production readiness and founder-led workshops, subject to the
+              selected plan or engagement.
             </p>
           </div>
         </div>
-        <div class="table-wrap">
-          <table class="plans">
-            <caption class="visually-hidden">
-              Cratis compared with enterprise JVM event platforms
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">&nbsp;</th>
-                <th scope="col">Enterprise JVM platform</th>
-                <th scope="col">Cratis</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Runtime</th>
-                <td>Java</td>
-                <td>.NET, with TypeScript, Kotlin and Elixir clients</td>
-              </tr>
-              <tr>
-                <th scope="row">Storage</th>
-                <td>Their server</td>
-                <td>MongoDB, PostgreSQL, SQL Server or SQLite</td>
-              </tr>
-              <!-- CORRECTED: was a bare "MIT" against their "Commercial licence for
-               production". The distinction we can honestly claim is that nothing
-               you DEPLOY needs a licence — Studio is a design-time product. -->
-              <tr>
-                <th scope="row">Licence</th>
-                <td>Commercial licence for production</td>
-                <td>
-                  MIT for everything you deploy; Studio is a paid design-time
-                  product
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Frontend</th>
-                <td>Not addressed</td>
-                <td>Typed C# → TypeScript → React</td>
-              </tr>
-              <tr>
-                <th scope="row">Model to system</th>
-                <td>An agent <em>generates</em> code from the model</td>
-                <td>Stage <em>runs</em> the model</td>
-              </tr>
-              <tr>
-                <th scope="row">Buying</th>
-                <td>Sales-led</td>
-                <td>Public pricing, self-serve</td>
-              </tr>
-              <tr>
-                <th scope="row">Getting help</th>
-                <td>A support portal</td>
-                <td>The person who wrote it</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="code-note">
-          Where we won't compete: they have fifteen years, regulated-industry
-          deployments, and a scale record we don't have an equivalent for. If
-          your evaluation weights those most heavily, that's a legitimate reason
-          to choose them. We compete on shape and on access.
-        </p>
       </section>
 
       <section class="band shell" id="wrong-fit">
@@ -444,9 +399,9 @@
             <div>
               <h3>You're not on .NET</h3>
               <p>
-                Chronicle's boundary is open and there are clients for
-                TypeScript, Kotlin and Elixir — but .NET is the first-class
-                experience and we're not going to pretend otherwise.
+                Chronicle exposes a documented gRPC and protobuf boundary, with
+                clients for TypeScript, Kotlin, and Elixir. Coverage varies by
+                client and version; .NET remains the primary experience.
               </p>
             </div>
           </div>
@@ -558,12 +513,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -637,8 +589,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

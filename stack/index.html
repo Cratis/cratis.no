@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The stack — Chronicle, Arc, Studio and the tools — Cratis</title>
+    <title>The Cratis Stack — design, build, operate and improve</title>
     <meta
       name="description"
-      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
     />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="Most stacks are a bag of libraries you keep in sync. Cratis is designed as one thing: model, build, record, render, operate — one set of conventions across every layer."
+      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
     />
     <meta property="og:url" content="https://cratis.no/stack/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,6 +28,8 @@
       content="https://cratis.no/assets/og/stack.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,10 +55,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -110,6 +109,18 @@
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
 
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
+
       <div class="header-actions">
         <button
           class="theme-toggle"
@@ -162,84 +173,68 @@
     <main id="main">
       <section class="page-hero shell">
         <p class="eyebrow">The stack</p>
-        <h1>Designed as one thing.</h1>
+        <h1>One cast. One accountable lifecycle.</h1>
         <p class="lead">
-          Most stacks are a bag of libraries you bolt together and then spend
-          the project keeping in sync. The point of Cratis isn't that there are
-          many packages — it's that the packages agree about how an application
-          is shaped.
+          Cratis is not a catalog of repositories. It is one path through the
+          life of a long-lived .NET business system: design together, build on
+          an open runtime, operate from durable facts, and improve with evidence.
         </p>
       </section>
 
       <section class="band shell">
-        <p class="eyebrow">One feature, every layer</p>
+        <p class="eyebrow">The lifecycle</p>
         <div class="band-head">
           <div>
-            <h2>Follow one behaviour all the way through.</h2>
+            <h2>Design → Build → Operate → Improve.</h2>
             <p>
-              This is where the difference shows. Not in a feature list — in
-              what happens to a single piece of behaviour as it crosses every
-              boundary in your system.
+              Each surface has a clear job. Together they preserve intent,
+              behavior and history as the system changes over years.
             </p>
           </div>
         </div>
         <div class="flow">
           <div class="flow-step">
-            <span class="k">01 Model</span>
-            <h3>Map the domain</h3>
-            <p>
-              Capture the command, the event, the read model and the team's
-              intent before the implementation spreads out.
-            </p>
-            <p class="owner">Studio</p>
+            <span class="k">01 Design</span>
+            <h3>Agree on the business</h3>
+            <p>Model commands, facts and views together, then explore the model as a live preview.</p>
+            <p class="owner">Cratis Studio</p>
           </div>
           <div class="flow-step">
             <span class="k">02 Build</span>
-            <h3>Keep the slice together</h3>
-            <p>
-              Command, handler, query, proxy and UI for one behaviour, in one
-              feature-shaped place.
-            </p>
-            <p class="owner">Arc</p>
+            <h3>Carry one typed contract</h3>
+            <p>C# commands and queries become HTTP APIs, TypeScript proxies and React continuity.</p>
+            <p class="owner">Cratis Build</p>
           </div>
           <div class="flow-step">
-            <span class="k">03 Record</span>
-            <h3>Store what happened</h3>
-            <p>
-              Append facts through the gRPC boundary and let projections turn
-              them into read models.
-            </p>
-            <p class="owner">Chronicle</p>
+            <span class="k">03 Operate</span>
+            <h3>Work from the event record</h3>
+            <p>Use the documented inspection and operational workflows available in each current tool; coverage varies by tool and version.</p>
+            <p class="owner">Workbench &middot; CLI &middot; MCP</p>
           </div>
           <div class="flow-step">
-            <span class="k">04 Render</span>
-            <h3>Ship a typed screen</h3>
-            <p>
-              Generated TypeScript proxies remove the hand-written API client
-              and the form plumbing.
-            </p>
-            <p class="owner">Components</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">05 Operate</span>
-            <h3>Inspect the running system</h3>
-            <p>
-              Browse events, replay projections, diagnose observers — from the
-              terminal or an agent.
-            </p>
-            <p class="owner">CLI &middot; MCP</p>
+            <span class="k">04 Improve</span>
+            <h3>Feed evidence back</h3>
+            <p>Use runtime history and specifications to explain state and shape the next change.</p>
+            <p class="owner">Chronicle &middot; Specifications</p>
           </div>
         </div>
         <p class="code-note">
-          Nothing in that sequence is a handoff you maintain. The build
-          maintains it.
+          Nothing in that sequence is a second architecture. It is one model
+          seen at the point where the team needs it.
         </p>
       </section>
 
       <section class="band shell" id="layers">
-        <p class="eyebrow">The pieces</p>
+        <p class="eyebrow">Cratis Build</p>
         <div class="band-head">
-          <div><h2>What each one owns.</h2></div>
+          <div>
+            <h2>The open runtime and operating foundation.</h2>
+            <p>
+              Chronicle, Arc, Components and the operating tools are one open
+              offer. Package boundaries stay useful to developers; customers do
+              not have to decode the repository map.
+            </p>
+          </div>
         </div>
 
         <div class="layer">
@@ -248,11 +243,11 @@
           </div>
           <div class="layer-body">
             <p>
-              Records what happened, in order, immutably — and derives read
-              models from it. Projections, reducers and reactors turn the log
-              into the state your screens need. Constraints are enforced
-              server-side at append time, so invalid facts never enter the
-              record.
+              Owns the event lifecycle: contract facts, append them in order,
+              evolve schemas, derive read models, react to change, replay when
+              understanding changes, and inspect or repair failed processing.
+              The durable record remains the source from which current state can
+              be explained.
             </p>
             <ul>
               <li>gRPC / protobuf boundary</li>
@@ -280,9 +275,9 @@
           </div>
           <div class="layer-body">
             <p>
-              Turns behaviour into a typed application. A C# command becomes an
-              HTTP endpoint and a generated TypeScript proxy — so the frontend
-              can't drift from the backend without the compiler saying so.
+              Turns behavior into a typed application. A C# command becomes an
+              HTTP endpoint and a generated TypeScript proxy — so many backend contract changes surface as TypeScript compile errors
+              instead of silent mismatches.
               Identity, authorization and tenancy are part of the framework, not
               per-app boilerplate.
             </p>
@@ -300,49 +295,6 @@
               target="_blank"
               rel="noopener"
               >Arc documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Studio</strong
-            ><span>the modelling surface · commercial</span>
-          </div>
-          <div class="layer-body">
-            <!-- DRAFT: needs approval — participation framing from Einar's Studio
-             presentation ("it changed who could participate"). -->
-            <p>
-              Where the domain is designed — commands, events and read models on
-              a shared canvas, with the whole team in the room. The point is not
-              a better diagram; it is changing who can take part in designing
-              the software. Screenplay writes that model down as a single
-              declarative file, and Stage performs it: a live application,
-              interpreted at runtime rather than generated. Prologue brings an
-              existing system in by capturing what it already does.
-            </p>
-            <!-- CORRECTED: Studio is our commercial product, in beta. Every other
-                 layer here is MIT, so saying nothing implied Studio was too. -->
-            <p>
-              Studio is the one commercial product in the stack — in beta now,
-              priced in public at
-              <a href="https://cratis.studio" target="_blank" rel="noopener"
-                >cratis.studio</a
-              >. Everything else on this page is MIT, including everything you
-              deploy.
-            </p>
-            <ul>
-              <li>Event modelling canvas</li>
-              <li>Screenplay <code>.play</code></li>
-              <li>Stage runtime</li>
-              <li>Prologue capture</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/studio/"
-              target="_blank"
-              rel="noopener"
-              >Studio →</a
             >
           </div>
         </div>
@@ -379,9 +331,9 @@
           </div>
           <div class="layer-body">
             <p>
-              Authenticates once at the edge, resolves the tenant, enriches
-              identity, and forwards trusted context to your services — in front
-              of any backend you point it at.
+              Authenticates at the edge, resolves the tenant, enriches identity,
+              and forwards trusted context to configured HTTP services according
+              to AuthProxy's current routing and integration documentation.
             </p>
             <ul>
               <li>Authentication</li>
@@ -405,21 +357,80 @@
           </div>
           <div class="layer-body">
             <p>
-              A terminal window into a running store, a VS Code reader for the
-              event log, a browser extension for stepping into another user or
-              tenant, and an MCP server that lets an assistant do the same in
-              plain language. Inspect-only by design — to change state you still
-              go through commands and events.
+              Workbench, the CLI, and Chronicle MCP provide public operating
+              surfaces with different current coverage. Workbench offers browser
+              inspection and interaction; the CLI documents event, observer,
+              failed-partition, replay, retry, and job workflows; Chronicle MCP
+              documents event-store, event, observer, recommendation, job, and
+              identity tools. Treat replay and other operational actions as
+              writes, and keep business changes on domain command and event paths.
             </p>
             <ul>
+              <li>Workbench</li>
               <li>CLI</li>
+              <li>Chronicle MCP</li>
               <li>Narrator</li>
               <li>Lens</li>
               <li>Synopsis</li>
-              <li>Chronicle MCP</li>
-              <li>Prompter</li>
             </ul>
             <a class="more" href="/stack/the-cast/">Meet the cast →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band shell" id="separate-offers">
+        <p class="eyebrow">Separate offers</p>
+        <div class="band-head">
+          <div>
+            <h2>Design and expertise without changing the Build boundary.</h2>
+            <p>
+              Studio and Assurance work alongside Cratis Build. Neither is part
+              of Build, and neither is required as permission to run or repair
+              Build in your own environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Studio</strong
+            ><span>the modeling surface · commercial Preview</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Studio is the separate paid design product. Teams model commands,
+              events, and read models together, and Stage can perform supported
+              behavior in a sandbox. Screenplay provides the portable model.
+              Prologue is an emerging brownfield aid; verify its current scope
+              before planning an adoption around it.
+            </p>
+            <p>
+              Studio remains Preview. Current trial, pricing, export, and
+              retention details are published by the hosted product and the
+              terms that apply when you use it.
+            </p>
+            <a
+              class="more"
+              href="https://cratis.io/studio/"
+              target="_blank"
+              rel="noopener"
+              >Studio →</a
+            >
+          </div>
+        </div>
+
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Assurance</strong><span>direct, bounded expertise</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Assurance covers support, reviews, first slices, production
+              readiness, and workshops with scope, availability, and commitments
+              defined by the selected plan or engagement. It does not gate access
+              to Build or its operating tools.
+            </p>
+            <a class="more" href="/support/">Cratis Assurance →</a>
           </div>
         </div>
       </section>
@@ -430,7 +441,7 @@
           <div>
             <h2>Take one piece, or take all of it.</h2>
             <p>
-              Each product solves a complete problem on its own. The dependency
+              Each product has a focused role and can be adopted selectively. The dependency
               only runs one way — Arc can sit on top of Chronicle, but Chronicle
               never knows Arc exists.
             </p>
@@ -451,7 +462,7 @@
             <tbody>
               <tr>
                 <th scope="row">
-                  History as the source of truth, from any runtime
+                  History as the source of truth through a documented client
                 </th>
                 <td>Chronicle on its own</td>
                 <td>Yes</td>
@@ -502,12 +513,12 @@
         <div class="grid grid-2">
           <div class="card">
             <span class="num">Open</span>
-            <h3>No boundary you can't cross</h3>
+            <h3>Documented boundaries, with explicit coverage</h3>
             <p>
-              MIT licensed. Chronicle speaks gRPC and protobuf, with .NET,
-              TypeScript, Kotlin and Elixir clients. Storage is a deployment
-              choice, not an architecture decision. Nothing here is a door that
-              only opens inward.
+              Chronicle exposes a gRPC and protobuf boundary. Client libraries
+              and storage providers have different maturity and coverage; .NET
+              is the primary experience. Check each repository's license and the
+              current compatibility documentation before choosing a boundary.
             </p>
           </div>
           <div class="card">
@@ -599,12 +610,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages,
-              databases and systems you already run. The software your business
-              runs on is open source; Cratis Studio, where your team designs, is
-              our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -678,8 +686,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>

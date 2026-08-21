@@ -6,14 +6,14 @@
     <title>The cast — how Cratis names things</title>
     <meta
       name="description"
-      content="Prologue captures the backstory, Studio storyboards it, Screenplay writes it down, Stage performs it, Chronicle records it. Ten products, one metaphor that holds."
+      content="A practical map of Cratis Build, Studio Preview, Assurance, and the capabilities that support design, implementation, and operations."
     />
     <link rel="canonical" href="https://cratis.no/stack/the-cast/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="The cast — how Cratis names things" />
     <meta
       property="og:description"
-      content="Prologue captures the backstory, Studio storyboards it, Screenplay writes it down, Stage performs it, Chronicle records it. Ten products, one metaphor that holds."
+      content="A practical map of Cratis Build, Studio Preview, Assurance, and the capabilities that support design, implementation, and operations."
     />
     <meta property="og:url" content="https://cratis.no/stack/the-cast/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,6 +28,8 @@
       content="https://cratis.no/assets/og/the-cast.jpg"
     />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,10 +55,7 @@
 
     <a class="skip" href="#main">Skip to content</a>
 
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
+
 
     <header class="site-header shell">
       <a class="logo" href="/" aria-label="Cratis — home">
@@ -109,6 +108,18 @@
         <a href="/support/"><span class="idx">04</span> Working with us</a>
         <a href="/about/"><span class="idx">05</span> Who we are</a>
       </nav>
+
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <a href="/studio/"><span class="idx">01</span> Studio</a>
+          <a href="/#production"><span class="idx">02</span> How it works</a>
+          <a href="/#value"><span class="idx">03</span> What you get</a>
+          <a href="/support/"><span class="idx">04</span> Working with us</a>
+          <a href="/about/"><span class="idx">05</span> Who we are</a>
+          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        </nav>
+      </details>
 
       <div class="header-actions">
         <button
@@ -164,9 +175,32 @@
         <p class="eyebrow">The naming</p>
         <h1>The <span class="serif">cast</span>.</h1>
         <p class="lead">
-          Cratis names its products after telling a story — because that is what
-          an information system is. Something happened. Something recorded it.
-          Something has to be able to tell you about it later.
+          Cratis names capabilities after telling and understanding a story —
+          because that is what an information system does. Something happened.
+          Something recorded it. Someone needs to explain it later.
+        </p>
+      </section>
+
+      <section class="band shell">
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="num">Cratis Build</span>
+            <h2>The open runtime</h2>
+            <p>Chronicle, Arc, Components and the open Workbench, CLI and MCP operating surfaces.</p>
+          </div>
+          <div class="card">
+            <span class="num">Cratis Studio</span>
+            <h2>The paid design product</h2>
+            <p>Collaborative modeling, executable preview and runtime understanding, at honest preview maturity.</p>
+          </div>
+          <div class="card">
+            <span class="num">Cratis Assurance</span>
+            <h2>The expertise</h2>
+            <p>Founder-led support, review, first slices, production readiness, and workshops, with scope and availability set by each plan or engagement.</p>
+          </div>
+        </div>
+        <p class="code-note">
+          These are the three offers. The names below are the cast of capabilities inside them, not separate products a customer must assemble.
         </p>
       </section>
 
@@ -176,13 +210,12 @@
             <div>
               <h3>
                 Prologue
-                <span class="muted">— what came before the curtain rose</span>
+                <span class="muted">— what the existing system already did</span>
               </h3>
               <p>
-                Captures what your existing system actually does — its HTTP
-                commands, its database changes, its telemetry — and interprets
-                that into an event model. It captures metadata, not data. The
-                story, not anyone's private lines.
+                Prologue is an emerging brownfield aid intended to observe
+                selected system behavior and help teams draft an event model.
+                Verify current inputs, data handling, and output coverage before use.
               </p>
             </div>
             <a
@@ -232,12 +265,12 @@
             <div>
               <h3>Stage <span class="muted">— the performance</span></h3>
               <p>
-                Hands the script to the cast and lets them perform it — a live,
-                running Cratis application. No code generation, no compilation.
-                The model <em>is</em> the application.
+                Stage can perform supported parts of a Screenplay model in a
+                live sandbox. It is useful for exploration at Preview maturity;
+                it is not the production application or a no-drift guarantee.
               </p>
             </div>
-            <span class="go">It performs, it doesn't print</span>
+            <span class="go">Supported behavior in a sandbox</span>
           </div>
           <div class="route">
             <div>
@@ -259,7 +292,8 @@
             <div>
               <h3>Chronicle <span class="muted">— the record</span></h3>
               <p>
-                What happened, in order, immutably. Not a summary. The facts.
+                Durable facts kept in order, with explicit compliance and
+                retention operations where the application requires them.
               </p>
             </div>
             <a
@@ -274,8 +308,8 @@
             <div>
               <h3>Narrator <span class="muted">— reading it back</span></h3>
               <p>
-                Browse the streams, namespaces and observers, and follow the
-                story your events tell — inside VS Code.
+                A VS Code surface for supported Chronicle inspection workflows.
+                Check its current repository and documentation before adoption.
               </p>
             </div>
             <span class="go">VS Code extension</span>
@@ -284,30 +318,39 @@
             <div>
               <h3>Lens <span class="muted">— the viewfinder</span></h3>
               <p>
-                Frames the scene from someone else's point of view: become any
-                user, step into any tenant, and fire commands at your running
-                app from the browser.
+                A browser extension for supported development and testing
+                workflows involving identities, tenants, and commands. Its
+                current scope varies with the target application.
               </p>
             </div>
             <span class="go">Browser extension</span>
           </div>
           <div class="route">
             <div>
-              <h3>Synopsis <span class="muted">— the programme notes</span></h3>
+              <h3>Synopsis <span class="muted">— the program notes</span></h3>
               <p>
                 Turns the executable examples scattered through a repository
                 into the clearest account of what the system actually promises.
                 The source proves it; Synopsis makes it readable.
               </p>
             </div>
-            <span class="go">Behaviour documentation</span>
+            <span class="go">Behavior documentation</span>
           </div>
           <div class="route">
             <div>
-              <h3>
-                Prompter
-                <span class="muted">— offstage, with the line you forgot</span>
-              </h3>
+              <h3>Workbench, CLI and MCP <span class="muted">— the operating surfaces</span></h3>
+              <p>
+                Workbench, CLI, and MCP provide open operating surfaces for
+                supported Chronicle workflows. Capability and maturity vary by
+                tool and version; Studio and Assurance are not intended to gate
+                Build's available inspection features.
+              </p>
+            </div>
+            <span class="go">Open operations</span>
+          </div>
+          <div class="route">
+            <div>
+              <h3>Prompter <span class="muted">— the documentation guide</span></h3>
               <p>
                 Answers Cratis questions on Discord in seconds, grounded in the
                 docs, with citations — and says so plainly when it doesn't know.
@@ -329,9 +372,9 @@
         <div class="callout">
           <h3>The metaphor isn't decoration.</h3>
           <p>
-            The file extension is <code>.play</code>. Stage really does perform
-            — it interprets the model at runtime rather than generating code
-            from it. And the whole pipeline reads as a sentence:
+            The file extension is <code>.play</code>. Stage can interpret
+            supported model behavior in a sandbox rather than generating a
+            production application. The names still read as a useful sentence:
           </p>
           <p>
             <em
@@ -347,11 +390,12 @@
       <section class="band shell">
         <div class="banner">
           <div>
-            <h3>Start with the three that matter.</h3>
+            <h3>One cast, three ways to work with us.</h3>
             <p>
-              Chronicle records what happened. Arc turns behaviour into a typed
-              application. Studio is where the model is designed — and run. The
-              rest of the cast supports those.
+              Build openly with Chronicle and Arc. Design collaboratively in
+              Studio. Add Assurance when experience and direct responsibility
+              matter. The capability names explain the parts without turning
+              the portfolio into a set of separate buying decisions.
             </p>
           </div>
           <a class="cta" href="/stack/">
@@ -416,9 +460,9 @@
                 </g>
               </svg>
             </a>
-            <!-- DRAFT: needs approval — replaces the old .NET-only tagline everywhere -->
             <p>
-              The software production platform — it fits the languages, databases and systems you already run. The software your business runs on is open source; Cratis Studio, where your team designs, is our product.
+              Software that remembers. Design, build, operate and improve
+              accountable, long-lived .NET business systems.
             </p>
           </div>
 
@@ -492,8 +536,7 @@
         </div>
 
         <div class="foot-bar">
-          <!-- NEEDS FACT: legal entity name, org.nr, registered address. Blocks launch. See POLICIES.md §3 decision 7. -->
-          <div>© 2026 Cratis · MIT licensed</div>
+<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
           <div class="legal">
             <a href="/trust/">Trust</a>
             <a href="/trust/#security">Security</a>
