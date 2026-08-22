@@ -83,6 +83,27 @@ Cratis joins that lifecycle instead of treating each part as a separate toolchai
 | Prologue | Start from what the existing system already does. |
 | Cratis Assurance | Direct expertise when the decision matters. |
 
+## AI-native development
+
+> **One Cratis way across the AI tools your team uses.**
+>
+> Cratis gives assistants explicit domain models, framework-aware workflows,
+> generated contracts, and documented operating surfaces. Approved skills come
+> from one canonical source and are generated into host-native packages; project
+> facts stay with the project. Compiler gates, specifications, CI, and human
+> review remain in charge.
+
+Availability copy while public coding skills remain gated:
+
+> Cratis maintainers use repository-local AI workflows today. Public portable
+> coding skills are being validated across supported agent ecosystems and are
+> not yet a supported installation. CLI and Chronicle MCP setup are documented
+> at cratis.io.
+
+Do not describe fixture-only generated distribution as a release, marketplace
+listing, supported install, or compatibility promise. Do not suggest copying AI
+configuration folders between repositories.
+
 ## Founder and lineage copy
 
 > Cratis carries more than fifteen years of event-sourcing lineage through successive generations of .NET frameworks and production systems. That experience does not make every new surface mature; it gives us a longer record of lessons to apply and limits to recognize.
