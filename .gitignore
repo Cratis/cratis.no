@@ -20,6 +20,8 @@ npm-debug.log*
 # Build output — this site has no build step; nothing here should ever appear
 dist/
 .astro/
+__pycache__/
+*.pyc
 
 # Local
 *.local

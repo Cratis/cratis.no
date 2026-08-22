@@ -1,8 +1,6 @@
 # cratis.no
 
-The Cratis company and brand site. It is plain HTML, CSS, and vanilla JavaScript with no build step or runtime dependencies.
-
-Product documentation belongs at [cratis.io](https://cratis.io). This repository helps people decide whether Cratis fits, understand current product maturity, evaluate trust, or work with Cratis Assurance.
+Static hosting for `cratis.no`. The published page currently provides neutral links to Cratis documentation, GitHub, and contact.
 
 ## Run locally
 
@@ -17,67 +15,28 @@ Any static server also works:
 python3 -m http.server 4321
 ```
 
-Root-relative paths require a server. GitHub Pages serves the repository root directly.
+Root-relative asset paths require a server. GitHub Pages serves the repository root directly.
 
-## Current structure
+## Structure
 
 ```text
-index.html                         Company and lifecycle overview
-studio/index.html                  Cratis Studio Preview
-stack/index.html                   Cratis Build and the lifecycle
-stack/the-cast/index.html          Portfolio naming map
-why-cratis/index.html              Fit and anti-fit guidance
-support/index.html                 Cratis Assurance plans and pricing
-trust/index.html                   Current trust facts and explicit limits
-about/index.html                   Founders, lineage, and values
-writing/index.html                 Essays
-writing/vague-codebase-vague-code/ Published essay
-assets/css/site.css                Shared styles
-assets/js/site.js                  Progressive enhancement
-assets/img/                        Wordmark, favicon, and touch icons
-assets/og/                         Per-page share cards
+index.html                Published page
+assets/img/               Wordmark, favicon, and touch icon
+CNAME                     Custom domain
+robots.txt                Crawler policy
+sitemap.xml               Published route inventory
+tools/verify_site.py      Static content guard
+tools/test_verify_site.py Guard regression tests
+serve                     Local static server
 ```
 
-## Content sources
+## Verify
 
-| File | Purpose |
-| --- | --- |
-| `AGENTS.md` | Repository-wide working rules |
-| `BRAND.md` | Positioning, lifecycle, offers, voice, and fit |
-| `MESSAGING.md` | Approved public language and claim boundaries |
-| `SITE.md` | Current site behavior, routes, and validation requirements |
-| `PAGES.md` | Page-by-page responsibilities |
-| `REVIEW-PROMPT.md` | Public-site review checklist |
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 tools/test_verify_site.py
+PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_site.py
+```
 
-Unratified policy drafts do not belong in this public repository.
+The verifier parses the HTML, rejects comments, scripts, generated CSS text, accessibility-label drift, duplicate links, and additional rendered routes; checks the exact ordered navigation targets; confirms the sitemap contains only the root route; and verifies required assets.
 
-## Public-content rules
-
-- Use American English.
-- Keep the lifecycle clear: **Design → Build → Operate → Improve**.
-- Keep Cratis Studio outside Cratis Build and label Studio **Preview**.
-- Scope open-source statements to Cratis Build and to the license stated by each repository.
-- Keep the support prices and terms already published on `/support` unless the founders approve a change.
-- Do not publish invented customers, logos, testimonials, quotations, legal details, metrics, or capabilities.
-- Do not expose editorial notes, audit history, private sources, or research provenance in HTML.
-- Qualify preview, compatibility, storage, client, export, and operating capabilities by product and version.
-- Say plainly when a simpler approach is the better fit.
-
-## Progressive enhancement and accessibility
-
-Every page remains readable without JavaScript. The mobile primary navigation uses native `<details>` behavior as its no-JavaScript fallback. JavaScript adds Escape-to-close, focus return, theme persistence, animation, smooth in-page navigation, and a properly encoded email draft for the contact form.
-
-Validate dark and light themes, mobile and desktop widths, keyboard navigation, visible focus, reduced motion, and no-JavaScript behavior before publication.
-
-## Static validation
-
-At minimum, check:
-
-- HTML parsing and unique IDs;
-- internal files and fragments;
-- external HTTP links;
-- no HTML comments or placeholder markers;
-- no invented customer or testimonial text;
-- American English in public content;
-- required favicon, touch icon, and share-card assets;
-- Studio labeled Preview everywhere.
+Use American English. Do not add customer material, attributed quotations, metrics, dates, prices, legal terms, product maturity, capabilities, support commitments, security assertions, availability statements, compatibility promises, roadmap wording, or outcome claims without the corresponding review and evidence.
