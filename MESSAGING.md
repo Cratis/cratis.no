@@ -1,6 +1,6 @@
-# Cratis — messaging
+# Cratis — candidate messaging inventory
 
-Ready-to-use public copy. Keep claims aligned with `BRAND.md` and the live product pages.
+This file preserves product-owned messaging, voice, and information-architecture intent for review. It is not ready-to-use copy or claim authority, and `BRAND.md`, current HTML, repository activity, packages, releases, and prior publication do not approve it. Before reuse, verify the exact product/profile facts, public surface, limitations, owner, approval, expiry, and withdrawal path. Keep product documentation and examples in their owning repositories.
 
 ## Elevator ladder
 

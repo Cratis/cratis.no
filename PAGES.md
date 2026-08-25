@@ -1,6 +1,6 @@
 # cratis.no page map
 
-This file records the public job and required messages for each page. It supplements `BRAND.md`, `MESSAGING.md`, and `SITE.md`.
+This file records the reader job and candidate message intent for each page. It supplements `BRAND.md`, `MESSAGING.md`, and `SITE.md`; none of those files is claim approval. Before implementation or reuse, map each material body, title, meta, OpenGraph, structured-data, image-text, and CTA statement to current owning evidence, approved surface scope, nearby limitations, and a withdrawal path.
 
 ## `/` — company and lifecycle
 
@@ -104,7 +104,11 @@ Required messages:
 
 ## `/writing`
 
-**Job:** hold engineering-led essays that deepen the company point of view. Posts may teach or explain, but product documentation remains on cratis.io.
+**Job:** hold reviewed engineering essays that teach one useful idea while product documentation remains on cratis.io. Each item requires its own content identity, evidence, claims, correction, and withdrawal review.
+
+## `/ai` — AI-topic route
+
+**Job:** explain one verified AI/developer-workflow boundary without implying model-first capability, tool compatibility, distribution, security, quality, productivity, or roadmap state. The route is currently omitted from the sitemap pending an explicit content/discovery decision; canonical presence alone does not decide indexing policy.
 
 ## Content hygiene
 

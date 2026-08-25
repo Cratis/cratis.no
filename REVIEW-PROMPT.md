@@ -38,6 +38,17 @@ Reject any page, comment, or document that:
 - makes universal license, telemetry, storage, client-parity, no-migration, or no-drift claims;
 - exposes HTML comments or references an internal policy document.
 
+## Statement and discovery review
+
+For every route, review body copy, title, meta description, OpenGraph title/description/image text, canonical URL, JSON-LD, CTA, diagram edge, and footer statement together.
+
+- Map each material assertion to current owning evidence and its exact approved surface, or mark it candidate/unpublishable.
+- Keep the product relationship and its independent-use/compatibility limitation adjacent.
+- Verify sitemap inventory against the full route inventory, including an explicit decision for `/ai/`; do not use robots/noindex as a substitute for content authority.
+- Verify cratis.no ↔ cratis.io ↔ repository/package canonical links and descriptive anchor text.
+- Scan tracked public source for claim IDs, private review rationale, local workstation paths, credentials, customer/personal data, generated agent output, and restricted security context.
+- Treat share-card copy and directly accessible assets as public statements even when a page stops referencing them.
+
 ## Experience
 
-Check dark and light themes, mobile and desktop, semantic heading order, keyboard use, visible focus, reduced-motion behavior, readable no-JavaScript content, valid links, and the absence of visible placeholders.
+Check dark and light themes, mobile and desktop, semantic heading order, keyboard use, visible focus, reduced-motion behavior, readable no-JavaScript content, valid links, meaningful image alternatives, layout shift, and the absence of visible placeholders. Preserve the established design unless the site owner explicitly approves a visual change.
