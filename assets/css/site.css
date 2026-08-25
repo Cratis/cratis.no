@@ -246,15 +246,9 @@ svg {
     gap: 10px;
     color: var(--text);
 }
-.logo svg,
-.logo img {
+.logo svg {
     height: 34px;
-    width: 34px;
-    flex: 0 0 auto;
-}
-.logo strong {
-    font-size: 18px;
-    letter-spacing: -0.02em;
+    width: auto;
 }
 
 .site-nav {
@@ -449,7 +443,6 @@ svg {
     font-weight: 600;
     font-size: 14.5px;
     color: var(--text);
-    background: transparent;
     transition:
         border-color 0.18s ease,
         background 0.18s ease;
@@ -1047,7 +1040,7 @@ pre code {
     max-width: 34ch;
     line-height: 1.6;
 }
-.foot-col h3 {
+.foot-col h4 {
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.13em;
@@ -1789,7 +1782,7 @@ table.plans .price-cell {
 }
 
 /* Buttons: accent primary, with a glow on hover */
-.cta:not(.cta-ghost) {
+.cta {
     background: linear-gradient(
         180deg,
         color-mix(in srgb, var(--text) 100%, transparent),
