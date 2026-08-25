@@ -1,8 +1,8 @@
 # cratis.no
 
-The Cratis company and brand site. It is plain HTML, CSS, and vanilla JavaScript with no build step or runtime dependencies.
+The Cratis company-navigation site. It is plain HTML, CSS, and progressive-enhancement JavaScript with no build step or runtime dependency.
 
-Product documentation belongs at [cratis.io](https://cratis.io). This repository helps people decide whether Cratis fits, understand current product maturity, evaluate trust, or work with Cratis Assurance.
+Product documentation belongs at [cratis.io](https://cratis.io). Product source, releases, packages, issues, and repository-specific licenses remain in their owning repositories.
 
 ## Run locally
 
@@ -11,73 +11,38 @@ Product documentation belongs at [cratis.io](https://cratis.io). This repository
 ./serve 8080       # another port
 ```
 
-Any static server also works:
+Root-relative links require a local static server.
 
-```bash
-python3 -m http.server 4321
-```
-
-Root-relative paths require a server. GitHub Pages serves the repository root directly.
-
-## Current structure
+## Public routes
 
 ```text
-index.html                         Company and lifecycle overview
-studio/index.html                  Cratis Studio Preview
-stack/index.html                   Cratis Build and the lifecycle
-stack/the-cast/index.html          Portfolio naming map
-why-cratis/index.html              Fit and anti-fit guidance
-support/index.html                 Cratis Assurance plans and pricing
-trust/index.html                   Current trust facts and explicit limits
-about/index.html                   Founders, lineage, and values
-writing/index.html                 Essays
-writing/vague-codebase-vague-code/ Published essay
-assets/css/site.css                Shared styles
-assets/js/site.js                  Progressive enhancement
-assets/img/                        Wordmark, favicon, and touch icons
-assets/og/                         Per-page share cards
+/               Company and product navigation
+/stack/         Bounded product descriptions and technical links
+/why-cratis/    Evidence-first fit navigation
+/support/       Commercial contact and software/responsibility boundary
+/trust/         Source, license, and private vulnerability-reporting routes
+/about/         Company contact and owning-surface links
 ```
 
-## Content sources
+The sitemap contains exactly these six routes. Removed routes have no replacement content in this repository.
 
-| File | Purpose |
-| --- | --- |
-| `AGENTS.md` | Repository-wide working rules |
-| `BRAND.md` | Positioning, lifecycle, offers, voice, and fit |
-| `MESSAGING.md` | Approved public language and claim boundaries |
-| `SITE.md` | Current site behavior, routes, and validation requirements |
-| `PAGES.md` | Page-by-page responsibilities |
-| `REVIEW-PROMPT.md` | Public-site review checklist |
+## Deployment
 
-Unratified policy drafts do not belong in this public repository.
+GitHub Pages uses the root of `main` with the custom domain in `CNAME`. A merge to `main` can therefore replace the deployed site directly, including removal of files and routes deleted by the merge. Pull requests do not deploy the site.
 
-## Public-content rules
+## Validation
 
-- Use American English.
-- Keep the lifecycle clear: **Design → Build → Operate → Improve**.
-- Keep Cratis Studio outside Cratis Build and label Studio **Preview**.
-- Scope open-source statements to Cratis Build and to the license stated by each repository.
-- Keep the support prices and terms already published on `/support` unless the founders approve a change.
-- Do not publish invented customers, logos, testimonials, quotations, legal details, metrics, or capabilities.
-- Do not expose editorial notes, audit history, private sources, or research provenance in HTML.
-- Qualify preview, compatibility, storage, client, export, and operating capabilities by product and version.
-- Say plainly when a simpler approach is the better fit.
+```bash
+python3 tools/validate-site.py
+python3 tools/validate-site.py --check-external
+```
 
-## Progressive enhancement and accessibility
+Before merge, also serve the site and review all six routes in light and dark themes, at desktop and mobile widths, with keyboard navigation, reduced motion, and JavaScript disabled.
 
-Every page remains readable without JavaScript. The mobile primary navigation uses native `<details>` behavior as its no-JavaScript fallback. JavaScript adds Escape-to-close, focus return, theme persistence, animation, smooth in-page navigation, and a properly encoded email draft for the contact form.
+## Content boundary
 
-Validate dark and light themes, mobile and desktop widths, keyboard navigation, visible focus, reduced motion, and no-JavaScript behavior before publication.
-
-## Static validation
-
-At minimum, check:
-
-- HTML parsing and unique IDs;
-- internal files and fragments;
-- external HTTP links;
-- no HTML comments or placeholder markers;
-- no invented customer or testimonial text;
-- American English in public content;
-- required favicon, touch icon, and share-card assets;
-- Studio labeled Preview everywhere.
+- Keep cratis.no focused on company, fit, trust, commercial contact, and product navigation.
+- Keep technical behavior, setup, version profiles, and limitations on cratis.io or in the owning product repository.
+- Do not infer maturity, quality, compatibility, security posture, performance, support, pricing, continuity, customer outcomes, or roadmap state from a repository, package, build, or current public copy.
+- Keep the private vulnerability-reporting route factual and free of security-posture or response-time claims.
+- Do not place credentials, customer or personal data, production payloads, private security evidence, internal review material, or local artifacts in this repository.

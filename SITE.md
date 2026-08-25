@@ -1,119 +1,86 @@
 # cratis.no site specification
 
-Read `AGENTS.md`, `BRAND.md`, and `MESSAGING.md` before changing public content.
-
 ## Purpose
 
-The site should let an evaluator understand Cratis quickly, decide whether it fits, verify current limits, and choose among three offers:
+cratis.no is the Cratis company, fit, trust, commercial-contact, and product-navigation surface. cratis.io is the canonical technical documentation surface. Owning product repositories retain source, releases, packages, issues, and repository-specific licenses.
 
-1. **Cratis Build** — the open runtime and operating foundation.
-2. **Cratis Studio** — the paid collaborative design product at **Preview** maturity.
-3. **Cratis Assurance** — founder-led support and bounded expertise, with availability and commitments defined by the selected plan or engagement.
+## Technology
 
-The organizing lifecycle is **Design → Build → Operate → Improve**. Studio supports Design but is not part of Build. Build includes the deployed runtime and available operating tools. Assurance does not gate the right to run or repair Build.
+The site is static HTML with one shared stylesheet and one optional progressive-enhancement script. Core content and navigation remain available without JavaScript.
 
-## Technology and deployment
+GitHub Pages is configured to serve the repository root from `main` at the custom domain in `CNAME`.
 
-The current site is static HTML, one shared stylesheet, and one progressive-enhancement script. GitHub Pages serves the repository root. There is no compilation, package installation, CMS, or generated content layer.
-
-JavaScript is optional for reading and navigation. It enhances theme persistence, motion, mobile-menu Escape behavior, in-page focus management, and contact email composition.
-
-## Current routes
+## Exact route set
 
 ```text
-/                                      Company and lifecycle overview
-/studio/                               Cratis Studio Preview
-/stack/                                Build and the lifecycle
-/stack/the-cast/                       Product and capability naming
-/why-cratis/                           Fit and anti-fit
-/support/                              Assurance plans, pricing, and workshops
-/trust/                                Current trust facts and explicit limits
-/about/                                Founders, lineage, and values
-/writing/                              Essays
-/writing/vague-codebase-vague-code/    Published essay
+/               Company and product navigation
+/stack/         Bounded product descriptions and technical links
+/why-cratis/    Evidence-first fit navigation
+/support/       Commercial contact and software/responsibility boundary
+/trust/         Source, license, and private vulnerability-reporting routes
+/about/         Company contact and owning-surface links
 ```
 
-Product tutorials and API documentation link to `cratis.io` instead of being duplicated here.
+Every route must appear in `sitemap.xml`, except no additional route is admitted by appearing in navigation or source. A removed HTML file is a removed Pages route after the reviewed `main` deployment completes.
 
 ## Navigation
 
-The desktop header contains Studio, How it works, What you get, Working with us, and Who we are, plus Docs. The mobile header exposes the same destinations through a native `<details>` menu.
+Desktop and native `<details>` mobile navigation expose the same destinations:
 
-Requirements:
+1. Products
+2. Fit
+3. Commercial
+4. Trust
+5. About
+6. Documentation at cratis.io
 
-- current Studio, Support, and About links use `aria-current="page"` in static HTML;
-- the menu works without JavaScript;
-- Escape closes an open enhanced menu and returns focus to its summary;
-- links have at least a 48-pixel touch target;
-- the skip link and visible focus styles remain available;
-- every page has one `<h1>` and a logical heading order.
+Each page marks its current navigation item with `aria-current="page"`. The skip link, visible focus, 48-pixel mobile targets, Escape-to-close enhancement, and focus return remain available.
 
-## Content architecture
+## Metadata
 
-### Homepage
+Every page has:
 
-Explain the lifecycle and route visitors to Studio, Build, Assurance, fit guidance, and contact. Do not include customer logos, testimonials, attributed founder quotations, or numerical absolutes without approved evidence.
+- one bounded title and meta description;
+- one self-canonical cratis.no URL;
+- matching OpenGraph title, description, URL, and 1200×630 local image;
+- SVG and PNG favicons plus the Apple touch icon; and
+- one visible H1 with logical heading order.
 
-The contact form opens a draft in the visitor's email application. The page must state that nothing is sent automatically and provide the email address as a fallback.
+Metadata is public copy and follows the same statement boundary as the page body.
 
-### Studio
+## Content boundary
 
-Use **Preview** consistently. Describe Stage as a sandbox for supported model behavior, not as the production system, a complete runtime, or proof that design and implementation cannot drift. Current trial, pricing, export, and retention details belong to the hosted product and its applicable terms.
+- Name products and link owning technical surfaces without implying an umbrella product, common maturity, compatibility, support, or commercial commitment.
+- Use only current product-owner-reviewed descriptions on their admitted product surfaces.
+- Do not publish a product identity, capability, maturity, quality, compatibility, security-posture, performance, support, pricing, continuity, customer-outcome, roadmap, or managed-service statement without current owning approval.
+- Keep the private vulnerability-reporting route factual. Do not imply security posture, response time, SLA, warranty, bounty, or support.
+- Keep technical depth on cratis.io and in owning product repositories.
+- Exclude credentials, customer or personal data, production payloads, private security evidence, internal review material, and local artifacts.
 
-### Stack and cast
+## Progressive enhancement
 
-Present Build, Studio, and Assurance before individual capability names. Chronicle is the event-lifecycle foundation and Arc carries typed contracts from C# toward TypeScript and React. Client, storage, and operating-tool coverage vary by product and version; link to current documentation.
-
-### Support
-
-Preserve the founder-published plan and engagement prices and the concrete support terms on the page. General marketing copy may summarize them as published response targets, but should not expand their coverage. A signed agreement is authoritative for an engagement.
-
-### Trust
-
-State current facts and limits. Do not publish a support window, maintenance branch, release cadence, legal entity detail, universal telemetry claim, zero-migration claim, universal storage independence, or formal governance program before it exists and is ratified.
-
-### About and writing
-
-Preserve the more-than-fifteen-year event-sourcing lineage and the founder-led nature of Assurance without promising unlimited direct availability. Only publish approved names, roles, bios, photographs, and quotations.
-
-## Open-source and commercial wording
-
-Use these boundaries:
-
-- Cratis Build is developed in public under the license stated by each repository.
-- Cratis Studio is a separate paid Preview product.
-- Cratis Assurance is paid time, expertise, and published commitments.
-- Build does not require Studio or Assurance as permission to run.
-
-Do not say that all Cratis software is MIT licensed, that every deployed component has identical terms, or that public source eliminates migration and maintenance work.
-
-Footer wording must remain scoped to Build and repository-specific licenses.
-
-## Visual and asset requirements
-
-- Dark is the default theme; light is fully supported.
-- Respect `prefers-reduced-motion`.
-- Content remains visible if scripts or observers fail.
-- Preserve readable prose width and horizontal scrolling for comparison tables.
-- Every public page includes SVG and PNG favicons plus the Apple touch icon.
-- Every public page has a 1200×630 share card; Studio uses `assets/og/studio.jpg`.
-
-## Public hygiene
-
-Public HTML contains no editorial, audit, placeholder, provenance, or source comments. Public pages and repository documents contain no private research references, competitor claims, customer secrets, or invented proof.
-
-Customer logos and testimonials remain absent until real material has written publication approval. Unratified policy drafts do not belong here.
+- The theme toggle persists only a light/dark preference.
+- The native mobile menu works without JavaScript; JavaScript adds Escape and focus return.
+- Reduced-motion preference disables optional entrance and scrolling animations.
+- Content is visible if scripts, fonts, or observers fail.
 
 ## Validation
 
-Before publication:
+Run:
 
-1. Parse every public HTML file and reject malformed markup, duplicate IDs, or broken heading structure.
-2. Resolve every internal file and fragment.
-3. Check external links.
-4. Scan for HTML comments, placeholder markers, invented customer names, and internal-policy references.
-5. Scan public copy for British spellings.
-6. Confirm Studio is Preview everywhere and outside Build.
-7. Check favicon, touch-icon, and share-card dimensions.
-8. Exercise desktop and mobile navigation with keyboard, Escape, reduced motion, and JavaScript disabled.
-9. Review dark and light screenshots at mobile and desktop widths when browser tooling is available.
+```bash
+python3 tools/validate-site.py
+python3 tools/validate-site.py --check-external
+```
+
+Then serve the repository and verify:
+
+1. all six routes return HTML;
+2. internal files and fragments resolve;
+3. the sitemap and canonical URLs match the exact route set;
+4. light and dark desktop layouts have no contrast or overflow blocker;
+5. mobile navigation works at 390 pixels;
+6. keyboard focus is visible and follows a logical order;
+7. reduced-motion mode has no required animation;
+8. each page remains useful with JavaScript disabled; and
+9. the final source contains no private or removed-route material.

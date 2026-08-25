@@ -3,701 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Cratis Stack — design, build, operate and improve</title>
-    <meta
-      name="description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
-    />
+    <title>Product paths — Cratis</title>
+    <meta name="description" content="Bounded Cratis product descriptions with canonical documentation and source links." />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="The stack — Chronicle, Arc, Studio and the tools — Cratis"
-    />
-    <meta
-      property="og:description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
-    />
+    <meta property="og:title" content="Product paths — Cratis" />
+    <meta property="og:description" content="Find bounded Cratis product descriptions, canonical documentation, and source links." />
     <meta property="og:url" content="https://cratis.no/stack/" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://cratis.no/assets/og/stack.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      name="twitter:image"
-      content="https://cratis.no/assets/og/stack.jpg"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://cratis.no/assets/og/stack.jpg" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/site.css" />
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("cratis-theme");
-          if (t === "light" || t === "dark")
-            document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
-    </script>
+    <script>(function(){try{var t=localStorage.getItem("cratis-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(error){}})();</script>
   </head>
   <body>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="bg-glow-2" aria-hidden="true"></div>
-    <div class="bg-grain" aria-hidden="true"></div>
-
+    <div class="bg-grid" aria-hidden="true"></div><div class="bg-glow" aria-hidden="true"></div><div class="bg-glow-2" aria-hidden="true"></div><div class="bg-grain" aria-hidden="true"></div>
     <a class="skip" href="#main">Skip to content</a>
-
-
-
     <header class="site-header shell">
-      <a class="logo" href="/" aria-label="Cratis — home">
-        <svg
-          viewBox="0 0 600 328"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Cratis"
-        >
-          <g
-            transform="translate(0,328) scale(0.1,-0.1)"
-            fill="currentColor"
-            stroke="none"
-          >
-            <path
-              d="M974 2789 c-319 -182 -592 -343 -607 -358 -16 -14 -34 -35 -40 -46 -8 -14 -10 -229 -9 -735 l3 -715 23 -35 c18 -26 74 -64 222 -151 110 -64 374 -219 589 -344 214 -126 400 -231 413 -233 13 -3 31 3 42 13 19 17 20 33 20 307 0 233 -3 294 -15 317 -10 21 -93 74 -327 211 -172 101 -324 194 -338 207 l-25 23 0 401 0 401 27 23 c14 12 161 100 327 194 177 101 310 184 325 202 l26 31 0 293 c0 318 -1 325 -55 325 -12 0 -283 -149 -601 -331z"
-            />
-            <path
-              d="M4830 2314 c-62 -23 -90 -58 -90 -115 0 -22 10 -41 34 -65 30 -30 40 -34 85 -34 59 0 95 19 117 61 25 49 12 105 -32 134 -25 16 -91 27 -114 19z"
-            />
-            <path
-              d="M4310 2080 l0 -80 -55 0 -55 0 0 -80 0 -80 55 0 55 0 0 -168 c0 -164 1 -170 28 -223 22 -44 36 -58 81 -81 45 -24 66 -28 131 -28 77 0 134 12 157 34 8 8 5 28 -14 79 -21 55 -29 67 -42 61 -9 -4 -35 -9 -57 -12 -34 -3 -46 1 -63 19 -19 21 -21 34 -21 171 l0 148 80 0 80 0 0 80 0 80 -80 0 -80 0 0 80 0 80 -100 0 -100 0 0 -80z"
-            />
-            <path
-              d="M1495 2019 c-178 -98 -219 -126 -237 -157 -15 -26 -18 -57 -18 -215 0 -175 1 -186 23 -218 30 -45 326 -219 372 -219 34 0 319 157 361 199 24 23 24 26 24 230 l0 207 -27 31 c-39 44 -319 203 -358 203 -19 0 -73 -24 -140 -61z"
-            />
-            <path
-              d="M2635 2006 c-110 -35 -200 -116 -230 -207 -22 -64 -22 -180 -1 -238 35 -96 124 -178 225 -208 79 -23 231 -15 291 16 53 27 106 75 126 113 l14 27 -74 40 c-40 23 -76 41 -79 41 -2 0 -22 -18 -44 -39 -30 -30 -50 -41 -86 -46 -135 -20 -230 129 -167 261 49 101 177 119 259 37 l35 -35 69 33 c37 19 72 39 78 45 13 15 -41 87 -90 119 -21 15 -60 33 -87 41 -58 17 -184 17 -239 0z"
-            />
-            <path
-              d="M3405 2008 c-16 -6 -47 -22 -67 -35 l-38 -23 0 30 0 30 -100 0 -100 0 0 -330 0 -330 99 0 99 0 4 183 c3 159 6 187 24 222 25 49 89 85 151 85 l43 0 0 90 0 90 -42 -1 c-24 0 -56 -5 -73 -11z"
-            />
-            <path
-              d="M3705 2007 c-61 -16 -145 -55 -145 -68 0 -7 56 -126 64 -136 1 -1 25 9 53 23 61 31 155 42 206 25 43 -14 77 -53 77 -87 0 -24 -1 -24 -108 -24 -173 0 -262 -34 -302 -116 -45 -92 -9 -203 83 -255 33 -18 62 -24 128 -27 97 -5 144 6 189 45 l30 25 0 -31 0 -31 96 0 96 0 -5 228 c-2 125 -10 243 -16 263 -19 63 -65 115 -128 145 -51 25 -70 29 -163 31 -60 1 -127 -3 -155 -10z m255 -425 c0 -71 -86 -123 -168 -100 -42 12 -61 33 -62 69 0 25 21 51 50 62 8 3 52 6 98 6 l82 1 0 -38z"
-            />
-            <path
-              d="M5207 2006 c-66 -19 -119 -58 -146 -107 -19 -34 -23 -52 -19 -109 3 -60 8 -73 33 -101 42 -44 94 -65 210 -84 109 -19 145 -35 145 -66 0 -55 -151 -63 -272 -15 -36 14 -67 26 -69 26 -9 0 -73 -140 -67 -146 4 -3 37 -17 75 -31 90 -34 269 -44 353 -19 119 35 172 95 172 194 0 124 -50 164 -249 202 -56 10 -112 24 -123 30 -31 17 -22 51 20 73 45 23 149 17 216 -12 26 -12 48 -21 51 -21 5 0 63 129 63 140 0 5 -26 19 -57 31 -73 28 -261 36 -336 15z"
-            />
-            <path
-              d="M4760 1680 l0 -330 100 0 100 0 0 330 0 330 -100 0 -100 0 0 -330z"
-            />
-          </g>
-        </svg>
-      </a>
-
+      <a class="logo" href="/" aria-label="Cratis — home"><img src="/assets/img/favicon.svg" alt="" width="34" height="34" /><strong>Cratis</strong></a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/studio/"><span class="idx">01</span> Studio</a>
-        <a href="/#production"><span class="idx">02</span> How it works</a>
-        <a href="/#value"><span class="idx">03</span> What you get</a>
-        <a href="/support/"><span class="idx">04</span> Working with us</a>
-        <a href="/about/"><span class="idx">05</span> Who we are</a>
+        <a href="/stack/" aria-current="page"><span class="idx">01</span> Products</a><a href="/why-cratis/"><span class="idx">02</span> Fit</a><a href="/support/"><span class="idx">03</span> Commercial</a><a href="/trust/"><span class="idx">04</span> Trust</a><a href="/about/"><span class="idx">05</span> About</a>
       </nav>
-
-      <details class="nav-menu">
-        <summary>Menu</summary>
-        <nav class="mobile-nav" aria-label="Mobile primary">
-          <a href="/studio/"><span class="idx">01</span> Studio</a>
-          <a href="/#production"><span class="idx">02</span> How it works</a>
-          <a href="/#value"><span class="idx">03</span> What you get</a>
-          <a href="/support/"><span class="idx">04</span> Working with us</a>
-          <a href="/about/"><span class="idx">05</span> Who we are</a>
-          <a href="https://cratis.io" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
-        </nav>
-      </details>
-
-      <div class="header-actions">
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          type="button"
-          aria-label="Switch between dark and light theme"
-        >
-          <svg
-            class="icon-sun"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-            />
-          </svg>
-          <svg
-            class="icon-moon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-          </svg>
-        </button>
-        <a class="pill" href="https://cratis.io" target="_blank" rel="noopener">
-          DOCS
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            aria-hidden="true"
-          >
-            <path d="M7 17L17 7M17 7H8M17 7V16" />
-          </svg>
-        </a>
-      </div>
+      <details class="nav-menu"><summary>Menu</summary><nav class="mobile-nav" aria-label="Mobile primary"><a href="/stack/" aria-current="page"><span class="idx">01</span> Products</a><a href="/why-cratis/"><span class="idx">02</span> Fit</a><a href="/support/"><span class="idx">03</span> Commercial</a><a href="/trust/"><span class="idx">04</span> Trust</a><a href="/about/"><span class="idx">05</span> About</a><a href="https://cratis.io"><span class="idx">↗</span> Documentation</a></nav></details>
+      <div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between dark and light theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg></button><a class="pill" href="https://cratis.io">DOCS <span aria-hidden="true">↗</span></a></div>
     </header>
 
     <main id="main">
       <section class="page-hero shell">
-        <p class="eyebrow">The stack</p>
-        <h1>One cast. One accountable lifecycle.</h1>
-        <p class="lead">
-          Cratis is not a catalog of repositories. It is one path through the
-          life of a long-lived .NET business system: design together, build on
-          an open runtime, operate from durable facts, and improve with evidence.
-        </p>
+        <p class="eyebrow">Products</p>
+        <h1>Product paths</h1>
+        <p class="lead">Start from the product that owns the job you are evaluating. Technical behavior, package profiles, and limitations belong in the linked documentation and source.</p>
       </section>
 
-      <section class="band shell">
-        <p class="eyebrow">The lifecycle</p>
-        <div class="band-head">
-          <div>
-            <h2>Design → Build → Operate → Improve.</h2>
-            <p>
-              Each surface has a clear job. Together they preserve intent,
-              behavior and history as the system changes over years.
-            </p>
-          </div>
-        </div>
-        <div class="flow">
-          <div class="flow-step">
-            <span class="k">01 Design</span>
-            <h3>Agree on the business</h3>
-            <p>Model commands, facts and views together, then explore the model as a live preview.</p>
-            <p class="owner">Cratis Studio</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">02 Build</span>
-            <h3>Carry one typed contract</h3>
-            <p>C# commands and queries become HTTP APIs, TypeScript proxies and React continuity.</p>
-            <p class="owner">Cratis Build</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">03 Operate</span>
-            <h3>Work from the event record</h3>
-            <p>Use the documented inspection and operational workflows available in each current tool; coverage varies by tool and version.</p>
-            <p class="owner">Workbench &middot; CLI &middot; MCP</p>
-          </div>
-          <div class="flow-step">
-            <span class="k">04 Improve</span>
-            <h3>Feed evidence back</h3>
-            <p>Use runtime history and specifications to explain state and shape the next change.</p>
-            <p class="owner">Chronicle &middot; Specifications</p>
-          </div>
-        </div>
-        <p class="code-note">
-          Nothing in that sequence is a second architecture. It is one model
-          seen at the point where the team needs it.
-        </p>
-      </section>
-
-      <section class="band shell" id="layers">
-        <p class="eyebrow">Cratis Build</p>
-        <div class="band-head">
-          <div>
-            <h2>The open runtime and operating foundation.</h2>
-            <p>
-              Chronicle, Arc, Components and the operating tools are one open
-              offer. Package boundaries stay useful to developers; customers do
-              not have to decode the repository map.
-            </p>
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Chronicle</strong><span>the event store</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Owns the event lifecycle: contract facts, append them in order,
-              evolve schemas, derive read models, react to change, replay when
-              understanding changes, and inspect or repair failed processing.
-              The durable record remains the source from which current state can
-              be explained.
-            </p>
-            <ul>
-              <li>gRPC / protobuf boundary</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>SQL Server</li>
-              <li>SQLite</li>
-              <li>Orleans runtime</li>
-              <li>Replay &amp; recovery</li>
-              <li>Namespaces for tenancy</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/chronicle/"
-              target="_blank"
-              rel="noopener"
-              >Chronicle documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Arc</strong><span>the full-stack CQRS framework</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Turns behavior into a typed application. A C# command becomes an
-              HTTP endpoint and a generated TypeScript proxy — so many backend contract changes surface as TypeScript compile errors
-              instead of silent mismatches.
-              Identity, authorization and tenancy are part of the framework, not
-              per-app boilerplate.
-            </p>
-            <ul>
-              <li>Commands &amp; queries</li>
-              <li>Proxy generation</li>
-              <li>Roslyn analyzers</li>
-              <li>Tenancy</li>
-              <li>Identity &amp; authorization</li>
-              <li>Works without event sourcing</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/arc/"
-              target="_blank"
-              rel="noopener"
-              >Arc documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Components</strong><span>the React library</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Renders Arc's generated proxies as forms, dialogs and data tables.
-              A screen becomes a few lines rather than a few files, and
-              observable queries keep it current without reload code.
-            </p>
-            <ul>
-              <li>Command dialogs</li>
-              <li>Data tables</li>
-              <li>Schema editors</li>
-              <li>Observable queries</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/components/"
-              target="_blank"
-              rel="noopener"
-              >Components documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>AuthProxy</strong><span>the edge gateway</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Authenticates at the edge, resolves the tenant, enriches identity,
-              and forwards trusted context to configured HTTP services according
-              to AuthProxy's current routing and integration documentation.
-            </p>
-            <ul>
-              <li>Authentication</li>
-              <li>Tenant resolution</li>
-              <li>Identity enrichment</li>
-              <li>Routing &amp; invites</li>
-            </ul>
-            <a
-              class="more"
-              href="https://cratis.io/authproxy/"
-              target="_blank"
-              rel="noopener"
-              >AuthProxy documentation →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>The tools</strong><span>the operating surface</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Workbench, the CLI, and Chronicle MCP provide public operating
-              surfaces with different current coverage. Workbench offers browser
-              inspection and interaction; the CLI documents event, observer,
-              failed-partition, replay, retry, and job workflows; Chronicle MCP
-              documents event-store, event, observer, recommendation, job, and
-              identity tools. Treat replay and other operational actions as
-              writes, and keep business changes on domain command and event paths.
-            </p>
-            <ul>
-              <li>Workbench</li>
-              <li>CLI</li>
-              <li>Chronicle MCP</li>
-              <li>Narrator</li>
-              <li>Lens</li>
-              <li>Synopsis</li>
-            </ul>
-            <a class="more" href="/stack/the-cast/">Meet the cast →</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="band shell" id="separate-offers">
-        <p class="eyebrow">Separate offers</p>
-        <div class="band-head">
-          <div>
-            <h2>Design and expertise without changing the Build boundary.</h2>
-            <p>
-              Studio and Assurance work alongside Cratis Build. Neither is part
-              of Build, and neither is required as permission to run or repair
-              Build in your own environment.
-            </p>
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Studio</strong
-            ><span>the modeling surface · commercial Preview</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Studio is the separate paid design product. Teams model commands,
-              events, and read models together, and Stage can perform supported
-              behavior in a sandbox. Screenplay provides the portable model.
-              Prologue is an emerging brownfield aid; verify its current scope
-              before planning an adoption around it.
-            </p>
-            <p>
-              Studio remains Preview. Current trial, pricing, export, and
-              retention details are published by the hosted product and the
-              terms that apply when you use it.
-            </p>
-            <a
-              class="more"
-              href="https://cratis.io/studio/"
-              target="_blank"
-              rel="noopener"
-              >Studio →</a
-            >
-          </div>
-        </div>
-
-        <div class="layer">
-          <div class="layer-name">
-            <strong>Assurance</strong><span>direct, bounded expertise</span>
-          </div>
-          <div class="layer-body">
-            <p>
-              Assurance covers support, reviews, first slices, production
-              readiness, and workshops with scope, availability, and commitments
-              defined by the selected plan or engagement. It does not gate access
-              to Build or its operating tools.
-            </p>
-            <a class="more" href="/support/">Cratis Assurance →</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="band shell" id="separable">
-        <p class="eyebrow">Adoption</p>
-        <div class="band-head">
-          <div>
-            <h2>Take one piece, or take all of it.</h2>
-            <p>
-              Each product has a focused role and can be adopted selectively. The dependency
-              only runs one way — Arc can sit on top of Chronicle, but Chronicle
-              never knows Arc exists.
-            </p>
-          </div>
-        </div>
-        <div class="table-wrap">
-          <table class="plans">
-            <caption class="visually-hidden">
-              Which Cratis products to reach for
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">You want</th>
-                <th scope="col">Reach for</th>
-                <th scope="col">Event sourcing?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  History as the source of truth through a documented client
-                </th>
-                <td>Chronicle on its own</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  A typed full-stack app over a traditional database
-                </th>
-                <td>Arc + Components over MongoDB or EF Core</td>
-                <td>Not required</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Authentication, tenancy and routing at the edge
-                </th>
-                <td>AuthProxy in front of your services</td>
-                <td>Optional</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  A typed full-stack app <em>and</em> a full event history
-                </th>
-                <td>Arc + Chronicle + Components</td>
-                <td>Yes</td>
-              </tr>
-              <tr>
-                <th scope="row">A product-grade SaaS shape, end to end</th>
-                <td>AuthProxy + Arc + Components + Chronicle + CLI</td>
-                <td>Default</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="code-note">
-          The last row is where the stack is at its best, and it's the default
-          for a new information system. Coming from an existing one?
-          <a
-            href="https://cratis.io/adopting-cratis/"
-            target="_blank"
-            rel="noopener"
-            >Adopting Cratis</a
-          >
-          walks through taking one piece at a time.
-        </p>
-      </section>
-
-      <section class="band shell">
+      <section class="band shell" aria-labelledby="product-heading">
+        <p class="eyebrow">Current public descriptions</p>
+        <div class="band-head"><div><h2 id="product-heading">Choose a product surface</h2><p>These descriptions stay inside their current public scope. They do not establish common maturity, compatibility, support, or production suitability.</p></div></div>
         <div class="grid grid-2">
-          <div class="card">
-            <span class="num">Open</span>
-            <h3>Documented boundaries, with explicit coverage</h3>
-            <p>
-              Chronicle exposes a gRPC and protobuf boundary. Client libraries
-              and storage providers have different maturity and coverage; .NET
-              is the primary experience. Check each repository's license and the
-              current compatibility documentation before choosing a boundary.
-            </p>
-          </div>
-          <div class="card">
-            <span class="num">Opinionated</span>
-            <h3>On purpose, and only where it pays</h3>
-            <p>
-              Conventions over configuration, vertical slices over layers, facts
-              over current state. The opinions are what make codebases
-              consistent — and consistency is what makes onboarding fast and AI
-              assistance less speculative.
-            </p>
-          </div>
+          <article class="card"><span class="num">01</span><h3>Arc</h3><p>Arc is an opinionated CQRS application framework for ASP.NET Core with commands, queries, validation, authorization, and TypeScript proxy generation.</p><a class="card-link" href="https://cratis.io/arc/">Arc documentation ↗</a><a class="card-link" href="https://github.com/Cratis/Arc">Arc source ↗</a></article>
+          <article class="card"><span class="num">02</span><h3>Components</h3><p>Components is a React component library aligned with Arc application patterns.</p><a class="card-link" href="https://cratis.io/components/">Components documentation ↗</a><a class="card-link" href="https://github.com/Cratis/Components">Components source ↗</a></article>
+          <article class="card"><span class="num">03</span><h3>Cratis CLI</h3><p>The Cratis CLI provides terminal workflows for inspecting and diagnosing Chronicle.</p><a class="card-link" href="https://cratis.io/cli/">CLI documentation ↗</a><a class="card-link" href="https://github.com/Cratis/cli">CLI source ↗</a></article>
+          <article class="card"><span class="num">04</span><h3>Chronicle Workbench</h3><p>Chronicle Workbench provides a bundled local browser surface for authorized inspection of Chronicle runtime state and preview of supported projection behavior.</p><a class="card-link" href="https://cratis.io/chronicle/workbench/">Workbench documentation ↗</a><a class="card-link" href="https://github.com/Cratis/Chronicle">Chronicle source ↗</a></article>
         </div>
       </section>
 
-      <section class="band shell">
-        <div class="banner">
-          <div>
-            <h3>The documentation goes deeper than this page can.</h3>
-            <p>
-              Concepts, tutorials, reference and a getting-started walkthrough
-              that takes one event through a projection and a reactor.
-            </p>
-          </div>
-          <a
-            class="cta"
-            href="https://cratis.io"
-            target="_blank"
-            rel="noopener"
-          >
-            Read the docs
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              aria-hidden="true"
-            >
-              <path d="M7 17L17 7M17 7H8M17 7V16" />
-            </svg>
-          </a>
+      <section class="band shell" aria-labelledby="chronicle-heading">
+        <p class="eyebrow">Chronicle</p>
+        <div class="callout">
+          <h2 id="chronicle-heading">Self-hosted software boundary</h2>
+          <p>Chronicle and its bundled local Workbench are available as MIT-licensed self-hosted software; authorized local use is separate from paid Cratis support, hosted coordination, or managed operational responsibility.</p>
+          <p><a href="https://cratis.io/chronicle/">Review the Chronicle documentation</a> and <a href="https://github.com/Cratis/Chronicle/blob/main/LICENSE">Chronicle license</a> for the current source and profile.</p>
+        </div>
+      </section>
+
+      <section class="band shell" aria-labelledby="boundary-heading">
+        <p class="eyebrow">Boundaries</p>
+        <div class="band-head"><div><h2 id="boundary-heading">Do not infer a bundle</h2><p>Product presence on this page does not establish client or provider parity, cross-product compatibility, maturity, security, performance, support, commercial availability, or a roadmap commitment.</p></div></div>
+        <div class="routes">
+          <a class="route" href="https://cratis.io/chronicle/"><h3>Chronicle documentation</h3><p>Current Chronicle and Workbench technical paths.</p><span class="go" aria-hidden="true">↗</span></a>
+          <a class="route" href="https://github.com/Cratis"><h3>Owning repositories</h3><p>Source, releases, package metadata, issues, and repository-specific licenses.</p><span class="go" aria-hidden="true">↗</span></a>
+          <a class="route" href="/why-cratis/"><h3>Evaluate fit</h3><p>Use exact product boundaries and current evidence to choose the smallest relevant path.</p><span class="go" aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell">
-        <div class="foot-grid">
-          <div class="foot-brand">
-            <a class="logo" href="/" aria-label="Cratis — home">
-              <svg
-                viewBox="0 0 600 328"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Cratis"
-              >
-                <g
-                  transform="translate(0,328) scale(0.1,-0.1)"
-                  fill="currentColor"
-                  stroke="none"
-                >
-                  <path
-                    d="M974 2789 c-319 -182 -592 -343 -607 -358 -16 -14 -34 -35 -40 -46 -8 -14 -10 -229 -9 -735 l3 -715 23 -35 c18 -26 74 -64 222 -151 110 -64 374 -219 589 -344 214 -126 400 -231 413 -233 13 -3 31 3 42 13 19 17 20 33 20 307 0 233 -3 294 -15 317 -10 21 -93 74 -327 211 -172 101 -324 194 -338 207 l-25 23 0 401 0 401 27 23 c14 12 161 100 327 194 177 101 310 184 325 202 l26 31 0 293 c0 318 -1 325 -55 325 -12 0 -283 -149 -601 -331z"
-                  />
-                  <path
-                    d="M4830 2314 c-62 -23 -90 -58 -90 -115 0 -22 10 -41 34 -65 30 -30 40 -34 85 -34 59 0 95 19 117 61 25 49 12 105 -32 134 -25 16 -91 27 -114 19z"
-                  />
-                  <path
-                    d="M4310 2080 l0 -80 -55 0 -55 0 0 -80 0 -80 55 0 55 0 0 -168 c0 -164 1 -170 28 -223 22 -44 36 -58 81 -81 45 -24 66 -28 131 -28 77 0 134 12 157 34 8 8 5 28 -14 79 -21 55 -29 67 -42 61 -9 -4 -35 -9 -57 -12 -34 -3 -46 1 -63 19 -19 21 -21 34 -21 171 l0 148 80 0 80 0 0 80 0 80 -80 0 -80 0 0 80 0 80 -100 0 -100 0 0 -80z"
-                  />
-                  <path
-                    d="M1495 2019 c-178 -98 -219 -126 -237 -157 -15 -26 -18 -57 -18 -215 0 -175 1 -186 23 -218 30 -45 326 -219 372 -219 34 0 319 157 361 199 24 23 24 26 24 230 l0 207 -27 31 c-39 44 -319 203 -358 203 -19 0 -73 -24 -140 -61z"
-                  />
-                  <path
-                    d="M2635 2006 c-110 -35 -200 -116 -230 -207 -22 -64 -22 -180 -1 -238 35 -96 124 -178 225 -208 79 -23 231 -15 291 16 53 27 106 75 126 113 l14 27 -74 40 c-40 23 -76 41 -79 41 -2 0 -22 -18 -44 -39 -30 -30 -50 -41 -86 -46 -135 -20 -230 129 -167 261 49 101 177 119 259 37 l35 -35 69 33 c37 19 72 39 78 45 13 15 -41 87 -90 119 -21 15 -60 33 -87 41 -58 17 -184 17 -239 0z"
-                  />
-                  <path
-                    d="M3405 2008 c-16 -6 -47 -22 -67 -35 l-38 -23 0 30 0 30 -100 0 -100 0 0 -330 0 -330 99 0 99 0 4 183 c3 159 6 187 24 222 25 49 89 85 151 85 l43 0 0 90 0 90 -42 -1 c-24 0 -56 -5 -73 -11z"
-                  />
-                  <path
-                    d="M3705 2007 c-61 -16 -145 -55 -145 -68 0 -7 56 -126 64 -136 1 -1 25 9 53 23 61 31 155 42 206 25 43 -14 77 -53 77 -87 0 -24 -1 -24 -108 -24 -173 0 -262 -34 -302 -116 -45 -92 -9 -203 83 -255 33 -18 62 -24 128 -27 97 -5 144 6 189 45 l30 25 0 -31 0 -31 96 0 96 0 -5 228 c-2 125 -10 243 -16 263 -19 63 -65 115 -128 145 -51 25 -70 29 -163 31 -60 1 -127 -3 -155 -10z m255 -425 c0 -71 -86 -123 -168 -100 -42 12 -61 33 -62 69 0 25 21 51 50 62 8 3 52 6 98 6 l82 1 0 -38z"
-                  />
-                  <path
-                    d="M5207 2006 c-66 -19 -119 -58 -146 -107 -19 -34 -23 -52 -19 -109 3 -60 8 -73 33 -101 42 -44 94 -65 210 -84 109 -19 145 -35 145 -66 0 -55 -151 -63 -272 -15 -36 14 -67 26 -69 26 -9 0 -73 -140 -67 -146 4 -3 37 -17 75 -31 90 -34 269 -44 353 -19 119 35 172 95 172 194 0 124 -50 164 -249 202 -56 10 -112 24 -123 30 -31 17 -22 51 20 73 45 23 149 17 216 -12 26 -12 48 -21 51 -21 5 0 63 129 63 140 0 5 -26 19 -57 31 -73 28 -261 36 -336 15z"
-                  />
-                  <path
-                    d="M4760 1680 l0 -330 100 0 100 0 0 330 0 330 -100 0 -100 0 0 -330z"
-                  />
-                </g>
-              </svg>
-            </a>
-            <p>
-              Software that remembers. Design, build, operate and improve
-              accountable, long-lived .NET business systems.
-            </p>
-          </div>
-
-          <div class="foot-col">
-            <h4>Product</h4>
-            <ul>
-              <li>
-                <a
-                  href="https://cratis.io/chronicle/"
-                  target="_blank"
-                  rel="noopener"
-                  >Chronicle</a
-                >
-              </li>
-              <li>
-                <a href="https://cratis.io/arc/" target="_blank" rel="noopener"
-                  >Arc</a
-                >
-              </li>
-              <li><a href="/studio/">Cratis Studio</a></li>
-              <li><a href="/stack/">The stack</a></li>
-              <li><a href="/stack/the-cast/">The cast</a></li>
-            </ul>
-          </div>
-
-          <div class="foot-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/why-cratis/">Why Cratis</a></li>
-              <li><a href="/support/">Support &amp; services</a></li>
-              <li><a href="/trust/">Trust</a></li>
-            </ul>
-          </div>
-
-          <div class="foot-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="/writing/">Writing</a></li>
-              <li>
-                <a href="https://cratis.io" target="_blank" rel="noopener"
-                  >Documentation</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/Cratis"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://cratis.io/community/"
-                  target="_blank"
-                  rel="noopener"
-                  >Discord</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://cratis.io/roadmap/"
-                  target="_blank"
-                  rel="noopener"
-                  >Roadmap</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="foot-bar">
-<div>© 2026 Cratis · Cratis Build is open source; licenses vary by repository.</div>
-          <div class="legal">
-            <a href="/trust/">Trust</a>
-            <a href="/trust/#security">Security</a>
-            <a href="https://github.com/Cratis" target="_blank" rel="noopener"
-              >Source</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    <footer class="site-footer"><div class="shell"><div class="foot-grid"><div class="foot-brand"><a class="logo" href="/" aria-label="Cratis — home"><img src="/assets/img/favicon.svg" alt="" width="34" height="34" /><strong>Cratis</strong></a><p>Company information and product navigation. Technical documentation is maintained at cratis.io.</p></div><div class="foot-col"><h3>Products</h3><ul><li><a href="https://cratis.io/chronicle/">Chronicle</a></li><li><a href="https://cratis.io/arc/">Arc</a></li><li><a href="https://cratis.io/components/">Components</a></li><li><a href="https://cratis.io/cli/">Cratis CLI</a></li></ul></div><div class="foot-col"><h3>Company</h3><ul><li><a href="/about/">About</a></li><li><a href="/why-cratis/">Fit</a></li><li><a href="/support/">Commercial contact</a></li><li><a href="/trust/">Trust</a></li></ul></div><div class="foot-col"><h3>Resources</h3><ul><li><a href="https://cratis.io">Documentation</a></li><li><a href="https://github.com/Cratis">GitHub</a></li><li><a href="/trust/#security">Security reporting</a></li></ul></div></div><div class="foot-bar"><div>Cratis</div><div class="legal"><a href="/trust/">Trust</a><a href="/trust/#security">Security</a><a href="https://github.com/Cratis">Source</a></div></div></div></footer>
     <script src="/assets/js/site.js" defer></script>
   </body>
 </html>
