@@ -1,4 +1,6 @@
-# Cratis — brand and positioning
+# Cratis — brand and positioning input
+
+This document preserves the site owner's creative direction, visual language, audience hypotheses, and candidate message hierarchy. It does not approve the product, ecosystem, maturity, compatibility, security/privacy, support, commercial, outcome, or roadmap claims it contains. Reuse requires current owning evidence and public-surface review; exact technical truth remains in product documentation.
 
 ## Core promise
 

@@ -4,13 +4,9 @@ Read `AGENTS.md`, `BRAND.md`, and `MESSAGING.md` before changing public content.
 
 ## Purpose
 
-The site should let an evaluator understand Cratis quickly, decide whether it fits, verify current limits, and choose among three offers:
+The site should help an evaluator understand Cratis quickly, find the smallest relevant product path, see how verified products relate without implying a mandatory bundle, inspect current limits, and continue to canonical technical documentation, source, trust, or contact routes.
 
-1. **Cratis Build** — the open runtime and operating foundation.
-2. **Cratis Studio** — the paid collaborative design product at **Preview** maturity.
-3. **Cratis Assurance** — founder-led support and bounded expertise, with availability and commitments defined by the selected plan or engagement.
-
-The organizing lifecycle is **Design → Build → Operate → Improve**. Studio supports Design but is not part of Build. Build includes the deployed runtime and available operating tools. Assurance does not gate the right to run or repair Build.
+The existing lifecycle and offer framing is product-owned creative input, not claim authority. Before changing or reusing it, map each material sentence to current owning evidence and public approval. Preserve the visual onboarding sequence while claim-gated copy is reviewed; do not solve a wording problem by redesigning or deleting the experience.
 
 ## Technology and deployment
 
@@ -31,6 +27,7 @@ JavaScript is optional for reading and navigation. It enhances theme persistence
 /about/                                Founders, lineage, and values
 /writing/                              Essays
 /writing/vague-codebase-vague-code/    Published essay
+/ai/                                   AI-topic route; intentionally absent from the current sitemap pending content/discovery review
 ```
 
 Product tutorials and API documentation link to `cratis.io` instead of being duplicated here.
@@ -74,20 +71,18 @@ State current facts and limits. Do not publish a support window, maintenance bra
 
 ### About and writing
 
-Preserve the more-than-fifteen-year event-sourcing lineage and the founder-led nature of Assurance without promising unlimited direct availability. Only publish approved names, roles, bios, photographs, and quotations.
+Treat company history, founder/team identity, experience, access, editorial claims, article assertions, and availability as separately reviewable facts. Publish names, roles, bios, photographs, quotations, history, and outcome language only with current owner verification and the required claim/content review.
 
-## Open-source and commercial wording
+## Product, ecosystem, license, and commercial wording
 
-Use these boundaries:
+- Use exact owner-verified product descriptions on approved product surfaces.
+- Explain the seam between products and the independent-use boundary together.
+- A connected product path does not establish completeness, common maturity, compatibility, support, security, or one commercial/license boundary.
+- Apply repository/package license wording only to that exact artifact and version.
+- Treat Studio, model-first/software-factory, umbrella ecosystem, support, pricing, continuity, security/compliance, and managed responsibility wording as separately gated.
+- Keep technical depth on cratis.io and in owning repositories; cratis.no teaches the reader where to start and why the next link matters.
 
-- Cratis Build is developed in public under the license stated by each repository.
-- Cratis Studio is a separate paid Preview product.
-- Cratis Assurance is paid time, expertise, and published commitments.
-- Build does not require Studio or Assurance as permission to run.
-
-Do not say that all Cratis software is MIT licensed, that every deployed component has identical terms, or that public source eliminates migration and maintenance work.
-
-Footer wording must remain scoped to Build and repository-specific licenses.
+Footer wording follows the same evidence and scope rules as body copy.
 
 ## Visual and asset requirements
 
