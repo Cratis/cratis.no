@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Cratis Stack — design, build, operate and improve</title>
+    <title>The Cratis Stack — event sourcing, CQRS, and the tools around them</title>
     <meta
       name="description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
     />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
     />
     <meta property="og:url" content="https://cratis.no/stack/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -239,7 +239,7 @@
 
         <div class="layer">
           <div class="layer-name">
-            <strong>Chronicle</strong><span>the event store</span>
+            <strong>Chronicle</strong><span>the event-sourcing database and runtime</span>
           </div>
           <div class="layer-body">
             <p>
@@ -247,7 +247,17 @@
               evolve schemas, derive read models, react to change, replay when
               understanding changes, and inspect or repair failed processing.
               The durable record remains the source from which current state can
-              be explained.
+              be explained. Chronicle is MIT licensed and free to use, with
+              pluggable storage — MongoDB by default, plus PostgreSQL, SQL
+              Server, and SQLite providers — and a language-agnostic gRPC
+              boundary: a first-class
+              <a href="https://github.com/Cratis/Chronicle" target="_blank" rel="noopener">.NET SDK</a>
+              and clients for
+              <a href="https://github.com/Cratis/Chronicle.TypeScript" target="_blank" rel="noopener">TypeScript</a>,
+              <a href="https://github.com/Cratis/Chronicle.Kotlin" target="_blank" rel="noopener">Kotlin/Java</a>
+              and
+              <a href="https://github.com/Cratis/Chronicle.Elixir" target="_blank" rel="noopener">Elixir</a>,
+              with a Python client coming soon.
             </p>
             <ul>
               <li>gRPC / protobuf boundary</li>
@@ -515,9 +525,11 @@
             <span class="num">Open</span>
             <h3>Documented boundaries, with explicit coverage</h3>
             <p>
-              Chronicle exposes a gRPC and protobuf boundary. Client libraries
-              and storage providers have different maturity and coverage; .NET
-              is the primary experience. Check each repository's license and the
+              Chronicle exposes a gRPC and protobuf boundary, with clients for
+              .NET, TypeScript, Kotlin/Java, and Elixir — and Python coming
+              soon. Client libraries and storage providers have different
+              maturity and coverage; .NET is the primary experience. Everything
+              Cratis publishes today is MIT licensed and free to use; check the
               current compatibility documentation before choosing a boundary.
             </p>
           </div>

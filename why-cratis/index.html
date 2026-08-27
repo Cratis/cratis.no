@@ -6,7 +6,7 @@
     <title>Why Cratis — and when it's the wrong choice</title>
     <meta
       name="description"
-      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
+      content="When event sourcing and CQRS earn their keep — and when they don't. Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools, and when a simpler approach is better."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
@@ -42,6 +42,46 @@
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I use Cratis if I'm not on .NET?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chronicle, the Cratis event-sourcing database, exposes a documented gRPC and protobuf boundary with clients for TypeScript, Kotlin/Java, and Elixir, and a Python client coming soon. The deepest experience is still the first-class .NET SDK, and coverage varies by client and version — so a non-.NET backend is a question of client fit, not an automatic no."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is event sourcing always the right answer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. For genuinely current-state-only behavior — reference data, settings, a small admin surface — event sourcing is pure cost. Arc, the Cratis CQRS framework for ASP.NET Core, works over MongoDB or EF Core without event sourcing, and that is a first-class path."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use Cratis for a throwaway prototype?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Probably not. The conventions pay off over years; if the code won't live that long, they're overhead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Cratis compare on community size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cratis is younger and smaller than the largest alternatives. If 'someone has already written a blog post about my exact problem' is your top criterion, weigh that honestly."
+            }
+          }
+        ]
+      }
     </script>
   </head>
   <body>
@@ -399,9 +439,29 @@
             <div>
               <h3>You're not on .NET</h3>
               <p>
-                Chronicle exposes a documented gRPC and protobuf boundary, with
-                clients for TypeScript, Kotlin, and Elixir. Coverage varies by
-                client and version; .NET remains the primary experience.
+                Less disqualifying than it used to be. Chronicle exposes a
+                documented gRPC and protobuf boundary, with clients for
+                <a
+                  href="https://github.com/Cratis/Chronicle.TypeScript"
+                  target="_blank"
+                  rel="noopener"
+                  >TypeScript</a
+                >,
+                <a
+                  href="https://github.com/Cratis/Chronicle.Kotlin"
+                  target="_blank"
+                  rel="noopener"
+                  >Kotlin/Java</a
+                >
+                and
+                <a
+                  href="https://github.com/Cratis/Chronicle.Elixir"
+                  target="_blank"
+                  rel="noopener"
+                  >Elixir</a
+                >, and a Python client coming soon. Coverage varies by client
+                and version; .NET remains the primary experience, so weigh that
+                honestly.
               </p>
             </div>
           </div>
@@ -436,9 +496,9 @@
           </div>
         </div>
         <p class="code-note">
-          When none of it fits — a couple of static pages, a non-.NET backend,
-          or a throwaway prototype — Cratis is more than you need, and that's
-          fine.
+          When none of it fits — a couple of static pages, a backend in a
+          language without a Chronicle client, or a throwaway prototype —
+          Cratis is more than you need, and that's fine.
         </p>
       </section>
 

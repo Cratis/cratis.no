@@ -6,7 +6,7 @@
     <title>About — Cratis</title>
     <meta
       name="description"
-      content="Cratis is built by two people who wanted software they'd be happy to inherit. Who we are, what we value, and what being small actually means for you."
+      content="Cratis is built by two people who wanted software they'd be happy to inherit — shaped by more than fifteen years of event sourcing and CQRS on .NET. Who we are, what we value, and what being small actually means for you."
     />
     <link rel="canonical" href="https://cratis.no/about/" />
     <meta property="og:type" content="website" />
@@ -42,6 +42,37 @@
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "url": "https://cratis.no/about/",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Cratis",
+          "url": "https://cratis.no",
+          "description": "Cratis helps teams build accountable, long-lived .NET business systems with event sourcing and CQRS. Founder-led and intentionally small, with more than fifteen years of event-sourcing lineage behind the stack.",
+          "sameAs": ["https://github.com/Cratis", "https://cratis.io"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Cratis",
+              "item": "https://cratis.no/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://cratis.no/about/"
+            }
+          ]
+        }
+      }
     </script>
   </head>
   <body>
@@ -179,7 +210,10 @@
           true within a month.
         </p>
         <p class="lead" style="margin-top: 18px">
-          So we built the thing where the pieces agree.
+          So we built the thing where the pieces agree. The habit behind it is
+          older than the company: more than fifteen years of building
+          event-sourced, CQRS-shaped .NET systems, and of learning what a
+          durable record is actually worth.
         </p>
       </section>
 

@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cratis — software that remembers</title>
+    <title>Cratis — software that remembers | Event sourcing for .NET and beyond</title>
     <meta
       name="description"
-      content="Software that remembers. Cratis helps .NET teams design, build, operate and improve accountable business systems that can explain how they reached their current state."
+      content="Software that remembers. Cratis is an open-source (MIT) event sourcing and CQRS platform: Chronicle, the event-sourcing database, and the tools around it help teams design, build, operate and improve accountable business systems that can explain how they reached their current state."
     />
     <link rel="canonical" href="https://cratis.no/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Cratis — software that remembers"
+      content="Cratis — software that remembers | Event sourcing for .NET and beyond"
     />
     <meta
       property="og:description"
-      content="Design, build, operate and improve accountable .NET business systems with an open runtime and a durable record of what happened."
+      content="Design, build, operate and improve accountable .NET business systems with an open-source (MIT) event sourcing runtime, an event store you can question, and a durable record of what happened."
     />
     <meta property="og:url" content="https://cratis.no/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -53,8 +53,76 @@
         "@type": "Organization",
         "name": "Cratis",
         "url": "https://cratis.no",
-        "description": "Cratis helps teams build accountable, long-lived .NET business systems. Cratis Build is open source; Cratis Studio is the paid collaborative design product; Cratis Assurance provides direct expert support.",
-        "sameAs": ["https://github.com/Cratis", "https://cratis.io"]
+        "description": "Cratis helps teams build accountable, long-lived .NET business systems with event sourcing and CQRS. Cratis Build is open source and MIT licensed, centered on Chronicle, an event-sourcing database and processing runtime; Cratis Studio is the paid collaborative design product; Cratis Assurance provides direct expert support.",
+        "sameAs": [
+          "https://github.com/Cratis",
+          "https://cratis.io",
+          "https://www.nuget.org/profiles/Cratis",
+          "https://www.npmjs.com/org/cratis"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Cratis products",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Chronicle",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "An event-sourcing database and processing runtime with a first-class .NET SDK and additional TypeScript, Kotlin/Java (JVM), and Elixir clients — with a Python client coming soon — plus pluggable storage-provider implementations including MongoDB (default), PostgreSQL, SQL Server, and SQLite.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/chronicle/",
+              "sameAs": "https://github.com/Cratis/Chronicle"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Arc",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "An opinionated CQRS application framework for ASP.NET Core — commands, queries, validation, authorization, and TypeScript proxy generation; works without event sourcing, with optional Chronicle integration.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/arc/",
+              "sameAs": "https://github.com/Cratis/Arc"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Components",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "React components for CQRS and event-sourced applications built with Cratis Arc — command dialogs, typed forms, and query-backed data tables.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/components/",
+              "sameAs": "https://github.com/Cratis/Components"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Studio",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Web",
+              "description": "The collaborative environment for designing, visualizing, and editing event models together — preview software, described that way on purpose.",
+              "url": "https://cratis.no/studio/"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -391,8 +459,9 @@
             <h3>Build</h3>
             <p>
               Cratis Build carries a feature from C# commands and queries to
-              generated TypeScript and React. Chronicle records the facts; Arc
-              keeps the full-stack contract continuous.
+              generated TypeScript and React. Chronicle — the event-sourcing
+              database — records the facts; Arc keeps the full-stack CQRS
+              contract continuous.
             </p>
             <p class="act-who">Arc &middot; Chronicle &middot; Components</p>
           </div>
@@ -574,14 +643,16 @@
             <h3>You are not locked in</h3>
             <div>
 <p>
-                Cratis Build is developed in public under the license stated by
-                each repository and is intended to run in your infrastructure.
-                It does not require a Studio subscription. Compatibility and
-                integration coverage vary by component and version, so check the
-                current documentation for the systems you need. Leaving any
-                platform still takes planning; public source and documented
-                interfaces provide practical options. Studio export availability
-                is described by the hosted product.
+                Cratis Build is developed in public, MIT licensed, and intended
+                to run in your infrastructure. It does not require a Studio
+                subscription. Chronicle keeps your event history behind a
+                documented gRPC boundary with clients for .NET, TypeScript,
+                Kotlin/Java, and Elixir — a Python client is coming soon — and
+                pluggable storage: MongoDB by default, with PostgreSQL, SQL
+                Server, and SQLite providers. Leaving any platform still takes
+                planning; public source and documented interfaces provide
+                practical options. Studio export availability is described by
+                the hosted product.
               </p>
               <span class="tagline">Open by design, not by promise</span>
             </div>
