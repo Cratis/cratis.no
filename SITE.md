@@ -93,6 +93,28 @@ Footer wording follows the same evidence and scope rules as body copy.
 - Every public page includes SVG and PNG favicons plus the Apple touch icon.
 - Every public page has a 1200×630 share card; Studio uses `assets/og/studio.jpg`.
 
+## Search and discoverability
+
+The site should be findable by the category terms evaluators actually search for, in the site's own voice — never as keyword paste.
+
+Voice boundary. cratis.no is the company's trust surface. Visible body copy leads with the company narrative — one deliberate ecosystem of professional products, many years of expertise behind them, a company that keeps building and supporting them — and names technical breadth only where the page's own story needs it. Client, storage, protocol, and license inventories belong in metadata and product documentation, not in body paragraphs. Commitment is expressed as company stance ("we're here to stay", "we keep building and supporting this"), never as SLAs, guaranteed terms, prices, or contractual assurances; services and support plans are pointed at the existing `/support/` and contact surfaces.
+
+Keywords. Titles, meta descriptions, and OpenGraph tags on product-relevant routes carry the category vocabulary naturally: event sourcing, event store, event-sourcing database, CQRS, .NET, and — where factual for the route — the shipped client languages (TypeScript, Kotlin/Java, Elixir) and MIT/free licensing. Use each term where it is true and reads natively; do not stuff, repeat, or rank-chase.
+
+Structured data. Each route carries the JSON-LD that matches its content:
+
+- `/` — `Organization` (with registry/social `sameAs`) and an `ItemList` of `SoftwareApplication` entries for the public products;
+- `/stack/` — `SoftwareApplication` for Chronicle, mirroring the home-page product entry;
+- `/why-cratis/` — `FAQPage` for the fit/anti-fit questions;
+- `/writing/<essay>/` — `BlogPosting` with headline, dates, author, publisher;
+- `/writing/` and `/about/` — `BreadcrumbList` (About also carries `AboutPage`/`Organization`).
+
+JSON-LD states only what the page itself states and follows the same claim gates as body copy.
+
+Sitemap. Every `<url>` carries `<lastmod>`; update it when a page's content changes. `/ai/` stays out of the sitemap until its content/discovery review passes.
+
+Claim gating. Language-breadth, storage-breadth, license, and "coming soon" wording (Python client, Ensemble) must match the current approved public-claim wording before publication, exactly as for body copy. Model-first surfaces (Studio, Screenplay, Stage, Scene, Prologue) are described as experimental or Preview; pre-release products are strictly "coming soon". No benchmark, superiority, maturity, or production-readiness wording.
+
 ## Public hygiene
 
 Public HTML contains no editorial, audit, placeholder, provenance, or source comments. Public pages and repository documents contain no private research references, competitor claims, customer secrets, or invented proof.

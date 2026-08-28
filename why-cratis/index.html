@@ -6,7 +6,7 @@
     <title>Why Cratis — and when it's the wrong choice</title>
     <meta
       name="description"
-      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
+      content="We believe event sourcing is worth it in almost all cases — and we'll tell you when it isn't. Why systems dealing with information, information flows and business processes benefit from durable facts, full-stack contract continuity and event sourcing that reads like idiomatic code — and when a simpler approach is better."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
+      content="We believe event sourcing is worth it in almost all cases — and we'll tell you when it isn't. Durable facts, full-stack contract continuity, and event sourcing that reads like idiomatic code — and when a simpler approach is better."
     />
     <meta property="og:url" content="https://cratis.no/why-cratis/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,6 +42,46 @@
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I use Cratis if I'm not on .NET?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chronicle, the Cratis event-sourcing database, exposes a documented gRPC and protobuf boundary with clients for TypeScript, Kotlin/Java, and Elixir, and a Python client coming soon. The deepest experience is still the first-class .NET SDK, and coverage varies by client and version — so a non-.NET backend is a question of client fit, not an automatic no."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is event sourcing always the right answer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not always — but we believe it is worth it in almost all cases. Nearly every system deals in information, information flows, and business processes, and that is exactly what a durable event history serves. The exceptions are genuinely current-state-only behavior — reference data, settings, a small admin surface — where event sourcing is pure cost. Arc, the Cratis CQRS framework for ASP.NET Core, works over MongoDB or EF Core without event sourcing, and that is a first-class path."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use Cratis for a throwaway prototype?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Cratis is meant to be quick and easy as well as robust and feature-rich — the conventions and scaffolding make even a prototype fast to stand up, so there's no reason not to use it for throwaway work. And if the prototype lives on, you're already on a solid foundation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Cratis compare on community size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cratis is young in the public eye and the community is smaller than the biggest alternatives — and it's growing, helpful, kind, and inclusive. The founders answer questions and join topics quickly, and issues raised on Discord have often been resolved within hours of being reported. We also attend conferences, give talks, and take part in the wider community."
+            }
+          }
+        ]
+      }
     </script>
   </head>
   <body>
@@ -172,8 +212,12 @@
         <p class="eyebrow">Why Cratis</p>
         <h1>The honest version.</h1>
         <p class="lead">
-          You're comparing options. Here's where we're genuinely different,
-          where we're not, and when you should pick something else.
+          You're comparing options, so we'll say our conviction out loud: we
+          believe keeping the full history of what happened — event sourcing —
+          is worth it in almost all cases. Nearly every business runs on
+          information, information flows and business processes, and that's
+          exactly what it serves. Here's where we're genuinely different, where
+          we're not, and when you should pick something else.
         </p>
       </section>
 
@@ -241,8 +285,8 @@
                   Locking event history to one language or database engine
                 </th>
                 <td>
-                  An open gRPC boundary, with client and storage coverage
-                  documented by product and version
+                  An open, documented boundary, with language and database
+                  coverage stated by product and version
                 </td>
               </tr>
               <tr>
@@ -272,7 +316,9 @@
               packages agree about how an application is shaped. A command, an
               event, a read model, a tenant, an identity, a React form and an
               operating tool are parts of one model — not islands with separate
-              conventions.
+              conventions. That agreement is how we take friction and
+              repetitive work out of the day-to-day; the aim is more
+              productivity, higher quality, and software you can rely on.
             </p>
           </div>
           <div class="card">
@@ -282,7 +328,8 @@
               Event sourcing optimizes for understanding change, not storing the
               latest value. Events are facts: immutable, past-tense,
               single-purpose. Read models are disposable, because the events are
-              the state.
+              the state. And with Cratis it stays familiar to the people
+              building it — even if they have never worked this way before.
             </p>
           </div>
           <div class="card">
@@ -300,8 +347,9 @@
             <h3>Public Build source and documented boundaries</h3>
             <p>
               Cratis Build is developed in public under the license stated by
-              each repository. Chronicle exposes gRPC and protobuf, while client
-              and storage coverage varies by product and version. Chronicle can
+              each repository. Chronicle has an open, documented boundary,
+              while client and storage coverage varies by product and version.
+              Chronicle can
               be used without Arc, and Arc can be used without event sourcing.
             </p>
           </div>
@@ -399,9 +447,9 @@
             <div>
               <h3>You're not on .NET</h3>
               <p>
-                Chronicle exposes a documented gRPC and protobuf boundary, with
-                clients for TypeScript, Kotlin, and Elixir. Coverage varies by
-                client and version; .NET remains the primary experience.
+                Chronicle has a documented, open boundary with clients for
+                TypeScript, Kotlin, and Elixir. Coverage varies by client and
+                version; .NET remains the primary experience.
               </p>
             </div>
           </div>
@@ -409,9 +457,9 @@
             <div>
               <h3>Your slice is genuinely current-state-only</h3>
               <p>
-                Reference data, settings, a small admin surface. Event sourcing
-                is pure cost there. Arc over MongoDB or EF Core is the simpler
-                boundary, and it's a first-class path.
+                Reference data, settings, a small admin surface. Keeping full
+                history is pure cost there. Arc over a traditional database is
+                the simpler boundary, and it's a first-class path.
               </p>
             </div>
           </div>
@@ -419,8 +467,10 @@
             <div>
               <h3>It's a prototype you'll throw away</h3>
               <p>
-                The conventions pay off over years. If the code won't live that
-                long, they're overhead.
+                Use it anyway. Cratis is meant to be quick and easy as well as
+                robust — the conventions and scaffolding make even a prototype
+                fast to stand up. And if it lives on, you're already on a solid
+                foundation.
               </p>
             </div>
           </div>
@@ -428,17 +478,18 @@
             <div>
               <h3>You want the largest possible community</h3>
               <p>
-                We're younger and smaller than the alternatives. If "someone has
-                already written a blog post about my exact problem" is your top
-                criterion, weigh that honestly.
+                Ours is smaller than the biggest alternatives — we're young in
+                the public eye. It's also growing, helpful, kind, and
+                inclusive: we answer questions and join topics quickly, and
+                issues raised on Discord have often been resolved within hours.
+                You'll find us at conferences and in the wider community too.
               </p>
             </div>
           </div>
         </div>
         <p class="code-note">
-          When none of it fits — a couple of static pages, a non-.NET backend,
-          or a throwaway prototype — Cratis is more than you need, and that's
-          fine.
+          When none of it fits — a couple of static pages or a non-.NET
+          backend — Cratis is more than you need, and that's fine.
         </p>
       </section>
 

@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cratis — software that remembers</title>
+    <title>Cratis — software that remembers | Event sourcing for .NET and beyond</title>
     <meta
       name="description"
-      content="Software that remembers. Cratis helps .NET teams design, build, operate and improve accountable business systems that can explain how they reached their current state."
+      content="Software that remembers. Cratis is an open-source (MIT) event sourcing and CQRS platform: Chronicle, the event-sourcing database, and the tools around it help teams design, build, operate and improve accountable business systems that can explain how they reached their current state — event sourcing that reads like idiomatic code, designed to cut friction and boilerplate."
     />
     <link rel="canonical" href="https://cratis.no/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Cratis — software that remembers"
+      content="Cratis — software that remembers | Event sourcing for .NET and beyond"
     />
     <meta
       property="og:description"
-      content="Design, build, operate and improve accountable .NET business systems with an open runtime and a durable record of what happened."
+      content="Design, build, operate and improve accountable .NET business systems with an open-source (MIT) event sourcing runtime, an event store you can question, and a durable record of what happened — event sourcing that reads like idiomatic code."
     />
     <meta property="og:url" content="https://cratis.no/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -53,8 +53,77 @@
         "@type": "Organization",
         "name": "Cratis",
         "url": "https://cratis.no",
-        "description": "Cratis helps teams build accountable, long-lived .NET business systems. Cratis Build is open source; Cratis Studio is the paid collaborative design product; Cratis Assurance provides direct expert support.",
-        "sameAs": ["https://github.com/Cratis", "https://cratis.io"]
+        "description": "Cratis helps teams build accountable, long-lived .NET business systems with event sourcing and CQRS. Cratis believes event sourcing is worth it in almost all cases — almost every system deals in information, information flows, and business processes — and designs the ecosystem so event sourcing looks and feels like idiomatic code: deliberately simple, aimed at reducing friction and boilerplate. Its products form one deliberate ecosystem, shaped by many years of professional experience. Cratis Build is open source and MIT licensed, centered on Chronicle, an event-sourcing database and processing runtime; Cratis Studio is the paid collaborative design product; Cratis Assurance provides direct expert support. Cratis stands behind the ecosystem for the long term, continuing to develop and support it, with services and support plans available for organizations that want them.",
+        "sameAs": [
+          "https://github.com/Cratis",
+          "https://blog.cratis.io",
+          "https://cratis.io",
+          "https://www.nuget.org/profiles/Cratis",
+          "https://www.npmjs.com/org/cratis"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Cratis products",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Chronicle",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "An event-sourcing database and processing runtime with a first-class .NET SDK and additional TypeScript, Kotlin/Java (JVM), and Elixir clients — with a Python client coming soon — plus pluggable storage-provider implementations including MongoDB (default), PostgreSQL, SQL Server, and SQLite.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/chronicle/",
+              "sameAs": "https://github.com/Cratis/Chronicle"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Arc",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "An opinionated CQRS application framework for ASP.NET Core — commands, queries, validation, authorization, and TypeScript proxy generation; works without event sourcing, with optional Chronicle integration.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/arc/",
+              "sameAs": "https://github.com/Cratis/Arc"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Components",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Cross-platform",
+              "description": "React components for CQRS and event-sourced applications built with Cratis Arc — command dialogs, typed forms, and query-backed data tables.",
+              "license": "https://opensource.org/license/mit",
+              "url": "https://cratis.io/components/",
+              "sameAs": "https://github.com/Cratis/Components"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Cratis Studio",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Web",
+              "description": "The collaborative environment for designing, visualizing, and editing event models together — preview software, described that way on purpose.",
+              "url": "https://cratis.no/studio/"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -267,7 +336,10 @@
               Machines now write a growing share of the software your company
               runs. They work faster than any review process was designed for —
               and they only understand what your system has actually written
-              down.
+              down. We believe that in the age of AI, software has to be built
+              differently — and more and more company leaders are reaching the
+              same conclusion. Cratis is that different way: we build it, we
+              sell it, and we support the companies adopting it.
             </p>
           </div>
         </div>
@@ -313,7 +385,11 @@
             <p class="section-lead">
               Any business where a decision has consequences later — a payment,
               a claim, a contract, a shipment — is a business that eventually
-              gets asked to account for itself.
+              gets asked to account for itself. That's why we believe keeping
+              the full history of what happened is worth it in almost every
+              case: nearly every business runs on information, information
+              flows and business processes, and those are exactly what a
+              system that remembers serves best.
             </p>
           </div>
         </div>
@@ -392,7 +468,9 @@
             <p>
               Cratis Build carries a feature from C# commands and queries to
               generated TypeScript and React. Chronicle records the facts; Arc
-              keeps the full-stack contract continuous.
+              keeps the full-stack contract continuous. It stays familiar to
+              the engineers building it, even if they have never built software
+              this way before.
             </p>
             <p class="act-who">Arc &middot; Chronicle &middot; Components</p>
           </div>
@@ -420,9 +498,14 @@
         </div>
 
         <p class="code-note">
-          Start with the part you need. The products stand alone, but they share
-          one vocabulary so the system becomes easier to understand over time,
-          not harder.
+          Start with the part you need. The products stand alone, but they were
+          designed together — one ecosystem, one vocabulary — so the system
+          becomes easier to understand over time, not harder. We keep it
+          deliberately simple, not complicated — one ecosystem with what a
+          company needs to build and maintain quality software. We work to take
+          the friction out of the approach, because we believe software built
+          this way ends up better: more robust, faster to change, higher
+          quality, and more cost-effective over its life.
         </p>
       </section>
 <section class="band shell" id="studio">
@@ -550,10 +633,10 @@
             <div>
               <p>
                 Assistants are only as good as the structure they work inside.
-                Cratis gives them explicit models, framework-aware workflows and
-                checks a machine can run. One canonical skill source is being
-                validated in host-native formats without replacing engineering
-                review.
+                We provide AI skills and a system AI can genuinely work with:
+                explicit models, guided ways of working, and checks a machine
+                can run. That guidance is still being validated across AI
+                tools, and it never replaces engineering review.
               </p>
               <a class="tagline" href="/ai/">Explore AI-native development →</a>
             </div>
@@ -574,14 +657,14 @@
             <h3>You are not locked in</h3>
             <div>
 <p>
-                Cratis Build is developed in public under the license stated by
-                each repository and is intended to run in your infrastructure.
-                It does not require a Studio subscription. Compatibility and
-                integration coverage vary by component and version, so check the
-                current documentation for the systems you need. Leaving any
-                platform still takes planning; public source and documented
-                interfaces provide practical options. Studio export availability
-                is described by the hosted product.
+                Cratis Build is developed in public, MIT licensed, and intended
+                to run in your infrastructure. It does not require a Studio
+                subscription. Compatibility and integration coverage vary by
+                component and version, so check the current documentation for
+                the systems you need. Leaving any platform still takes
+                planning; public source and documented interfaces provide
+                practical options. Studio export availability is described by
+                the hosted product.
               </p>
               <span class="tagline">Open by design, not by promise</span>
             </div>
@@ -738,8 +821,10 @@
             <h2>More than fifteen years of event-sourcing lineage. Direct access today.</h2>
             <p class="section-lead">
               Cratis carries lessons from successive generations of event-sourced
-              .NET systems. The company is intentionally small, so the people
-              helping with your model or incident are the people building the stack.
+              .NET systems. The products are one deliberate ecosystem — designed
+              together, developed together, supported together — by a company
+              that is intentionally small, so the people helping with your model
+              or incident are the people building the stack.
             </p>
           </div>
         </div>
@@ -759,7 +844,10 @@
         </div>
         <p class="code-note">
           We publish what we're building, including the parts that aren't ready
-          — and we'll tell you plainly when Cratis is the wrong fit.
+          — and we'll tell you plainly when Cratis is the wrong fit. We're here
+          to stay: we keep building and supporting this, and
+          <a href="/support/">support plans and services</a> are available when
+          you want us alongside you.
           <a href="/about/">More about how we work →</a>
         </p>
       </section>

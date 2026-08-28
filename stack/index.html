@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Cratis Stack — design, build, operate and improve</title>
+    <title>The Cratis Stack — event sourcing, CQRS, and the tools around them</title>
     <meta
       name="description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime that works with the database you already run — MongoDB, PostgreSQL, SQL Server, or SQLite; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — event sourcing that reads like idiomatic code, plus paid collaborative design and direct Assurance."
     />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="One coherent stack for accountable .NET systems: paid collaborative design, an open build/runtime foundation, open operations, and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime that works with the database you already run — MongoDB, PostgreSQL, SQL Server, or SQLite; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — event sourcing that reads like idiomatic code, plus paid collaborative design and direct Assurance."
     />
     <meta property="og:url" content="https://cratis.no/stack/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,6 +45,19 @@
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Cratis Chronicle",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "description": "An event-sourcing database and processing runtime with a first-class .NET SDK and additional TypeScript, Kotlin/Java (JVM), and Elixir clients — with a Python client coming soon — plus pluggable storage-provider implementations including MongoDB (default), PostgreSQL, SQL Server, and SQLite.",
+        "license": "https://opensource.org/license/mit",
+        "url": "https://cratis.io/chronicle/",
+        "sameAs": "https://github.com/Cratis/Chronicle"
+      }
     </script>
   </head>
   <body>
@@ -177,7 +190,9 @@
         <p class="lead">
           Cratis is not a catalog of repositories. It is one path through the
           life of a long-lived .NET business system: design together, build on
-          an open runtime, operate from durable facts, and improve with evidence.
+          an open runtime, operate from durable facts, and improve with
+          evidence. Deliberately simple, not complicated — one ecosystem with
+          what a company needs to build and maintain quality software.
         </p>
       </section>
 
@@ -248,6 +263,11 @@
               understanding changes, and inspect or repair failed processing.
               The durable record remains the source from which current state can
               be explained.
+            </p>
+            <p>
+              And it runs on the databases companies already operate, so keeping
+              the full history fits into your existing operation — not the other
+              way around.
             </p>
             <ul>
               <li>gRPC / protobuf boundary</li>
@@ -528,7 +548,9 @@
               Conventions over configuration, vertical slices over layers, facts
               over current state. The opinions are what make codebases
               consistent — and consistency is what makes onboarding fast and AI
-              assistance less speculative.
+              assistance less speculative. They are also how we take friction
+              out of the day-to-day work; the aim is productivity, quality, and
+              reliability, not ceremony.
             </p>
           </div>
         </div>

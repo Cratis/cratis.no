@@ -52,6 +52,29 @@
         } catch (e) {}
       })();
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Give it a vague codebase and it produces vague code, faster",
+        "description": "Assistants are a multiplier on the structure they work inside — including when that structure is bad. On unstated conventions, contract drift, and rules with teeth.",
+        "url": "https://cratis.no/writing/vague-codebase-vague-code/",
+        "mainEntityOfPage": "https://cratis.no/writing/vague-codebase-vague-code/",
+        "image": "https://cratis.no/assets/og/vague.jpg",
+        "datePublished": "2026-08-19",
+        "dateModified": "2026-08-28",
+        "author": {
+          "@type": "Organization",
+          "name": "Cratis",
+          "url": "https://cratis.no"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Cratis",
+          "url": "https://cratis.no"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="bg-grid" aria-hidden="true"></div>
@@ -419,7 +442,14 @@
             <strong>Facts instead of conclusions.</strong> If the system records
             <em>what happened</em> rather than overwriting
             <em>what is true now</em>, "how did we get here?" is a query rather
-            than a forensic exercise. This is what event sourcing buys, and the
+            than a forensic exercise. This is what
+            <a
+              href="https://cratis.io/chronicle/"
+              target="_blank"
+              rel="noopener"
+              >event sourcing</a
+            >
+            buys, and the
             benefit that is usually undersold is not audit — it is that the
             system becomes <em>answerable</em>. To a regulator, to a support
             engineer, and increasingly to an agent trying to work out why the
@@ -530,8 +560,8 @@
 
         <footer class="article-footer">
           <p>
-            We build <a href="/stack/">Cratis</a> — an event-sourced application
-            platform for .NET — around exactly this idea: that an explicit model
+            We build <a href="/stack/">Cratis</a> — an event-sourced
+            application platform for .NET — around exactly this idea: that an explicit model
             should stay close to the running system rather than becoming a stale
             document beside it. If you are
             working through this in your own codebase,
