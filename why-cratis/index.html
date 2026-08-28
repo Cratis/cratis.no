@@ -6,7 +6,7 @@
     <title>Why Cratis — and when it's the wrong choice</title>
     <meta
       name="description"
-      content="When event sourcing and CQRS earn their keep — and when they don't. Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools, and when a simpler approach is better."
+      content="We believe event sourcing is worth it in almost all cases — and we'll tell you when it isn't. Why systems dealing with information, information flows and business processes benefit from durable facts, full-stack contract continuity and event sourcing that reads like idiomatic code — and when a simpler approach is better."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="Why accountable, long-lived .NET business systems need durable facts, full-stack contract continuity and documented operating tools — and when a simpler approach is better."
+      content="We believe event sourcing is worth it in almost all cases — and we'll tell you when it isn't. Durable facts, full-stack contract continuity, and event sourcing that reads like idiomatic code — and when a simpler approach is better."
     />
     <meta property="og:url" content="https://cratis.no/why-cratis/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -61,7 +61,7 @@
             "name": "Is event sourcing always the right answer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. For genuinely current-state-only behavior — reference data, settings, a small admin surface — event sourcing is pure cost. Arc, the Cratis CQRS framework for ASP.NET Core, works over MongoDB or EF Core without event sourcing, and that is a first-class path."
+              "text": "Not always — but we believe it is worth it in almost all cases. Nearly every system deals in information, information flows, and business processes, and that is exactly what a durable event history serves. The exceptions are genuinely current-state-only behavior — reference data, settings, a small admin surface — where event sourcing is pure cost. Arc, the Cratis CQRS framework for ASP.NET Core, works over MongoDB or EF Core without event sourcing, and that is a first-class path."
             }
           },
           {
@@ -212,8 +212,12 @@
         <p class="eyebrow">Why Cratis</p>
         <h1>The honest version.</h1>
         <p class="lead">
-          You're comparing options. Here's where we're genuinely different,
-          where we're not, and when you should pick something else.
+          You're comparing options, so we'll say our conviction out loud: we
+          believe event sourcing is worth it in almost all cases — nearly every
+          system deals in information, information flows, and business
+          processes, and that's exactly what it's good at. Here's where we're
+          genuinely different, where we're not, and when you should pick
+          something else.
         </p>
       </section>
 
@@ -312,7 +316,9 @@
               packages agree about how an application is shaped. A command, an
               event, a read model, a tenant, an identity, a React form and an
               operating tool are parts of one model — not islands with separate
-              conventions.
+              conventions. That agreement is how we take friction and
+              boilerplate out of the work; the aim is more productivity, higher
+              quality, and software you can rely on.
             </p>
           </div>
           <div class="card">
@@ -322,7 +328,9 @@
               Event sourcing optimizes for understanding change, not storing the
               latest value. Events are facts: immutable, past-tense,
               single-purpose. Read models are disposable, because the events are
-              the state.
+              the state. And with Cratis it looks and feels like the idiomatic
+              code you already write — familiar even if you have never done
+              event sourcing.
             </p>
           </div>
           <div class="card">
