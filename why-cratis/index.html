@@ -213,11 +213,11 @@
         <h1>The honest version.</h1>
         <p class="lead">
           You're comparing options, so we'll say our conviction out loud: we
-          believe event sourcing is worth it in almost all cases — nearly every
-          system deals in information, information flows, and business
-          processes, and that's exactly what it's good at. Here's where we're
-          genuinely different, where we're not, and when you should pick
-          something else.
+          believe keeping the full history of what happened — event sourcing —
+          is worth it in almost all cases. Nearly every business runs on
+          information, information flows and business processes, and that's
+          exactly what it serves. Here's where we're genuinely different, where
+          we're not, and when you should pick something else.
         </p>
       </section>
 
@@ -285,8 +285,8 @@
                   Locking event history to one language or database engine
                 </th>
                 <td>
-                  An open gRPC boundary, with client and storage coverage
-                  documented by product and version
+                  An open, documented boundary, with language and database
+                  coverage stated by product and version
                 </td>
               </tr>
               <tr>
@@ -317,8 +317,8 @@
               event, a read model, a tenant, an identity, a React form and an
               operating tool are parts of one model — not islands with separate
               conventions. That agreement is how we take friction and
-              boilerplate out of the work; the aim is more productivity, higher
-              quality, and software you can rely on.
+              repetitive work out of the day-to-day; the aim is more
+              productivity, higher quality, and software you can rely on.
             </p>
           </div>
           <div class="card">
@@ -328,9 +328,8 @@
               Event sourcing optimizes for understanding change, not storing the
               latest value. Events are facts: immutable, past-tense,
               single-purpose. Read models are disposable, because the events are
-              the state. And with Cratis it looks and feels like the idiomatic
-              code you already write — familiar even if you have never done
-              event sourcing.
+              the state. And with Cratis it stays familiar to the people
+              building it — even if they have never worked this way before.
             </p>
           </div>
           <div class="card">
@@ -348,8 +347,9 @@
             <h3>Public Build source and documented boundaries</h3>
             <p>
               Cratis Build is developed in public under the license stated by
-              each repository. Chronicle exposes gRPC and protobuf, while client
-              and storage coverage varies by product and version. Chronicle can
+              each repository. Chronicle has an open, documented boundary,
+              while client and storage coverage varies by product and version.
+              Chronicle can
               be used without Arc, and Arc can be used without event sourcing.
             </p>
           </div>
@@ -447,9 +447,9 @@
             <div>
               <h3>You're not on .NET</h3>
               <p>
-                Chronicle exposes a documented gRPC and protobuf boundary, with
-                clients for TypeScript, Kotlin, and Elixir. Coverage varies by
-                client and version; .NET remains the primary experience.
+                Chronicle has a documented, open boundary with clients for
+                TypeScript, Kotlin, and Elixir. Coverage varies by client and
+                version; .NET remains the primary experience.
               </p>
             </div>
           </div>
@@ -457,9 +457,9 @@
             <div>
               <h3>Your slice is genuinely current-state-only</h3>
               <p>
-                Reference data, settings, a small admin surface. Event sourcing
-                is pure cost there. Arc over MongoDB or EF Core is the simpler
-                boundary, and it's a first-class path.
+                Reference data, settings, a small admin surface. Keeping full
+                history is pure cost there. Arc over a traditional database is
+                the simpler boundary, and it's a first-class path.
               </p>
             </div>
           </div>
