@@ -104,6 +104,7 @@ Keywords. Titles, meta descriptions, and OpenGraph tags on product-relevant rout
 Structured data. Each route carries the JSON-LD that matches its content:
 
 - `/` — `Organization` (with registry/social `sameAs`) and an `ItemList` of `SoftwareApplication` entries for the public products;
+- `/stack/` — `SoftwareApplication` for Chronicle, mirroring the home-page product entry;
 - `/why-cratis/` — `FAQPage` for the fit/anti-fit questions;
 - `/writing/<essay>/` — `BlogPosting` with headline, dates, author, publisher;
 - `/writing/` and `/about/` — `BreadcrumbList` (About also carries `AboutPage`/`Organization`).

@@ -6,7 +6,7 @@
     <title>The Cratis Stack — event sourcing, CQRS, and the tools around them</title>
     <meta
       name="description"
-      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime that works with the database you already run — MongoDB, PostgreSQL, SQL Server, or SQLite; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
     />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
     />
     <meta
       property="og:description"
-      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
+      content="One coherent stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database and runtime that works with the database you already run — MongoDB, PostgreSQL, SQL Server, or SQLite; Arc, the CQRS framework for ASP.NET Core; React Components; and open operating tools — plus paid collaborative design and direct Assurance."
     />
     <meta property="og:url" content="https://cratis.no/stack/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,6 +45,19 @@
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Cratis Chronicle",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "description": "An event-sourcing database and processing runtime with a first-class .NET SDK and additional TypeScript, Kotlin/Java (JVM), and Elixir clients — with a Python client coming soon — plus pluggable storage-provider implementations including MongoDB (default), PostgreSQL, SQL Server, and SQLite.",
+        "license": "https://opensource.org/license/mit",
+        "url": "https://cratis.io/chronicle/",
+        "sameAs": "https://github.com/Cratis/Chronicle"
+      }
     </script>
   </head>
   <body>
@@ -248,6 +261,11 @@
               understanding changes, and inspect or repair failed processing.
               The durable record remains the source from which current state can
               be explained.
+            </p>
+            <p>
+              And it works with the database you already run — MongoDB,
+              PostgreSQL, SQL Server, or SQLite — so the event store fits your
+              operation, not the other way around.
             </p>
             <ul>
               <li>gRPC / protobuf boundary</li>
