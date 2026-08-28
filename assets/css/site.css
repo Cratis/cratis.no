@@ -1939,7 +1939,8 @@ table.plans .price-cell {
     padding-block: clamp(40px, 5vw, 72px) clamp(56px, 7vw, 96px);
 }
 .article-head {
-    max-width: 34ch;
+    max-width: 72ch;
+    margin-inline: auto;
     margin-bottom: 44px;
 }
 .article-head h1 {
@@ -1959,7 +1960,8 @@ table.plans .price-cell {
     color: var(--text-faint);
 }
 .article-body {
-    max-width: 68ch;
+    max-width: 72ch;
+    margin-inline: auto;
 }
 .article-body > * + * {
     margin-top: 24px;
@@ -2046,7 +2048,8 @@ table.plans .price-cell {
 }
 
 .article-footer {
-    max-width: 68ch;
+    max-width: 72ch;
+    margin-inline: auto;
     margin-top: 64px;
     padding-top: 34px;
     border-top: 1px solid var(--line);
