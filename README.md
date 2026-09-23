@@ -27,7 +27,7 @@ studio/index.html                  Cratis Studio Preview
 stack/index.html                   Cratis Build and the lifecycle
 stack/the-cast/index.html          Portfolio naming map
 why-cratis/index.html              Fit and anti-fit guidance
-support/index.html                 Cratis Assurance plans and pricing
+support/index.html                 Cratis Assurance: support on request, engagements and workshops
 trust/index.html                   Current trust facts and explicit limits
 about/index.html                   Founders, lineage, and values
 writing/index.html                 Essays

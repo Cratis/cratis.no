@@ -87,7 +87,7 @@ The technical champion is often a staff or principal engineer. The economic or g
 
 Cratis carries more than fifteen years of event-sourcing lineage across successive generations of .NET frameworks and production systems. This is evidence of learned judgment, not a shortcut around current product maturity.
 
-The company is intentionally small, and Assurance is founder-led today. State that plainly while tying availability, response targets, and escalation to the selected plan or engagement.
+The company is intentionally small, and Assurance is founder-led today. State that plainly while tying availability, response targets, and escalation to the signed agreement.
 
 ## Fit and anti-fit
 

@@ -22,7 +22,7 @@ JavaScript is optional for reading and navigation. It enhances theme persistence
 /stack/                                Build and the lifecycle
 /stack/the-cast/                       Product and capability naming
 /why-cratis/                           Fit and anti-fit
-/support/                              Assurance plans, pricing, and workshops
+/support/                              Assurance support (on request), engagements, and workshops
 /trust/                                Current trust facts and explicit limits
 /about/                                Founders, lineage, and values
 /writing/                              Essays

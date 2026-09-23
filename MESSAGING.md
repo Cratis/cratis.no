@@ -140,7 +140,7 @@ configuration folders between repositories.
 
 **What is open for operations?**
 
-> Workbench, CLI, and Chronicle MCP are public operating surfaces that do not require Studio or an Assurance plan. Workbench provides browser-based Chronicle inspection and interaction; the CLI exposes documented inspection, replay, retry, and job workflows; Chronicle MCP exposes its documented event-store, event, observer, recommendation, job, and identity tools. Exact coverage varies by tool and version.
+> Workbench, CLI, and Chronicle MCP are public operating surfaces that do not require Studio or an Assurance agreement. Workbench provides browser-based Chronicle inspection and interaction; the CLI exposes documented inspection, replay, retry, and job workflows; Chronicle MCP exposes its documented event-store, event, observer, recommendation, job, and identity tools. Exact coverage varies by tool and version.
 
 **What does Studio do today?**
 
@@ -148,7 +148,7 @@ configuration folders between repositories.
 
 **Why work with Cratis Assurance?**
 
-> For founder-led access to people building the stack and experience shaped by more than fifteen years of event-sourced .NET systems. Assurance covers bounded outcomes and published support commitments, with availability defined by the selected plan or engagement; it does not gate open software.
+> For founder-led access to people building the stack and experience shaped by more than fifteen years of event-sourced .NET systems. Assurance covers bounded outcomes and support commitments agreed in writing, with availability defined by the selected plan or engagement; it does not gate open software.
 
 ## Do not say
 
