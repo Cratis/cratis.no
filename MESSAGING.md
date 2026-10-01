@@ -93,16 +93,30 @@ Cratis joins that lifecycle instead of treating each part as a separate toolchai
 > facts stay with the project. Compiler gates, specifications, CI, and human
 > review remain in charge.
 
-Availability copy while public coding skills remain gated:
+Release-status copy:
 
-> Cratis maintainers use repository-local AI workflows today. Public portable
-> coding skills are being validated across supported agent ecosystems and are
-> not yet a supported installation. CLI and Chronicle MCP setup are documented
-> at cratis.io.
+> Cratis AI has a supported public release, starting with
+> [v1.0.0](https://github.com/Cratis/AI/releases/tag/v1.0.0).
+> Install the [@cratis/pi npm package](https://pi.dev/packages/@cratis/pi),
+> use Cratis's own GitHub-hosted plugin marketplaces for Claude Code, Codex,
+> GitHub Copilot and Cursor, or choose the cratis CLI's managed installation.
+> [Getting started](https://www.cratis.io/ai/getting-started/) leads to the
+> supported setup for your tools. Project facts stay with the project;
+> compiler gates, specifications, CI and human review remain in charge.
 
-Do not describe fixture-only generated distribution as a release, marketplace
-listing, supported install, or compatibility promise. Do not suggest copying AI
-configuration folders between repositories.
+Keep the channel and support limits explicit:
+
+- [Supported harnesses](https://www.cratis.io/ai/ecosystems/) are Claude Code,
+  Codex, GitHub Copilot, Cursor, OpenCode and Pi. Kiro, Junie and Gemini are not
+  supported. OpenCode has no plugin or marketplace entry; use managed installation.
+- [Plugin setup](https://www.cratis.io/ai/harnesses/) uses Cratis's own
+  GitHub-hosted marketplaces. Do not claim vendor-curated central marketplace
+  listings. Marketplace plugins track Cratis/AI main, not a pinned release.
+- The Pi package is versioned. There is no separately published, versioned
+  package per profile. Do not promise universal version rollback or a completed
+  distribution canary; keep channel-specific limits in
+  [trust and distribution](https://www.cratis.io/ai/trust-and-distribution/).
+- Do not suggest copying AI configuration folders between repositories.
 
 ## Founder and lineage copy
 
