@@ -30,6 +30,8 @@ JavaScript is optional for reading and navigation. It enhances theme persistence
 /ai/                                   AI-topic route; intentionally absent from the current sitemap pending content/discovery review
 ```
 
+`/404.html` is the noindex not-found page (not in the sitemap).
+
 Product tutorials and API documentation link to `cratis.io` instead of being duplicated here.
 
 ## Navigation
