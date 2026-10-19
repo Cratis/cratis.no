@@ -271,7 +271,6 @@
     var menus = document.querySelectorAll(".nav-menu");
     for (var menuIndex = 0; menuIndex < menus.length; menuIndex++) {
         var menu = menus[menuIndex];
-        var summary = menu.querySelector("summary");
         menu.addEventListener("keydown", function (event) {
             if (event.key === "Escape" && this.open) {
                 this.open = false;
@@ -283,9 +282,6 @@
             menuLinks[linkIndex].addEventListener("click", function () {
                 this.closest("details").open = false;
             });
-        }
-        if (summary) {
-            summary.setAttribute("aria-label", "Open primary navigation");
         }
     }
 
