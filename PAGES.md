@@ -23,7 +23,7 @@ Required messages:
 
 Required messages:
 
-- Paid hosted product with a free trial as currently published by Studio.
+- Paid hosted product in Preview; public sign-up is not open yet. Follow what cratis.studio publishes (trial, pricing) and update this page when sign-up opens.
 - Collaborative event modeling for domain experts, product people, and engineers.
 - Portable model and live sandbox for supported behavior.
 - Runtime understanding is the direction and value; not every lifecycle connection is complete.
