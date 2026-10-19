@@ -2,7 +2,7 @@
 
 The Cratis company, onboarding, and brand site. It is plain HTML, CSS, and vanilla JavaScript with no build step or runtime dependencies.
 
-Product documentation belongs at [cratis.io](https://cratis.io). This repository owns the cratis.no visual system, route implementation, metadata, and candidate company/onboarding copy. Existing public copy and supporting message documents remain inputs to review; they do not independently approve a product, maturity, compatibility, security, support, commercial, or roadmap claim.
+Product documentation belongs at [cratis.io](https://www.cratis.io/). This repository owns the cratis.no visual system, route implementation, metadata, and candidate company/onboarding copy. Existing public copy and supporting message documents remain inputs to review; they do not independently approve a product, maturity, compatibility, security, support, commercial, or roadmap claim.
 
 ## Run locally
 
@@ -32,7 +32,8 @@ trust/index.html                   Current trust facts and explicit limits
 about/index.html                   Founders, lineage, and values
 writing/index.html                 Essays
 writing/vague-codebase-vague-code/ Published essay
-ai/index.html                      AI-topic route; currently omitted from sitemap pending content/discovery review
+ai/index.html                      AI-topic landing page (in the sitemap)
+robots.txt, llms.txt              Crawler policy and a plain-text map for AI assistants
 assets/css/site.css                Shared styles
 assets/js/site.js                  Progressive enhancement
 assets/img/                        Wordmark, favicon, and touch icons

@@ -1,0 +1,28 @@
+# Cratis
+
+> Cratis helps teams design, build, operate and improve accountable, long-lived .NET business systems. Cratis Build is the open-source (MIT) runtime, centered on Chronicle, an event-sourcing database, and Arc, a CQRS framework; Cratis Studio is the paid collaborative design product (Preview); Cratis Assurance is founder-led support.
+
+## Cratis
+
+- [Home](https://cratis.no/): Company and lifecycle overview.
+- [The Cratis stack](https://cratis.no/stack/): How Chronicle, Arc and the tools around them fit together.
+- [The cast](https://cratis.no/stack/the-cast/): How Cratis names its products and capabilities.
+- [Why Cratis](https://cratis.no/why-cratis/): When Cratis fits, and when it is the wrong choice.
+- [Cratis Studio](https://cratis.no/studio/): Collaborative design and runtime understanding (Preview).
+- [Cratis Assurance](https://cratis.no/support/): Support, reviews, first slices and workshops.
+- [Trust](https://cratis.no/trust/): Open-source scope, security, continuity and current practices.
+- [AI-native development](https://cratis.no/ai/): AI tooling for event-sourced .NET applications.
+- [About](https://cratis.no/about/): The team and the thinking behind Cratis.
+
+## Documentation
+
+- [Cratis documentation](https://www.cratis.io): Product documentation, tutorials and API reference.
+- [Chronicle](https://www.cratis.io/chronicle/): The event-sourcing database and processing runtime.
+- [Arc](https://www.cratis.io/arc/): The CQRS framework for ASP.NET Core.
+- [Cratis Studio](https://cratis.studio): The hosted Studio product.
+
+## Writing
+
+- [Writing](https://cratis.no/writing/): Essays on building systems that can account for themselves.
+- [Give it a vague codebase and it produces vague code, faster](https://cratis.no/writing/vague-codebase-vague-code/): On AI assistants and the structure they work inside.
+- [Cratis blog](https://blog.cratis.io): Engineering posts from the Cratis team.

@@ -27,7 +27,7 @@ JavaScript is optional for reading and navigation. It enhances theme persistence
 /about/                                Founders, lineage, and values
 /writing/                              Essays
 /writing/vague-codebase-vague-code/    Published essay
-/ai/                                   AI-topic route; intentionally absent from the current sitemap pending content/discovery review
+/ai/                                   AI-topic landing page (indexable, in the sitemap)
 ```
 
 `/404.html` is the noindex not-found page (not in the sitemap).
@@ -113,7 +113,7 @@ Structured data. Each route carries the JSON-LD that matches its content:
 
 JSON-LD states only what the page itself states and follows the same claim gates as body copy.
 
-Sitemap. Every `<url>` carries `<lastmod>`; update it when a page's content changes. `/ai/` stays out of the sitemap until its content/discovery review passes.
+Sitemap. Every `<url>` carries `<lastmod>`; update it when a page's content changes.
 
 Claim gating. Language-breadth, storage-breadth, license, and "coming soon" wording (Python client, Ensemble) must match the current approved public-claim wording before publication, exactly as for body copy. Model-first surfaces (Studio, Screenplay, Stage, Scene, Prologue) are described as experimental or Preview; pre-release products are strictly "coming soon". No benchmark, superiority, maturity, or production-readiness wording.
 
