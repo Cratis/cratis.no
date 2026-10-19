@@ -19,6 +19,11 @@
 - [Cratis documentation](https://www.cratis.io): Product documentation, tutorials and API reference.
 - [Chronicle](https://www.cratis.io/chronicle/): The event-sourcing database and processing runtime.
 - [Arc](https://www.cratis.io/arc/): The CQRS framework for ASP.NET Core.
+- [Capability map](https://www.cratis.io/cratis-stack/#capability-map): Product scope and maturity across the stack.
+- [Support matrix](https://www.cratis.io/compatibility/#support-matrix): Storage, clients, hosting and maturity; not a guarantee of feature parity.
+- [Spec-driven development](https://www.cratis.io/spec-driven-development/): Model contracts, executable specifications and acceptance scenarios.
+- [Event sourcing and GDPR](https://www.cratis.io/concepts/event-sourcing-gdpr/): Crypto-shredding and the erasure responsibilities that remain.
+- [First application](https://www.cratis.io/templates/getting-started/): Scaffold and run a local full-stack application.
 - [Cratis Studio](https://cratis.studio): The hosted Studio product.
 
 ## Writing

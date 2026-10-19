@@ -26,17 +26,21 @@
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/fraunces-italic-600-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <script>
       (function () {
         try {
-          var t = localStorage.getItem("cratis-theme");
-          if (t === "light" || t === "dark")
-            document.documentElement.setAttribute("data-theme", t);
+          var t;
+          try {
+            t = localStorage.getItem("cratis-theme");
+          } catch (e) {
+            /* Storage may be unavailable; still follow the OS preference. */
+          }
+          if (t !== "light" && t !== "dark")
+            t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", t);
         } catch (e) {
           /* keep the dark default */
         }
@@ -51,6 +55,7 @@
         "name": "AI-native development with Cratis — free AI tooling for event-sourced .NET",
         "description": "Free AI tooling for event-sourced .NET: Cratis gives AI agents explicit models, Chronicle- and Arc-aware skills and generated contracts, with human review.",
         "inLanguage": "en",
+        "dateModified": "2026-10-19",
         "isPartOf": {
           "@id": "https://cratis.no/#website"
         },
@@ -92,21 +97,26 @@
         <img src="/assets/img/logo.svg" alt="Cratis" style="height: 34px; width: auto" />
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/studio/"><span class="idx">01</span> Studio</a>
-        <a href="/#production"><span class="idx">02</span> How it works</a>
+        <a href="/stack/"><span class="idx">01</span> Stack</a>
+        <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
         <a href="/ai/" aria-current="page"><span class="idx">03</span> AI</a>
-        <a href="/support/"><span class="idx">04</span> Working with us</a>
-        <a href="/about/"><span class="idx">05</span> Who we are</a>
+        <a href="/studio/"><span class="idx">04</span> Studio</a>
+        <a href="/trust/"><span class="idx">05</span> Trust</a>
+        <a href="/support/"><span class="idx">06</span> Support</a>
+        <a href="/about/"><span class="idx">07</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
       </nav>
       <details class="nav-menu">
         <summary>Menu</summary>
         <nav class="mobile-nav" aria-label="Mobile primary">
-          <a href="/studio/">Studio</a>
-          <a href="/#production">How it works</a>
-          <a href="/ai/" aria-current="page">AI</a>
-          <a href="/support/">Working with us</a>
-          <a href="/about/">Who we are</a>
-          <a href="https://www.cratis.io/ai/" target="_blank" rel="noopener">AI docs ↗</a>
+        <a href="/stack/"><span class="idx">01</span> Stack</a>
+        <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
+        <a href="/ai/" aria-current="page"><span class="idx">03</span> AI</a>
+        <a href="/studio/"><span class="idx">04</span> Studio</a>
+        <a href="/trust/"><span class="idx">05</span> Trust</a>
+        <a href="/support/"><span class="idx">06</span> Support</a>
+        <a href="/about/"><span class="idx">07</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
         </nav>
       </details>
       <div class="header-actions">
@@ -119,7 +129,6 @@
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
         </button>
-        <a class="pill" href="https://www.cratis.io/ai/" target="_blank" rel="noopener">AI DOCS ↗</a>
       </div>
     </header>
 
@@ -131,6 +140,7 @@
             <span class="l">One Cratis way.</span>
             <span class="r"><span class="serif">Every AI tool.</span></span>
           </h1>
+          <p class="reviewed">Last reviewed: <time datetime="2026-10-19">19 October 2026</time></p>
           <p class="lead">
             Give agents the same domain model, framework conventions, generated
             contracts and operating vocabulary your team uses — then keep the
@@ -271,6 +281,14 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="band shell" id="spec-driven">
+        <p class="eyebrow">Spec-driven development</p>
+        <h2>Intent that can be checked.</h2>
+        <p class="section-lead">See
+          <a href="https://www.cratis.io/spec-driven-development/">spec-driven development with event models and specs</a>
+          for the path from intent through specifications to code, and the
+          limits of each step.</p>
       </section>
     </main>
 

@@ -1,3 +1,26 @@
+/* Latin WOFF2 subsets; SIL OFL notices are in /assets/fonts/. */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("/assets/fonts/inter-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Fraunces";
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/fonts/fraunces-italic-600-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url("/assets/fonts/jetbrains-mono-latin.woff2") format("woff2");
+}
+
 /* =========================================================================
    Cratis — cratis.no
    Design direction evolved from the exploratory concept:
@@ -39,7 +62,7 @@
 
     --text: #f5f3f0;
     --text-dim: #9b9aa8;
-    --text-faint: #6c6b7a;
+    --text-faint: #9493a3;
 
     --shell: 1280px;
     --gutter: clamp(20px, 5vw, 48px);
@@ -253,7 +276,7 @@ svg {
 
 .site-nav {
     display: flex;
-    gap: 30px;
+    gap: clamp(12px, 1.5vw, 22px);
     font-size: var(--step--1);
     color: var(--text-dim);
 }
@@ -274,7 +297,7 @@ svg {
 .mobile-nav .idx {
     color: var(--text-faint);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .nav-menu {
@@ -335,8 +358,8 @@ svg {
 .theme-toggle {
     display: grid;
     place-items: center;
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--line);
     border-radius: 999px;
     background: transparent;
@@ -387,7 +410,7 @@ svg {
     height: 11px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .site-header {
         gap: 10px;
     }
@@ -455,7 +478,7 @@ svg {
 /* ---------- type ---------- */
 .eyebrow {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.16em;
     font-weight: 600;
     color: var(--accent-soft);
@@ -549,7 +572,7 @@ h3 {
     flex-wrap: wrap;
     gap: 8px 22px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -587,7 +610,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -607,7 +630,7 @@ h3 {
 }
 .loop-label {
     color: var(--text-faint);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding-top: 3px;
@@ -632,7 +655,7 @@ h3 {
     margin-top: 18px;
     padding-top: 16px;
     border-top: 1px solid var(--line);
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--text-faint);
     line-height: 1.55;
     font-family: var(--font-sans);
@@ -649,7 +672,7 @@ h3 {
     gap: 12px 24px;
     padding-block: 20px 40px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -757,7 +780,7 @@ h3 {
 }
 .card .num {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--accent);
     letter-spacing: 0.1em;
     margin-bottom: 16px;
@@ -768,7 +791,7 @@ h3 {
 }
 .card .role {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-faint);
     letter-spacing: 0.05em;
     margin-bottom: 12px;
@@ -799,7 +822,7 @@ h3 {
     margin-left: 8px;
     vertical-align: middle;
     font-family: var(--font-mono);
-    font-size: 9.5px;
+    font-size: 12px;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--signal);
@@ -857,7 +880,7 @@ h3 {
     padding: 12px 18px;
     border-bottom: 1px solid var(--line);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1042,7 +1065,7 @@ pre code {
 }
 .foot-col h4 {
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1268,7 +1291,7 @@ pre code {
     padding: 11px 16px;
     margin-bottom: 22px;
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.04em;
     line-height: 1.5;
 }
@@ -1364,7 +1387,7 @@ pre code {
     top: 18px;
     right: 18px;
     font-family: var(--font-mono);
-    font-size: 9.5px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-soft);
@@ -1473,7 +1496,7 @@ table.plans .price-cell {
 }
 .person .role {
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.05em;
     color: var(--text-faint);
     margin-bottom: 14px;
@@ -1838,7 +1861,7 @@ table.plans .price-cell {
 }
 .flow-step .k {
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
@@ -1857,7 +1880,7 @@ table.plans .price-cell {
 .flow-step .owner {
     margin-top: 12px;
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     color: var(--text-faint);
     text-transform: uppercase;
@@ -1892,7 +1915,7 @@ table.plans .price-cell {
 }
 .layer-name span {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.05em;
     color: var(--text-faint);
 }
@@ -1911,7 +1934,7 @@ table.plans .price-cell {
 }
 .layer-body li {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.04em;
     color: var(--text-dim);
     border: 1px solid var(--line);
@@ -1954,7 +1977,7 @@ table.plans .price-cell {
     gap: 18px;
     flex-wrap: wrap;
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2079,7 +2102,7 @@ table.plans .price-cell {
 }
 .post .when {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2197,7 +2220,7 @@ table.plans .price-cell {
 }
 .act .act-no {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.16em;
     color: var(--accent);
     text-transform: uppercase;
@@ -2223,7 +2246,7 @@ table.plans .price-cell {
     padding-top: 16px;
     border-top: 1px solid var(--line);
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2266,7 +2289,7 @@ table.plans .price-cell {
     display: block;
     margin-top: 14px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--accent);
@@ -2293,7 +2316,7 @@ table.plans .price-cell {
 .moment .attrib {
     margin-top: 28px;
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2324,7 +2347,7 @@ table.plans .price-cell {
 }
 .aud .role {
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
@@ -2519,7 +2542,7 @@ h3 {
     padding: 15px 20px;
     border-bottom: 1px solid var(--line);
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2578,7 +2601,7 @@ h3 {
 }
 .tl-row .t {
     color: var(--text-faint);
-    font-size: 11px;
+    font-size: 12px;
 }
 .tl-row .what {
     color: var(--text);
@@ -2592,7 +2615,7 @@ h3 {
 }
 .tl-row .who {
     color: var(--text-faint);
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
 }
 .tl-row.fresh {
@@ -2620,7 +2643,7 @@ h3 {
 @media (max-width: 620px) {
     .tl-row {
         grid-template-columns: 60px 1fr;
-        font-size: 11.5px;
+        font-size: 12px;
     }
     .tl-row .who {
         display: none;
@@ -2871,7 +2894,7 @@ h3 {
     right: 0;
     text-align: center;
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2912,15 +2935,15 @@ h3 {
 /* =========================================================================
    THE ROTATOR — the headline's living word
    The point of the concept: each word is a different reason to care.
-   Width animates with the swap, so the line never snaps or reflows.
+   CSS reserves the phrase width so the line never snaps or reflows.
    ========================================================================= */
 .rotator {
     position: relative;
     display: inline-block;
     vertical-align: baseline;
-    /* width is set in JS from the measured word; transition makes it glide */
-    transition: width 0.5s cubic-bezier(0.22, 0.68, 0.24, 1);
-    will-change: width;
+    /* Reserve the longest phrase before fonts or JavaScript load. */
+    min-width: 9ch;
+    white-space: nowrap;
 }
 .rot-word {
     display: inline-block;
@@ -2979,16 +3002,6 @@ h3 {
         transform: scaleX(1);
         opacity: 0;
     }
-}
-
-/* Measuring shadow — offscreen, never announced */
-.rot-measure {
-    position: absolute;
-    visibility: hidden;
-    pointer-events: none;
-    white-space: nowrap;
-    top: 0;
-    left: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3072,7 +3085,7 @@ h3 {
     align-items: center;
     gap: 10px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -3118,7 +3131,7 @@ h3 {
 .logos-label {
     text-align: center;
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -3215,7 +3228,7 @@ h3 {
     border-radius: 5px;
     display: grid;
     place-items: center;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 800;
     color: #fff;
 }
@@ -3269,7 +3282,7 @@ h3 {
 }
 .fq-who span {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -3352,4 +3365,119 @@ h3 {
 .d-lime {
     background: var(--lime);
     box-shadow: 0 0 14px 2px color-mix(in srgb, var(--lime) 50%, transparent);
+}
+
+/* The open details panel occupies a whole row and pushes the hero down. */
+@media (max-width: 1100px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+    .nav-menu {
+        display: block;
+    }
+    .nav-menu[open] {
+        flex-basis: 100%;
+        order: 3;
+    }
+    .nav-menu[open] summary {
+        width: max-content;
+        margin-left: auto;
+        margin-bottom: 12px;
+    }
+    .mobile-nav {
+        position: static;
+        width: 100%;
+        padding: 16px;
+        box-shadow: none;
+    }
+}
+
+.reviewed {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--text-faint);
+}
+#continuity .callout h2 {
+    font-size: clamp(24px, 2.8vw, 36px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+#continuity .callout h3 {
+    font-size: 22px;
+}
+
+@media (max-width: 640px) {
+    a,
+    button,
+    summary,
+    .scroll-cue {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    .site-footer a,
+    .prose li a,
+    .layer-body li a {
+        padding-block: 10px;
+    }
+    .post {
+        display: grid;
+    }
+    .card p,
+    .person p,
+    .post p,
+    .act p,
+    .use p,
+    .help-item p,
+    .layer-body p,
+    .callout p {
+        font-size: 15px;
+    }
+}
+
+.definition {
+    padding-block: 24px 36px;
+    border-top: 1px solid var(--line);
+}
+.definition h2 {
+    font-size: clamp(24px, 2.8vw, 36px);
+    margin-bottom: 14px;
+}
+.definition p {
+    max-width: 68ch;
+    color: var(--text-dim);
+    line-height: 1.65;
+}
+.page-sections {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--text-faint);
+}
+.page-sections a {
+    display: inline-block;
+    min-height: 44px;
+    padding-block: 12px;
+}
+.hero-docs {
+    margin-top: 18px;
+    font-size: 14px;
+}
+.fit-summary {
+    padding-bottom: 32px;
+}
+.fit-summary h2 {
+    font-size: clamp(24px, 2.8vw, 36px);
+    margin-bottom: 18px;
+}
+.fit-summary ul,
+.start-path {
+    max-width: 72ch;
+    padding-left: 22px;
+    color: var(--text-dim);
+    line-height: 1.65;
+}
+.fit-summary li + li,
+.start-path li + li {
+    margin-top: 10px;
 }
