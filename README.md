@@ -2,7 +2,7 @@
 
 The Cratis company, onboarding, and brand site. It is plain HTML, CSS, and vanilla JavaScript with no build step or runtime dependencies.
 
-Product documentation belongs at [cratis.io](https://cratis.io). This repository owns the cratis.no visual system, route implementation, metadata, and candidate company/onboarding copy. Existing public copy and supporting message documents remain inputs to review; they do not independently approve a product, maturity, compatibility, security, support, commercial, or roadmap claim.
+Product documentation belongs at [cratis.io](https://www.cratis.io/). This repository owns the cratis.no visual system, route implementation, metadata, and candidate company/onboarding copy. Existing public copy and supporting message documents remain inputs to review; they do not independently approve a product, maturity, compatibility, security, support, commercial, or roadmap claim.
 
 ## Run locally
 
