@@ -1,0 +1,14 @@
+# GitHub Pages (Jekyll) settings. HTML pages have no front matter and are copied as-is.
+# Serve /.well-known/security.txt (Jekyll skips dot-folders unless included).
+include:
+  - .well-known
+# Repository notes for maintainers and agents, not site pages.
+exclude:
+  - AGENTS.md
+  - BRAND.md
+  - CLAUDE.md
+  - MESSAGING.md
+  - PAGES.md
+  - README.md
+  - SITE.md
+  - serve
