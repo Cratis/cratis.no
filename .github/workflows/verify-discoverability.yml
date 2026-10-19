@@ -1,0 +1,29 @@
+name: Verify Discoverability
+
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'llms.txt'
+      - 'assets/**'
+      - '.github/workflows/verify-discoverability.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  discoverability:
+    uses: Cratis/Workflows/.github/workflows/verify-discoverability.yml@main
+    with:
+      runs-on: ${{ vars.RUNNER_GATE || 'ubuntu-latest' }}
+      site-path: .
+      base-url: https://cratis.no
+      build-command: ''
+      ignore: 404.html
+      fail-on: none
