@@ -108,7 +108,13 @@ Required messages:
 
 ## `/ai` — AI-topic route
 
-**Job:** explain one verified AI/developer-workflow boundary without implying model-first capability, tool compatibility, distribution, security, quality, productivity, or roadmap state. The route is currently omitted from the sitemap pending an explicit content/discovery decision; canonical presence alone does not decide indexing policy.
+**Job:** explain one verified AI/developer-workflow boundary without implying model-first capability, tool compatibility, distribution, security, quality, productivity, or roadmap state. The route is included in the primary navigation and sitemap; its claims remain subject to the same evidence gate as the rest of the site.
+
+## Shared navigation
+
+- Primary destinations are Stack, Why Cratis, AI, Studio, Trust, Support, About, Docs, in that order, on desktop and mobile.
+- Docs links to https://www.cratis.io/; mark the current page with `aria-current="page"`.
+- Home-section navigation remains in-page on the home page rather than replacing the evaluator destinations.
 
 ## Content hygiene
 

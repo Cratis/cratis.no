@@ -30,17 +30,21 @@
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/fraunces-italic-600-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <script>
       (function () {
         try {
-          var t = localStorage.getItem("cratis-theme");
-          if (t === "light" || t === "dark")
-            document.documentElement.setAttribute("data-theme", t);
+          var t;
+          try {
+            t = localStorage.getItem("cratis-theme");
+          } catch (e) {
+            /* Storage may be unavailable; still follow the OS preference. */
+          }
+          if (t !== "light" && t !== "dark")
+            t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
     </script>
@@ -114,22 +118,27 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="/studio/"><span class="idx">01</span> Studio</a>
-        <a href="/#production"><span class="idx">02</span> How it works</a>
-        <a href="/#value"><span class="idx">03</span> What you get</a>
-        <a href="/support/"><span class="idx">04</span> Working with us</a>
-        <a href="/about/"><span class="idx">05</span> Who we are</a>
+        <a href="/stack/" aria-current="page"><span class="idx">01</span> Stack</a>
+        <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
+        <a href="/ai/"><span class="idx">03</span> AI</a>
+        <a href="/studio/"><span class="idx">04</span> Studio</a>
+        <a href="/trust/"><span class="idx">05</span> Trust</a>
+        <a href="/support/"><span class="idx">06</span> Support</a>
+        <a href="/about/"><span class="idx">07</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
       </nav>
 
       <details class="nav-menu">
         <summary>Menu</summary>
         <nav class="mobile-nav" aria-label="Mobile primary">
-          <a href="/studio/"><span class="idx">01</span> Studio</a>
-          <a href="/#production"><span class="idx">02</span> How it works</a>
-          <a href="/#value"><span class="idx">03</span> What you get</a>
-          <a href="/support/"><span class="idx">04</span> Working with us</a>
-          <a href="/about/"><span class="idx">05</span> Who we are</a>
-          <a href="https://www.cratis.io/" target="_blank" rel="noopener"><span class="idx">↗</span> Docs</a>
+        <a href="/stack/" aria-current="page"><span class="idx">01</span> Stack</a>
+        <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
+        <a href="/ai/"><span class="idx">03</span> AI</a>
+        <a href="/studio/"><span class="idx">04</span> Studio</a>
+        <a href="/trust/"><span class="idx">05</span> Trust</a>
+        <a href="/support/"><span class="idx">06</span> Support</a>
+        <a href="/about/"><span class="idx">07</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
         </nav>
       </details>
 
@@ -167,18 +176,6 @@
             <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
           </svg>
         </button>
-        <a class="pill" href="https://www.cratis.io/" target="_blank" rel="noopener">
-          DOCS
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            aria-hidden="true"
-          >
-            <path d="M7 17L17 7M17 7H8M17 7V16" />
-          </svg>
-        </a>
       </div>
     </header>
 
@@ -326,8 +323,8 @@
           <div class="layer-body">
             <p>
               Renders Arc's generated proxies as forms, dialogs and data tables.
-              A screen becomes a few lines rather than a few files, and
-              observable queries keep it current without reload code.
+              Generated contracts remove the hand-written API client;
+              observable queries keep the screen current without reload code.
             </p>
             <ul>
               <li>Command dialogs</li>
@@ -537,7 +534,10 @@
               Chronicle exposes a gRPC and protobuf boundary. Client libraries
               and storage providers have different maturity and coverage; .NET
               is the primary experience. Check each repository's license and the
-              current compatibility documentation before choosing a boundary.
+              <a href="https://www.cratis.io/compatibility/#support-matrix">current support matrix</a>
+              before choosing a boundary, and the
+              <a href="https://www.cratis.io/cratis-stack/#capability-map">capability map</a>
+              for each product's scope and maturity.
             </p>
           </div>
           <div class="card">
@@ -553,6 +553,23 @@
             </p>
           </div>
         </div>
+      </section>
+
+      <section class="band shell" id="start-here">
+        <p class="eyebrow">Evaluate the stack</p>
+        <h2>Start here.</h2>
+        <ol class="start-path">
+          <li><strong>Install.</strong> Check the prerequisites and scaffold a
+            local application with the
+            <a href="https://www.cratis.io/templates/getting-started/">template getting-started guide</a>.</li>
+          <li><strong>Model and build one slice.</strong> Follow
+            <a href="https://www.cratis.io/build-a-full-app/">Build a full app</a>
+            from a command through its event and projection to the screen.</li>
+          <li><strong>Run it.</strong> Use the
+            <a href="https://www.cratis.io/templates/getting-started/#run-it">local startup instructions</a>
+            to start Chronicle, the backend and the frontend, then register a
+            name and inspect its event in Workbench.</li>
+        </ol>
       </section>
 
       <section class="band shell">
