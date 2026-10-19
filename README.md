@@ -32,7 +32,8 @@ trust/index.html                   Current trust facts and explicit limits
 about/index.html                   Founders, lineage, and values
 writing/index.html                 Essays
 writing/vague-codebase-vague-code/ Published essay
-ai/index.html                      AI-topic route; currently omitted from sitemap pending content/discovery review
+ai/index.html                      AI-topic landing page (in the sitemap)
+robots.txt, llms.txt              Crawler policy and a plain-text map for AI assistants
 assets/css/site.css                Shared styles
 assets/js/site.js                  Progressive enhancement
 assets/img/                        Wordmark, favicon, and touch icons
