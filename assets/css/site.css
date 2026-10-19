@@ -3449,6 +3449,15 @@ h3 {
     color: var(--text-dim);
     line-height: 1.65;
 }
+.page-sections {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--text-faint);
+}
+.page-sections a {
+    display: inline-block;
+    padding-block: 10px;
+}
 .hero-docs {
     margin-top: 18px;
     font-size: 14px;
