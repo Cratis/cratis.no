@@ -87,42 +87,23 @@
     }
 
     /* ---------- the living word ----------
-       Each word is a different reason to care. The container width animates
-       with the swap so the line never snaps. Accessibility: the h1 always
-       contains a real, readable sentence; the swap is announced politely once
+       Each word is a different reason to care. CSS reserves the longest
+       phrase; each word keeps its period through the swap. Accessibility: the
+       h1 always contains a real, readable sentence; the swap is announced politely once
        per change rather than mid-transition. */
     var rot = document.getElementById("rotator");
     var rotWord = document.getElementById("rotWord");
-    var rotMeasure = document.getElementById("rotMeasure");
 
-    if (rot && rotWord && rotMeasure) {
+    if (rot && rotWord) {
         var WORDS = [
-            "remembers",
-            "explains",
-            "proves it",
-            "holds up",
-            "evolves",
-            "answers",
+            "remembers.",
+            "explains.",
+            "proves it.",
+            "holds up.",
+            "evolves.",
+            "answers.",
         ];
         var wi = 0;
-
-        var sizeTo = (word) => {
-            rotMeasure.textContent = word;
-            rot.style.width = rotMeasure.getBoundingClientRect().width + "px";
-        };
-
-        // Lock the initial width once fonts have settled, so nothing jumps.
-        var lock = () => {
-            sizeTo(WORDS[wi]);
-        };
-        if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(lock);
-        } else {
-            lock();
-        }
-        window.addEventListener("resize", () => {
-            sizeTo(WORDS[wi]);
-        });
 
         if (!reduced) {
             var swapTimer = null;
@@ -137,7 +118,6 @@
                 }
                 rotWord.textContent = WORDS[wi];
                 rotWord.classList.remove("out", "in");
-                sizeTo(WORDS[wi]);
             };
 
             var swap = () => {
@@ -145,7 +125,6 @@
                 var next = WORDS[wi];
 
                 rotWord.classList.add("out");
-                sizeTo(next); // width glides while the word leaves
 
                 if (swapTimer !== null) {
                     window.clearTimeout(swapTimer);
