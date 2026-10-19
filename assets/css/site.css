@@ -3456,7 +3456,8 @@ h3 {
 }
 .page-sections a {
     display: inline-block;
-    padding-block: 10px;
+    min-height: 44px;
+    padding-block: 12px;
 }
 .hero-docs {
     margin-top: 18px;
