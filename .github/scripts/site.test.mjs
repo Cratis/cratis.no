@@ -83,3 +83,85 @@ test('Studio summary is self-canonical, links to the product site and has no inv
     assert.match(source, /Public sign-up is not open yet/);
     assert.doesNotMatch(source, /trial terms are not published|Pricing and trial terms are not published/);
 });
+
+test('stack capability map describes each product and matches its WebPage schema', () => {
+    const source = read('stack/index.html');
+    const map = source.match(/<section\b[^>]*id="capability-map"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(map, 'Missing capability map');
+    const rows = [...map.matchAll(/<tr>\s*<th scope="row">([^<]+)<\/th>\s*<td>(.*?)<\/td>/gs)];
+    const products = ['Chronicle', 'Arc', 'Components', 'Fundamentals', 'CLI', 'Studio', 'Screenplay', 'Prologue'];
+    assert.deepEqual(rows.map(row => row[1]), products);
+    const blocks = [...source.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    const page = blocks.map(block => JSON.parse(block[1])).find(block => block['@type'] === 'WebPage');
+    assert.equal(page?.url, 'https://cratis.no/stack/');
+    assert.equal(page.mainEntity['@type'], 'ItemList');
+    assert.deepEqual(page.mainEntity.itemListElement.map(entry => entry.item.name), products);
+    rows.forEach((row, index) => {
+        const entry = page.mainEntity.itemListElement[index];
+        assert.equal(entry.position, index + 1);
+        assert.equal(entry.item.description, row[2].replace(/<[^>]+>/g, ''));
+        assert.equal(entry.item.url, `https://www.cratis.io/${products[index].toLowerCase()}/`);
+    });
+    for (const path of ['chronicle', 'arc/backend', 'arc/frontend', 'components', 'fundamentals', 'cli', 'studio', 'screenplay', 'prologue']) {
+        assert.ok(map.includes(`href="https://www.cratis.io/${path}/"`), `Missing ${path} docs`);
+    }
+});
+
+test('stack map keeps client and model-first maturity boundaries visible', () => {
+    const source = read('stack/index.html');
+    const map = source.match(/<section\b[^>]*id="capability-map"[\s\S]*?<\/section>/)[0];
+    for (const language of ['dotnet', 'typescript', 'kotlin', 'elixir', 'go', 'python']) {
+        assert.ok(map.includes(`href="https://www.cratis.io/event-sourcing/${language}/"`), `Missing ${language} client`);
+    }
+    assert.match(map, /Kotlin \/ Java/);
+    assert.match(map, /Go \(experimental\)/);
+    assert.match(map, /Python \(pre-alpha, not published\)/);
+    assert.match(map, /<th scope="row">Arc<\/th>[\s\S]*?<td>Released; TypeScript backend in source preview<\/td>/);
+    assert.match(map, /<th scope="row">Studio<\/th>[\s\S]*?<td>Preview · paid product<\/td>/);
+    for (const product of ['Screenplay', 'Prologue']) {
+        assert.match(map, new RegExp(`<th scope="row">${product}</th>\\s*<td>.*?</td>\\s*<td>Experimental</td>`));
+    }
+});
+
+test('Stack and Support stay discoverable in public navigation and the home footer', () => {
+    const paths = [...read('sitemap.xml').matchAll(/<loc>https:\/\/cratis\.no(\/[^<]*)<\/loc>/g)];
+    assert.ok(paths.length > 0);
+    for (const [, path] of paths) {
+        const source = read(`${path.slice(1)}index.html`);
+        for (const pattern of [/<nav class="site-nav"[\s\S]*?<\/nav>/, /<nav class="mobile-nav"[\s\S]*?<\/nav>/]) {
+            const navigation = source.match(pattern)?.[0];
+            assert.ok(navigation, `${path}: missing navigation`);
+            for (const destination of ['/stack/', '/support/']) {
+                assert.ok(navigation.includes(`href="${destination}"`), `${path}: missing ${destination}`);
+            }
+        }
+    }
+    const home = read('index.html');
+    const footer = home.match(/<footer\b[\s\S]*?<\/footer>/)[0];
+    for (const destination of ['/stack/', '/support/']) {
+        assert.ok(footer.includes(`href="${destination}"`), `Home footer: missing ${destination}`);
+    }
+    assert.match(home, /<p class="hero-facts">[\s\S]*?href="\/support\/"[\s\S]*?<\/p>/);
+    for (const source of [home, read('stack/index.html')]) {
+        assert.match(source, /href="https:\/\/www\.cratis\.io\/chronicle\/get-started\/">Your first five minutes with Chronicle →<\/a>/);
+    }
+});
+
+test('sitemap records per-page modification dates and resolves to public pages', () => {
+    const entries = [...read('sitemap.xml').matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/g)];
+    assert.ok(entries.length > 0);
+    const dates = new Map(entries.map(([, url, date]) => [url, date]));
+    assert.equal(dates.size, entries.length, 'Duplicate sitemap URLs');
+    for (const [url, date] of dates) {
+        assert.match(date, /^\d{4}-\d{2}-\d{2}$/);
+        assert.equal(new Date(date).toISOString().slice(0, 10), date);
+        const page = new URL(url);
+        assert.equal(page.origin, 'https://cratis.no');
+        assert.ok(read(`${page.pathname.slice(1)}index.html`).includes(`href="${url}"`), `${url}: missing page or canonical`);
+    }
+    // These pages changed on October 20; untouched pages retain their October 19 dates.
+    for (const path of ['', 'stack/', 'studio/', 'support/']) {
+        assert.equal(dates.get(`https://cratis.no/${path}`), '2026-10-20');
+    }
+    assert.equal(dates.get('https://cratis.no/about/'), '2026-10-19');
+});

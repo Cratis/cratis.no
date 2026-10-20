@@ -51,6 +51,103 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://cratis.no/stack/#webpage",
+        "url": "https://cratis.no/stack/",
+        "name": "The Cratis Stack",
+        "description": "A capability map of the Cratis ecosystem, with product roles, maturity and links to the documentation.",
+        "isPartOf": { "@id": "https://cratis.no/#website" },
+        "publisher": { "@id": "https://cratis.no/#organization" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Thing",
+                "name": "Chronicle",
+                "url": "https://www.cratis.io/chronicle/",
+                "description": "Keeps the event history and turns it into read models and reactions through a language-neutral gRPC boundary."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Thing",
+                "name": "Arc",
+                "url": "https://www.cratis.io/arc/",
+                "description": "Connects backend commands and queries to generated TypeScript clients and React hooks without requiring event sourcing."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Thing",
+                "name": "Components",
+                "url": "https://www.cratis.io/components/",
+                "description": "Builds React forms, command dialogs and query-backed tables on Arc's generated proxies."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Thing",
+                "name": "Fundamentals",
+                "url": "https://www.cratis.io/fundamentals/",
+                "description": "Provides reusable concepts, serialization and other shared building blocks beneath the stack."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Thing",
+                "name": "CLI",
+                "url": "https://www.cratis.io/cli/",
+                "description": "Inspects and diagnoses Chronicle events, observers and failed processing from the terminal."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "Thing",
+                "name": "Studio",
+                "url": "https://www.cratis.io/studio/",
+                "description": "Gives teams a shared canvas for designing commands, events and read models as Screenplay models."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "Thing",
+                "name": "Screenplay",
+                "url": "https://www.cratis.io/screenplay/",
+                "description": "Records desired business behavior in a portable declarative .play model."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "Thing",
+                "name": "Prologue",
+                "url": "https://www.cratis.io/prologue/",
+                "description": "Observes selected signals from an existing system and proposes an event model for your review."
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Cratis Chronicle",
         "applicationCategory": "DeveloperApplication",
@@ -190,6 +287,102 @@
           design together, build on an open runtime, operate from durable
           facts, and improve with evidence. One ecosystem, kept deliberately
           simple.
+        </p>
+      </section>
+
+      <section class="band shell" id="capability-map">
+        <p class="eyebrow">Capability map</p>
+        <div class="band-head">
+          <div>
+            <h2>Know which piece does the job.</h2>
+            <p>
+              One ecosystem, with focused products you can adopt separately.
+              Released means packages or images are published, not a promise of
+              feature parity across languages; the
+              <a href="https://www.cratis.io/compatibility/#support-matrix">support matrix</a>
+              has the details.
+            </p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="plans">
+            <caption class="visually-hidden">Cratis capabilities, maturity and documentation</caption>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">What it does</th>
+                <th scope="col">Maturity</th>
+                <th scope="col">Go deeper</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Chronicle</th>
+                <td>Keeps the event history and turns it into read models and reactions through a language-neutral gRPC boundary.</td>
+                <td>Released</td>
+                <td><a href="https://www.cratis.io/chronicle/">Chronicle docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Arc</th>
+                <td>Connects backend commands and queries to generated TypeScript clients and React hooks without requiring event sourcing.</td>
+                <td>Released; TypeScript backend in source preview</td>
+                <td><a href="https://www.cratis.io/arc/backend/">Backend</a> · <a href="https://www.cratis.io/arc/frontend/">Frontend</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Components</th>
+                <td>Builds React forms, command dialogs and query-backed tables on Arc's generated proxies.</td>
+                <td>Released</td>
+                <td><a href="https://www.cratis.io/components/">Components docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Fundamentals</th>
+                <td>Provides reusable concepts, serialization and other shared building blocks beneath the stack.</td>
+                <td>Released</td>
+                <td><a href="https://www.cratis.io/fundamentals/">Fundamentals docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">CLI</th>
+                <td>Inspects and diagnoses Chronicle events, observers and failed processing from the terminal.</td>
+                <td>Released</td>
+                <td><a href="https://www.cratis.io/cli/">CLI docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Studio</th>
+                <td>Gives teams a shared canvas for designing commands, events and read models as Screenplay models.</td>
+                <td>Preview · paid product</td>
+                <td><a href="https://www.cratis.io/studio/">Studio docs</a> · <a href="/studio/">The offer</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Screenplay</th>
+                <td>Records desired business behavior in a portable declarative <code>.play</code> model.</td>
+                <td>Experimental</td>
+                <td><a href="https://www.cratis.io/screenplay/">Screenplay docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Prologue</th>
+                <td>Observes selected signals from an existing system and proposes an event model for your review.</td>
+                <td>Experimental</td>
+                <td><a href="https://www.cratis.io/prologue/">Prologue docs</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="code-note">
+          Chronicle clients:
+          <a href="https://www.cratis.io/event-sourcing/dotnet/">.NET</a> ·
+          <a href="https://www.cratis.io/event-sourcing/typescript/">TypeScript</a> ·
+          <a href="https://www.cratis.io/event-sourcing/kotlin/">Kotlin / Java</a> ·
+          <a href="https://www.cratis.io/event-sourcing/elixir/">Elixir</a> ·
+          <a href="https://www.cratis.io/event-sourcing/go/">Go (experimental)</a> ·
+          <a href="https://www.cratis.io/event-sourcing/python/">Python (pre-alpha, not published)</a>.
+          Client coverage differs; start with
+          <a href="https://www.cratis.io/chronicle-clients/">Chronicle in your language</a>.
+          The open tools are MIT-licensed; Studio is a separate paid product.
+        </p>
+        <p class="code-note">
+          Start small:
+          <a href="https://www.cratis.io/chronicle/get-started/">Your first five minutes with Chronicle →</a>
+          Follow one fact through an event, a projection and a reaction.
         </p>
       </section>
 
