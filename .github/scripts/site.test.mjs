@@ -217,3 +217,28 @@ test('Organization founders share stable identities and match visible public pro
         about.founder[index].sameAs.forEach(url => assert.ok(source.includes(`href="${url}"`)));
     });
 });
+
+test('Stage maturity stays experimental beside its sandbox claims', () => {
+    for (const file of ['index.html', 'stack/index.html', 'stack/the-cast/index.html', 'studio/index.html']) {
+        assert.match(read(file), /Stage remains experimental/, `${file}: missing Stage limitation`);
+    }
+    assert.match(read('studio/index.html'), /Paid Preview product/);
+    assert.match(read('stack/index.html'), /operating tools are\s+optional, not prerequisites for using Chronicle or Arc/);
+});
+
+test('community help does not imply response or resolution targets', () => {
+    for (const file of ['index.html', 'about/index.html', 'support/index.html', 'why-cratis/index.html']) {
+        const source = read(file);
+        assert.match(source, /best-effort/);
+        assert.match(source, /without a guaranteed|rather than\s+a guaranteed/);
+        assert.doesNotMatch(source, /usually faster|resolved within hours/);
+    }
+    assert.match(read('support/index.html'), /response targets and\s+escalation with you in a signed agreement/);
+});
+
+test('versioning distinguishes release-label checks from breaking-change detection', () => {
+    const source = read('trust/index.html');
+    assert.match(source, /Release-label checks do not prove that every\s+breaking change has been detected/);
+    assert.match(source, /Review the release notes and\s+compatibility guidance for the product and version you use/);
+    assert.doesNotMatch(source, /checked\s+automatically before anything ships|twenty changes/);
+});
