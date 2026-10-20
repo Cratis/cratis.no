@@ -28,8 +28,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Pages artifacts are atomic deployments; newer site updates supersede older runs.
 concurrency:
@@ -53,6 +51,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     timeout-minutes: 15
     environment:
       name: github-pages
