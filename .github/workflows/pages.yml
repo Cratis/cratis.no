@@ -24,6 +24,9 @@ on:
       - 'CNAME'
       - '.github/workflows/pages.yml'
       - '.github/scripts/stage-site.sh'
+      - '.github/scripts/minify-css.mjs'
+      - '.github/scripts/verify-jsonld.mjs'
+      - '.github/scripts/site.test.mjs'
   workflow_dispatch:
 
 permissions:
@@ -42,6 +45,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+      - name: Validate JSON-LD
+        run: |
+          node .github/scripts/verify-jsonld.mjs --self-test
+          node .github/scripts/verify-jsonld.mjs
+      - name: Test site assets and structured data
+        run: node --test .github/scripts/site.test.mjs
       - name: Stage public files
         run: bash .github/scripts/stage-site.sh
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
