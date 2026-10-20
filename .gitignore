@@ -35,3 +35,4 @@ dist/
 !/.pi/agents/
 /.pi/agents/*
 !/.pi/agents/.generated.json
+_site/
