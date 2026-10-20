@@ -15,7 +15,7 @@
     var numbers = new Intl.NumberFormat(locale);
     var dates = new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" });
 
-    var isCount = (value) => typeof value === "number" && isFinite(value) && value >= 0;
+    var isCount = (value) => Number.isInteger(value) && value >= 0;
 
     var set = (name, text) => {
         var node = root.querySelector('[data-stat="' + name + '"]');
