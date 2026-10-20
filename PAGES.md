@@ -16,6 +16,7 @@ Required messages:
 - Cratis Assurance is direct expertise.
 - More than fifteen years of event-sourcing lineage and founder-led Assurance with defined availability.
 - A simpler approach is sometimes the better answer.
+- Optional release-activity strip (hidden unless the public org snapshot loads): release counts only, never a maturity, support or quality claim.
 
 ## `/studio` — collaborative design
 

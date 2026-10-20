@@ -42,6 +42,7 @@ ai/index.html                      AI-topic landing page (in the sitemap)
 robots.txt, llms.txt              Crawler policy and a plain-text map for AI assistants
 assets/css/site.css                Shared styles
 assets/js/site.js                  Progressive enhancement
+assets/js/activity.js              Home release-activity strip (optional, reads the public org snapshot)
 assets/img/                        Wordmark, favicon, and touch icons
 assets/og/                         Per-page share cards
 ```
