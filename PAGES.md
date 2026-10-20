@@ -71,7 +71,7 @@ Required messages:
 - Assurance is direct expertise, not software access.
 - Production repair remains available through open Build tooling.
 - Continuity statement appears before pricing.
-- Existing published prices and commitments must not be changed without founder approval.
+- Engagement and workshop prices are not published ("On request"); publishing prices or changing commitments needs founder approval.
 - Keep the explicit anti-fit section.
 
 ## `/trust` — citeable commitments

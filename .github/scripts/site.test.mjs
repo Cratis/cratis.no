@@ -51,7 +51,7 @@ test('the four page schemas share the existing site and organization identities'
     }
 });
 
-test('Assurance offers contain only the named services and prices visible on the page', () => {
+test('Assurance offers contain only the named services visible on the page and publish no paid prices', () => {
     const source = read('support/index.html').split('</head>')[1];
     const service = pageData('support').mainEntity;
     assert.equal(service['@type'], 'Service');
@@ -62,10 +62,17 @@ test('Assurance offers contain only the named services and prices visible on the
     for (const offer of service.offers) {
         const card = cards.find(([, name]) => name === offer.name);
         assert.ok(card, `Missing visible service: ${offer.name}`);
-        assert.equal(offer.price, card[3] === 'Free' ? '0' : card[3].replace(/[€,]/g, ''));
-        assert.equal(offer.priceCurrency, 'EUR');
+        if (card[3] === 'Free') {
+            assert.equal(offer.price, '0');
+            assert.equal(offer.priceCurrency, 'EUR');
+        } else {
+            assert.equal(card[3], 'On request');
+            assert.equal(offer.price, undefined);
+            assert.equal(offer.priceCurrency, undefined);
+        }
         assert.equal(offer.itemOffered.description, card[2]);
     }
+    assert.doesNotMatch(source, /€\s?\d/);
 });
 
 test('Studio summary is self-canonical, links to the product site and has no invented Offer', () => {
