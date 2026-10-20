@@ -27,6 +27,9 @@ git ls-files -z -- "${public_paths[@]}" | while IFS= read -r -d '' path; do
     cp "$path" "_site/$path"
 done
 
+# Keep the readable source; deploy a whitespace-minified stylesheet.
+node .github/scripts/minify-css.mjs _site/assets/css/site.css
+
 # No public file uses Jekyll processing. The allowlist replaces _config.yml's
 # include/exclude rules, including the explicit .well-known inclusion.
 touch _site/.nojekyll
