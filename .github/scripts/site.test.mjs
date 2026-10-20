@@ -2,9 +2,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, rmSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { test } from 'node:test';
 import { minifyCss } from './minify-css.mjs';
+import { notifyIndexNow } from './indexnow.mjs';
 
 const read = path => readFileSync(path, 'utf8');
 const pageData = page => JSON.parse(read(`${page}/index.html`).match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
@@ -257,4 +259,69 @@ test('why-cratis wrong-fit section names real alternatives instead of a sales pi
     assert.ok(questions.includes('Does Cratis offer support with an SLA?'));
     assert.doesNotMatch(source, /Use it anyway|throwaway prototype|Python client coming soon/);
     assert.match(source, /<h3>You want a fully managed database<\/h3>/);
+});
+
+test('IndexNow ownership key is exact and included in the staged site', () => {
+    const key = '9b4557a8001ed37db2d4a017989e9038';
+    assert.equal(read(`${key}.txt`), key);
+    assert.equal(existsSync('_site'), false, 'Staging requires absent _site output');
+    assert.equal(execFileSync('git', ['ls-files', '--', '_site'], { encoding: 'utf8' }), '');
+    try {
+        execFileSync('bash', ['.github/scripts/stage-site.sh']);
+        assert.equal(read(`_site/${key}.txt`), key);
+    } finally {
+        rmSync('_site', { recursive: true, force: true });
+    }
+});
+
+const indexNowKey = '9b4557a8001ed37db2d4a017989e9038';
+const sitemapResponse = xml => new Response(xml);
+
+test('IndexNow retries sitemap fetches, follows indexes and submits only unique same-host URLs', async () => {
+    const calls = [];
+    let waits = 0;
+    await notifyIndexNow('cratis.no', indexNowKey, {
+        wait: async () => { waits++; },
+        fetchUrl: async (url, options) => {
+            calls.push([url, options]);
+            if (calls.length === 1) return new Response('', { status: 503 });
+            if (url.endsWith('/sitemap.xml')) return sitemapResponse('<sitemapindex><sitemap><loc>https://cratis.no/child.xml</loc></sitemap></sitemapindex>');
+            if (url.endsWith('/child.xml')) return sitemapResponse('<urlset><url><loc>https://cratis.no/?a=1&amp;b=2</loc></url><url><loc>https://cratis.no/?a=1&amp;b=2</loc></url><url><loc>https://other.test/</loc></url></urlset>');
+            assert.equal(url, 'https://api.indexnow.org/indexnow');
+            assert.equal(options.method, 'POST');
+            assert.equal(options.headers['Content-Type'], 'application/json; charset=utf-8');
+            assert.deepEqual(JSON.parse(options.body), {
+                host: 'cratis.no', key: indexNowKey,
+                keyLocation: `https://cratis.no/${indexNowKey}.txt`,
+                urlList: ['https://cratis.no/?a=1&b=2']
+            });
+            return new Response('', { status: 202 });
+        }
+    });
+    assert.equal(waits, 1);
+    assert.equal(calls.length, 4);
+});
+
+test('IndexNow dry-run falls back to sitemap-index.xml, caps URLs and never POSTs', async t => {
+    const log = t.mock.method(console, 'log', () => {});
+    await notifyIndexNow('cratis.no', indexNowKey, {
+        dryRun: true, wait: async () => {},
+        fetchUrl: async (url, options) => {
+            assert.equal(options.method, undefined);
+            if (url.endsWith('/sitemap.xml')) return new Response('', { status: 404 });
+            assert.ok(url.endsWith('/sitemap-index.xml'));
+            return sitemapResponse(`<urlset>${Array.from({ length: 10_001 }, (_, i) => `<url><loc>https://cratis.no/${i}</loc></url>`).join('')}</urlset>`);
+        }
+    });
+    assert.match(log.mock.calls[0].arguments[0], /^IndexNow: 10000 URLs, \d+ payload bytes \(dry-run, no POST\)$/);
+});
+
+test('IndexNow non-success submission warns without failing', async t => {
+    const warn = t.mock.method(console, 'warn', () => {});
+    await notifyIndexNow('cratis.no', indexNowKey, {
+        fetchUrl: async url => url.endsWith('/sitemap.xml')
+            ? sitemapResponse('<urlset><url><loc>https://cratis.no/</loc></url></urlset>')
+            : new Response('', { status: 429 })
+    });
+    assert.match(warn.mock.calls[0].arguments[0], /^::warning::.*HTTP 429/);
 });

@@ -8,6 +8,7 @@ public_paths=(
     index.html 404.html
     about/ ai/ stack/ studio/ support/ trust/ why-cratis/ writing/
     assets/ .well-known/
+    9b4557a8001ed37db2d4a017989e9038.txt
     robots.txt sitemap.xml llms.txt llms-full.txt favicon.ico CNAME
 )
 
