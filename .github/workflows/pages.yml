@@ -18,12 +18,14 @@ on:
       - '.well-known/**'
       - 'robots.txt'
       - 'sitemap.xml'
+      - '9b4557a8001ed37db2d4a017989e9038.txt'
       - 'llms.txt'
       - 'llms-full.txt'
       - 'favicon.ico'
       - 'CNAME'
       - '.github/workflows/pages.yml'
       - '.github/scripts/stage-site.sh'
+      - '.github/scripts/indexnow.mjs'
       - '.github/scripts/minify-css.mjs'
       - '.github/scripts/verify-jsonld.mjs'
       - '.github/scripts/site.test.mjs'
@@ -61,9 +63,11 @@ jobs:
           path: _site
 
   deploy:
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
     timeout-minutes: 15
@@ -74,3 +78,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
+      - name: Checkout IndexNow script
+        continue-on-error: true
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Notify IndexNow
+        continue-on-error: true
+        run: node .github/scripts/indexnow.mjs cratis.no 9b4557a8001ed37db2d4a017989e9038
