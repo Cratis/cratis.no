@@ -160,8 +160,60 @@ test('sitemap records per-page modification dates and resolves to public pages',
         assert.ok(read(`${page.pathname.slice(1)}index.html`).includes(`href="${url}"`), `${url}: missing page or canonical`);
     }
     // These pages changed on October 20; untouched pages retain their October 19 dates.
-    for (const path of ['', 'stack/', 'studio/', 'support/']) {
+    for (const path of ['', 'stack/', 'studio/', 'support/', 'about/']) {
         assert.equal(dates.get(`https://cratis.no/${path}`), '2026-10-20');
     }
-    assert.equal(dates.get('https://cratis.no/about/'), '2026-10-19');
+});
+
+test('About presents a definition-first facts block and an answer-first summary', () => {
+    const source = read('about/index.html');
+    const facts = source.match(/<section\b[^>]*id="facts"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(facts, 'Missing facts block');
+    assert.match(facts, /<h2>Cratis at a glance<\/h2>/);
+    const definition = 'Cratis is a set of open-source (MIT) tools for building event-sourced and CQRS applications, from the event store to the UI.';
+    assert.ok(facts.includes(`<p>${definition}</p>`));
+    assert.equal((facts.match(/<li>/g) || []).length, 10);
+    assert.match(facts, /href="\/support\/">Cratis Assurance<\/a>/);
+    const hero = source.match(/<section class="page-hero shell">[\s\S]*?<\/section>/)[0];
+    assert.ok(hero.includes(definition));
+    assert.match(facts, /Based in Norway/);
+    for (const product of ['chronicle', 'arc', 'components', 'fundamentals', 'cli']) {
+        assert.ok(facts.includes(`href="https://www.cratis.io/${product}/"`));
+    }
+    assert.match(facts, /License: MIT for the open-source tools/);
+    assert.match(facts, /href="https:\/\/cratis\.studio\/">Studio<\/a> is a paid Preview product/);
+});
+
+test('download facts retain the approved scope, predecessors and counting date', () => {
+    const facts = read('about/index.html').match(/<section\b[^>]*id="facts"[\s\S]*?<\/section>/)[0];
+    assert.match(facts, /over 2\.5 million downloads<\/strong> across NuGet, npm, Docker Hub and Hex, counted October 2026/);
+    assert.match(facts, /Chronicle, including its predecessors Aksio Cratis and the Dolittle Runtime: over 1\.5 million downloads/);
+    assert.match(facts, /Arc, including Aksio Cratis Applications and the Dolittle SDK: over 1\.2 million downloads/);
+    assert.doesNotMatch(facts, /users|installations|Fundamentals[^<]*downloads/i);
+    for (const file of ['index.html', 'about/index.html']) {
+        const schemas = [...read(file).matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+        schemas.forEach(([, schema]) => assert.doesNotMatch(schema, /downloads|1\.5 million|1\.2 million|2\.5 million/i));
+    }
+});
+
+test('Organization founders share stable identities and match visible public profiles', () => {
+    const source = read('about/index.html');
+    const about = pageData('about').mainEntity;
+    const home = JSON.parse(read('index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    assert.equal(about['@id'], organization['@id']);
+    assert.deepEqual(home.founder, about.founder);
+    assert.equal(about.founder.length, 2);
+    const expected = [
+        ['einar-ingebrigtsen', 'Einar Ingebrigtsen', 'Co-founder and CTO', 'einari'],
+        ['sindre-alstad-wilting', 'Sindre Alstad Wilting', 'Co-founder and Chief Architect', 'woksin']
+    ];
+    expected.forEach(([id, name, jobTitle, handle], index) => {
+        assert.deepEqual(about.founder[index], {
+            '@type': 'Person', '@id': `https://cratis.no/#${id}`, name, jobTitle,
+            sameAs: [`https://github.com/${handle}`, `https://cast.cratis.io/${handle}/`]
+        });
+        assert.ok(source.includes(`<h3>${name}</h3>`));
+        assert.ok(source.includes(`<p class="role">${jobTitle}</p>`));
+        about.founder[index].sameAs.forEach(url => assert.ok(source.includes(`href="${url}"`)));
+    });
 });
