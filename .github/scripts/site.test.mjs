@@ -68,14 +68,16 @@ test('Assurance offers contain only the named services and prices visible on the
     }
 });
 
-test('Studio points to its canonical product site without an invented Offer', () => {
+test('Studio summary is self-canonical, links to the product site and has no invented Offer', () => {
     const source = read('studio/index.html');
     const app = pageData('studio').mainEntity;
     assert.equal(app['@type'], 'SoftwareApplication');
     assert.equal(app.url, 'https://cratis.studio/');
     assert.deepEqual(app.publisher, organization);
     assert.equal(app.offers, undefined);
-    assert.match(source, /rel="canonical" href="https:\/\/cratis\.studio\/"/);
+    assert.match(source, /rel="canonical" href="https:\/\/cratis\.no\/studio\/"/);
+    assert.match(source, /property="og:url" content="https:\/\/cratis\.no\/studio\/"/);
+    assert.match(source, /class="cta" href="https:\/\/cratis\.studio\/"/);
     assert.match(source, /href="https:\/\/cratis\.studio\/terms-and-conditions\.html"/);
     assert.match(source, /14-day trial/);
     assert.match(source, /Public sign-up is not open yet/);
