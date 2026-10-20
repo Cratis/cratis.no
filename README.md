@@ -17,7 +17,13 @@ Any static server also works:
 python3 -m http.server 4321
 ```
 
-Root-relative paths require a server. GitHub Pages serves the repository root directly.
+Root-relative paths require a server.
+
+## Deployment
+
+After the Pages source is switched to **GitHub Actions**, `.github/workflows/pages.yml` deploys pushes to `main` that change public paths or the deployment workflow/script. Maintainer-only changes do not redeploy; manual runs are also available. Newer runs cancel older ones (latest wins).
+
+The build runs `bash .github/scripts/stage-site.sh` to copy an explicit allowlist of tracked public files into a fresh `_site/`, then uploads the Pages artifact for the deploy job. No Jekyll processing is needed; `.nojekyll` preserves static serving, including `.well-known/security.txt`. When adding top-level public paths, update **both** the script's allowlist and the workflow's push path filters. For a local staging check, run the same command with no existing `_site/` and remove its generated output afterward; never commit `_site/`.
 
 ## Current structure
 
