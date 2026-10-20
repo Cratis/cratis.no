@@ -896,6 +896,29 @@
             <span class="label">Assurance is founder-led today. Capacity and response commitments are set by the signed agreement.</span>
           </div>
         </div>
+        <div class="activity" id="activity" hidden
+             data-src="https://raw.githubusercontent.com/Cratis/.github/main/stats/org-stats.json">
+          <p class="activity-title">How often we ship</p>
+          <div class="activity-grid">
+            <div class="activity-item">
+              <strong data-stat="year">0</strong>
+              <span class="label">releases in the last 12 months, <span data-stat="yearMajorMinor">0</span> of them major or minor.</span>
+            </div>
+            <div class="activity-item">
+              <strong data-stat="week">0</strong>
+              <span class="label">releases in the last 7 days.</span>
+            </div>
+            <div class="activity-item" data-item="streak">
+              <strong data-stat="streak">0</strong>
+              <span class="label">days in a row with at least one release.</span>
+            </div>
+          </div>
+          <p class="code-note">
+            Counted from public GitHub releases across non-archived,
+            non-fork repositories in the Cratis organization. Updated
+            <span data-stat="date"></span>.
+          </p>
+        </div>
         <p class="code-note">
           We publish what we're building, including the parts that aren't ready
           — and we'll tell you plainly when Cratis is the wrong fit. We're here
@@ -1168,5 +1191,6 @@
     </footer>
 
     <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/activity.js" defer></script>
   </body>
 </html>
