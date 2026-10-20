@@ -172,7 +172,8 @@ test('About presents a definition-first facts block and an answer-first summary'
     assert.match(facts, /<h2>Cratis at a glance<\/h2>/);
     const definition = 'Cratis is a set of open-source (MIT) tools for building event-sourced and CQRS applications, from the event store to the UI.';
     assert.ok(facts.includes(`<p>${definition}</p>`));
-    assert.equal((facts.match(/<li>/g) || []).length, 8);
+    assert.equal((facts.match(/<li>/g) || []).length, 10);
+    assert.match(facts, /href="\/support\/">Cratis Assurance<\/a>/);
     const hero = source.match(/<section class="page-hero shell">[\s\S]*?<\/section>/)[0];
     assert.ok(hero.includes(definition));
     assert.match(facts, /Based in Norway/);
