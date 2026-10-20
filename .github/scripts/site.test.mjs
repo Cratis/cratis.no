@@ -227,7 +227,7 @@ test('Stage maturity stays experimental beside its sandbox claims', () => {
 });
 
 test('community help does not imply response or resolution targets', () => {
-    for (const file of ['support/index.html', 'why-cratis/index.html']) {
+    for (const file of ['index.html', 'about/index.html', 'support/index.html', 'why-cratis/index.html']) {
         const source = read(file);
         assert.match(source, /best-effort/);
         assert.match(source, /without a guaranteed|rather than\s+a guaranteed/);
