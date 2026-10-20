@@ -249,3 +249,12 @@ test('versioning distinguishes release-label checks from breaking-change detecti
     assert.match(source, /Review the release notes and\s+compatibility guidance for the product and version you use/);
     assert.doesNotMatch(source, /checked\s+automatically before anything ships|twenty changes/);
 });
+
+test('why-cratis wrong-fit section names real alternatives instead of a sales pitch', () => {
+    const source = read('why-cratis/index.html');
+    const questions = pageData('why-cratis').mainEntity.map(question => question.name);
+    assert.ok(questions.includes('Is Chronicle a managed cloud service?'));
+    assert.ok(questions.includes('Does Cratis offer support with an SLA?'));
+    assert.doesNotMatch(source, /Use it anyway|throwaway prototype|Python client coming soon/);
+    assert.match(source, /<h3>You want a fully managed database<\/h3>/);
+});
