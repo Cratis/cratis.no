@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why Cratis — and when it's the wrong choice</title>
+    <title>Why Cratis, and when to choose something else</title>
     <meta
       name="description"
-      content="We believe event sourcing is worth it in almost all cases, and we'll tell you when it isn't. Why Cratis, and when a simpler approach is the better choice."
+      content="Why teams build on Cratis, and the cases where a CRUD framework, a managed database or another stack is the better choice."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Why Cratis — and when it's the wrong choice"
+      content="Why Cratis, and when to choose something else"
     />
     <meta
       property="og:description"
-      content="We believe event sourcing is worth it in almost all cases — and we'll tell you when it isn't. Durable facts, full-stack contract continuity, and event sourcing that reads like idiomatic code — and when a simpler approach is better."
+      content="Why teams build on Cratis, and the cases where a CRUD framework, a managed database or another stack is the better choice."
     />
     <meta property="og:url" content="https://cratis.no/why-cratis/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -55,7 +55,7 @@
             "name": "Can I use Cratis if I'm not on .NET?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Chronicle, the Cratis event-sourcing database, exposes a documented gRPC and protobuf boundary with clients for TypeScript, Kotlin/Java, and Elixir, and a Python client coming soon. The deepest experience is still the first-class .NET SDK, and coverage varies by client and version — so a non-.NET backend is a question of client fit, not an automatic no."
+              "text": "Partly. Chronicle, the Cratis event-sourcing database, has a first-class .NET SDK and clients for TypeScript/Node.js, Kotlin/Java and Elixir, plus an experimental Go client. Arc and the rest of the full stack are built for .NET. If your backend language has no Chronicle client, choose an event store or database with a mature client in that language."
             }
           },
           {
@@ -63,23 +63,23 @@
             "name": "Is event sourcing always the right answer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Not always — but we believe it is worth it in almost all cases. Nearly every system deals in information, information flows, and business processes, and that is exactly what a durable event history serves. The exceptions are current-state-only behavior — reference data, settings, a small admin surface — where event sourcing is pure cost. Arc, the Cratis CQRS framework for ASP.NET Core, works over MongoDB or EF Core without event sourcing, and that is a first-class path."
+              "text": "No. It pays off when the history of what happened matters. If you only need current state, or your team doesn't want to model with events, a conventional database and a CRUD framework are simpler. On .NET, Arc works over MongoDB or EF Core without event sourcing."
             }
           },
           {
             "@type": "Question",
-            "name": "Should I use Cratis for a throwaway prototype?",
+            "name": "Is Chronicle a managed cloud service?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The conventions and scaffolding make even a prototype fast to stand up, so there's no reason not to use it for throwaway work. And if the prototype lives on, you're already on a foundation built for the long run."
+              "text": "No. Chronicle is self-hosted and MIT-licensed. You run the Docker image in your own environment. If you need a fully managed database, use a managed database service instead."
             }
           },
           {
             "@type": "Question",
-            "name": "How does Cratis compare on community size?",
+            "name": "Does Cratis offer support with an SLA?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Cratis is young in the public eye and the community is smaller than the biggest alternatives — and it's growing, helpful, kind, and inclusive. Community help is best-effort, without a guaranteed response or resolution time. We also attend conferences, give talks, and take part in the wider community."
+              "text": "Community help is best-effort, without a guaranteed response time. Paid support comes through Cratis Assurance, with scope, response targets and escalation agreed in a signed agreement. There are no published support tiers. If you need a published SLA before you engage, choose a vendor that publishes one."
             }
           }
         ]
@@ -441,64 +441,58 @@
       </section>
 
       <section class="band shell" id="wrong-fit">
-        <p class="eyebrow">The part most sites leave out</p>
+        <p class="eyebrow">Fit</p>
         <div class="band-head">
           <div>
             <h2>When Cratis is the wrong choice.</h2>
-            <p>
-              Because the products are separable, "is Cratis a good fit?" is
-              really several questions.
-            </p>
+            <p>Here is when we would point you somewhere else, and where.</p>
           </div>
         </div>
         <div class="routes">
           <div class="route">
             <div>
-              <h3>You're not on .NET</h3>
+              <h3>Your team doesn't want to model with events</h3>
               <p>
-                Chronicle has a documented, open boundary with clients for
-                TypeScript, Kotlin, and Elixir. Coverage varies by client and
-                version; .NET remains the primary experience.
+                Event sourcing asks you to describe the system as things that happened. If the team doesn't want that way of working, it will fight the tool. Pick a CRUD framework over the database you already have.
               </p>
             </div>
           </div>
           <div class="route">
             <div>
-              <h3>Your slice is current-state-only</h3>
+              <h3>You only ever need current state</h3>
               <p>
-                Reference data, settings, a small admin surface. Keeping full
-                history is pure cost there. Arc over a traditional database is
-                the simpler boundary, and it's a first-class path.
+                No audit trail, no &ldquo;how did we get here&rdquo;, no replay. Then storing every event is cost without return. A conventional database and an ORM will do the job with fewer parts.
               </p>
             </div>
           </div>
           <div class="route">
             <div>
-              <h3>It's a prototype you'll throw away</h3>
+              <h3>You want a fully managed database</h3>
               <p>
-                Use it anyway. The conventions and scaffolding make even a
-                prototype fast to stand up, so there's no reason not to. And if
-                it lives on, you're already on a foundation built for the long
-                run.
+                Chronicle is self-hosted. You run the Docker image and you operate it. If nobody on the team wants that job, use a managed database service from your cloud provider.
               </p>
             </div>
           </div>
           <div class="route">
             <div>
-              <h3>You want the largest possible community</h3>
+              <h3>Your backend language has no Chronicle client</h3>
               <p>
-                Ours is smaller than the biggest alternatives — we're young in
-                the public eye. It's also growing, helpful, kind, and
-                inclusive. Community help is best-effort, without a guaranteed
-                response or resolution time. You'll find us at conferences and
-                in the wider community too.
+                .NET has the first-class SDK. TypeScript/Node.js, Kotlin/Java and Elixir have clients, and Go is experimental. Outside those, choose an event store or database with a mature client in your language.
+              </p>
+            </div>
+          </div>
+          <div class="route">
+            <div>
+              <h3>You need a published SLA before the first conversation</h3>
+              <p>
+                Paid support comes through Assurance, with scope and terms set in a signed agreement, not published tiers. If your buying process needs a published SLA before you talk to anyone, pick a vendor that publishes one.
               </p>
             </div>
           </div>
         </div>
         <p class="code-note">
-          When none of it fits — a couple of static pages or a non-.NET
-          backend — Cratis is more than you need, and that's fine.
+          On .NET and only need current state? Arc, the CQRS framework, also
+          runs over MongoDB or EF Core without event sourcing.
         </p>
       </section>
 
@@ -507,12 +501,13 @@
           <div>
             <h3>Still deciding?</h3>
             <p>
-              Book a Fit Review. Ninety minutes, free, and if the answer is that
-              you should use something else, that's what we'll tell you.
+              Ask for a Fit Review. It's ninety minutes, remote and free. Tell us
+              what you're building. If the honest answer is something other than
+              Cratis, that's what you'll hear.
             </p>
           </div>
           <a class="cta" href="/#contact">
-            Book a Fit Review
+            Ask for a Fit Review
             <svg
               viewBox="0 0 24 24"
               fill="none"
