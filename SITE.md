@@ -65,7 +65,7 @@ Present Build, Studio, and Assurance before individual capability names. Chronic
 
 ### Support
 
-Preserve the founder-published plan and engagement prices and the concrete support terms on the page. General marketing copy may summarize them as published response targets, but should not expand their coverage. A signed agreement is authoritative for an engagement.
+Engagement and workshop prices are not published; the page shows "On request" and points to the contact section, with the Fit Review as the free entry point. Preserve the concrete support terms on the page. General marketing copy may summarize them as published response targets, but should not expand their coverage. A signed agreement is authoritative for an engagement.
 
 ### Trust
 
