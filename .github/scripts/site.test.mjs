@@ -83,3 +83,42 @@ test('Studio summary is self-canonical, links to the product site and has no inv
     assert.match(source, /Public sign-up is not open yet/);
     assert.doesNotMatch(source, /trial terms are not published|Pricing and trial terms are not published/);
 });
+
+test('stack capability map describes each product and matches its WebPage schema', () => {
+    const source = read('stack/index.html');
+    const map = source.match(/<section\b[^>]*id="capability-map"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(map, 'Missing capability map');
+    const rows = [...map.matchAll(/<tr>\s*<th scope="row">([^<]+)<\/th>\s*<td>(.*?)<\/td>/gs)];
+    const products = ['Chronicle', 'Arc', 'Components', 'Fundamentals', 'CLI', 'Studio', 'Screenplay', 'Prologue'];
+    assert.deepEqual(rows.map(row => row[1]), products);
+    const blocks = [...source.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    const page = blocks.map(block => JSON.parse(block[1])).find(block => block['@type'] === 'WebPage');
+    assert.equal(page?.url, 'https://cratis.no/stack/');
+    assert.equal(page.mainEntity['@type'], 'ItemList');
+    assert.deepEqual(page.mainEntity.itemListElement.map(entry => entry.item.name), products);
+    rows.forEach((row, index) => {
+        const entry = page.mainEntity.itemListElement[index];
+        assert.equal(entry.position, index + 1);
+        assert.equal(entry.item.description, row[2].replace(/<[^>]+>/g, ''));
+        assert.equal(entry.item.url, `https://www.cratis.io/${products[index].toLowerCase()}/`);
+    });
+    for (const path of ['chronicle', 'arc/backend', 'arc/frontend', 'components', 'fundamentals', 'cli', 'studio', 'screenplay', 'prologue']) {
+        assert.ok(map.includes(`href="https://www.cratis.io/${path}/"`), `Missing ${path} docs`);
+    }
+});
+
+test('stack map keeps client and model-first maturity boundaries visible', () => {
+    const source = read('stack/index.html');
+    const map = source.match(/<section\b[^>]*id="capability-map"[\s\S]*?<\/section>/)[0];
+    for (const language of ['dotnet', 'typescript', 'kotlin', 'elixir', 'go', 'python']) {
+        assert.ok(map.includes(`href="https://www.cratis.io/event-sourcing/${language}/"`), `Missing ${language} client`);
+    }
+    assert.match(map, /Kotlin \/ Java/);
+    assert.match(map, /Go \(experimental\)/);
+    assert.match(map, /Python \(pre-alpha, not published\)/);
+    assert.match(map, /<th scope="row">Arc<\/th>[\s\S]*?<td>Released; TypeScript backend in source preview<\/td>/);
+    assert.match(map, /<th scope="row">Studio<\/th>[\s\S]*?<td>Preview · paid product<\/td>/);
+    for (const product of ['Screenplay', 'Prologue']) {
+        assert.match(map, new RegExp(`<th scope="row">${product}</th>\\s*<td>.*?</td>\\s*<td>Experimental</td>`));
+    }
+});
