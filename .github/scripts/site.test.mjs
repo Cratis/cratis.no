@@ -42,6 +42,32 @@ test('home H1 contains one remembers, with no generated duplicate word', () => {
     assert.doesNotMatch(read('assets/css/site.css'), /content:\s*["']remembers/);
 });
 
+test('home Writing selection links four curated posts with their existing titles and root URLs', () => {
+    const selection = read('index.html').match(/<section\b[^>]*id="writing"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(selection, 'Missing home Writing selection');
+    const posts = source => [...source.matchAll(/<a class="post" href="(https:\/\/blog\.cratis\.io\/[^"\s]+)">[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(([, url, title]) => [url, title]);
+    const selected = posts(selection);
+    assert.deepEqual(selected, posts(read('writing/index.html')).slice(0, 4));
+    assert.equal(selected.length, 4);
+    for (const [url] of selected) assert.ok(!new URL(url).pathname.startsWith('/blog/'));
+    assert.ok(selection.includes('href="/writing/"'));
+});
+
+test('every defined Organization includes the company LinkedIn identity', () => {
+    const nodes = value => value && typeof value === 'object' ? [value, ...Object.values(value).flatMap(nodes)] : [];
+    let definitions = 0;
+    for (const file of ['index.html', 'about/index.html', 'writing/vague-codebase-vague-code/index.html']) {
+        for (const [, schema] of read(file).matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+            for (const node of nodes(JSON.parse(schema)).filter(node => node['@type'] === 'Organization')) {
+                assert.equal(node['@id'], organization['@id']);
+                assert.ok(node.sameAs?.includes('https://www.linkedin.com/company/cratis-stack'), `${file}: missing LinkedIn`);
+                definitions++;
+            }
+        }
+    }
+    assert.equal(definitions, 4);
+});
+
 test('the four page schemas share the existing site and organization identities', () => {
     for (const page of ['ai', 'studio', 'support', 'trust']) {
         const data = pageData(page);
@@ -169,7 +195,7 @@ test('sitemap records per-page modification dates and resolves to public pages',
         assert.ok(read(`${page.pathname.slice(1)}index.html`).includes(`href="${url}"`), `${url}: missing page or canonical`);
     }
     // These pages changed on October 20; untouched pages retain their October 19 dates.
-    for (const path of ['', 'stack/', 'studio/', 'support/', 'about/']) {
+    for (const path of ['', 'stack/', 'studio/', 'support/', 'about/', 'writing/vague-codebase-vague-code/']) {
         assert.equal(dates.get(`https://cratis.no/${path}`), '2026-10-20');
     }
 });
