@@ -122,3 +122,46 @@ test('stack map keeps client and model-first maturity boundaries visible', () =>
         assert.match(map, new RegExp(`<th scope="row">${product}</th>\\s*<td>.*?</td>\\s*<td>Experimental</td>`));
     }
 });
+
+test('Stack and Support stay discoverable in public navigation and the home footer', () => {
+    const paths = [...read('sitemap.xml').matchAll(/<loc>https:\/\/cratis\.no(\/[^<]*)<\/loc>/g)];
+    assert.ok(paths.length > 0);
+    for (const [, path] of paths) {
+        const source = read(`${path.slice(1)}index.html`);
+        for (const pattern of [/<nav class="site-nav"[\s\S]*?<\/nav>/, /<nav class="mobile-nav"[\s\S]*?<\/nav>/]) {
+            const navigation = source.match(pattern)?.[0];
+            assert.ok(navigation, `${path}: missing navigation`);
+            for (const destination of ['/stack/', '/support/']) {
+                assert.ok(navigation.includes(`href="${destination}"`), `${path}: missing ${destination}`);
+            }
+        }
+    }
+    const home = read('index.html');
+    const footer = home.match(/<footer\b[\s\S]*?<\/footer>/)[0];
+    for (const destination of ['/stack/', '/support/']) {
+        assert.ok(footer.includes(`href="${destination}"`), `Home footer: missing ${destination}`);
+    }
+    assert.match(home, /<p class="hero-facts">[\s\S]*?href="\/support\/"[\s\S]*?<\/p>/);
+    for (const source of [home, read('stack/index.html')]) {
+        assert.match(source, /href="https:\/\/www\.cratis\.io\/chronicle\/get-started\/">Your first five minutes with Chronicle →<\/a>/);
+    }
+});
+
+test('sitemap records per-page modification dates and resolves to public pages', () => {
+    const entries = [...read('sitemap.xml').matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/g)];
+    assert.ok(entries.length > 0);
+    const dates = new Map(entries.map(([, url, date]) => [url, date]));
+    assert.equal(dates.size, entries.length, 'Duplicate sitemap URLs');
+    for (const [url, date] of dates) {
+        assert.match(date, /^\d{4}-\d{2}-\d{2}$/);
+        assert.equal(new Date(date).toISOString().slice(0, 10), date);
+        const page = new URL(url);
+        assert.equal(page.origin, 'https://cratis.no');
+        assert.ok(read(`${page.pathname.slice(1)}index.html`).includes(`href="${url}"`), `${url}: missing page or canonical`);
+    }
+    // These pages changed on October 20; untouched pages retain their October 19 dates.
+    for (const path of ['', 'stack/', 'studio/', 'support/']) {
+        assert.equal(dates.get(`https://cratis.no/${path}`), '2026-10-20');
+    }
+    assert.equal(dates.get('https://cratis.no/about/'), '2026-10-19');
+});
