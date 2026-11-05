@@ -29,7 +29,7 @@ The build runs `bash .github/scripts/stage-site.sh` to copy an explicit allowlis
 
 ```text
 index.html                         Company and lifecycle overview
-studio/index.html                  Cratis Studio Preview
+studio/index.html                  Cratis Studio
 stack/index.html                   Cratis Build and the lifecycle
 stack/the-cast/index.html          Portfolio naming map
 why-cratis/index.html              Fit and anti-fit guidance
@@ -89,4 +89,5 @@ At minimum, check:
 - no invented customer or testimonial text;
 - American English in public content;
 - required favicon, touch icon, and share-card assets;
-- Studio labeled Preview everywhere.
+- Studio is optional and paid, with open sign-up, a 14-day free trial and per-seat pricing; state real limits without maturity labels.
+- Direct is linked in the portfolio, desktop/mobile navigation, footers and llms.txt; access opens in stages.

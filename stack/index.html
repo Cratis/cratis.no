@@ -6,23 +6,25 @@
     <title>The Cratis Stack — event sourcing, CQRS, and the tools around them</title>
     <meta
       name="description"
-      content="The Cratis stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database, Arc for CQRS, React components and open operating tools."
+      content="Choose Cratis tools for business history, typed APIs and shared models. Compare Chronicle, Arc, Studio and Direct, with availability, limits and docs."
     />
     <link rel="canonical" href="https://cratis.no/stack/" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="The stack — Chronicle, Arc, Studio and the tools — Cratis"
+      content="The Cratis Stack — event sourcing, CQRS, and the tools around them"
     />
     <meta
       property="og:description"
-      content="The Cratis stack for accountable .NET systems: Chronicle, the MIT-licensed event-sourcing database, Arc for CQRS, React components and open operating tools."
+      content="Choose Cratis tools for business history, typed APIs and shared models. Compare Chronicle, Arc, Studio and Direct, with availability, limits and docs."
     />
     <meta property="og:url" content="https://cratis.no/stack/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://cratis.no/assets/og/stack.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Cratis stack" />
+    <meta name="twitter:image:alt" content="The Cratis stack" />
     <meta
       name="twitter:image"
       content="https://cratis.no/assets/og/stack.jpg"
@@ -55,7 +57,7 @@
         "@id": "https://cratis.no/stack/#webpage",
         "url": "https://cratis.no/stack/",
         "name": "The Cratis Stack",
-        "description": "A capability map of the Cratis ecosystem, with product roles, maturity and links to the documentation.",
+        "description": "A capability map of Cratis Build, Studio, Direct and Assurance, with product roles, availability, limits and documentation.",
         "isPartOf": { "@id": "https://cratis.no/#website" },
         "publisher": { "@id": "https://cratis.no/#organization" },
         "mainEntity": {
@@ -115,15 +117,29 @@
               "@type": "ListItem",
               "position": 6,
               "item": {
-                "@type": "Thing",
-                "name": "Studio",
+                "@type": "SoftwareApplication",
+                "name": "Cratis Studio",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Web",
                 "url": "https://www.cratis.io/studio/",
-                "description": "Gives teams a shared canvas for designing commands, events and read models as Screenplay models."
+                "description": "Optional paid collaborative event modeling, built on Chronicle. Sign-up is open with a 14-day free trial and per-seat pricing."
               }
             },
             {
               "@type": "ListItem",
               "position": 7,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Cratis Direct",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Web",
+                "url": "https://cratis.direct",
+                "description": "The control plane for agentic engineering. Journeys, gates and recorded evidence govern agent work. Access opens in stages."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
               "item": {
                 "@type": "Thing",
                 "name": "Screenplay",
@@ -133,12 +149,36 @@
             },
             {
               "@type": "ListItem",
-              "position": 8,
+              "position": 9,
               "item": {
                 "@type": "Thing",
                 "name": "Prologue",
                 "url": "https://www.cratis.io/prologue/",
                 "description": "Observes selected signals from an existing system and proposes an event model for your review."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Cratis Choreography",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Cross-platform",
+                "url": "https://www.cratis.io/choreography/",
+                "description": "Runs durable business processes on Orleans: jobs, workflows, state machines and workers."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Cratis Stage",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Cross-platform",
+                "url": "https://www.cratis.io/stage/",
+                "description": "Compiles Screenplay models, verifies supported specifications and runs supported behavior in disposable sandboxes, not production hosting."
               }
             }
           ]
@@ -152,7 +192,7 @@
         "name": "Cratis Chronicle",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Cross-platform",
-        "description": "An event-sourcing database and processing runtime with a first-class .NET SDK and additional TypeScript, Kotlin/Java (JVM), and Elixir clients — with a Python client coming soon — plus pluggable storage-provider implementations including MongoDB (default), PostgreSQL, SQL Server, and SQLite.",
+        "description": "An event-sourcing database and processing runtime for preserving business history and deriving read models. It has a first-class .NET SDK and additional language clients; features and storage-provider support vary by client, provider and version.",
         "license": "https://opensource.org/license/mit",
         "isAccessibleForFree": true,
         "url": "https://www.cratis.io/chronicle/",
@@ -219,10 +259,11 @@
         <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
         <a href="/ai/"><span class="idx">03</span> AI</a>
         <a href="/studio/"><span class="idx">04</span> Studio</a>
-        <a href="/trust/"><span class="idx">05</span> Trust</a>
-        <a href="/support/"><span class="idx">06</span> Support</a>
-        <a href="/about/"><span class="idx">07</span> About</a>
-        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
+        <a href="https://cratis.direct"><span class="idx">05</span> Direct</a>
+        <a href="/trust/"><span class="idx">06</span> Trust</a>
+        <a href="/support/"><span class="idx">07</span> Support</a>
+        <a href="/about/"><span class="idx">08</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">09</span> Docs</a>
       </nav>
 
       <details class="nav-menu">
@@ -232,10 +273,11 @@
         <a href="/why-cratis/"><span class="idx">02</span> Why Cratis</a>
         <a href="/ai/"><span class="idx">03</span> AI</a>
         <a href="/studio/"><span class="idx">04</span> Studio</a>
-        <a href="/trust/"><span class="idx">05</span> Trust</a>
-        <a href="/support/"><span class="idx">06</span> Support</a>
-        <a href="/about/"><span class="idx">07</span> About</a>
-        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
+        <a href="https://cratis.direct"><span class="idx">05</span> Direct</a>
+        <a href="/trust/"><span class="idx">06</span> Trust</a>
+        <a href="/support/"><span class="idx">07</span> Support</a>
+        <a href="/about/"><span class="idx">08</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">09</span> Docs</a>
         </nav>
       </details>
 
@@ -279,14 +321,13 @@
     <main id="main">
       <section class="page-hero shell">
         <p class="eyebrow">The stack</p>
-        <h1>One cast. One accountable lifecycle.</h1>
+        <h1>Keep business history, contracts and behavior connected.</h1>
         <p class="lead">
-          Cratis is the open application and event-lifecycle stack for
-          accountable .NET business systems. It is not a catalog of
-          repositories. It is one path through the life of a long-lived system:
-          design together, build on an open runtime, operate from durable
-          facts, and improve with evidence. One ecosystem, kept deliberately
-          simple.
+          Cratis brings together tools for systems you need to explain and
+          change: Chronicle for event history, Arc for typed commands and
+          queries, and Screenplay for explicit business models. Choose the part
+          you need. Studio adds an optional paid design workspace; Direct
+          governs agentic engineering, with access opening in stages.
         </p>
       </section>
 
@@ -297,8 +338,8 @@
             <h2>Know which piece does the job.</h2>
             <p>
               One ecosystem, with focused products you can adopt separately.
-              Released means packages or images are published, not a promise of
-              feature parity across languages; the
+              Published packages or images do not promise feature parity
+              across languages; the
               <a href="https://www.cratis.io/compatibility/#support-matrix">support matrix</a>
               has the details.
             </p>
@@ -306,63 +347,81 @@
         </div>
         <div class="table-wrap">
           <table class="plans">
-            <caption class="visually-hidden">Cratis capabilities, maturity and documentation</caption>
+            <caption class="visually-hidden">Cratis capabilities, availability and documentation</caption>
             <thead>
               <tr>
                 <th scope="col">Product</th>
-                <th scope="col">What it does</th>
-                <th scope="col">Maturity</th>
+                <th scope="col">What it helps you achieve</th>
+                <th scope="col">Availability and limits</th>
                 <th scope="col">Go deeper</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">Chronicle</th>
-                <td>Keeps the event history and turns it into read models and reactions through a language-neutral gRPC boundary.</td>
-                <td>Released</td>
+                <td>Explain today's state and build new views from recorded events through projections and reactions.</td>
+                <td>Packages and images published; client coverage varies</td>
                 <td><a href="https://www.cratis.io/chronicle/">Chronicle docs</a></td>
               </tr>
               <tr>
                 <th scope="row">Arc</th>
-                <td>Connects backend commands and queries to generated TypeScript clients and React hooks without requiring event sourcing.</td>
-                <td>Released; TypeScript backend in source preview</td>
+                <td>See which frontend code a backend contract change affects through generated TypeScript proxies and React hooks. Event sourcing is optional.</td>
+                <td>Packages published; TypeScript backend available from source</td>
                 <td><a href="https://www.cratis.io/arc/backend/">Backend</a> · <a href="https://www.cratis.io/arc/frontend/">Frontend</a></td>
               </tr>
               <tr>
                 <th scope="row">Components</th>
                 <td>Builds React forms, command dialogs and query-backed tables on Arc's generated proxies.</td>
-                <td>Released</td>
+                <td>Packages published</td>
                 <td><a href="https://www.cratis.io/components/">Components docs</a></td>
               </tr>
               <tr>
                 <th scope="row">Fundamentals</th>
                 <td>Provides reusable concepts, serialization and other shared building blocks beneath the stack.</td>
-                <td>Released</td>
+                <td>Packages published</td>
                 <td><a href="https://www.cratis.io/fundamentals/">Fundamentals docs</a></td>
               </tr>
               <tr>
                 <th scope="row">CLI</th>
                 <td>Inspects and diagnoses Chronicle events, observers and failed processing from the terminal.</td>
-                <td>Released</td>
+                <td>Published tool; action coverage varies by version</td>
                 <td><a href="https://www.cratis.io/cli/">CLI docs</a></td>
               </tr>
               <tr>
                 <th scope="row">Studio</th>
-                <td>Gives teams a shared canvas for designing commands, events and read models as Screenplay models.</td>
-                <td>Preview · paid product</td>
+                <td>Agree on commands, events and expected views together in a shared Screenplay modeling workspace, built on Chronicle.</td>
+                <td>Paid; sign-up open, 14-day free trial, per-seat pricing</td>
                 <td><a href="https://www.cratis.io/studio/">Studio docs</a> · <a href="/studio/">The offer</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Direct</th>
+                <td>Control how far agent work progresses and review the evidence behind it. The control plane for agentic engineering uses journeys and gates.</td>
+                <td>Runs Cratis's own engineering; access opens in stages</td>
+                <td><a href="https://cratis.direct">Cratis Direct</a></td>
               </tr>
               <tr>
                 <th scope="row">Screenplay</th>
                 <td>Records desired business behavior in a portable declarative <code>.play</code> model.</td>
-                <td>Experimental</td>
+                <td>Supported behavior varies by consumer</td>
                 <td><a href="https://www.cratis.io/screenplay/">Screenplay docs</a></td>
               </tr>
               <tr>
                 <th scope="row">Prologue</th>
                 <td>Observes selected signals from an existing system and proposes an event model for your review.</td>
-                <td>Experimental</td>
+                <td>Verify current inputs, data handling and output coverage before use</td>
                 <td><a href="https://www.cratis.io/prologue/">Prologue docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Cratis Choreography</th>
+                <td>Keep business processes running across restarts with durable jobs, workflows, state machines and workers on Orleans.</td>
+                <td>Choose the building block and storage for your process</td>
+                <td><a href="https://www.cratis.io/choreography/">Cratis Choreography docs</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Stage</th>
+                <td>Compile Screenplay models, verify supported specifications and explore supported behavior in a disposable sandbox.</td>
+                <td>Supported model subset; sandbox, not production hosting</td>
+                <td><a href="https://www.cratis.io/stage/">Stage docs</a></td>
               </tr>
             </tbody>
           </table>
@@ -373,8 +432,8 @@
           <a href="https://www.cratis.io/event-sourcing/typescript/">TypeScript</a> ·
           <a href="https://www.cratis.io/event-sourcing/kotlin/">Kotlin / Java</a> ·
           <a href="https://www.cratis.io/event-sourcing/elixir/">Elixir</a> ·
-          <a href="https://www.cratis.io/event-sourcing/go/">Go (experimental)</a> ·
-          <a href="https://www.cratis.io/event-sourcing/python/">Python (pre-alpha, not published)</a>.
+          <a href="https://www.cratis.io/event-sourcing/go/">Go (no observers or projections)</a> ·
+          <a href="https://www.cratis.io/event-sourcing/python/">Python (not published)</a>.
           Client coverage differs; start with
           <a href="https://www.cratis.io/chronicle-clients/">Chronicle in your language</a>.
           The open tools are MIT-licensed; Studio is a separate paid product.
@@ -401,7 +460,7 @@
           <div class="flow-step">
             <span class="k">01 Design</span>
             <h3>Agree on the business</h3>
-            <p>Model commands, facts and views together, then explore the model as a live preview.</p>
+            <p>Model commands, facts and views together, then explore supported behavior in a sandbox.</p>
             <p class="owner">Cratis Studio</p>
           </div>
           <div class="flow-step">
@@ -424,8 +483,9 @@
           </div>
         </div>
         <p class="code-note">
-          Nothing in that sequence is a second architecture. It is one model
-          seen at the point where the team needs it.
+          These tools share concepts, not a promise of automatic delivery from
+          design to production. Check the documented capabilities of each tool.
+          <a href="https://www.cratis.io/adopting-cratis/">Choose a starting point in an existing system →</a>
         </p>
       </section>
 
@@ -592,11 +652,11 @@
         <p class="eyebrow">Separate offers</p>
         <div class="band-head">
           <div>
-            <h2>Design and expertise without changing the Build boundary.</h2>
+            <h2>Design, agent governance and expertise alongside Build.</h2>
             <p>
-              Studio and Assurance work alongside Cratis Build. Neither is part
-              of Build, and neither is required as permission to run or repair
-              Build in your own environment.
+              Studio, Direct and Assurance work alongside Cratis Build. They
+              are separate offers, not permission to run or repair Build in
+              your own environment.
             </p>
           </div>
         </div>
@@ -604,19 +664,21 @@
         <div class="layer">
           <div class="layer-name">
             <strong>Studio</strong
-            ><span>the modeling surface · commercial Preview</span>
+            ><span>the modeling surface · paid product</span>
           </div>
           <div class="layer-body">
             <p>
               Studio is the separate paid design product. Teams model commands,
               events, and read models together, and Stage can perform supported
-              behavior in a sandbox. Stage remains experimental. Screenplay provides
+              behavior in a sandbox, not a production deployment. Screenplay provides
               the portable model.
-              Prologue is an emerging brownfield aid; verify its current scope
+              Prologue is a brownfield aid; verify its current scope
               before planning an adoption around it.
             </p>
             <p>
-              Studio is in Preview and public sign-up is not open yet. The
+              Studio is optional and built on Chronicle. Sign-up is open with
+              a 14-day free trial and per-seat pricing at
+              <a href="https://cratis.studio">cratis.studio</a>. The
               <a href="/studio/">Studio page</a> describes export and retention.
             </p>
             <a
@@ -626,6 +688,21 @@
               rel="noopener"
               >Studio →</a
             >
+          </div>
+        </div>
+
+        <div class="layer">
+          <div class="layer-name">
+            <strong>Direct</strong><span>the control plane for agentic engineering</span>
+          </div>
+          <div class="layer-body">
+            <p>
+              Keep agent work accountable through journeys, gates and recorded
+              evidence. Direct is GitHub-first, lets you bring your own model
+              provider, and is event-sourced on Chronicle. It runs Cratis's own
+              engineering; access opens in stages.
+            </p>
+            <a class="more" href="https://cratis.direct">Cratis Direct →</a>
           </div>
         </div>
 
@@ -851,7 +928,7 @@
           </div>
 
           <div class="foot-col">
-            <h4>Product</h4>
+            <h2>Product</h2>
             <ul>
               <li>
                 <a
@@ -867,13 +944,14 @@
                 >
               </li>
               <li><a href="/studio/">Cratis Studio</a></li>
+              <li><a href="https://cratis.direct">Cratis Direct</a></li>
               <li><a href="/stack/">The stack</a></li>
               <li><a href="/stack/the-cast/">The cast</a></li>
             </ul>
           </div>
 
           <div class="foot-col">
-            <h4>Company</h4>
+            <h2>Company</h2>
             <ul>
               <li><a href="/about/">About</a></li>
               <li><a href="/why-cratis/">Why Cratis</a></li>
@@ -883,7 +961,7 @@
           </div>
 
           <div class="foot-col">
-            <h4>Resources</h4>
+            <h2>Resources</h2>
             <ul>
               <li><a href="/writing/">Writing</a></li>
               <li>

@@ -12,9 +12,9 @@ This file preserves product-owned messaging, voice, and information-architecture
 
 > Cratis helps teams design, build, operate, and improve accountable, long-lived .NET business systems.
 
-**Three sentences**
+**Portfolio summary**
 
-> Cratis Build is the open runtime: Chronicle owns the event lifecycle, while Arc carries commands and queries from C# through generated TypeScript toward React. Cratis Studio is the paid collaborative design and runtime-understanding product at Preview maturity. Cratis Assurance is founder-led support, reviews, first slices, production readiness, and workshops, with commitments defined by the selected plan or engagement.
+> Cratis Build is the open runtime: Chronicle owns the event lifecycle, while Arc carries commands and queries from C# through generated TypeScript toward React. Cratis Studio is the optional paid collaborative design product, built on Chronicle, with open sign-up, a 14-day free trial and per-seat pricing. Cratis Direct is the control plane for agentic engineering: journeys, gates and evidence keep agent work accountable; access opens in stages. Cratis Assurance is founder-led support, reviews, first slices, production readiness, and workshops, with commitments defined by the selected plan or engagement.
 
 ## Master narrative
 
@@ -60,7 +60,15 @@ Cratis joins that lifecycle instead of treating each part as a separate toolchai
 
 > **The paid collaborative design product.**
 >
-> Model the business with domain experts, product people, and engineers on one shared surface. Explore supported behavior as a live preview and connect design intent with runtime understanding. Studio is Preview software: useful today and still moving. Supported export formats and retention follow the hosted product and its applicable terms.
+> Model the business with domain experts, product people, and engineers on one shared surface. Studio is optional and built on Chronicle. Sign up at https://cratis.studio for a 14-day free trial, with per-seat pricing. Explore supported behavior in a sandbox and connect design intent with runtime understanding. Supported export formats and retention follow the hosted product and its applicable terms.
+
+### Cratis Direct
+
+> **The control plane for agentic engineering.**
+>
+> Keep intended work and delivery connected through journeys, gates and recorded evidence. Direct is GitHub-first, lets you bring your own model provider, and is event-sourced on Chronicle. It runs Cratis's own engineering. Access opens in stages at https://cratis.direct.
+
+Keep Direct's boundaries explicit: no open-registration promise, access date, invented pricing, trial or service-license claim. Do not imply unattended correctness or a complete automatic delivery-to-production loop. Keep private internals out of public copy and distinguish Direct from Cratis AI's assistant guidance.
 
 ### Cratis Assurance
 
@@ -75,6 +83,7 @@ Cratis joins that lifecycle instead of treating each part as a separate toolchai
 | Chronicle | Own the full life of a durable fact. |
 | Arc | One C# contract, typed through to React. |
 | Cratis Studio | Design together. Understand what runs. |
+| Cratis Direct | Keep agent work accountable through journeys, gates and evidence. |
 | Workbench | Inspect and interact with supported Chronicle concepts in the browser. |
 | CLI | Inspect Chronicle and run documented operational actions from the terminal. |
 | Chronicle MCP | Expose documented Chronicle inspection and operational tools through MCP. |
@@ -130,13 +139,13 @@ Keep the channel and support limits explicit:
 
 > Use the smallest approach that solves the whole problem. A settings surface, reference data, a short-lived prototype, or a focused backend service may not need event sourcing or the wider Cratis lifecycle. Arc can work without Chronicle, and sometimes a smaller tool is the honest answer.
 
-### Studio maturity
+### Studio limits
 
-> Studio is Preview software. Features move, some lifecycle connections remain partial, and Stage performs supported model behavior as a sandbox rather than removing every production concern. We state that boundary because ambition is not the same as maturity.
+> State real limits as plain facts. Some lifecycle connections remain partial, and Stage performs supported model behavior as a sandbox, not a production host. Implementation, review and testing remain necessary.
 
 ### Open and paid boundary
 
-> Cratis Build is open: the runtime and operating tools you deploy. Cratis Studio is paid: collaborative design and runtime understanding. Cratis Assurance is paid: our time, expertise, and commitments. A paid plan is never permission to operate or repair your own system.
+> Cratis Build is open: the runtime and operating tools you deploy. Cratis Studio is paid: collaborative design and runtime understanding. Cratis Direct governs agent work, with access opening in stages; do not infer a service license or price. Cratis Assurance is paid: our time, expertise, and commitments. A paid plan is never permission to operate or repair your own system. MIT licensing applies to the open-source products, not the whole portfolio.
 
 ## Common questions
 
@@ -158,7 +167,7 @@ Keep the channel and support limits explicit:
 
 **What does Studio do today?**
 
-> It gives teams a collaborative event-modeling surface and a live sandbox for supported behavior. Supported model export is available, while formats and retention follow the hosted product. Its direction includes deeper runtime understanding, but it remains Preview.
+> It gives teams a collaborative event-modeling surface and a live sandbox for supported behavior. Sign-up is open with a 14-day free trial and per-seat pricing at https://cratis.studio. Supported model export is available, while formats and retention follow the hosted product. Deeper runtime understanding remains a direction, not a complete lifecycle connection.
 
 **Why work with Cratis Assurance?**
 
@@ -173,5 +182,5 @@ Avoid claims that are generic, inflated, or ahead of the product:
 - fully automatic lifecycle;
 - full language-client parity;
 - production runtime when describing Stage;
-- mature or generally available when describing Studio;
+- product maturity labels in place of facts about availability, supported behavior and limits;
 - any customer, testimonial, metric, price, date, or capability that has not been verified publicly.

@@ -22,7 +22,7 @@ Use this order consistently:
 
 ### Design
 
-Cratis Studio is the paid collaborative design and runtime-understanding product. Teams model commands, facts, views, and flows together. Stage can perform supported parts of a model as a live sandbox. Studio is preview software: useful today, still moving, and never described as if every lifecycle connection or production concern is complete.
+Cratis Studio is the paid collaborative design and runtime-understanding product. Teams model commands, facts, views, and flows together. Stage can perform supported parts of a model as a live sandbox. Studio is optional and built on Chronicle. Sign-up is open at https://cratis.studio with a 14-day free trial and per-seat pricing. Stage is a sandbox for supported behavior, not a production host.
 
 ### Build
 
@@ -41,7 +41,7 @@ Workbench, CLI, and Chronicle MCP are open operating surfaces around Chronicle. 
 
 Runtime evidence returns to design. Durable facts, executable specifications, projections, and operating history help teams explain current state, test a change, and evolve without discarding why the system behaves as it does.
 
-## Three customer-facing offers
+## Four customer-facing offers
 
 ### Cratis Build
 
@@ -53,7 +53,13 @@ Everything required to build and operate the deployed system. Use product names 
 
 **The paid collaborative design product.**
 
-A shared modeling surface, executable preview, and runtime-understanding experience. Always state preview maturity and exportability. Never imply that Studio is required to run or repair Cratis Build.
+A shared modeling surface, sandbox for supported behavior, and runtime-understanding experience. State real limits as plain facts, including supported export formats and retention under the hosted product's terms. Studio is paid, with open sign-up, a 14-day free trial and per-seat pricing at https://cratis.studio. Never imply that Studio is required to run or repair Cratis Build.
+
+### Cratis Direct
+
+**The control plane for agentic engineering.**
+
+Keep agent work accountable through journeys, gates and recorded evidence. Direct is GitHub-first, supports bringing your own model provider, and is event-sourced on Chronicle. It runs Cratis's own engineering; access opens in stages at https://cratis.direct. Do not imply open registration, a complete automatic delivery-to-production loop, or a service price, trial or license not stated by the product. Use only public product facts; never disclose private internals.
 
 ### Cratis Assurance
 
@@ -67,7 +73,8 @@ Support, architecture review, model sprints, first slices, production readiness,
 | --- | --- | --- |
 | Chronicle | the event lifecycle platform | Records, evolves, derives, explains, and repairs durable facts. |
 | Arc | the full-stack CQRS framework | Carries one typed contract from C# through TypeScript to React. |
-| Cratis Studio | the collaborative design product | Lets the team model together and explore supported behavior as a live preview. |
+| Cratis Studio | the collaborative design product | Lets the team model together and explore supported behavior in a sandbox. |
+| Cratis Direct | the control plane for agentic engineering | Governs agent work through journeys, gates and recorded evidence; access opens in stages. |
 | Workbench | the visual operating surface | Inspects and operates a Chronicle deployment. |
 | CLI | the terminal operating surface | Gives people and scripts a direct view into Chronicle. |
 | Chronicle MCP | the agent-facing operating surface | Exposes supported Chronicle operations to tools through MCP. |
@@ -126,7 +133,7 @@ Cratis sounds like a senior engineer who respects the reader's time.
 - Software that remembers.
 - Design → Build → Operate → Improve.
 - Accountable software for long-lived .NET business systems.
-- Cratis Build is open. Cratis Studio is paid Preview software. Cratis Assurance is founder-led expertise with defined scope.
+- Cratis Build is open. Cratis Studio is paid, with open sign-up and a 14-day free trial. Cratis Direct governs agent work, with access opening in stages. Cratis Assurance is founder-led expertise with defined scope.
 - Chronicle owns the event lifecycle.
 - Arc carries one typed contract from C# to React.
 - Workbench, CLI, and MCP keep operations open.
