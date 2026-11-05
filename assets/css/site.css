@@ -1063,9 +1063,10 @@ pre code {
     max-width: 34ch;
     line-height: 1.6;
 }
-.foot-col h4 {
+.foot-col h2 {
     font-family: var(--font-mono);
     font-size: 12px;
+    line-height: inherit;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--text-faint);

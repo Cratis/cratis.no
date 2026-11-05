@@ -1,6 +1,6 @@
 # Cratis
 
-> Cratis helps teams design, build, operate and improve accountable, long-lived .NET business systems. Cratis Build is the open-source (MIT) runtime, centered on Chronicle, an event-sourcing database, and Arc, a CQRS framework; Cratis Studio is the paid collaborative design product (Preview); Cratis Assurance is founder-led support.
+> Cratis helps teams build business systems they can explain and change: preserve event history, keep backend and frontend contracts in step, and make expected behavior explicit. Cratis Build brings together MIT-licensed tools, including Chronicle for event sourcing and Arc for CQRS with or without event sourcing. Cratis Studio is an optional paid modeling workspace built on Chronicle, with open sign-up, a 14-day free trial and per-seat pricing. Cratis Direct is the control plane for agentic engineering; access opens in stages. Cratis Assurance provides paid expertise, support, reviews and workshops.
 
 ## Cratis
 
@@ -8,23 +8,28 @@
 - [The Cratis stack](https://cratis.no/stack/): How Chronicle, Arc and the tools around them fit together.
 - [The cast](https://cratis.no/stack/the-cast/): How Cratis names its products and capabilities.
 - [Why Cratis](https://cratis.no/why-cratis/): When Cratis fits, and when it is the wrong choice.
-- [Cratis Studio](https://cratis.no/studio/): Collaborative design and runtime understanding (Preview).
+- [Cratis Studio](https://cratis.no/studio/): Agree on business behavior together. Optional paid product built on Chronicle; sign-up is open with a 14-day free trial and per-seat pricing at https://cratis.studio.
+- [Cratis Direct](https://cratis.direct): The control plane for agentic engineering. Journeys, gates and recorded evidence keep agent work accountable. GitHub-first, bring your own model provider, event-sourced on Chronicle, and used for Cratis's own engineering. Access opens in stages.
 - [Cratis Assurance](https://cratis.no/support/): Support, reviews, first slices and workshops.
 - [Trust](https://cratis.no/trust/): Open-source scope, security, continuity and current practices.
-- [AI-native development](https://cratis.no/ai/): AI tooling for event-sourced .NET applications.
+- [Cratis AI and Direct](https://cratis.no/ai/): Framework guidance for assistants, and journeys, gates and evidence for governing agentic engineering. Neither replaces engineering review.
 - [About](https://cratis.no/about/): The team and the thinking behind Cratis.
 
 ## Documentation
 
-- [Cratis documentation](https://www.cratis.io): Product documentation, tutorials and API reference.
-- [Chronicle](https://www.cratis.io/chronicle/): The event-sourcing database and processing runtime.
-- [Arc](https://www.cratis.io/arc/): The CQRS framework for ASP.NET Core.
-- [Capability map](https://www.cratis.io/cratis-stack/#capability-map): Product scope and maturity across the stack.
-- [Support matrix](https://www.cratis.io/compatibility/#support-matrix): Storage, clients, hosting and maturity; not a guarantee of feature parity.
+- [Cratis documentation](https://www.cratis.io/): Product documentation, tutorials and API reference.
+- [Adopt Cratis in an existing system](https://www.cratis.io/adopting-cratis/): Choose a bounded starting point; keep current-state storage where history is not needed.
+- [Chronicle](https://www.cratis.io/chronicle/): Preserve business events and derive read models from recorded history.
+- [Arc](https://www.cratis.io/arc/): Typed commands, queries and generated TypeScript proxies, with or without event sourcing.
+- [Screenplay](https://www.cratis.io/screenplay/): Describe business behavior in a portable .play model.
+- [Stage](https://www.cratis.io/stage/): Compile models, verify supported specifications and explore supported behavior in disposable sandboxes, not production hosting.
+- [Cratis Choreography](https://www.cratis.io/choreography/): Durable jobs, workflows, state machines and workers on Orleans.
+- [Capability map](https://www.cratis.io/cratis-stack/#capability-map): Product responsibilities, licenses and service terms across the stack.
+- [Support matrix](https://www.cratis.io/compatibility/#support-matrix): Storage, client languages and hosting, including the Go client's lack of observers and projections; not a guarantee of feature parity.
 - [Spec-driven development](https://www.cratis.io/spec-driven-development/): Model contracts, executable specifications and acceptance scenarios.
 - [Event sourcing and GDPR](https://www.cratis.io/concepts/event-sourcing-gdpr/): Crypto-shredding and the erasure responsibilities that remain.
 - [First application](https://www.cratis.io/templates/getting-started/): Scaffold and run a local full-stack application.
-- [Cratis Studio](https://cratis.studio): The hosted Studio product.
+- [Cratis Studio](https://cratis.studio): The hosted paid Studio product; sign-up is open with a 14-day free trial and per-seat pricing.
 
 ## Writing
 

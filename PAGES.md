@@ -4,7 +4,7 @@ This file records the reader job and candidate message intent for each page. It 
 
 ## `/` — company and lifecycle
 
-**Job:** explain Cratis in ten seconds and route visitors to Studio, Build, or Assurance.
+**Job:** explain Cratis in ten seconds and route visitors to Build, Studio, Direct, or Assurance.
 
 Required messages:
 
@@ -12,7 +12,8 @@ Required messages:
 - Accountable, long-lived .NET business systems.
 - Design → Build → Operate → Improve.
 - Cratis Build is the open runtime and operating foundation.
-- Cratis Studio is the paid collaborative design product at preview maturity.
+- Cratis Studio is the optional paid collaborative design product, built on Chronicle; sign-up is open with a 14-day free trial and per-seat pricing at https://cratis.studio.
+- Cratis Direct is the control plane for agentic engineering: journeys, gates and recorded evidence keep agent work accountable. It is GitHub-first, supports bringing your own model provider, is event-sourced on Chronicle and runs Cratis's own engineering. Access opens in stages at https://cratis.direct.
 - Cratis Assurance is direct expertise.
 - More than fifteen years of event-sourcing lineage and founder-led Assurance with defined availability.
 - A simpler approach is sometimes the better answer.
@@ -20,15 +21,15 @@ Required messages:
 
 ## `/studio` — collaborative design
 
-**Job:** explain what Studio is useful for today without borrowing maturity from the established runtime.
+**Job:** explain how Studio helps teams agree on business behavior, with its current limits.
 
 Required messages:
 
-- Paid hosted product in Preview; public sign-up is not open yet. Follow what cratis.studio publishes (trial, pricing) and update this page when sign-up opens.
+- Optional paid hosted product built on Chronicle; sign-up is open at https://cratis.studio with a 14-day free trial and per-seat pricing.
 - Collaborative event modeling for domain experts, product people, and engineers.
 - Portable model and live sandbox for supported behavior.
 - Runtime understanding is the direction and value; not every lifecycle connection is complete.
-- Explicit **Preview** maturity and anti-fit.
+- State real limits as plain facts and retain anti-fit guidance. Stage is a sandbox for supported behavior, not a production host.
 - Cratis Build keeps running without Studio.
 
 ## `/stack` — one coherent cast
@@ -37,9 +38,11 @@ Required messages:
 
 Required messages:
 
-- The customer-facing offers are Build, Studio, and Assurance.
+- The customer-facing offers are Build, Studio, Direct, and Assurance.
 - Chronicle owns the event lifecycle.
-- Arc carries C# commands and queries through generated TypeScript to React.
+- Arc carries backend commands and queries through generated TypeScript to React; the .NET path uses C#.
+- Screenplay makes expected behavior explicit; Stage compiles models and verifies supported specifications in disposable sandboxes, not production hosting.
+- Cratis Choreography provides durable jobs, workflows, state machines and workers on Orleans.
 - Workbench, CLI, and Chronicle MCP are open operating surfaces.
 - Products can stand alone, but share one vocabulary.
 - Technical package names explain capabilities; they are not separate buying decisions.
@@ -48,7 +51,7 @@ Required messages:
 
 **Job:** explain the Cratis names without making the portfolio feel fragmented.
 
-Open with Build, Studio, and Assurance. Present all other names as capabilities inside those offers. Keep the metaphor restrained and functional.
+Open with Build, Studio, Direct, and Assurance. Present all other names as capabilities inside those offers. Keep the metaphor restrained and functional. Direct links to https://cratis.direct; no local Direct page is needed.
 
 ## `/why-cratis` — fit and anti-fit
 
@@ -59,7 +62,7 @@ Required messages:
 - Choose focused parts when the problem is narrow.
 - Choose Cratis when design, typed full-stack continuity, durable history, and operations must cohere.
 - Current-state-only behavior can use Arc without Chronicle.
-- Non-.NET backends, disposable prototypes, and simple reference data may be a poor fit.
+- Client coverage, operational costs, disposable prototypes, and simple reference data affect fit. Do not treat non-.NET backends as uniformly unsupported; link to the language and feature matrix.
 - No named comparisons or external product claims.
 
 ## `/support` — Cratis Assurance
@@ -80,7 +83,7 @@ Required messages:
 
 Required sections:
 
-- Build / Studio / Assurance boundary.
+- Build / Studio / Direct / Assurance boundary, without a portfolio-wide MIT or free-service claim.
 - Open operating surfaces and the rule that repair is not a paid permission.
 - Continuity.
 - Versioning policy, including what is not yet promised.
@@ -109,11 +112,11 @@ Required messages:
 
 ## `/ai` — AI-topic route
 
-**Job:** explain one verified AI/developer-workflow boundary without implying model-first capability, tool compatibility, distribution, security, quality, productivity, or roadmap state. The route is included in the primary navigation and sitemap; its claims remain subject to the same evidence gate as the rest of the site.
+**Job:** distinguish Cratis AI's framework guidance from Direct's control plane for agentic engineering, with a clear next step for each. Direct access opens in stages. Neither guidance nor gates establish correctness or replace engineering review. Do not imply universal tool compatibility, distribution, security, quality, productivity, or roadmap state. The route is included in the primary navigation and sitemap; its claims remain subject to the same evidence gate as the rest of the site.
 
 ## Shared navigation
 
-- Primary destinations are Stack, Why Cratis, AI, Studio, Trust, Support, About, Docs, in that order, on desktop and mobile.
+- Primary destinations are Stack, Why Cratis, AI, Studio, Direct, Trust, Support, About, Docs, in that order, on desktop and mobile. Direct links to https://cratis.direct; include it in every shared footer too.
 - Docs links to https://www.cratis.io/; mark the current page with `aria-current="page"`.
 - Home-section navigation remains in-page on the home page rather than replacing the evaluator destinations.
 
@@ -123,4 +126,5 @@ Required messages:
 - Do not publish external product names or claims.
 - Do not expose internal evidence sources or drafting provenance.
 - Do not invent customers, testimonials, metrics, prices, dates, legal details, or capabilities.
+- Direct access opens in stages. Do not promise open registration, an access date, pricing, a trial, unattended correctness or a complete automatic delivery-to-production loop. Publish only public product facts, never private internals.
 - Placeholders, editorial comments, and unratified policy references are removed from public HTML.

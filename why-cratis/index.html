@@ -6,7 +6,7 @@
     <title>Why Cratis, and when to choose something else</title>
     <meta
       name="description"
-      content="Why teams build on Cratis, and the cases where a CRUD framework, a managed database or another stack is the better choice."
+      content="Choose Cratis when business history, typed contracts or shared models matter. Compare the benefits, costs and limits, and find a bounded place to start."
     />
     <link rel="canonical" href="https://cratis.no/why-cratis/" />
     <meta property="og:type" content="website" />
@@ -16,13 +16,15 @@
     />
     <meta
       property="og:description"
-      content="Why teams build on Cratis, and the cases where a CRUD framework, a managed database or another stack is the better choice."
+      content="Choose Cratis when business history, typed contracts or shared models matter. Compare the benefits, costs and limits, and find a bounded place to start."
     />
     <meta property="og:url" content="https://cratis.no/why-cratis/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://cratis.no/assets/og/why.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Why Cratis" />
+    <meta name="twitter:image:alt" content="Why Cratis" />
     <meta name="twitter:image" content="https://cratis.no/assets/og/why.jpg" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
@@ -55,7 +57,7 @@
             "name": "Can I use Cratis if I'm not on .NET?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Partly. Chronicle, the Cratis event-sourcing database, has a first-class .NET SDK and clients for TypeScript/Node.js, Kotlin/Java and Elixir, plus an experimental Go client. Arc and the rest of the full stack are built for .NET. If your backend language has no Chronicle client, choose an event store or database with a mature client in that language."
+              "text": "Chronicle has a first-class .NET SDK and clients for TypeScript/Node.js, Kotlin/Java and Elixir. The Go client has no observers or projections. Arc also documents Kotlin/Java and TypeScript backends. Check the support matrix for the language, features and version you need."
             }
           },
           {
@@ -145,10 +147,11 @@
         <a href="/why-cratis/" aria-current="page"><span class="idx">02</span> Why Cratis</a>
         <a href="/ai/"><span class="idx">03</span> AI</a>
         <a href="/studio/"><span class="idx">04</span> Studio</a>
-        <a href="/trust/"><span class="idx">05</span> Trust</a>
-        <a href="/support/"><span class="idx">06</span> Support</a>
-        <a href="/about/"><span class="idx">07</span> About</a>
-        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
+        <a href="https://cratis.direct"><span class="idx">05</span> Direct</a>
+        <a href="/trust/"><span class="idx">06</span> Trust</a>
+        <a href="/support/"><span class="idx">07</span> Support</a>
+        <a href="/about/"><span class="idx">08</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">09</span> Docs</a>
       </nav>
 
       <details class="nav-menu">
@@ -158,10 +161,11 @@
         <a href="/why-cratis/" aria-current="page"><span class="idx">02</span> Why Cratis</a>
         <a href="/ai/"><span class="idx">03</span> AI</a>
         <a href="/studio/"><span class="idx">04</span> Studio</a>
-        <a href="/trust/"><span class="idx">05</span> Trust</a>
-        <a href="/support/"><span class="idx">06</span> Support</a>
-        <a href="/about/"><span class="idx">07</span> About</a>
-        <a href="https://www.cratis.io/"><span class="idx">08</span> Docs</a>
+        <a href="https://cratis.direct"><span class="idx">05</span> Direct</a>
+        <a href="/trust/"><span class="idx">06</span> Trust</a>
+        <a href="/support/"><span class="idx">07</span> Support</a>
+        <a href="/about/"><span class="idx">08</span> About</a>
+        <a href="https://www.cratis.io/"><span class="idx">09</span> Docs</a>
         </nav>
       </details>
 
@@ -205,13 +209,13 @@
     <main id="main">
       <section class="page-hero shell">
         <p class="eyebrow">Why Cratis</p>
-        <h1>The honest version.</h1>
+        <h1>Choose the part that solves your problem.</h1>
         <p class="lead">
-          You're comparing options, so we'll say our conviction out loud: we
-          believe an event history earns its place when understanding change
-          matters. It preserves the business facts behind today's state, with
-          the modeling and operational costs that entails. Here's what the
-          stack changes, what it doesn't, and when you should pick something else.
+          Cratis fits teams that need to explain business history, keep backend
+          and frontend contracts in step, or make expected behavior explicit.
+          Chronicle preserves events; Arc provides typed commands and queries
+          with or without event sourcing. Each brings modeling or operational
+          costs. Here's what changes, what doesn't, and when to choose less.
         </p>
       </section>
 
@@ -221,11 +225,16 @@
           <li>A focused library can be the better answer.</li>
           <li>Cratis earns its keep when the expensive gaps are between design,
             backend, frontend, history and operations.</li>
-          <li>Cratis Build joins Chronicle's event lifecycle with Arc's typed
-            C# → TypeScript → React continuity.</li>
-          <li>Studio is a separate paid product in Preview.</li>
+          <li>Cratis Build joins Chronicle's event lifecycle with Arc's generated
+            TypeScript contracts and React integration.</li>
+          <li><a href="https://cratis.studio">Studio</a> is optional and paid, with open sign-up, a 14-day free trial and per-seat pricing.</li>
+          <li><a href="https://cratis.direct">Direct</a> governs agentic engineering; access opens in stages.</li>
           <li>Assurance adds support from the people building the stack.</li>
         </ul>
+        <p class="code-note">
+          <a href="https://www.cratis.io/adopting-cratis/">Start in an existing system</a>
+          or <a href="/stack/">compare the products and their limits</a>.
+        </p>
       </section>
 
       <section class="band shell" id="instead-of">
@@ -335,18 +344,19 @@
               Event sourcing optimizes for understanding change, not storing the
               latest value. Events are facts: immutable, past-tense,
               single-purpose. Read models are disposable, because the events are
-              the state. And with Cratis it stays familiar to the people
-              building it — even if they have never worked this way before.
+              the source of truth. That makes new views possible from recorded
+              history, but requires deliberate event design and operational care.
             </p>
           </div>
           <div class="card">
             <span class="num">03</span>
             <h3>Rails an agent can follow</h3>
             <p>
-              Analyzers that fail the build on convention drift, skills that
-              teach assistants the conventions, and an MCP server that makes the
-              running store legible. A convention you can break silently isn't a
-              convention — it's a suggestion.
+              Cratis AI provides framework guidance, analyzers catch supported
+              convention violations, and Chronicle MCP exposes a running store
+              to an assistant. Cratis Direct adds journeys, gates and recorded
+              evidence to govern agent work. These checks support engineering
+              review; they do not establish correctness on their own.
             </p>
           </div>
           <div class="card">
@@ -404,10 +414,10 @@
         <p class="eyebrow">The commercial boundary</p>
         <div class="band-head">
           <div>
-            <h2>Three offers, with the line drawn plainly.</h2>
+            <h2>Four offers, with the line drawn plainly.</h2>
           </div>
         </div>
-        <div class="grid grid-3">
+        <div class="grid grid-2">
           <div class="card">
             <span class="num">Cratis Build</span>
             <h3>Public runtime source and operating tools</h3>
@@ -422,10 +432,22 @@
             <span class="num">Cratis Studio</span>
             <h3>Paid collaborative design</h3>
             <p>
-              A hosted Preview for modeling together, exploring supported
-              behavior, and improving runtime understanding. Studio provides
+              An optional paid workspace built on Chronicle for modeling together
+              and exploring supported behavior. <a href="https://cratis.studio">Sign-up
+              is open</a> with a 14-day free trial and per-seat pricing. Studio provides
               export for supported model content; available formats, retention,
               and later access follow the hosted product and applicable terms.
+            </p>
+          </div>
+          <div class="card">
+            <span class="num">Cratis Direct</span>
+            <h3>Keep agent work accountable</h3>
+            <p>
+              The control plane for agentic engineering connects intended work
+              with delivery through journeys, gates and recorded evidence.
+              Direct is GitHub-first and lets you bring your own model provider.
+              It runs Cratis's own engineering;
+              <a href="https://cratis.direct">access opens in stages</a>.
             </p>
           </div>
           <div class="card">
@@ -451,9 +473,9 @@
         <div class="routes">
           <div class="route">
             <div>
-              <h3>Your team doesn't want to model with events</h3>
+              <h3>You don't need an event-sourced model</h3>
               <p>
-                Event sourcing asks you to describe the system as things that happened. If the team doesn't want that way of working, it will fight the tool. Pick a CRUD framework over the database you already have.
+                Chronicle asks you to describe the system as things that happened. If that history is not useful to your feature, keep its current-state database. Arc can still provide typed commands and queries without event sourcing.
               </p>
             </div>
           </div>
@@ -461,7 +483,7 @@
             <div>
               <h3>You only ever need current state</h3>
               <p>
-                No audit trail, no &ldquo;how did we get here&rdquo;, no replay. Then storing every event is cost without return. A conventional database and an ORM will do the job with fewer parts.
+                No audit trail, no &ldquo;how did we get here&rdquo;, no replay: storing every event may add cost without a useful return. A conventional database and an ORM may be enough. This is a limit on the case for event sourcing, not a requirement to adopt the whole Cratis stack.
               </p>
             </div>
           </div>
@@ -477,7 +499,7 @@
             <div>
               <h3>Your backend language has no Chronicle client</h3>
               <p>
-                .NET has the first-class SDK. TypeScript/Node.js, Kotlin/Java and Elixir have clients, and Go is experimental. Outside those, choose an event store or database with a mature client in your language.
+                .NET has the first-class SDK. TypeScript/Node.js, Kotlin/Java and Elixir have clients. Go has a released client without observers or projections. Arc also documents Kotlin/Java and TypeScript backends. Check the support matrix for the features and version you need.
               </p>
             </div>
           </div>
@@ -575,7 +597,7 @@
           </div>
 
           <div class="foot-col">
-            <h4>Product</h4>
+            <h2>Product</h2>
             <ul>
               <li>
                 <a
@@ -591,13 +613,14 @@
                 >
               </li>
               <li><a href="/studio/">Cratis Studio</a></li>
+              <li><a href="https://cratis.direct">Cratis Direct</a></li>
               <li><a href="/stack/">The stack</a></li>
               <li><a href="/stack/the-cast/">The cast</a></li>
             </ul>
           </div>
 
           <div class="foot-col">
-            <h4>Company</h4>
+            <h2>Company</h2>
             <ul>
               <li><a href="/about/">About</a></li>
               <li><a href="/why-cratis/">Why Cratis</a></li>
@@ -607,7 +630,7 @@
           </div>
 
           <div class="foot-col">
-            <h4>Resources</h4>
+            <h2>Resources</h2>
             <ul>
               <li><a href="/writing/">Writing</a></li>
               <li>

@@ -18,7 +18,7 @@ JavaScript is optional for reading and navigation. It enhances theme persistence
 
 ```text
 /                                      Company and lifecycle overview
-/studio/                               Cratis Studio Preview
+/studio/                               Cratis Studio
 /stack/                                Build and the lifecycle
 /stack/the-cast/                       Product and capability naming
 /why-cratis/                           Fit and anti-fit
@@ -36,7 +36,7 @@ Product tutorials and API documentation link to `cratis.io` instead of being dup
 
 ## Navigation
 
-The desktop header contains Studio, How it works, What you get, Working with us, and Who we are, plus Docs. The mobile header exposes the same destinations through a native `<details>` menu.
+The desktop header contains Stack, Why Cratis, AI, Studio, Direct (https://cratis.direct), Trust, Support, About, and Docs. The mobile header exposes the same destinations through a native `<details>` menu. Shared footers also link to Direct.
 
 Requirements:
 
@@ -51,17 +51,21 @@ Requirements:
 
 ### Homepage
 
-Explain the lifecycle and route visitors to Studio, Build, Assurance, fit guidance, and contact. Do not include customer logos, testimonials, attributed founder quotations, or numerical absolutes without approved evidence.
+Explain the lifecycle and route visitors to Build, Studio, Direct, Assurance, fit guidance, and contact. Do not include customer logos, testimonials, attributed founder quotations, or numerical absolutes without approved evidence.
 
 The contact form opens a draft in the visitor's email application. The page must state that nothing is sent automatically and provide the email address as a fallback.
 
 ### Studio
 
-Use **Preview** consistently. Describe Stage as a sandbox for supported model behavior, not as the production system, a complete runtime, or proof that design and implementation cannot drift. Current trial, pricing, export, and retention details belong to the hosted product and its applicable terms.
+Studio is an optional paid product built on Chronicle, with open sign-up, a 14-day free trial and per-seat pricing at https://cratis.studio. State real limits as plain facts. Describe Stage as a sandbox for supported model behavior, not as the production system, a complete runtime, or proof that design and implementation cannot drift. Export and retention details follow the hosted product and its applicable terms.
+
+### Direct
+
+Direct is the control plane for agentic engineering: journeys, gates and recorded evidence keep agent work accountable. It is GitHub-first, supports bringing your own model provider, is event-sourced on Chronicle and runs Cratis's own engineering. Link to https://cratis.direct; access opens in stages. Do not promise open registration, a date, pricing, a trial or a complete automatic delivery-to-production loop. Never publish private internals.
 
 ### Stack and cast
 
-Present Build, Studio, and Assurance before individual capability names. Chronicle is the event-lifecycle foundation and Arc carries typed contracts from C# toward TypeScript and React. Client, storage, and operating-tool coverage vary by product and version; link to current documentation.
+Present Build, Studio, Direct, and Assurance before individual capability names. Chronicle is the event-lifecycle foundation and Arc carries typed contracts from C# toward TypeScript and React. Client, storage, and operating-tool coverage vary by product and version; link to current documentation.
 
 ### Support
 
@@ -115,7 +119,7 @@ JSON-LD states only what the page itself states and follows the same claim gates
 
 Sitemap. Every `<url>` carries `<lastmod>`; update it when a page's content changes.
 
-Claim gating. Language-breadth, storage-breadth, license, and "coming soon" wording (Python client, Ensemble) must match the current approved public-claim wording before publication, exactly as for body copy. Model-first surfaces (Studio, Screenplay, Stage, Scene, Prologue) are described as experimental or Preview; pre-release products are strictly "coming soon". No benchmark, superiority, maturity, or production-readiness wording.
+Claim gating. Language-breadth, storage-breadth, license, and "coming soon" wording (Python client, Ensemble) must match the current approved public-claim wording before publication, exactly as for body copy. Do not use product maturity labels; state availability and real limits as plain facts. No benchmark, superiority or production-readiness wording.
 
 ## Public hygiene
 
@@ -132,7 +136,7 @@ Before publication:
 3. Check external links.
 4. Scan for HTML comments, placeholder markers, invented customer names, and internal-policy references.
 5. Scan public copy for British spellings.
-6. Confirm Studio is Preview everywhere and outside Build.
+6. Confirm Studio's open sign-up, 14-day free trial and per-seat pricing are consistent, Studio remains optional, and Direct's staged access is explicit.
 7. Check favicon, touch-icon, and share-card dimensions.
 8. Exercise desktop and mobile navigation with keyboard, Escape, reduced motion, and JavaScript disabled.
 9. Review dark and light screenshots at mobile and desktop widths when browser tooling is available.
