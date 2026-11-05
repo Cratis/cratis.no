@@ -115,8 +115,8 @@ test('Studio summary is self-canonical, links to the product site and has no inv
     assert.match(source, /class="cta" href="https:\/\/cratis\.studio\/"/);
     assert.match(source, /href="https:\/\/cratis\.studio\/terms-and-conditions\.html"/);
     assert.match(source, /14-day trial/);
-    assert.match(source, /Public sign-up is not open yet/);
-    assert.doesNotMatch(source, /trial terms are not published|Pricing and trial terms are not published/);
+    assert.match(source, /Sign-up is open/);
+    assert.doesNotMatch(source, /Public sign-up is not open yet/);
 });
 
 test('stack capability map describes each product and matches its WebPage schema', () => {
@@ -124,18 +124,33 @@ test('stack capability map describes each product and matches its WebPage schema
     const map = source.match(/<section\b[^>]*id="capability-map"[\s\S]*?<\/section>/)?.[0];
     assert.ok(map, 'Missing capability map');
     const rows = [...map.matchAll(/<tr>\s*<th scope="row">([^<]+)<\/th>\s*<td>(.*?)<\/td>/gs)];
-    const products = ['Chronicle', 'Arc', 'Components', 'Fundamentals', 'CLI', 'Studio', 'Screenplay', 'Prologue'];
-    assert.deepEqual(rows.map(row => row[1]), products);
+    // Branded products (Studio, Direct, Stage) use their short row label in the table but
+    // the full "Cratis X" name in structured data; Direct and Choreography also use a
+    // different URL shape than `lowercase(row label)`.
+    const products = [
+        { row: 'Chronicle', name: 'Chronicle', url: 'https://www.cratis.io/chronicle/' },
+        { row: 'Arc', name: 'Arc', url: 'https://www.cratis.io/arc/' },
+        { row: 'Components', name: 'Components', url: 'https://www.cratis.io/components/' },
+        { row: 'Fundamentals', name: 'Fundamentals', url: 'https://www.cratis.io/fundamentals/' },
+        { row: 'CLI', name: 'CLI', url: 'https://www.cratis.io/cli/' },
+        { row: 'Studio', name: 'Cratis Studio', url: 'https://www.cratis.io/studio/' },
+        { row: 'Direct', name: 'Cratis Direct', url: 'https://cratis.direct' },
+        { row: 'Screenplay', name: 'Screenplay', url: 'https://www.cratis.io/screenplay/' },
+        { row: 'Prologue', name: 'Prologue', url: 'https://www.cratis.io/prologue/' },
+        { row: 'Cratis Choreography', name: 'Cratis Choreography', url: 'https://www.cratis.io/choreography/' },
+        { row: 'Stage', name: 'Cratis Stage', url: 'https://www.cratis.io/stage/' }
+    ];
+    assert.deepEqual(rows.map(row => row[1]), products.map(product => product.row));
     const blocks = [...source.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
     const page = blocks.map(block => JSON.parse(block[1])).find(block => block['@type'] === 'WebPage');
     assert.equal(page?.url, 'https://cratis.no/stack/');
     assert.equal(page.mainEntity['@type'], 'ItemList');
-    assert.deepEqual(page.mainEntity.itemListElement.map(entry => entry.item.name), products);
-    rows.forEach((row, index) => {
-        const entry = page.mainEntity.itemListElement[index];
+    assert.deepEqual(page.mainEntity.itemListElement.map(entry => entry.item.name), products.map(product => product.name));
+    page.mainEntity.itemListElement.forEach((entry, index) => {
         assert.equal(entry.position, index + 1);
-        assert.equal(entry.item.description, row[2].replace(/<[^>]+>/g, ''));
-        assert.equal(entry.item.url, `https://www.cratis.io/${products[index].toLowerCase()}/`);
+        assert.equal(entry.item.url, products[index].url);
+        assert.ok(entry.item.description.length > 0, `${products[index].name}: missing schema description`);
+        assert.ok(rows[index][2].replace(/<[^>]+>/g, '').length > 0, `${products[index].row}: missing table description`);
     });
     for (const path of ['chronicle', 'arc/backend', 'arc/frontend', 'components', 'fundamentals', 'cli', 'studio', 'screenplay', 'prologue']) {
         assert.ok(map.includes(`href="https://www.cratis.io/${path}/"`), `Missing ${path} docs`);
@@ -149,13 +164,12 @@ test('stack map keeps client and model-first maturity boundaries visible', () =>
         assert.ok(map.includes(`href="https://www.cratis.io/event-sourcing/${language}/"`), `Missing ${language} client`);
     }
     assert.match(map, /Kotlin \/ Java/);
-    assert.match(map, /Go \(experimental\)/);
-    assert.match(map, /Python \(pre-alpha, not published\)/);
-    assert.match(map, /<th scope="row">Arc<\/th>[\s\S]*?<td>Released; TypeScript backend in source preview<\/td>/);
-    assert.match(map, /<th scope="row">Studio<\/th>[\s\S]*?<td>Preview · paid product<\/td>/);
-    for (const product of ['Screenplay', 'Prologue']) {
-        assert.match(map, new RegExp(`<th scope="row">${product}</th>\\s*<td>.*?</td>\\s*<td>Experimental</td>`));
-    }
+    assert.match(map, /Go \(no observers or projections\)/);
+    assert.match(map, /Python \(not published\)/);
+    assert.match(map, /<th scope="row">Arc<\/th>[\s\S]*?<td>Packages published; TypeScript backend available from source<\/td>/);
+    assert.match(map, /<th scope="row">Studio<\/th>[\s\S]*?<td>Paid; sign-up open, 14-day free trial, per-seat pricing<\/td>/);
+    assert.match(map, /<th scope="row">Screenplay<\/th>\s*<td>.*?<\/td>\s*<td>Supported behavior varies by consumer<\/td>/);
+    assert.match(map, /<th scope="row">Prologue<\/th>\s*<td>.*?<\/td>\s*<td>Verify current inputs, data handling and output coverage before use<\/td>/);
 });
 
 test('Stack and Support stay discoverable in public navigation and the home footer', () => {
@@ -194,9 +208,9 @@ test('sitemap records per-page modification dates and resolves to public pages',
         assert.equal(page.origin, 'https://cratis.no');
         assert.ok(read(`${page.pathname.slice(1)}index.html`).includes(`href="${url}"`), `${url}: missing page or canonical`);
     }
-    // These pages changed on October 20; untouched pages retain their October 19 dates.
+    // These pages changed on November 4; bump this date whenever one of them changes again.
     for (const path of ['', 'stack/', 'studio/', 'support/', 'about/', 'writing/vague-codebase-vague-code/']) {
-        assert.equal(dates.get(`https://cratis.no/${path}`), '2026-10-20');
+        assert.equal(dates.get(`https://cratis.no/${path}`), '2026-11-04');
     }
 });
 
@@ -205,18 +219,18 @@ test('About presents a definition-first facts block and an answer-first summary'
     const facts = source.match(/<section\b[^>]*id="facts"[\s\S]*?<\/section>/)?.[0];
     assert.ok(facts, 'Missing facts block');
     assert.match(facts, /<h2>Cratis at a glance<\/h2>/);
-    const definition = 'Cratis is a set of open-source (MIT) tools for building event-sourced and CQRS applications, from the event store to the UI.';
+    const definition = 'Cratis Build brings together open-source (MIT) tools for event-sourced and CQRS applications, from the event store to the UI.';
     assert.ok(facts.includes(`<p>${definition}</p>`));
     assert.equal((facts.match(/<li>/g) || []).length, 10);
     assert.match(facts, /href="\/support\/">Cratis Assurance<\/a>/);
     const hero = source.match(/<section class="page-hero shell">[\s\S]*?<\/section>/)[0];
-    assert.ok(hero.includes(definition));
+    assert.match(hero, /<h1>[^<]+<\/h1>/);
     assert.match(facts, /Based in Norway/);
-    for (const product of ['chronicle', 'arc', 'components', 'fundamentals', 'cli']) {
+    for (const product of ['chronicle', 'arc', 'components', 'screenplay', 'choreography']) {
         assert.ok(facts.includes(`href="https://www.cratis.io/${product}/"`));
     }
     assert.match(facts, /License: MIT for the open-source tools/);
-    assert.match(facts, /href="https:\/\/cratis\.studio\/">Studio<\/a> is a paid Preview product/);
+    assert.match(facts, /href="https:\/\/cratis\.studio\/">Studio<\/a> is paid per seat, with open sign-up and a 14-day free trial/);
 });
 
 test('download facts retain the approved scope, predecessors and counting date', () => {
@@ -253,11 +267,12 @@ test('Organization founders share stable identities and match visible public pro
     });
 });
 
-test('Stage maturity stays experimental beside its sandbox claims', () => {
+test('Stage maturity disclaims production use beside its sandbox claims', () => {
+    const stageLimitation = /sandbox[\s\S]{0,220}?not (?:the|a)\s+production/i;
     for (const file of ['index.html', 'stack/index.html', 'stack/the-cast/index.html', 'studio/index.html']) {
-        assert.match(read(file), /Stage remains experimental/, `${file}: missing Stage limitation`);
+        assert.match(read(file), stageLimitation, `${file}: missing Stage limitation`);
     }
-    assert.match(read('studio/index.html'), /Paid Preview product/);
+    assert.match(read('studio/index.html'), /Paid product · per-seat pricing/);
     assert.match(read('stack/index.html'), /operating tools are\s+optional, not prerequisites for using Chronicle or Arc/);
 });
 
